@@ -1,0 +1,29 @@
+# ssu-build's crash exercises, in sqc command format.
+# These exercises are meant to test each option at least
+# once, and some in more than one circumstance.
+#
+# Example run:
+# > ./sqc 1 ssu-build.sqc ../src/
+#
+# EPN, Fri Nov 13 10:18:29 2009
+#
+1  exercise  help:ssu-build        @ssu-build@ -h
+1  exercise  bacseed-5:ssu-build1  @ssu-build@ -F bacseed-5.stk
+1  exercise  bacseed-5:ssu-build2  @ssu-build@ -F --key-out 2 -o my.cm bacseed-5.stk
+1  exercise  bacseed-5:ssu-build3  @ssu-build@ -F --key-out 3 -n bacseed bacseed-5.stk
+1  exercise  bacseed-5:ssu-build4  @ssu-build@ -F --key-out 4 -n bacseed bacseed-5.stk
+1  exercise  bacseed-5:ssu-build5  @ssu-build@ -F --key-out 5 -n newbacseed --append bacseed-5.cm bacseed-5.stk
+1  exercise  bacseed-5:ssu-build6  @ssu-build@ -F --key-out 6 --trunc 322-570 bacseed-5.stk
+1  exercise  bacseed-5:ssu-build7  @ssu-build@ -F --key-out 7 --ileaved --trunc 322-570 bacseed-5.stk
+1  exercise  bacseed-5:ssu-build8  @ssu-build@ -F --key-out 8 --num bacseed-5.stk
+1  exercise  bacseed-5:ssu-build9  @ssu-build@ -F --key-out 9 --ileaved --num bacseed-5.stk
+1  exercise  bacseed-5:ssu-build10  @ssu-build@ -F --key-out 10 --gapthresh 0.3 bacseed-5.stk
+1  exercise  bacseed-5:ssu-build11  @ssu-build@ -F --key-out 11 --rf bacseed-5.stk
+1  exercise  bacseed-5:ssu-build12  @ssu-build@ -F --key-out 12 --eent bacseed-5.stk
+1  exercise  bacseed-5:ssu-build13  @ssu-build@ -F --key-out 13 --eent --ere 1.0 bacseed-5.stk
+1  exercise  d-arc:ssu-build14      @ssu-build@ -F --key-out 14 -d archaea --eent --ere 1.0
+1  exercise  d-arc:ssu-build15      @ssu-build@ -F --key-out 15 -d archaea --trunc 320..510 
+1  exercise  d-arc:ssu-build16      @ssu-build@ -F --key-out 16 --ps2pdf ps2pdfwr -d archaea --trunc 320..510 
+1  exercise  d-arc:ssu-build17      @ssu-build@ -F --key-out 17 --ps-keep -d archaea --trunc 320..510 
+1  exercise  d-arc:ssu-build18      @ssu-build@ -F --key-out 18 --ps-only -d archaea --trunc 320..510 
+

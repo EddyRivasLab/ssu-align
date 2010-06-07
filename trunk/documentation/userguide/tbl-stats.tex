@@ -1,0 +1,207 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notes on how these tables were created are in
+% /groups/eddy/home/nawrockie/notebook/10_0322_ssualign_auto_merge/
+% This work, as logged in the 00LOG in that dir, was done on May
+% 24-27, 2010.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[hb]
+\begin{center}
+  \scriptsize
+  \begin{tabular}{lllrr|rrrr|rr} 
+                &          &          &         &        &       &       &       &           &           & masked \\
+                &          &          &         &average &total  & \# of & \# of & \# columns& alignment & alignment \\
+                &          &          & \# of   &sequence&\# of  &insert &consensus&included & file      & file \\
+dataset         & models   & domain   &sequences& length &columns&columns&columns&by mask    & size (Mb) & size (Mb) \\ \hline
+& & & & & & & & & & \\ 
+Ggenes-core     & default  & archaea  &     186 & 1407.5 &  1757 &   249 &  1508 &  1380 &      0.7 &      0.5 \\
+                & default  & bacteria &    4752 & 1438.1 &  5319 &  3737 &  1582 &  1362 &     50.7 &     13.1 \\
+& & & & & & & & & & \\ 
+Ggenes-full     & default  & archaea  &    8407 & 1365.0 &  3151 &  1643 &  1508 &  1382 &     53.3 &     23.5 \\
+                & default  & bacteria &  499787 & 1400.3 & 11900 & 10318 &  1582 &  1404 & 11910.9 &   1419.4 \\
+& & & & & & & & & & \\ 
+Silva-Ref       & default  & archaea  &   19260 & 1169.0 & 12107 & 10599 &  1508 &  1383 &    469.2 &     56.1 \\
+                & default  & bacteria &  391158 & 1413.0 & 24540 & 22958 &  1582 &  1396 & 19254.6 &   1148.6 \\
+                & default  & eukarya  &   50350 & 1727.3 & 20950 & 19069 &  1881 &  1418 &   2117.0 &    150.1 \\
+& & & & & & & & & & \\ 
+Silva-Parc      & default  & archaea  &   56113 &  862.1 & 14299 & 12791 &  1508 &  1383 &   1613.0 &    163.0 \\
+                & default  & bacteria & 1062938 & 1016.4 & 27918 & 26336 &  1582 &  1391 & 59498.1 &   3105.0 \\
+                & default  & eukarya  &  123454 & 1092.6 & 24247 & 22366 &  1881 &  1424 &   6003.9 &    368.6 \\
+& & & & & & & & & & \\ 
+RDP             & default  & archaea  &   55249 &  830.9 & 12724 & 11216 &  1508 &  1382 &   1411.7 &    158.4 \\
+                & default  & bacteria & 1182624 &  975.1 & 29736 & 28154 &  1582 &  1397 & 70455.3 &   3426.5 \\ %\hline
+%& & & & & & & & & & \\ \hline
+%& & & & & & & & & & \\ %\hline
+%synthetic-full  & default  & archaea  &      34 & 1479.2 &  1596 &    88 &  1508 &  1400 &      0.113 &      0.099 \\
+%synthetic-full  & default  & bacteria &      33 & 1530.0 &  1660 &    78 &  1582 &  1480 &      0.114 &      0.102 \\
+%synthetic-full  & default  & eukarya  &      33 & 1805.7 &  2343 &   462 &  1881 &  1550 &      0.161 &      0.107 \\
+%& & & & & & & & & & \\ 
+%%synthetic-full  & default  & archaea  &     334 & 1479.7 &  2040 &   532 &  1508 &  1424 &      1.381 &      0.968 \\
+%%synthetic-full  & default  & bacteria &     333 & 1526.9 &  1872 &   290 &  1582 &  1476 &      1.265 &      1.001 \\
+%%synthetic-full  & default  & eukarya  &     333 & 1814.4 &  3312 &  1431 &  1881 &  1551 &      2.226 &      1.050 \\
+%%& & & & & & & & & & \\ 
+%synthetic-full  & default  & archaea  &    3334 & 1480.2 &  3781 &  2273 &  1508 &  1423 &     25.366 &      9.638 \\
+%synthetic-full  & default  & bacteria &    3333 & 1526.8 &  2844 &  1262 &  1582 &  1466 &     19.117 &      9.929 \\
+%synthetic-full  & default  & eukarya  &    3333 & 1814.0 &  4827 &  2946 &  1881 &  1554 &     32.333 &     10.509 \\
+%& & & & & & & & & & \\ 
+%%synthetic-full  & default  & archaea  &   33334 & 1480.3 &  6312 &  4804 &  1508 &  1424 &    422.354 &     96.472 \\
+%%synthetic-full  & default  & bacteria &   33333 & 1526.5 &  5217 &  3635 &  1582 &  1465 &    349.407 &     99.269 \\
+%%synthetic-full  & default  & eukarya  &   33333 & 1813.9 &  7888 &  6007 &  1881 &  1552 &    527.411 &    105.002 \\
+%%& & & & & & & & & & \\ 
+%synthetic-full  & default  & archaea  &  333334 & 1480.4 &  8800 &  7292 &  1508 &  1424 &   5882.696 &    965.338 \\
+%synthetic-full  & default  & bacteria &  333333 & 1526.6 &  7798 &  6216 &  1582 &  1465 &   5215.344 &    993.335 \\
+%synthetic-full  & default  & eukarya  &  333333 & 1814.4 & 11342 &  9461 &  1881 &  1551 &   7577.349 &   1050.002 \\ %\hline
+%& & & & & & & & & & \\ %\hline
+%synthetic-v4    & default  & archaea  &      50 &  238.7 &  1519 &    11 &  1508 &   241 &      0.157 &      0.027 \\
+%synthetic-v4    & default  & bacteria &      50 &  239.7 &  1591 &     9 &  1582 &   237 &      0.164 &      0.026 \\
+%& & & & & & & & & & \\ 
+%%synthetic-v4    & default  & archaea  &     500 &  238.9 &  1603 &    95 &  1508 &   241 &      1.626 &      0.262 \\
+%%synthetic-v4    & default  & bacteria &     500 &  239.4 &  1614 &    32 &  1582 &   238 &      1.637 &      0.259 \\
+%%& & & & & & & & & & \\ 
+%synthetic-v4    & default  & archaea  &    5000 &  238.9 &  1927 &   419 &  1508 &   243 &     19.484 &      2.641 \\
+%synthetic-v4    & default  & bacteria &    5000 &  239.5 &  1823 &   241 &  1582 &   239 &     18.444 &      2.601 \\
+%& & & & & & & & & & \\ 
+%%synthetic-v4    & default  & archaea  &   50000 &  238.9 &  2301 &   793 &  1508 &   246 &    232.305 &     26.801 \\
+%%synthetic-v4    & default  & bacteria &   50000 &  239.5 &  2168 &   586 &  1582 &   240 &    219.004 &     26.201 \\
+%%& & & & & & & & & & \\ 
+%synthetic-v4    & default  & archaea  &  500000 &  238.9 &  2667 &  1159 &  1508 &   254 &   2690.005 &    277.001 \\
+%synthetic-v4    & default  & bacteria &  500000 &  239.5 &  2563 &   981 &  1582 &   244 &   2586.005 &    267.001 \\ %\hline
+%& & & & & & & & & & \\ %\hline
+%synthetic-v4    & v4       & archaea  &      50 &  239.3 &   254 &    13 &   241 &   241 &      0.028 &      0.027 \\
+%synthetic-v4    & v4       & bacteria   &      50 &  239.7 &   250 &     9 &   241 &   237 &      0.027 &      0.026 \\
+%& & & & & & & & & & \\ 
+%%synthetic-v4    & v4       & archaea  &     500 &  239.6 &   346 &   105 &   241 &   241 &      0.367 &      0.262 \\
+%%synthetic-v4    & v4       & bacteria   &     500 &  239.7 &   278 &    37 &   241 &   238 &      0.299 &      0.259 \\
+%%& & & & & & & & & & \\ 
+%synthetic-v4    & v4       & archaea  &    5000 &  239.6 &   686 &   445 &   241 &   241 &      7.071 &      2.621 \\
+%synthetic-v4    & v4       & bacteria   &    5000 &  239.7 &   490 &   249 &   241 &   238 &      5.111 &      2.591 \\
+%%& & & & & & & & & & \\ 
+%%synthetic-v4    & v4       & archaea  &   50000 &  239.6 &  1075 &   834 &   241 &   241 &    109.702 &     26.301 \\
+%%synthetic-v4    & v4       & bacteria   &   50000 &  239.7 &   865 &   624 &   241 &   238 &     88.702 &     26.001 \\
+%& & & & & & & & & & \\ 
+%synthetic-v4    & v4       & archaea   &  500000 &  239.6 &  1469 &  1228 &   241 &   241 &   1492.003 &    264.001 \\
+%synthetic-v4    & v4       & bacteria    &  500000 &  239.7 &  1283 &  1042 &   241 &   238 &   1306.003 &    261.001 \\
+\end{tabular}
+\end{center}
+\caption{\textbf{Statistics and resulting output file sizes for
+    various SSU datasets.} For each dataset, the number
+  of and average length of sequences for each domain, as classified by
+  \prog{ssu-align}, is reported. For each dataset and domain an
+  alignment is created. The four columns in the middle block report
+  the total number of columns, the
+  number of insert and consensus columns (consensus column counts are
+  invariant per domain across all datasets), and the number of
+  consensus columns remaining (included) after masking with
+  \prog{ssu-mask}.  The column second from the right reports the size in 
+  megabytes (Mb) of each full alignment file that is output by
+  \prog{ssu-align}. These alignments include insert and consensus
+  columns for all sequences. The rightmost column reports the size in
+  Mb of the masked alignment output from \prog{ssu-mask}.  These
+  alignments include a subset of the consensus columns and zero insert
+  columns. See section~\ref{sec:background} for more information on
+  consensus versus insert columns.}
+\label{tbl:sizes}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[hb]
+\begin{center}
+  \scriptsize
+%  \begin{tabular}{llrr|rrrrr|rrr} 
+  \begin{tabular}{llrr|rrrrr|rr} 
+                &          &         &         &  & & & &                          & \multicolumn{2}{c}{parallel ssu-align} \\
+                &          &         &average  & \multicolumn{5}{c|}{running time} & \multicolumn{2}{c}{statistics} \\ \cline {10-11} %& summed \\
+                &          & \# of   &seq     & \multicolumn{5}{c|}{(hh:mm:ss)}   &                      \# of & wall  \\ \cline{5-9} %& time $\div$  \\ 
+dataset         & models   & seqs    & length & ssu-prep & ssu-align & ssu-mask & ssu-draw & ssu-merge & procs & time  \\ \hline % & \# of procs \\ \hline
+& & & & & & & & & \\
+Ggenes-core     & default  &    4938 & 1437.0 &         - &   1:47:48 &   0:00:04 &   0:00:05 &         - &   1 &         - \\% &         - \\
+Ggenes-full     & default  &  508194 & 1399.7 &   0:01:50 & 183:04:18 &   0:07:51 &   0:08:49 &   0:06:12 & 100 &   2:01:08 \\% &   1:49:51 \\
+Silva-Ref       & default  &  460783 & 1437.1 &   0:01:18 & 175:07:23 &   0:13:13 &   0:15:25 &   0:09:03 & 100 &   1:58:50 \\% &   1:45:04 \\
+Silva-Parc      & default  & 1246462 & 1017.0 &   0:02:28 & 315:20:54 &   1:07:07 &   1:05:40 &   0:24:27 & 100 &   3:47:06 \\% &   3:09:13 \\
+RDP             & default  & 1237963 &  968.7 &   0:02:27 & 293:15:32 &   1:24:13 &   1:13:49 &   0:25:05 & 100 &   3:38:54 \\% &   2:55:57 \\
+& & & & & & & & & \\ 
+synthetic-full  & default  &     100 & 1603.7 &         - &   0:02:39 &   0:00:01 &   0:00:02 &         - &   1 &         - \\% &         - \\
+synthetic-full  & default  &    1000 & 1606.9 &         - &   0:26:12 &   0:00:01 &   0:00:02 &         - &   1 &         - \\% &         - \\
+synthetic-full  & default  &   10000 & 1607.0 &         - &   4:17:36 &   0:00:05 &   0:00:06 &         - &   1 &         - \\% &         - \\
+synthetic-full  & default  &  100000 & 1606.9 &   0:00:51 &  44:56:37 &   0:00:57 &   0:01:14 &   0:01:08 & 100 &   0:30:22 \\% &   0:26:58 \\
+synthetic-full  & default  & 1000000 & 1607.1 &   0:02:00 & 450:15:46 &   0:12:06 &   0:13:35 &   0:12:12 & 100 &   5:06:52 \\% &   4:30:09 \\
+& & & & & & & & & \\
+synthetic-v4    & default  &     100 &  239.2 &         - &   0:00:37 &   0:00:01 &   0:00:02 &         - &   1 &         - \\% &         - \\
+synthetic-v4    & default  &    1000 &  239.2 &         - &   0:02:44 &   0:00:01 &   0:00:02 &         - &   1 &         - \\% &         - \\
+synthetic-v4    & default  &   10000 &  239.2 &         - &   0:26:36 &   0:00:03 &   0:00:04 &         - &   1 &         - \\% &         - \\
+synthetic-v4    & default  &  100000 &  239.2 &   0:01:02 &   4:37:51 &   0:00:07 &   0:00:23 &   0:00:27 & 100 &   0:03:17 \\% &   0:02:47 \\
+synthetic-v4    & default  & 1000000 &  239.2 &   0:01:37 &  45:14:17 &   0:03:28 &   0:04:27 &   0:03:57 & 100 &   0:31:46 \\% &   0:27:09 \\
+& & & & & & & & & \\
+synthetic-v4    & v4       &     100 &  239.5 &         - &   0:00:06 &   0:00:01 &         - &         - &   1 &         - \\% &         - \\
+synthetic-v4    & v4       &    1000 &  239.6 &         - &   0:00:34 &   0:00:01 &         - &         - &   1 &         - \\% &         - \\
+synthetic-v4    & v4       &   10000 &  239.6 &         - &   0:05:31 &   0:00:01 &         - &         - &   1 &         - \\% &         - \\
+synthetic-v4    & v4       &  100000 &  239.6 &   0:00:08 &   1:03:58 &   0:00:15 &         - &   0:00:14 & 100 &   0:00:55 \\% &   0:00:38 \\
+synthetic-v4    & v4       & 1000000 &  239.6 &   0:00:23 &   9:42:32 &   0:02:60 &         - &   0:01:57 & 100 &   0:07:60 \\% &   0:05:50 \\ 
+\end{tabular}
+\end{center}
+\caption{\textbf{Statistics and running times for various SSU
+    datasets.} For each dataset, the number of and average length of all
+  sequences is reported. The running time of each program:
+  \prog{ssu-prep}, \prog{ssu-align}, \prog{ssu-mask}, \prog{ssu-draw},
+and \prog{ssu-merge} is reported in the middle block. For datasets
+with more than 10,000 sequences, \prog{ssu-prep} was used to create 100 parallel
+\prog{ssu-align} jobs. For these datasets: the \emph{ssu-align} column
+under \emph{running time} reports the summed time for all 100 jobs
+minus the time required to merge the results; \emph{wall time} reports
+the actual wall time required for the 100 jobs to run and be merged
+together. All running times are given in \emph{hh:mm:ss} format;
+\emph{hh}=hours, \emph{mm}=minutes, \emph{ss}=seconds. All
+programs were run as single execution threads on 3.0 GHz Intel Xeon
+processors.}
+\label{tbl:ttimes}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[hb]
+\begin{center}
+  \scriptsize
+  \begin{tabular}{llrr|rrrr} 
+                &          &         &        &  \multicolumn{4}{c}{ssu-align running time (hh:mm:ss)} \\ \cline{5-8}
+                &          &         &average &           & stage 1      & stage 2      & both   \\ 
+                &          &\# of    &sequence&           & (search)     & (alignment)  & stages \\ 
+dataset         & models   &sequences& length & total     & per seq      & per seq      & per seq     \\ \hline
+& & & & & & & \\
+Ggenes-core     & default  &    4938 & 1437.0 &   1:47:48 &   0:00:00.64 &   0:00:00.67 &   0:00:01.31 \\
+Ggenes-full     & default  &  508194 & 1399.7 & 183:04:18 &   0:00:00.63 &   0:00:00.67 &   0:00:01.30 \\
+Silva-Ref       & default  &  460783 & 1437.1 & 175:07:23 &   0:00:00.66 &   0:00:00.71 &   0:00:01.37 \\
+Silva-Parc      & default  & 1246462 & 1017.0 & 315:20:54 &   0:00:00.46 &   0:00:00.45 &   0:00:00.91 \\
+RDP             & default  & 1237963 &  968.7 & 293:15:32 &   0:00:00.43 &   0:00:00.42 &   0:00:00.85 \\
+& & & & & & & \\
+%synthetic-full  & default  &     100 & 1603.7 &   0:02:39 &   0:00:00.78 &   0:00:00.78 &   0:00:01.58 \\
+%synthetic-full  & default  &    1000 & 1606.9 &   0:26:12 &   0:00:00.79 &   0:00:00.78 &   0:00:01.57 \\
+%synthetic-full  & default  &   10000 & 1607.0 &   4:17:36 &   0:00:00.75 &   0:00:00.79 &   0:00:01.55 \\
+%synthetic-full  & default  &  100000 & 1606.9 &  44:56:37 &   0:00:00.79 &   0:00:00.83 &   0:00:01.62 \\
+synthetic-full  & default  & 1000000 & 1607.1 & 450:15:46 &   0:00:00.78 &   0:00:00.84 &   0:00:01.62 \\
+& & & & & & & \\
+%synthetic-v4    & default  &     100 &  239.2 &   0:00:37 &   0:00:00.11 &   0:00:00.12 &   0:00:00.37 \\
+%synthetic-v4    & default  &    1000 &  239.2 &   0:02:44 &   0:00:00.09 &   0:00:00.07 &   0:00:00.16 \\
+%synthetic-v4    & default  &   10000 &  239.2 &   0:26:36 &   0:00:00.09 &   0:00:00.07 &   0:00:00.16 \\
+%synthetic-v4    & default  &  100000 &  239.2 &   4:37:51 &   0:00:00.09 &   0:00:00.07 &   0:00:00.17 \\
+synthetic-v4    & default  & 1000000 &  239.2 &  45:14:17 &   0:00:00.09 &   0:00:00.07 &   0:00:00.16 \\
+& & & & & & & \\
+%synthetic-v4    & v4       &     100 &  239.5 &   0:00:06 &   0:00:00.01 &   0:00:00.03 &   0:00:00.06 \\
+%synthetic-v4    & v4       &    1000 &  239.6 &   0:00:34 &   0:00:00.01 &   0:00:00.02 &   0:00:00.03 \\
+%synthetic-v4    & v4       &   10000 &  239.6 &   0:05:31 &   0:00:00.01 &   0:00:00.02 &   0:00:00.03 \\
+%synthetic-v4    & v4       &  100000 &  239.6 &   1:03:58 &   0:00:00.01 &   0:00:00.02 &   0:00:00.04 \\
+synthetic-v4    & v4       & 1000000 &  239.6 &   9:42:32 &   0:00:00.01 &   0:00:00.02 &   0:00:00.03 \\ 
+\end{tabular}
+\end{center}
+\caption{\textbf{Statistics and \prog{ssu-align} per-sequence running
+    times for various SSU datasets.} For each dataset, the number of and average length of all
+  sequences is reported. The running time of \prog{ssu-align}
+  is reported in the \emph{total} column. \prog{ssu-align} proceeds
+  through two stages, the search stage first determines the domain of
+  each sequence and the alignment stage structurally aligns each
+  sequence to a domain specific model. The \emph{per seq} columns report
+  the average time per sequence for the search stage, alignment stage,
+  and for the entire program execution (\emph{both stages per seq}
+  column). All running times are given in \emph{hh:mm:ss} format;
+  \emph{hh}=hours, \emph{mm}=minutes, \emph{ss}=seconds. All
+  programs were run as single execution threads on 3.0 GHz Intel Xeon
+  processors.}
+\label{tbl:ptimes}
+\end{table}

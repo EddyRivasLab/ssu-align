@@ -1,0 +1,9 @@
+# ssu-mask's crash exercises, in sqc command format.
+# These exercises are meant to test each option at least
+# once, and some in more than one circumstance.
+#
+# EPN, Tue Nov 11 15:45:00 2008
+#
+1  exercise help:ssu-merge        @ssu-merge@ -h
+1  exercise seed-6:ssu-align-prep @ssu-align@ --prep-p 3 -F seed-6.fa seed-6
+

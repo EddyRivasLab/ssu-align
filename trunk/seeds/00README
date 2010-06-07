@@ -1,0 +1,14 @@
+#Instructions on how to recreate some of the files in this directory.
+#WARNING: these commands will overwrite files.
+#
+#To build the default models:
+sh build-default-models.sh
+
+#To realign the seed seqs to the model:
+sh realign.sh
+
+#To use those realignments to construction posterior probability masks:
+sh create-realn-masks.sh
+
+#To create a bunch of secondary structures go to ./ss-diagrams and execute:
+sh draw-ss-diagrams.sh

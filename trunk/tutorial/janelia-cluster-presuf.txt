@@ -1,0 +1,2 @@
+qsub -N ssu-align -o /dev/null -b y -j y -cwd -V "
+"

@@ -1,0 +1,33 @@
+
+.SH SEE ALSO
+
+See 
+.B ssu(1)
+for a master man page with a list of all the individual man pages
+for programs in the SSU-ALIGN package.
+
+For complete documentation, see the User's Guide (Userguide.pdf) that
+came with the distribution; or see the Infernal web page,
+http://infernal.janelia.org/.
+
+.PP
+For complete documentation, see the user's guide that came with your
+SSU-ALIGN distribution (Userguide.pdf).
+
+.SH COPYRIGHT
+
+.nf
+@PACKAGE_COPYRIGHT@.
+@PACKAGE_LICENSE@.
+.fi
+
+.SH AUTHOR
+
+.nf
+Eric Nawrocki
+Eddy/Rivas Laboratory
+HHMI Janelia Farm Research Campus
+19700 Helix Drive
+Ashburn VA 20147 USA
+http://selab.janelia.org/
+

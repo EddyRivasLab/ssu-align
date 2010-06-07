@@ -1,0 +1,5 @@
+#Instructions on how to recreate some of the files in this directory.
+#WARNING: these commands will overwrite files.
+
+#To create a bunch of secondary structures:
+sh draw-ss-diagrams.sh

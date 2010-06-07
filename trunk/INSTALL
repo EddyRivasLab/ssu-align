@@ -1,0 +1,34 @@
+Brief installation instructions 
+SSU-ALIGN 0.1; June 2010
+EPN, Mon Jun  7 09:10:06 2010
+-------------------------------------------------------------
+
+These are quick installation instructions. For complete documentation,
+including customization, see the Installation chapter in the SSU-ALIG
+User's Guide (Userguide.pdf).
+
+Starting from a source distribution, ssu-align-0.1.tar.gz:
+ uncompress:                uncompress ssu-align-0.1.tar.gz  
+ unpack:                    tar xf ssu-align-0.1.tar
+ move into new directory:   cd ssu-align-0.1
+ configure:                 ./configure
+ build:                     make
+ automated tests:           make check
+ automated install:         make install
+
+SSU-ALIGN is developed primarily on Linux and Mac OS/X systems. It is
+tested on a variety of UNIX and UNIX-like operating systems. It is
+meant to be portable to any POSIX-compliant system with an ANSI C99
+compiler, including all UNIX and Macintosh systems. It should also
+build on Windows systems with optional POSIX compatibility software
+installed, such as Cygwin.
+
+-------------------------------------------------------------
+Eddy/Rivas Laboratory
+HHMI Janelia Farm Research Campus
+19700 Helix Drive
+Ashburn VA 20147 USA
+http://eddylab.org
+
+
+

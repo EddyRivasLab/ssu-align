@@ -1,0 +1,692 @@
+\section{Description of output files}
+\label{sec:output}
+
+This section describes the content of the different output file
+formats created by the various programs in the SSU-ALIGN
+package. For demonstration, the descriptions below refer to the
+specific files created during the tutorial in
+section~\ref{sec:tutorial}, in the directory \prog{myseqs/}. 
+Specifically, we'll go over the files created by the following four
+commands from the tutorial:
+
+\user{ssu-align seed-15.fa myseqs}
+
+\user{ssu-mask myseqs} 
+
+\user{ssu-draw myseqs}
+
+\subsection{ssu-align output files}
+
+As shown in the tutorial, when executed with the command above, \prog{ssu-align} 
+prints information about the output files it creates to the screen:
+
+\begin{sreoutput}
+# Stage 1: Determining SSU start/end positions and best-matching models...
+#
+# output file name         description                                
+# -----------------------  -------------------------------------------
+  myseqs.tab               locations/scores of hits defined by HMM(s)
+  myseqs.archaea.hitlist   list of sequences to align with archaea CM
+  myseqs.archaea.fa              5 sequences to align with archaea CM
+  myseqs.bacteria.hitlist  list of sequences to align with bacteria CM
+  myseqs.bacteria.fa             5 sequences to align with bacteria CM
+  myseqs.eukarya.hitlist   list of sequences to align with eukarya CM
+  myseqs.eukarya.fa              5 sequences to align with eukarya CM
+#
+# Stage 2: Aligning each sequence to its best-matching model...
+#
+# output file name         description
+# -----------------------  ---------------------------------------
+  myseqs.archaea.stk       archaea alignment
+  myseqs.archaea.cmalign   archaea cmalign output
+  myseqs.archaea.ifile     archaea insert info
+  myseqs.bacteria.stk      bacteria alignment
+  myseqs.bacteria.cmalign  bacteria cmalign output
+  myseqs.bacteria.ifile    bacteria insert info
+  myseqs.eukarya.stk       eukarya alignment
+  myseqs.eukarya.cmalign   eukarya cmalign output
+  myseqs.eukarya.ifile     eukarya insert info
+  myseqs.scores            list of CM/HMM scores for each sequence
+\end{sreoutput}
+
+I'll walk through the format of these output files:
+
+\subsubsection{.tab suffixed files}
+
+The \prog{.tab} files are created by INFERNAL's
+\prog{cmsearch} program which is called internally by
+\prog{ssu-align}. \prog{cmsearch} builds profile HMMs for each model
+in the input CM file and scans each input sequence for high scoring
+alignments to the HMM\@. The \prog{.tab} file lists the locations and
+scores of each of these alignments. Let's look at the header of the 
+\prog{seed-15.tab} file created here:
+
+\begin{sreoutput}
+# command:    ssu-cmsearch --hmm-cW 1.5 --no-null3 --noalign -T -1 --tab myseqs/myseqs.tab --viterbi 
+/usr/local/share/ssu-align-0.1/ssu-align-0p1.cm seed-15.fa
+# date:       Tue May 18 05:48:34 2010
+# num seqs:   15
+# dbsize(Mb): 0.040518
+#
+# Pre-search info for CM 1: archaea
+#
+# rnd  mod  alg  cfg   beta  bit sc cut
+# ---  ---  ---  ---  -----  ----------
+#   1  hmm  vit  loc      -       -1.00
+#
+\end{sreoutput}
+
+The first four lines list the \prog{cmsearch} command executed from
+within \prog{ssu-align}, the date it was executed, the number of
+sequences in the sequence file being searched, and the number of
+millions of nucleotides (Mb) searched in that sequence file (double the
+actual size of the sequences because both strands are searched).
+
+Next, the pre-search information describing how the search will be
+conducted is printed for the first model in the CM file: \prog{archaea}. 
+The \prog{rnd}, \prog{mod}, \prog{alg} and \prog{cfg} columns report
+that the first and only round of searching will be conducted with a
+profile \prog{hmm} using the \prog{vit}erbi algorithm for scoring
+\prog{loc}al alignments to the model. The \prog{beta}
+column is irrelevant when searching with an HMM\@. The \prog{bit sc cut}
+column shows the minimum score threshold, alignments scoring above
+\prog{-1.00} bits will be reported.
+
+After the pre-search information comes four lines of column headings
+followed by data lines reporting high scoring local alignments. One
+line is printed per alignment, or \emph{hit} (it is possible to see
+more than one hit per sequence). Remember these are scores against the
+archaea model.
+
+\begin{sreoutputtiny}
+# CM: archaea
+#                                                                      target coord   query coord                         
+#                                                            ----------------------  ------------                         
+# model name  target name                                         start        stop  start   stop    bit sc   E-value  GC%
+# ----------  ---------------------------------------------  ----------  ----------  -----  -----  --------  --------  ---
+  archaea     00052::Halobacterium_sp.::AE005128                      1        1473      1   1508   2080.08         -   58
+  archaea     00052::Halobacterium_sp.::AE005128                   1229        1217      1   1508      1.41         -   54
+  archaea     00013::Methanobacterium_formicicum::M36508              1        1476      1   1508   2108.16         -   56
+  archaea     00013::Methanobacterium_formicicum::M36508           1227         984      1   1508      1.80         -   59
+  archaea     00004::Nanoarchaeum_equitans::AJ318041                  1         865      1   1508   1112.07         -   67
+  archaea     00004::Nanoarchaeum_equitans::AJ318041                619         570      1   1508      1.00         -   64
+  archaea     00121::Thermococcus_celer::M21529                     202        1687      1   1508   2223.71         -   66
+  archaea     00121::Thermococcus_celer::M21529                    1237        1188      1   1508      1.00         -   62
+  archaea     00115::Pyrococcus_furiosus::U20163|g643670            260         309      1   1508      1.00         -   62
+  archaea     00115::Pyrococcus_furiosus::U20163|g643670            922           1      1   1508   1354.25         -   66
+  archaea     00035::Bacteroides_fragilis::M61006|g143965            60        1533      1   1508    576.22         -   51
+  archaea     01106::Bacillus_subtilis::K00637                       55        1548      1   1508    768.61         -   55
+  archaea     01106::Bacillus_subtilis::K00637                      684         672      1   1508     -0.63         -   46
+  archaea     00072::Chlamydia_trachomatis.::AE001345               123         853      1   1508    212.41         -   51
+  archaea     01351::Mycoplasma_gallisepticum::M22441               110         120      1   1508      1.43         -   36
+  archaea     01351::Mycoplasma_gallisepticum::M22441               872          69      1   1508     95.30         -   45
+  archaea     00224::Rickettsia_prowazekii.::AJ235272               104        1590      1   1508    613.67         -   51
+  archaea     00224::Rickettsia_prowazekii.::AJ235272               748         739      1   1508      0.79         -   40
+  archaea     01223::Audouinella_hermannii.::AF026040              1079        1767      1   1508    222.16         -   54
+  archaea     01223::Audouinella_hermannii.::AF026040               880         871      1   1508      0.79         -   40
+  archaea     01240::Batrachospermum_gelatinosum.::AF026045        1077        1761      1   1508    219.14         -   54
+  archaea     01240::Batrachospermum_gelatinosum.::AF026045         878         869      1   1508      0.79         -   40
+  archaea     00220::Euplotes_aediculatus.::M14590                  710        1081      1   1508     96.64         -   48
+  archaea     00220::Euplotes_aediculatus.::M14590                  508         499      1   1508      0.79         -   40
+  archaea     00229::Oxytricha_granulifera.::AF164122               335         344      1   1508      0.79         -   40
+  archaea     00229::Oxytricha_granulifera.::AF164122               138          31      1   1508     86.31         -   53
+  archaea     01710::Oryza_sativa.::X00755                         1190        1883      1   1508    202.90         -   53
+  archaea     01710::Oryza_sativa.::X00755                          989         980      1   1508      0.79         -   40
+\end{sreoutputtiny}
+
+Here's a brief description of each column:
+
+\begin{wideitem}
+\item[\emprog{model name}] the name of the model used for the search.
+
+\item[\emprog{target name}] the name of the target sequence.
+
+\item[\emprog{start (target coord)}] first sequence nucleotide in the alignment
+
+\item[\emprog{end (target coord)}] final sequence nucleotide in the alignment
+\end{wideitem}
+
+Note that under \prog{target coord} some of the sequences' \prog{start} position is
+greater than their \prog{stop} positions. This occurs if the program
+has determined the sequence in the target sequence file is a reverse
+complemented SSU sequence. 
+
+The \prog{start} and \prog{stop} columns under \prog{query coord} are
+uninformative for HMM searches like these.
+(\prog{cmsearch} will print informative numbers in
+these columns when the CM is used for a search.) With HMM searches the
+\prog{begin} column will always be \prog{1} and the \prog{end} column
+will always be the final position of the model.
+
+\begin{wideitem}
+
+\item[\emprog{bit sc}] the bit score of the HMM alignment of
+  target sequence nucleotides \prog{begin} to \prog{end}.
+
+\item[\emprog{E-value}] this will always read \prog{-}. It would
+  include an E-value of the bit score if the model had been calibrated
+  with \prog{cmcalibrate}. Currently, \prog{ssu-align} does not use
+  calibrated models, mainly because they are most useful for
+  identifying remotely homologous structural RNAs using models of
+  much smaller RNAs, such as transfer RNA. See the INFERNAL 
+  user's guide \cite{Nawrocki09} for more information.
+
+\item[\emprog{GC\%}] the percent of the nucleotides in the aligned
+  sequence that are either \prog{G} or \prog{C}. This is largely
+  irrelevant for SSU rRNA, but is sometimes useful when using
+  \prog{cmsearch} with smaller models.
+\end{wideitem}
+
+\subsubsection{.hitlist suffixed files}
+
+The \prog{.hitlist} files are simple files created for each model
+that list the sequences that were best-matches to that model, and as a
+result were aligned to that model in stage 2. If a model has zero
+sequences for which it is the best-matching model, this file will not
+be created for that model. The file contains no new information that is not in the
+\prog{.tab} file and is only created as a convenience, because it is
+cumbersome to determine which model gave the highest score to a
+particular sequence in the \prog{.tab} file.  For model \emph{x}, the
+\prog{hitlist} file contains four columns providing four pieces of
+data for each sequence whose best-matching model was \emph{x}. For
+example, take a look at the \prog{myseq.archaea.hitlist}
+file:
+
+\begin{sreoutput}
+# List of 5 subsequences to align to CM: archaea
+# Created by ssu-align.
+#
+# target name                                  start    stop     score
+# ------------------------------------------  ------  ------  --------
+  00052::Halobacterium_sp.::AE005128               1    1473   2080.08
+  00013::Methanobacterium_formicicum::M36508       1    1476   2108.16
+  00004::Nanoarchaeum_equitans::AJ318041           1     865   1112.07
+  00121::Thermococcus_celer::M21529              202    1687   2223.71
+  00115::Pyrococcus_furiosus::U20163|g643670     922       1   1354.25
+\end{sreoutput}
+
+The four columns correspond to those of the same name in the \prog{.tab}
+suffixed files as explained above: the \prog{target name},
+\prog{start} and \prog{stop} (which correspond to the target sequence
+coordinates), and \prog{score}, which is the primary sequence HMM
+score assigned to this subsequence by model \emph{x}: the scores of
+all other hits from this and other other models are less than
+this score.
+
+\subsubsection{.fa suffixed files}
+This is a FASTA-formatted sequence file containing the sequences
+listed in the corresponding \prog{hitlist} file. For example, the
+file \prog{myseqs/myseqs.archaea.fa} contains the five sequences
+listed in \\
+\prog{myseqs/myseqs.archaea.hitlist}. These sequences were
+copied from the original sequence file \prog{seed-15.fa} that
+was used as input to \prog{ssu-align}. Only the nucleotides from
+positions \prog{start} to \prog{stop} as listed in the
+\prog{hitlist} file were copied, so sometimes the sequences in the
+\prog{.fa} file will be subsequences of those from the original
+file.  \prog{ssu-align} uses the \prog{.fa} files it
+creates as input to the \prog{cmalign} program, which it calls
+internally to generate its structurally annotated alignments.
+
+\subsubsection{.cmalign suffixed files}
+
+The \prog{.cmalign} files are the standard output created by the
+INFERNAL program \prog{cmalign} which is called internally
+during the alignment stage of \prog{ssu-align}. There is one such file
+created for each model that was the best-matching model to at least
+one sequence in \prog{ssu-align}'s search stage. Take a look at the
+beginning of the file \prog{myseqs.archaea.cmalign}:
+
+\begin{sreoutputwide}
+# command: ssu-cmalign --cm-name archaea --mxsize 4096 --no-null3 --sub --ifile myseqs/myseqs.archaea.ifile 
+-o myseqs/myseqs.archaea.stk /usr/local/share/ssu-align-0.1/ssu-align-0p1.cm myseqs/myseqs.archaea.fa
+# date:    Tue May 18 05:48:47 2010
+#
+# cm name                    algorithm  config  sub  bands     tau
+# -------------------------  ---------  ------  ---  -----  ------
+# archaea                      opt acc  global  yes    hmm   1e-07
+\end{sreoutputwide}
+
+This section includes the command used to execute \prog{cmalign}, the
+date of execution, and information on the alignment parameters used by
+the program.
+
+The \prog{cm name} column reports the name of the model used for
+alignment. \prog{algorithm} gives the name of the algorithm, in this
+case \prog{opt acc} stands for \emph{optimal accuracy} \cite{Holmes98}
+(also known as maximum expected accuracy). This algorithm is similar
+to the CYK algorithm described in \cite{Nawrocki09b}, but returns the
+alignment that maximizes the sum of posterior probability labels on
+aligned nucleotides instead of the maximally scoring alignment. In
+practice, for SSU the CYK and optimally accurate alignment are very often
+identical, and if not, they are nearly identical.  The next two
+columns, \prog{config} and \prog{sub}, read \prog{global} and
+\prog{yes} respectively, which tells us the program will first predict
+the start and end points of the alignment to the model using an HMM
+(the \prog{sub yes} part) and then align the region of the model that
+spans from start to end \emph{globally} to the sequence (the
+\prog{global} part). In this case, \emph{global} alignment means that
+the program is forced to align the full model region from start to end
+to the sequence (it is \emph{not} allowed to skip large parts of the
+model without large score penalties as it would if \emph{local}
+alignment was being performed). The \prog{bands} column tells us that
+bands (constraints) from an HMM alignment will be used to accelerate
+alignment to the CM. This is explained more in Chapter 8 of
+\cite{Nawrocki09b}. The \prog{tau} column reports the probability loss
+allowed when computing the HMM bands. In this case, \prog{1e-07}
+probability mass is allowed outside each band.
+
+The next section includes per-sequence information on the alignment
+that was created:
+
+\begin{sreoutputwide}
+#                                                                  bit scores                            
+#                                                               ------------------                       
+#   seq idx  seq name                                      len     total    struct  avg prob      elapsed
+# ---------  ------------------------------------------  -----  --------  --------  --------  -----------
+          1  00052::Halobacterium_sp.::AE005128           1473   2335.05    290.70     1.000  00:00:01.00
+          2  00013::Methanobacterium_formicicum::M36508   1476   2331.84    262.88     0.999  00:00:01.01
+          3  00004::Nanoarchaeum_equitans::AJ318041        865   1294.71    170.40     0.999  00:00:00.46
+          4  00121::Thermococcus_celer::M21529            1486   2430.39    249.92     0.998  00:00:01.02
+          5  00115::Pyrococcus_furiosus::U20163|g643670    922   1496.81    138.96     0.997  00:00:00.51
+\end{sreoutputwide}
+
+We'll go through each of these columns:
+
+\begin{wideitem}
+\item[\emprog{seq idx}] the index of the sequence in the file.
+
+\item[\emprog{seq name}] the name of the sequence.
+
+\item[\emprog{len}] length of the sequence; the full sequence hit from 
+  the search stage is aligned, no trimming of ends is permitted, as it was in the search
+  stage with \prog{cmsearch}.
+
+\item[\emprog{total}] the bit score of the CM alignment. For more
+  information, see section 5 of the INFERNAL User's Guide \cite{Nawrocki09}.
+
+\item[\emprog{struct}] the secondary structure score component of the
+  \prog{total} bit score. These are the added bits that are due solely
+  to the modeling of the consensus secondary structure of the
+  molecule by the CM\@. 
+  
+\item[\emprog{avg prob}] the average posterior labeling, or confidence
+  estimate, of the aligned nucleotides. The higher this value is the less
+  ambiguous and more well-defined the alignment is. The highest this
+  can possibly be is \prog{1.000}, which means very nearly 100\% of
+  the probability mass of the alignment to the model is contained in
+  the single, optimally accurate alignment that was reported by the
+  program. In other words, the reported alignment receives a
+  significantly higher score than any other alternative alignment. The
+  program derives this value by evaluating the score of every possible
+  alignment (consistent with the HMM bands) of the sequence to the
+  model, and comparing the best, optimal score versus all of the
+  rest. 
+  %This is described in a bit more detail in section~\ref{section:chap9}.
+
+\item[\emprog{elapsed}] the amount of actual time (wall time) it took
+  the program to align this sequence. In general, less well-defined
+  alignments with lower \prog{avg prob} will take longer than more
+  well-defined ones. This is because the HMM bands are usually tighter
+  and act as stricter constraints to the CM alignment when the
+  alignment is well-defined. Tighter bands lead to quicker alignments
+  because fewer possible alignments to the CM must be considered.
+\end{wideitem}
+
+\subsubsection{.stk suffixed files}
+The \prog{.stk} suffixed files are Stockholm-formatted alignment
+files. These are the alignments generated by \prog{cmalign}. The
+statistics in the \prog{.cmalign} suffixed files correspond to these
+alignments. One alignment is created for each model that was the
+best-matching model to at least one sequence in \prog{ssu-align}'s
+search stage. An explanation of Stockholm alignments can be found at
+the beginning of the tutorial, on page~\pageref{sec:tutorial-stk}.
+
+\subsubsection{.scores suffixed files}
+
+The \prog{.scores} file are meant to be a useful summary file.
+They contain various statistics from each of the other output files
+for every sequence in the original input sequence file. 
+
+Take a look at the file \prog{myseqs.scores}:
+
+\begin{sreoutputtinywide}
+#                                                                        best-matching model                  second-best model 
+#                                                         -------------------------------------------------  -------------------
+#     idx  sequence name                                  model name   beg   end    CM sc   struct   HMM sc  model name   HMM sc  HMMdiff
+# -------  ---------------------------------------------  ----------  ----  ----  -------  -------  -------  ----------  -------  -------
+        1  00052::Halobacterium_sp.::AE005128             archaea        1  1473  2335.05   290.70  2080.08  bacteria     471.45  1608.63
+        2  00013::Methanobacterium_formicicum::M36508     archaea        1  1476  2331.84   262.88  2108.16  bacteria     693.10  1415.06
+        3  00004::Nanoarchaeum_equitans::AJ318041         archaea        1   865  1294.71   170.40  1112.07  bacteria     255.78   856.29
+        4  00121::Thermococcus_celer::M21529              archaea      202  1687  2430.39   249.92  2223.71  bacteria     632.38  1591.33
+        5  00115::Pyrococcus_furiosus::U20163|g643670     archaea      922     1  1496.81   138.96  1354.25  bacteria     378.49   975.76
+        6  00035::Bacteroides_fragilis::M61006|g143965    bacteria       5  1537  2136.76   382.95  1797.77  archaea      576.22  1221.55
+        7  01106::Bacillus_subtilis::K00637               bacteria       1  1552  2465.43   289.74  2212.50  archaea      768.61  1443.89
+        8  00072::Chlamydia_trachomatis.::AE001345        bacteria       1   879  1215.64   183.53  1030.27  archaea      212.41   817.86
+        9  01351::Mycoplasma_gallisepticum::M22441        bacteria     881     5  1165.86   217.01   940.15  archaea       95.30   844.85
+       10  00224::Rickettsia_prowazekii.::AJ235272        bacteria      93  1594  2278.46   281.43  2037.49  archaea      613.67  1423.82
+       11  01223::Audouinella_hermannii.::AF026040        eukarya        1  1770  2682.07   221.33  2481.69  archaea      222.16  2259.53
+       12  01240::Batrachospermum_gelatinosum.::AF026045  eukarya        1  1764  2665.16   217.20  2463.49  archaea      219.14  2244.35
+       13  00220::Euplotes_aediculatus.::M14590           eukarya        1  1082  1213.07    78.14  1103.29  archaea       96.64  1006.65
+       14  00229::Oxytricha_granulifera.::AF164122        eukarya      600     1   851.30    23.53   788.12  archaea       86.31   701.81
+       15  01710::Oryza_sativa.::X00755                   eukarya       75  1886  2687.06   142.17  2570.56  archaea      202.90  2367.66
+\end{sreoutputtinywide}
+
+There are four rows containing column headings prefixed with
+\prog{\#}. Then there are 15 data rows, one for each sequence in the
+input sequence file \prog{seed-15.fa}. Data rows are
+separated into 12 columns:
+
+\begin{wideitem}
+\item[\emprog{idx}] the index of the sequence in the file.
+
+\item[\emprog{sequence name}] the name of the sequence.
+\end{wideitem}
+
+The next 6 columns all describe the \emph{best-matching} model for the
+sequence. This is the model that assigned the highest primary
+sequence-based local profile HMM alignment score to the sequence.  If
+no model aligned the sequence with a score higher than the minimum
+threshold of 50 bits then the sequence was skipped and not aligned,
+and all these columns will read \prog{-}. There are no such sequences
+in the \prog{seed-15.fa} file, but if there were, an additional
+\prog{.nomatch} file would have been created, as described
+below. (Note: the minimum bit score
+threshold value can be changed to \prog{<x>} using the
+\prog{ssu-align} command-line option \prog{-b <x>}, as explained in
+the \prog{ssu-align} anual page at the end of this guide).
+
+\begin{wideitem}
+\item[\emprog{model name}] name of best-matching model.
+
+\item[\emprog{beg}] first nucleotide in the maximal
+  scoring local HMM alignment to the best-matching model.
+
+\item[\emprog{end}] final nucleotide in the maximal
+  scoring local HMM alignment to the best-matching model.
+
+\item[\emprog{CM sc}] the CM bit score for the best-matching model
+  assigned to the sequence from positions \prog{beg} to \prog{end}.
+
+\item[\emprog{struct}] the number of extra bits included in the
+  CM bit score that are dervied from the secondary structure component
+  of the model.
+
+\item[\emprog{HMM sc}] the HMM bit score for the local alignment of
+  the best-matching model to the sequence from positions \prog{beg} to
+  \prog{end}.
+\end{wideitem}
+
+For more information on bit scores, see section 5 of the INFERNAL
+User's Guide \cite{Nawrocki09}. 
+
+The next 2 columns describe the \prog{second-best model}. This is the
+model that assigned the second-highest primary sequence-based local 
+profile HMM alignment score to the sequence. If only one models score
+exceeded the minimum of 50 bits then these columns will each read
+``\prog{-}''.
+
+\begin{wideitem}
+\item[\emprog{model name}] name of second-best-matching model.
+
+\item[\emprog{HMM sc}] the HMM bit score for the local alignment of
+  the second-best-matching model to the sequence. This alignment was
+  not necessarily from \prog{beg} to \prog{end} (those were the
+  coordinates of the alignment to the best-matching model). The
+  sequence coordinates of the second-best model's alignment can be
+  found in the file \prog{myseqs.tab}.
+\end{wideitem}
+
+The final column, \prog{HMMdiff}, reports the score difference between
+the best-matching model HMM alignment and the second-best matching
+model HMM alignment. This is included because it is an indication of
+how clearly ``homologous'' the sequence is to the best-matching model
+rather than to the second-best-matching model. The higher this score
+difference is the more obvious it is that the sequence falls within
+the sequence diversity represented by the best-matching model.
+Sequences that are phylogenetically novel and do not obviously match
+any single model much better than any other one should have relatively
+small score differences in this column.
+
+\subsubsection{.nomatch suffixed files}
+
+A \prog{.nomatch} file simply lists the sequences in the input
+sequence file that do not match to any model, one sequence name per
+line. For a sequence to match to a model it must score above the
+minimum profile HMM bit score threshold to at least one model. By
+default, this threshold is 50 bits, but it can be changed to
+\prog{<x>} bits with the \prog{-b <x>} option to \prog{ssu-align}. All
+15 sequences in the tutorial file \prog{seed-15.fa} score above this
+threshold to at least one model, so no \prog{.nomatch} file is
+created. 
+
+\subsection{.sum suffixed files}
+
+The \prog{.sum} files include the text reported to the screen
+(standard output) by \prog{ssu-align}. These files serve as a
+reference to remind the user how \prog{ssu-align} was run
+(parameters, input file names, etc.). All six programs in the
+SSU-ALIGN package generate specifically named \prog{.sum}
+suffixed files. For example, \prog{ssu-mask} generates a file ending
+with the suffix \prog{.ssu-mask.sum}.
+
+As a special case, when \prog{ssu-prep} is used to create parallel
+jobs of \prog{ssu-align}, a \prog{ssu-prep.sum} file is created. Then,
+when the \prog{ssu-prep}-generated shell script that executes the
+parallel alignment jobs is run, a \prog{ssu-align.sum} file will be created.
+This \prog{ssu-align.sum} file will contain the 
+\prog{ssu-align.sum} files from all parallel alignment jobs
+concatenated together, followed by a section describing the merge
+performed automatically by the final job and alignment
+statistics summarizing all parallel jobs.
+
+\prog{ssu-align.sum} files include more information than the other
+program's \prog{.sum} files. Specifically, they include two sections
+labelled \prog{Summary statistics} and \prog{Speed statistics} which
+summarizes the number of sequences in the input target sequence file
+that match each model, and how fast the program completed the search
+and alignment stages, respectively. Below is a short description of
+each of the fields in the \prog{Summary statistics} section of the
+\prog{myseqs.ssu-align.sum} file we just created:
+
+\begin{sreoutput}
+# Summary statistics:
+#
+# model or       number  fraction        average   average               
+# category      of seqs  of total         length  coverage    nucleotides
+# ------------  -------  --------  -------------  --------  -------------
+  *input*            15    1.0000        1350.60    1.0000          20259
+#
+  archaea             5    0.3333        1244.40    0.9546           6222
+  bacteria            5    0.3333        1268.60    0.9793           6343
+  eukarya             5    0.3333        1405.60    0.9675           7028
+#
+  *all-models*       15    1.0000        1306.20    0.9671          19593
+  *no-models*         0    0.0000              -         -              0
+\end{sreoutput}
+
+\begin{wideitem}
+\item[\emprog{model or category}] the name of the model or category
+  the row pertains to. Categories include \prog{*input*}, the set of 
+  all full length target sequence file used as input; \prog{*all-models*},
+  the set of sequences that match any model; and \prog{*no-models*}, the set of
+  sequences that do not match any model above threshold. 
+
+\item[\emprog{number of seqs}] number of seqs that belong in a
+  category, or were best-matches to a model.
+
+\item[\emprog{fraction of total}] the number of sequences in this
+  model/category divided by the total number of sequences listed in the
+  \prog{*input*} category.
+
+\item[\emprog{average length}] the average sequence length of the
+  model/category. For models, this is the average length of the
+  subsequences that survive the search stage, which are not
+  necessarily the full length sequences in the input sequence file.
+
+\item[\emprog{average coverage}] length of surviving sequences
+  divided by the full length of those sequences in the input sequence
+  file. 
+
+\item[\emprog{nucleotides}] summed length of surviving sequences in
+  model/category. This is equal to the product of the values in
+  \prog{number of seqs} and \prog{average length} columns.
+\end{wideitem}
+
+Now, take a look at the \prog{Speed statistics} section. Each field in
+this table is described below:
+
+\begin{sreoutput}
+# Speed statistics:
+#
+# stage      num seqs  seq/sec  seq/sec/model    nucleotides    nt/sec
+# ---------  --------  -------  -------------  -------------  --------
+  search           15    1.159          0.386          20259    1565.5
+  alignment        15    0.972          0.972          19593    1270.0
+\end{sreoutput}
+
+\begin{wideitem}
+\item[\emprog{stage}] the stage of the program this row pertains to,
+  either \prog{search} or \prog{alignment}.
+
+\item[\emprog{num seqs}] the number of sequences processed by this stage.
+
+\item[\emprog{seq/sec}] the number of sequences processed by this
+  stage per second.
+
+\item[\emprog{seq/sec/model}] the number of sequences processed by this
+  stage per second per model. This is the value in the \prog{seq/sec}
+  column divided by the number of models used to search for or align
+  the sequences. Remember that in the \prog{search} stage, all 3
+  models are used by default, whereas only 1 model is used in the
+  \prog{alignment} stage (figure~\ref{fig:strategy}).
+
+\item[\emprog{nucleotides}] summed length of all sequences processed
+  by this stage.
+
+\item[\emprog{nt/sec}] number of nucleotides processed by this stage
+  per second.
+\end{wideitem}
+
+\subsection{.log suffixed files}
+
+The \prog{.log} files include information on all of the system
+commands run by \prog{ssu-align}. As with \prog{.sum} suffixed files,
+program specific \prog{.log} suffixed files are created by each of the
+six SSU-ALIGN programs. For example, \prog{ssu-mask}
+generates a log file ending with the suffix \prog{.ssu-mask.log}.
+
+
+As a special case, when \prog{ssu-prep} is used to create parallel
+jobs of \prog{ssu-align}, a \prog{ssu-prep.log} file is created. Then,
+when the \prog{ssu-prep}-generated shell script that executes the
+parallel alignment jobs is run, a \prog{ssu-align.log} file will be created.
+This \prog{ssu-align.log} file will contain the 
+\prog{ssu-align.log} files from all parallel alignment jobs
+concatenated together.
+
+The \prog{.log} files list all of the commands that were executed by
+the program along with their STDERR and sometimes their STDOUT output
+(for example, the \prog{cmsearch} and \prog{cmalign} commands), as
+well as the ``globals hash'', a set of variables defined in the
+SSU-ALIGN PERL module \prog{ssu.pm} which is installed in the
+\$SSUALIGNDIR. The \prog{.log} files should mainly be useful to expert 
+users or developers who are trying to figure out why a specific run of a
+program failed, or how to reproduce a specific step executed by the
+program (e.g. the \prog{cmsearch} step of \prog{ssu-align}).
+
+\subsection{ssu-mask output files}
+
+The \prog{ssu-mask} example from the tutorial is executed with:
+
+\user{ssu-mask myseqs} 
+
+This command generates three output files per-domain, each of which is
+briefly explained below. These files are also discussed in the
+Tutorial section. 
+
+\subsubsection{.mask suffixed files}
+Mask files are simple one-line text files that correspond to a
+specific domain model/alignment file and include only \prog{0} and
+\prog{1} characters. Each character corresponds to a consensus column
+of the model/alignment. For example, the
+\prog{myseqs.archaea.mask} file contains 1508 characters, one per
+consensus column of the default SSU-ALIGN archaeal model
+described in section~\ref{sec:models}. A \prog{0} at position \emph{x}
+indicates that consensus position \emph{x} is excluded from the mask
+and will be removed from the alignment when the mask is applied. A
+\prog{1} at position \emph{x} indicates that it is included by the
+mask and will be kept when the mask is applied. A consensus position
+of an alignment is one where the \prog{\#=GC RF} annotation is a
+nongap (see section~\ref{sec:background} for more detail).
+
+\subsubsection{.mask.pdf and .mask.ps suffixed files}
+These are structure diagram files that display a mask on the consensus
+secondary structure of a domain. Pink positions are excluded by the
+mask. Black positions are included by the mask. Either \prog{.pdf} or
+postscript \prog{.ps} files will be created, but not both. If you have
+the program \prog{ps2pdf} in your path, \prog{.pdf} files will be
+created, otherwise postscript will be. One difference between
+these file types is their sizes, the PDF files created by
+\prog{ssu-mask} are only about 10\% the size of the postscript files.
+
+\subsubsection{.mask.stk suffixed files}
+The \prog{.mask.stk} files are Stockholm-formatted alignment files
+that include a subset of the columns of the alignments created by
+\prog{ssu-align}. The consensus columns excluded by the mask have been
+removed. Additionally, all insert columns have been removed. An insert
+column is one which is a gap in the reference (\prog{\#=GC RF})
+annotation of the alignment. For more information on inserts, see
+section~\ref{sec:background}.
+
+\subsubsection{.list suffixed files}
+\prog{.list} suffixed files are only generated if \prog{ssu-mask} is
+executed using the \prog{--list} option. A list file is generated for
+a specific alignment file, and it simply lists the name of each
+sequence in the alignment, one per line.
+
+\subsubsection{.afa suffixed files}
+\prog{.afa} suffixed files are FASTA-formatted alignment files that
+are created by \prog{ssu-mask} only if the \prog{--stk2afa} option is
+used. These files differ from unaligned FASTA files in that each
+sequence may contain gaps, and all sequences are guaranteed to be
+the same length. \prog{.afa} files created by \prog{ssu-mask}
+contain two types of gap characters. A \prog{-} character
+is a gap in a consensus column of an alignment. A \prog{.} character
+is a gap in an insert column of an alignment. See
+section~\ref{sec:background} for more information on the distinction
+between consensus and insert columns. Note that \prog{.afa} alignment
+files do not include structure information that is included in
+Stockholm alignment files.
+
+\subsection{ssu-draw output files}
+
+The \prog{ssu-draw} example from the tutorial is executed with:
+
+\user{ssu-draw myseqs} 
+
+This command generates two output files per-domain, each of which is 
+briefly explained below. 
+
+\subsubsection{.pdf or .ps suffixed files}
+These are structure diagram files that display either alignment
+summary statistics (such as information content or frequency of gaps)
+or individual aligned sequences on the consensus secondary structure
+for a domain. They may be multiple pages. A brief description is
+included at the top of each page. Along with each of these files, a
+corresponding \prog{.drawtab} file is generated, as described below.
+Either \prog{.pdf} or postscript \prog{.ps} files will
+be created, but not both. If you have the program \prog{ps2pdf} in
+your path, \prog{.pdf} files will be created, otherwise postscript
+will be. One difference between
+these file types is their sizes, the PDF files created by
+\prog{ssu-draw} are only about 10\% the size of the postscript files.
+
+\subsubsection{.drawtab suffixed files}
+\prog{.drawtab} suffixed files are tab-delimited text files meant to
+be easily parseable that contain the information displayed in a
+corresponding \prog{.pdf} or \prog{.ps} structure diagram file. 
+In these files, lines beginning with \prog{\#} are comment
+lines. Comments at the beginning of \prog{.drawtab} files explain the
+meaning of each of the tab-delimited fields in the non-comment lines. 
+

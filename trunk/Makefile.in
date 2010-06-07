@@ -1,0 +1,441 @@
+#################################################################
+# SSU-ALIGN
+# top level Makefile: installation, documentation
+# CVS $Id: Makefile.in 3099 2009-12-10 20:10:00Z nawrockie $
+#################################################################
+# @LICENSE@
+#################################################################
+
+# On most Unices, you can build the package without modifying anything 
+#   by just typing "./configure; make".
+#
+# Post-configuration, you may still want to modify the following make variables:
+#   BINDIR  - where the executables will be installed by a 'make install'
+#   MANDIR  - where the man pages will be installed by a 'make install'
+#   CC      - which compiler to use
+#   CFLAGS  - compiler flags to use
+
+# where you want things installed
+# Sort of uses GNU coding standards. ${prefix} might be /usr/local.
+# ${exec_prefix} gives you some flexibility for installing architecture
+# dependent files (e.g. the programs): an example ${exec_prefix} might be
+# /nfs/share/irix64/
+#
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+BINDIR      = @bindir@
+MANDIR      = @mandir@
+datarootdir = @datarootdir@
+datadir     = @datadir@
+
+# how to install the man pages; 
+# cp is generally fine, unless you preformat your pages.
+#
+INSTMAN   = cp
+MANSUFFIX = 1
+
+# your compiler and compiler flags
+#
+CC        = @CC@
+CFLAGS    = @CFLAGS@
+SIMDFLAGS = @SIMD_CFLAGS@
+
+#######
+## You should not need to modify below this line.
+## Some of it is concerned with maintenance of the development version
+## and building the release (indeed, several commands will only work at
+## Janelia)
+#######
+SHELL       = /bin/sh
+PACKAGE     = @PACKAGE_NAME@
+BASENAME    = @PACKAGE_TARNAME@
+RELEASE     = @PACKAGE_VERSION@
+RELEASEDATE = "@PACKAGE_DATE@"
+COPYRIGHT   = "@PACKAGE_COPYRIGHT@"
+LICENSELINE = "@PACKAGE_LICENSE@"
+LICENSETAG  = gnu
+COMPRESS    = gzip
+REPOSITORY  = https://svn.janelia.org/eddylab/nawrockie/src/ssualign/
+
+
+PROGS = ssu-align\
+	ssu-build\
+	ssu-draw\
+	ssu-merge\
+	ssu-mask\
+	ssu-prep
+
+INFPROGS = cmalign\
+	   cmbuild\
+	   cmcalibrate\
+	   cmemit\
+	   cmfetch\
+	   cmscore\
+           cmsearch\
+	   cmstat
+
+ESLPROGS = esl-afetch\
+	   esl-alimanip\
+	   esl-alimap\
+	   esl-alimask\
+           esl-alimerge\
+           esl-alistat\
+           esl-cluster\
+	   esl-compalign\
+	   esl-compstruct\
+	   esl-histplot\
+	   esl-mask\
+	   esl-reformat\
+	   esl-selectn\
+	   esl-seqrange\
+	   esl-seqstat\
+	   esl-sfetch\
+	   esl-shuffle\
+	   esl-ssdraw\
+	   esl-weight
+
+# List of the files to be copied to the lib/ directory.
+#
+PERLMODULEFILES = ssu.pm
+
+SEEDLIBFILES = ssu-align-0p1.cm\
+	       archaea-0p1.cm\
+	       bacteria-0p1.cm\
+	       eukarya-0p1.cm\
+	       archaea-0p1.stk\
+	       bacteria-0p1.stk\
+	       eukarya-0p1.stk
+
+PSLIBFILES = ssu-align-0p1.ps\
+             archaea-0p1.ps\
+	     bacteria-0p1.ps\
+	     eukarya-0p1.ps
+
+MASKLIBFILES = archaea-0p1.mask\
+	       bacteria-0p1.mask\
+	       eukarya-0p1.mask
+
+# all: compiles all packages, adds 'ssu-' prefix to Infernal and Easel executables,
+#
+all: core addssu
+
+core:
+	cd infernal;        make CC="$(CC)" CFLAGS="$(CFLAGS)";
+#	cd infernal/easel;        make CC="$(CC)" CFLAGS="$(CFLAGS)"; make ssu
+#	cd infernal/hmmer;        make hmmer_lib
+#	cd infernal/src;          make CC="$(CC)" CFLAGS="$(CFLAGS)"; make ssu
+
+addssu: 
+	for file in $(INFPROGS); do\
+		mv infernal/src/$$file infernal/src/ssu-$$file;\
+	done
+	for file in $(ESLPROGS); do\
+		mv infernal/easel/miniapps/$$file infernal/easel/miniapps/ssu-$$file;\
+	done
+
+# dist: build a new distribution directory in ssu-align-$RELEASE
+#
+dist:
+	# Make sure we pointed the make dist to a subversion repository
+	@if test x${REPOSITORY} = 'x'; then\
+	  echo "REPOSITORY isn't set; use make REPOSITORY=... dist";\
+	  exit 1;\
+	fi
+	# Delete old versions of the same release
+	#
+	@if test -d ../${BASENAME}-$(RELEASE);        then rm -rf ../${BASENAME}-$(RELEASE);        fi
+	@if test -e ../${BASENAME}-$(RELEASE).tar;    then rm -f  ../${BASENAME}-$(RELEASE).tar;    fi
+	@if test -e ../${BASENAME}-$(RELEASE).tar.Z;  then rm -f  ../${BASENAME}-$(RELEASE).tar.Z;  fi
+	@if test -e ../${BASENAME}-$(RELEASE).tar.gz; then rm -f  ../${BASENAME}-$(RELEASE).tar.gz; fi
+	# 
+	# Export the release from Subversion control.
+        # Because we use svn:externals, this automatically exports 
+	# the Infernal, ssdk, and Easel libraries as well.
+	#
+	svn export ${REPOSITORY} ../${BASENAME}-${RELEASE}
+	# 
+	# Make the configure scripts from configure.ac
+	#
+	(cd ../${BASENAME}-${RELEASE};          autoconf)
+	(cd ../${BASENAME}-${RELEASE}/infernal/easel;    autoconf)
+	(cd ../${BASENAME}-${RELEASE}/infernal/hmmer;    autoconf)
+	(cd ../${BASENAME}-${RELEASE}/infernal; autoconf)
+	#
+	# We'll need a basic Makefiles for some steps; later
+	# we'll delete them
+	#
+	(cd ../${BASENAME}-${RELEASE}/; ./configure)
+	#
+	# Make symlinks and set file permissions
+	#
+	(cd ../${BASENAME}-${RELEASE}/infernal/testsuite; ln -s ../easel/devkit/sqc .)
+	find ../${BASENAME}-${RELEASE} -type f -exec chmod +r {} \;
+	chmod +x ../${BASENAME}-${RELEASE}/infernal/easel/devkit/sqc
+	chmod +x ../${BASENAME}-${RELEASE}/infernal/easel/devkit/autodoc
+	#
+	# Attach license stamps on all files that need 'em
+	# (e.g. replace LICENSE keyword everywhere)
+	#
+	find ../${BASENAME}-${RELEASE} -type f -exec infernal/easel/devkit/sedition-pp LICENSE Licenses/$(LICENSETAG) {} \;
+	#
+	# Other keyword replacements
+	#
+	infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE}                        ../${BASENAME}-${RELEASE}/documentation/userguide/titlepage.tex
+	infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} ../${BASENAME}-${RELEASE}/00README
+	for manpage in ../${BASENAME}-${RELEASE}/documentation/manpages/*; do\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} $$manpage;\
+	done
+	for manpage in ../${BASENAME}-${RELEASE}/infernal/documentation/manpages/*; do\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} $$manpage;\
+	done
+	for manpage in ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/*.man; do\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} $$manpage;\
+	done
+
+	for prog in $(PROGS); do\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} ../${BASENAME}-${RELEASE}/documentation/manpages/$$prog.man;\
+	done
+	for prog in $(INFPROGS); do\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} ../${BASENAME}-${RELEASE}/infernal/documentation/manpages/$$prog.man;\
+	done
+	for prog in $(ESLPROGS); do\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/$$prog.man\;
+	done
+	#
+	# Make the User's Guide, and copy to top level. (We'll
+	# destroy the userguide source soon.)
+	#
+	(cd ../${BASENAME}-${RELEASE}/documentation/userguide; make pdf)
+	cp ../${BASENAME}-${RELEASE}/documentation/userguide/main.pdf  ../${BASENAME}-${RELEASE}/Userguide.pdf
+	# 
+	# Finish the man pages off, adding necessary boilerplate.
+	# Must be done *after* the user guide is created, since the user guide
+	# steals and uses the pre-boilerplate man pages.
+	# Include the optional rigfilters documentation too; whether the user
+	# wants it or not is a configuration-time decision.
+	#
+	for prog in $(PROGS); do\
+	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/documentation/manpages/$$prog.man;\
+	done
+	for prog in $(INFPROGS); do\
+	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/infernal/documentation/manpages/$$prog.man;\
+	done
+	for prog in $(PROGS); do\
+	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/$$prog.man;\
+	done
+	-rm -f ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer
+	#
+	# Remove SVN-controlled files/directories that don't belong in the
+	# distro
+	#
+	-rm -rf ../${BASENAME}-${RELEASE}/5seeds
+	-rm -rf ../${BASENAME}-${RELEASE}/5tutorial
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/documentation/userguide
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/Licenses
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/00CHECKLIST
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/Bugs
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/Manuscripts
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/SUBPACKAGES
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/00WISHLIST
+	(cd ../${BASENAME}-${RELEASE}/infernal/easel; make implode)
+	(cd ../${BASENAME}-${RELEASE}/infernal/hmmer; make implode)
+	(cd ../${BASENAME}-${RELEASE}/infernal/; make implode)
+	(cd ../${BASENAME}-${RELEASE}/;      make distclean)
+	#
+	# Packaging commands
+	#
+	(cd ..;	tar cvf ${BASENAME}-${RELEASE}.tar ${BASENAME}-${RELEASE})
+	(cd ..; $(COMPRESS) ${BASENAME}-$(RELEASE).tar)
+
+# "make check" runs Easel tests and a special set of Infernal tests using sqc,
+# and then a simple perl script that runs the SSU-ALIGN test scripts.
+# The SSU-ALIGN tests take a while (about 7 minutes). 
+# Easel and Infernal tests are much faster.
+# After running Easel's tests, which creates the miniapps, we have to remove
+# them. This is not ideal, we actually test those newly created miniapps, not
+# the ssu-* prefixed ones that SSU-ALIGN will use, but I think they must be
+# identical. 
+#
+check:
+	(cd infernal/easel; make check)
+	for file in $(ESLPROGS); do\
+		rm infernal/easel/miniapps/$$file;\
+	done
+	(cd infernal/testsuite; ../easel/devkit/sqc 4 ../../testsuite/infernal-exercises.sqc .. ../src)
+	(cd testsuite; perl testsuite.pl;)
+
+# install: installs the programs in BINDIR, the CM, seeds, masks and postscript templates in DATADIR,
+#          the perl module file in DATADIR, and MANPAGES in MANDIR/man1/ (e.g. if MANSUFFIX is 1)
+#          Creates these directories if they don't exist). 
+#
+install: actually-install ssu-align setpaths
+
+actually-install:
+# copy the SSU-ALIGN scripts
+	mkdir -p ${BINDIR}
+	for file in $(PROGS); do\
+		cp src/$$file $(BINDIR)/;\
+	done
+# copy the Infernal binaries
+	for file in $(INFPROGS); do\
+		cp infernal/src/ssu-$$file $(BINDIR)/;\
+	done
+# copy the Easel miniapp binaries
+	for file in $(ESLPROGS); do\
+		cp infernal/easel/miniapps/ssu-$$file $(BINDIR)/;\
+	done
+# copy the seed alignments, and CMs
+	mkdir -p ${datadir}/${BASENAME}-${RELEASE}
+	for file in $(SEEDLIBFILES); do\
+		cp seeds/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+	done
+# copy the postscript templates
+	for file in $(PSLIBFILES); do\
+		cp seeds/ss-diagrams/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+	done
+# copy the default masks
+	for file in $(MASKLIBFILES); do\
+		cp seeds/masks/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+	done
+# copy the PERL module
+	for file in $(PERLMODULEFILES); do\
+		cp src/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+	done
+# Copy MAN pages for SSU-ALIGN scripts
+# Use sed to replace non-'ssu-' prefixed Infernal and Easel program names in 
+# Infernal and Easel man pages as those are copied.
+	@mkdir -p ${MANDIR}/man${MANSUFFIX}
+	@for file in ssu $(PROGS); do\
+	   $(INSTMAN) documentation/manpages/$$file.man $(MANDIR)/man$(MANSUFFIX)/$$file.$(MANSUFFIX);\
+	done
+	@for file in $(INFPROGS); do\
+	   sed -e 's/cmalign/ssu-cmalign/g' \
+	    -e 's/cmbuild/ssu-cmbuild/g' \
+	    -e 's/cmcalibrate/ssu-cmcalibrate/g' \
+	    -e 's/cmemit/ssu-cmemit/g' \
+	    -e 's/cmfetch/ssu-cmfetch/g' \
+	    -e 's/cmscore/ssu-cmscore/g' \
+	    -e 's/cmsearch/ssu-cmsearch/g' \
+	    -e 's/cmstat/ssu-cmstat/g' \
+	    -e 's/esl-alimerge/ssu-esl-alimerge/g' \
+	    -e 's/esl-sfetch/ssu-esl-sfetch/g' \
+	    < infernal/documentation/manpages/$$file.man > $(MANDIR)/man$(MANSUFFIX)/ssu-$$file.$(MANSUFFIX);\
+	done
+	@for file in $(ESLPROGS); do\
+	   sed -e 's/cmalign/ssu-cmalign/g' \
+	    -e 's/cmbuild/ssu-cmbuild/g' \
+	    -e 's/cmcalibrate/ssu-cmcalibrate/g' \
+	    -e 's/cmemit/ssu-cmemit/g' \
+	    -e 's/cmfetch/ssu-cmfetch/g' \
+	    -e 's/cmscore/ssu-cmscore/g' \
+	    -e 's/cmsearch/ssu-cmsearch/g' \
+	    -e 's/cmstat/ssu-cmstat/g' \
+	    -e 's/esl-afetch/ssu-esl-afetch/g' \
+	    -e 's/esl-alimanip/ssu-esl-alimanip/g' \
+	    -e 's/esl-alimask/ssu-esl-alimask/g' \
+	    -e 's/esl-alimerge/ssu-esl-alimerge/g' \
+	    -e 's/esl-alistat/ssu-esl-alistat/g' \
+	    -e 's/esl-cluster/ssu-esl-cluster/g' \
+	    -e 's/esl-compalign/ssu-esl-compalign/g' \
+	    -e 's/esl-compstruct/ssu-esl-compstruct/g' \
+	    -e 's/esl-construct/ssu-esl-construct/g' \
+	    -e 's/esl-histplot/ssu-esl-histplot/g' \
+	    -e 's/esl-mask/ssu-esl-mask/g' \
+	    -e 's/esl-reformat/ssu-esl-reformat/g' \
+	    -e 's/esl-selectn/ssu-esl-selectn/g' \
+	    -e 's/esl-seqrange/ssu-esl-seqrange/g' \
+	    -e 's/esl-seqstat/ssu-esl-seqstat/g' \
+	    -e 's/esl-sfetch/ssu-esl-sfetch/g' \
+	    -e 's/esl-shuffle/ssu-esl-shuffle/g' \
+	    -e 's/esl-ssdraw/ssu-esl-ssdraw/g' \
+	    -e 's/esl-weight/ssu-esl-weight/g' \
+	    < infernal/easel/miniapps/$$file.man > $(MANDIR)/man$(MANSUFFIX)/ssu-$$file.$(MANSUFFIX);\
+	done
+
+ssu-align:
+	@echo ""
+	@echo ""
+	@echo "====================================="
+	@echo "SSU-ALIGN has been successfully built"
+	@echo "====================================="
+
+setpaths:
+	@echo ""
+	@echo "The final step is to update your environment variables:"
+	@echo ""
+	@echo "If you are using the bash shell, add the following three:"
+	@echo "lines to the '.bashrc' file in your home directory:"
+	@echo ""
+	@echo 'export PATH="$$PATH:$(BINDIR)"'
+	@echo 'export MANPATH="$$MANPATH:$(MANDIR)"'
+	@echo 'export SSUALIGNDIR="$(datadir)/$(BASENAME)-$(RELEASE)"'
+	@echo ""
+	@echo "And then source that file to update your current"
+	@echo "environment with the command:"
+	@echo ""
+	@echo "sh ~/.bashrc"
+	@echo ""
+	@echo "If you are using the C shell, add the following three:"
+	@echo "lines to the '.cshrc' file in your home directory:"
+	@echo ""
+	@echo 'setenv PATH "$$PATH:$(BINDIR)"'
+	@echo 'setenv MANPATH "$$MANPATH:$(MANDIR)"'
+	@echo 'setenv SSUALIGNDIR "$(datadir)/$(BASENAME)-$(RELEASE)"'
+	@echo ""
+	@echo "And then source that file to update your current"
+	@echo "environment with the command:"
+	@echo ""
+	@echo "sh ~/.cshrc"
+	@echo ""
+	@echo "(To determine which shell you use, type: 'echo \$$SHELL')"
+	@echo ""
+	@echo "For more information on SSU-ALIGN see the user's guide"
+	@echo "in ./Userguide.pdf."
+	@echo ""
+
+
+# "make clean" removes almost everything except configuration files
+#              and binaries.
+clean:
+	-rm -f *.o *~ Makefile.bak core TAGS gmon.out infernal/src/$(SSUINFPROGS) infernal/easel/miniapps/$(SSUESLPROGS)
+	(if cd documentation/userguide; then make clean; fi)
+	(cd infernal/src;            make clean)
+	if test -e infernal/src/imp_sse/Makefile;     then (cd infernal/src/impl_sse;    make clean); fi	
+	if test -e infernal/rigfilters/Makefile;      then (cd infernal/rigfilters;      make clean); fi	
+	(cd infernal/easel;          make clean)
+	(cd infernal/hmmer/src/;     make clean)
+	if test -e infernal/hmmer/easel/Makefile;     then (cd infernal/hmmer/easel/;    make clean); fi	
+	if test -e infernal/hmmer/profmark/Makefile;  then (cd infernal/hmmer/profmark;  make clean); fi
+	if test -e infernal/hmmer/testsuite/Makefile; then (cd infernal/hmmer/testsuite; make clean); fi
+	if test -e infernal/hmmer/documentation/userguide/Makefile; then (cd infernal/hmmer/documentation/userguide; make clean); fi
+	for file in $(INFPROGS); do\
+		rm infernal/src/ssu-$$file;\
+	done;
+	for file in $(ESLPROGS); do\
+		rm infernal/easel/miniapps/ssu-$$file;\
+	done;
+
+# "make distclean" leaves a pristine source distribution.
+#
+distclean:
+	-rm -f  config.cache config.log config.status
+	-rm -rf autom4te.cache
+	-rm -f *.o *~ Makefile.bak core TAGS gmon.out
+	(if cd documentation/userguide; then make distclean; fi)
+	(cd infernal/src;            make distclean)
+	if test -e infernal/src/imp_sse/Makefile;     then (cd infernal/src/impl_sse;    make distclean); fi	
+	if test -e infernal/rigfilters/Makefile;      then (cd infernal/rigfilters;      make distclean); fi	
+	(cd infernal/easel;          make distclean)
+	(cd infernal/hmmer/src/;     make distclean)
+	if test -e infernal/hmmer/easel/Makefile;     then (cd infernal/hmmer/easel/;    make distclean); fi	
+	if test -e infernal/hmmer/profmark/Makefile;  then (cd infernal/hmmer/profmark;  make distclean); fi
+	if test -e infernal/hmmer/testsuite/Makefile; then (cd infernal/hmmer/testsuite; make distclean); fi
+	if test -e infernal/hmmer/documentation/userguide/Makefile; then (cd infernal/hmmer/documentation/userguide; make distclean); fi
+	-rm Makefile
+	for file in $(INFPROGS); do\
+		rm infernal/src/ssu-$$file;\
+	done;
+	for file in $(ESLPROGS); do\
+		rm infernal/easel/miniapps/ssu-$$file;\
+	done;
+

@@ -1,0 +1,6 @@
+$cmsearch   = "/groups/eddy/home/nawrockie/src/infernal-1.0/src/cmsearch";
+$cmalign    = "/groups/eddy/home/nawrockie/src/infernal-1.0/src/cmalign";
+$esl_sfetch = "/groups/eddy/home/nawrockie/src/infernal-1.0/easel/miniapps/esl-sfetch";
+$cluster_prefix = "qsub -N ssualign -o ssualign.out -b y -cwd -V -j y '";
+$cluster_suffix = "'";
+1;

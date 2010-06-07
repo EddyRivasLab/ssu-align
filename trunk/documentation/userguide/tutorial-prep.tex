@@ -1,0 +1,335 @@
+\subsection{Faster alignment of large datasets through parallelization
+  with ssu-prep}
+\label{sec:tutorial-prep}
+\prog{ssu-align} runs on a single processor and does not support MPI
+or multi-threading. However, if you have access to a compute
+cluster or multi-core computers, simplistic parallelization is possible
+with the \prog{ssu-prep} program.
+
+\prog{ssu-prep} will split up a large input sequence file into
+\emph{n} smaller files and create a shell script that will execute
+\emph{n} \prog{ssu-align} jobs in parallel, each processing one of the
+small sequence files. The results of all jobs will automatically be
+merged together by the final job, ultimately yielding the same results
+as if a single 
+\prog{ssu-align}
+job was run for the original large input sequence file. 
+Parallelizing \prog{ssu-align} in this way can drastically reduce the
+actual time required for aligning large datasets. A job that would
+have required 100 hours on 1 processor can be done in a little more
+than 1 hour on 100 processors. See table~\ref{tbl:ttimes} in
+section~\ref{sec:stats} for example timing statistics. 
+
+In this section we'll walk through an example of how to do this for a
+small dataset.  The sequence file \prog{tutorial/seed-30.fa} includes
+30 randomly chosen sequences from the complete set of seed sequences
+from the three default models of SSU-ALIGN.
+
+\prog{ssu-prep} has three different usage modes as explained by the
+program if it is run without any command-line arguments:
+
+\user{ssu-prep}
+
+\begin{sreoutput}
+Incorrect number of command line arguments.
+Usage: ssu-prep    [-options] <seqfile> <output dir> <num jobs> <prefix/suffix file>
+Usage: ssu-prep -x [-options] <seqfile> <output dir> <num jobs>
+Usage: ssu-prep -y [-options] <seqfile> <output dir> <num jobs>
+
+ssu-prep splits up <seqfile> into <num jobs> smaller files and creates a shell
+script that will execute <num jobs> ssu-align jobs in parallel, each processing
+one of the small sequence files. The results of all jobs will automatically be
+merged together by the final job, giving the same results as if a single
+ssu-align job was run for the complete <seqfile>.
+
+The 3 different usages control how the prefix and suffix are defined for the jobs
+in the output shell script, allowing, for example, the user to wrap the ssu-align
+commands in a cluster submission command (such as Sun Grid Engine's "qsub"):
+
+Default: (neither -x nor -y enabled) prefix and suffix for ssu-align jobs in
+         output shell script are defined in <prefix/suffix file>. First line is
+         the prefix, second line is the suffix.
+With -x: do not specify <prefix/suffix file>; output shell script will run all
+         <num jobs> jobs in parallel on one machine with <num jobs> cores/cpus.
+With -y: do not specify <prefix/suffix file>; user will manually add the desired
+         prefix/suffix to ssu-align commands after ssu-prep finishes.
+
+To see more help on available options, do ssu-prep -h
+\end{sreoutput}
+
+By default, if neither \prog{-x} nor \prog{-y} options are used, the program
+reads a \prog{<prefix/suffix file>}, a simple two line file that
+a prefix string and a suffix string to prepend and append respectively
+to the \prog{ssu-align} commands it generates. 
+
+The strings in the \prog{<prefix/suffix file>} will likely be specific
+to your parallel computing environment. At Janelia, we use Sun Grid
+Engine's \prog{qsub} program for submitting jobs to a large compute
+cluster. The relevant prefix/suffix file for our specific
+computing environment is included in \\
+\prog{tutorial/janelia-cluster-presuf.txt}. Take a look at this file:
+
+\begin{sreoutput}
+qsub -N ssu-align -o /dev/null -b y -j y -cwd -V "
+"
+\end{sreoutput}
+
+The first line is the prefix string, containing the name and
+appropriate command line arguments of the \prog{qsub} program which
+submits jobs to the Grid Engine queuing system at Janelia. The second
+line is the suffix, and contains only a double quote, which
+complements the double quote at the end of the prefix line as we'll
+see below.
+
+Now, let's run \prog{ssu-prep} as if we were going to create parallel
+\prog{ssu-align} jobs for the Janelia cluster.  Move into the
+\prog{tutorial/} directory and execute the command:
+
+\user{ssu-prep seed-30.fa my30 5 janelia-cluster-presuf.txt}
+
+About forty lines of text are output to the screen. We'll step through
+and discuss this output: 
+
+\begin{sreoutput}
+# Validating input sequence file ... done.
+#
+# Preparing 5 ssu-align jobs ...
+# Partitioning seqs with goal of equalizing total number of nucleotides per job ...
+#
+# output file name   description                                       
+# -----------------  --------------------------------------------------
+  my30/seed-30.fa.1  partition 1 FASTA sequence file (6 seqs; 10463 nt)
+  my30/seed-30.fa.2  partition 2 FASTA sequence file (6 seqs; 10240 nt)
+  my30/seed-30.fa.3  partition 3 FASTA sequence file (6 seqs;  9922 nt)
+  my30/seed-30.fa.4  partition 4 FASTA sequence file (6 seqs; 10358 nt)
+  my30/seed-30.fa.5  partition 5 FASTA sequence file (6 seqs;  9397 nt)
+  my30.ssu-align.sh  shell script that will execute 5 ssu-align jobs
+#
+\end{sreoutput}
+
+First, \prog{ssu-prep} reports that it has validated the formatting of
+the sequence file, partitioned it into 5 new files and placed each file
+into the newly created \prog{my30/} subdirectory. Each of these files has
+6 of the original 30 sequences in it. Additionally,
+\prog{my30.ssu-align.sh}, a shell script that will execute 5 jobs, one
+per sequence file, was created in the current working directory. After
+this, you'll see:
+
+\begin{sreoutput}
+################################################################################
+# To execute all 5 ssu-align jobs, run the shell script with:
+#	sh my30.ssu-align.sh
+################################################################################
+\end{sreoutput}
+
+These are instructions for how to execute the shell script. Take a
+look at the shell script \\ \prog{my30.ssu-align.sh}:
+
+\begin{sreoutput}
+#!/bin/bash
+# Bash shell script created by ssu-prep for running 5 ssu-align jobs.
+# Each job will process a separate partition of the sequence file:
+# 'seed-30.fa'.
+#
+# The final job is special, after computing its alignments it will wait for all
+# other jobs to finish and then merge the output of all jobs together.
+# The merged output files will be in the directory: '/my30/'
+#
+# The for loop below will execute/submit the first 4 of 5 jobs.
+# The final ssu-align job is executed separately because it does the merging.
+#
+for i in {1..4}
+do
+	echo "# Executing: qsub -N ssu-align -o /dev/null -b y -j y -cwd -V " ssu-align my30/seed-30.fa.$i my30/my30.$i ""
+	qsub -N ssu-align -o /dev/null -b y -j y -cwd -V " ssu-align my30/seed-30.fa.$i my30/my30.$i "
+done
+echo "# Executing: qsub -N ssu-align -o /dev/null -b y -j y -cwd -V " ssu-align --merge 5 my30/seed-30.fa.5 my30/my30.5 ""
+qsub -N ssu-align -o /dev/null -b y -j y -cwd -V " ssu-align --merge 5 my30/seed-30.fa.5 my30/my30.5 "
+\end{sreoutput}
+
+This is a bash shell script file\footnote{The \prog{--no-bash} option
+  can be used to make a non-bash-specific script, see the
+  \prog{ssu-prep} manual page for more information.}.
+The \prog{\#}-prefixed lines are
+explanatory comments. The remainder of the file consists of a for loop
+that will submit the first four \prog{ssu-align} jobs to the cluster
+using \prog{qsub}. The lines beginning with \prog{qsub} are the actual
+job submission commands. The lines beginning with \prog{echo} cause updates to
+be printed to STDOUT before each job is submitted. 
+Note that the \prog{qsub} command line is composed
+of the prefix string from the \prog{janelia-cluster-presuf.txt} file,
+followed by a \prog{ssu-align} command, followed by the suffix
+string. The end result is that the \prog{ssu-align} command is
+contained within the quotes from the prefix/suffix strings.
+
+The comments explain that the final job is special. It will merge the
+results of all jobs once they are finished. Consequently, it requires
+special command-line options and so is executed outside the for loop,
+as the final line of the script.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+The final important part of the \prog{ssu-prep} output explains what
+to do if any of the jobs fail: 
+
+\begin{sreoutput}
+# If one or more jobs fail: rerun the failed jobs, wait for them to finish,
+# and then perform manual merge from this directory by executing:
+#	ssu-merge my30
+\end{sreoutput}
+
+This should happen only rarely, but if any jobs fail, this aspect of
+the program allows 
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Because your specific compute system is likely different from
+Janelia's, the \prog{my30.ssu-align.sh} script will probably not
+work. To make \prog{ssu-prep} generate shell scripts you can run on
+your system, create a file like \prog{janelia-cluster-presuf.txt} but
+with prefix and suffix strings specific to your
+system. 
+
+This simple prefix/suffix string method may not work for your
+compute system. For example, if your cluster requires using \prog{ssh}
+to remote login to different nodes, a single fixed prefix line will
+probably not be sufficient. If this is the case, run \prog{ssu-prep}
+with the \prog{-y} option. In this mode no prefix/suffix file
+will be read, and the output shell script will contain only the raw
+\prog{ssu-align} commands. For example, do:
+
+\user{ssu-prep -f -y seed-30.fa my30 5}
+
+(We had to also specify \prog{-f} so the program would overwrite our
+existing \prog{my30} directory.) Much of the output is the same as the
+prior example, but the \prog{WARNING} section is new:
+
+\begin{sreoutput}
+################################################################################
+# WARNING: -y was set on the command line.
+# This means that 'my30.ssu-align.sh' will simply run the 5 ssu-align jobs in
+# succession, one after another, not in parallel. If you want to run the jobs in
+# parallel you'll either have to manually edit that file or rerun ssu-prep using
+# the options listed above to specify prefix and/or suffix strings for the
+# ssu-align commands, so they are, for example, submitted to run on a cluster
+# using a queing system manager like SGE. Or you can run <n> jobs in parallel on
+# a single <n>-core machine by rerunning ssu-prep using '-x'.
+# Do 'ssu-prep -h' or see the User Guide for more information.
+################################################################################
+\end{sreoutput}
+
+As explained, you'll have to modify the newly created
+\prog{my30.ssu-align.sh} to make the jobs run in parallel in this
+case, either manually or using your own script. The file will still
+contain a for loop submitting all but the final job. If you'd rather
+all jobs were placed on their own line, use the \prog{--no-bash}
+option to \prog{ssu-prep}.
+
+For now, let's run the unmodified \prog{my30.ssu-align.sh} script to
+demonstrate how the jobs are merged together automatically. As noted
+in the warning above, this will simply run the 5 jobs in succession
+instead of in parallel, but for our purposes here this is okay. To run
+the script, execute the command: 
+
+\user{sh my30.ssu-align.sh \footnote{If this command fails, you're
+    probably not using the BASH shell. Rerun the \prog{ssu-prep}
+    command above with the \prog{--no-bash} option and try again.}}
+
+The script executes \prog{ssu-align} five times in succession, and
+these jobs will being reporting what they're doing to the screen. 
+Once all five jobs are run, the \prog{ssu-merge} program will
+automatically be called to merge their output. You'll see the
+following output at that point:
+
+\begin{sreoutput}
+# Merging files from 5 ssu-align runs...
+#
+#                                  # files     # seqs
+# merged file name       CM name    merged     merged
+# ---------------------  --------  -------  ---------
+  my30.tab               -               5          -
+  my30.scores            -               5          -
+  my30.ssu-align.sum     -               5          -
+  my30.ssu-align.log     -               5          -
+#
+  my30.archaea.fa        archaea         2          5
+  my30.archaea.hitlist   archaea         2          5
+  my30.archaea.cmalign   archaea         2          5
+  my30.archaea.ifile     archaea         2          5
+  my30.archaea.stk       archaea         2          5
+#
+  my30.bacteria.fa       bacteria        5          8
+  my30.bacteria.hitlist  bacteria        5          8
+  my30.bacteria.cmalign  bacteria        5          8
+  my30.bacteria.ifile    bacteria        5          8
+  my30.bacteria.stk      bacteria        5          8
+#
+  my30.eukarya.fa        eukarya         5         17
+  my30.eukarya.hitlist   eukarya         5         17
+  my30.eukarya.cmalign   eukarya         5         17
+  my30.eukarya.ifile     eukarya         5         17
+  my30.eukarya.stk       eukarya         5         17
+\end{sreoutput}
+
+Two of the five small partition files included archaeal sequences, and
+all five included bacterial and eukaryotic  sequences. The total number
+of archaeal, bacterial and eukaryotic sequences was 5, 8 and 17,
+respectively. The final merged alignments are in the files
+\prog{my30.archaea.stk}, \prog{my30.bacteria.stk}, and
+\prog{my30.eukarya.stk}.
+
+subsubsection{Using ssu-prep to parallelize ssu-align
+  on multi-core machines}
+
+The third and final \prog{ssu-prep} usage mode is for parallelizing
+jobs to run on a single multi-core machine. This mode can be thought
+of as a simple substitute for multi-threading, and is enabled with the
+\prog{-x} option to \prog{ssu-prep}. As with \prog{-y}, using
+\prog{-x} obviates the need for a prefix/suffix file. As an example,
+imagine you are using a quad-core machine. In this case, execute: 
+
+\user{ssu-prep -f -x seed-30.fa my30 4}
+
+(We had to also specify \prog{-f} so the program would overwrite our
+existing \prog{my30} directory.) Much of the output is the same as
+before. However, the \prog{my30.ssu-align.sh} file will be different;
+it is included below:
+
+\begin{sreoutput}
+#!/bin/bash
+# Bash shell script created by ssu-prep for running 4 ssu-align jobs.
+# Each job will process a separate partition of the sequence file:
+# 'seed-30.fa'.
+#
+# This script will execute all 4 jobs at once, in parallel. It is only
+# meant to be executed on a system with 4 cpus/cores. The first 3 jobs
+# will run in the background and output to /dev/null. The final job will
+# output to STDOUT, allowing you to follow its progress.
+#
+# The final job is special, after computing its alignments it will wait for all
+# other jobs to finish and then merge the output of all jobs together.
+# The merged output files will be in the directory: '/my30/'
+#
+# The for loop below will execute/submit the first 3 of 4 jobs.
+# The final ssu-align job is executed separately because it does the merging.
+#
+for i in {1..3}
+do
+	echo "# Executing: ssu-align my30/seed-30.fa.$i my30/my30.$i > /dev/null &"
+	ssu-align my30/seed-30.fa.$i my30/my30.$i > /dev/null &
+done
+echo "# Executing: ssu-align --merge 4 my30/seed-30.fa.4 my30/my30.4"
+ssu-align --merge 4 my30/seed-30.fa.4 my30/my30.4
+\end{sreoutput}
+
+Note that the \prog{ssu-align} commands in the for loop include
+\prog{\&} at the end, which cause them to be run simultaneously.
+
+
+
+
+
+
+
+
+

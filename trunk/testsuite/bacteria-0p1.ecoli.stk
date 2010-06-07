@@ -1,0 +1,174 @@
+# STOCKHOLM 1.0
+#=GF ID bacteria
+#=GF AU which is available from http://selab.janelia.org/publications.html.
+
+00841::Escherichia_coli::J01695         ----------------------AAAUUGAAGAGUUUGAUCAUGGCUCAGA
+#=GR 00841::Escherichia_coli::J01695 SS ..............................<<<<<.......>>>>>.<<
+#=GC SS_cons                            ::::::::::::::::::::::::::::::<<<<<_______>>>>>:{{
+#=GC RF                                 ....................xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         UUGAACGCUGGCGGCAGGCCUAACACAUGCAAGUCGAACGGUAACA---G
+#=GR 00841::Escherichia_coli::J01695 SS <<.<<<<<<.<<<<<<<<<....<<<.<<<..<<<..<<<<<..<<...<
+#=GC SS_cons                            {{-{{{{{{,{{{{{{{{{----{{{-{{{,,<<<--<<<<<--<-----
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xx...x
+
+00841::Escherichia_coli::J01695         -GAAGAAGCU-UGCUUCUUU-G----CUGACGAGUGGCGG-ACGGGUGAG
+#=GR 00841::Escherichia_coli::J01695 SS .<<<<<<<.....>>>>>>>......>>>>>.>>>>>>.......<<<..
+#=GC SS_cons                            <<<<<<<<_____>>>>>>>>------->>>->>>>>>,,,,,,,[[[,,
+#=GC RF                                 xxxxxxxxxx.xxxxxxxxxxx....x.xxxxxxxxxxxx.xxxxxxxxx
+
+00841::Escherichia_coli::J01695         UAAUGU-CUGGGA-AACUGCCUGAUGGAGG-GGGAUAACUACUGGAAACG
+#=GR 00841::Escherichia_coli::J01695 SS ....<<.<<<<<<..<<...<<<<<<<.<<.<<....<<<<<<<....>>
+#=GC SS_cons                            ,,,,((-((((((--((---(((((((,<<-<<----<<<<<<<____>>
+#=GC RF                                 xxxxxx.xxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GUAGCUAAUACCGCAUAAC---------GUCGCAA-GAC---------CA
+#=GR 00841::Escherichia_coli::J01695 SS >>>>>.....>>>>..............<<<.....>>>...........
+#=GC SS_cons                            >>>>>----->>>>,,,,,<<<<<<-<<<<<_____>>>>>>>>>>>,,,
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxx.xxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         AA-GAGGGGGA-CC---UUCG--GG-CCUCUUGCCAUCGGAUGUGCCCAG
+#=GR 00841::Escherichia_coli::J01695 SS ...<<<<<<...<<.........>>.>>>>>>.>>>>>>>..>>>>>>>>
+#=GC SS_cons                            ,,,<<<<<<---<<_________>>->>>>>>,)))))))--))))))))
+#=GC RF                                 xx.xxxxxxxx.xx...xxxx..xx.xxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         AUGGGAUUAGCUAGUAGGUG-GGGUAACGGCUCACCUAGGCGA-CGA-UC
+#=GR 00841::Escherichia_coli::J01695 SS >><<<..<.<<<..<<<<<<.<<.......>>>>>>>>>>>.......>>
+#=GC SS_cons                            ))<<<--<-<<<--<<<<<<-<<_______>>>>>>>>>>>------->>
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx.xxx.xx
+
+00841::Escherichia_coli::J01695         CCUAGCUGGUCUGAGAGGAUGACCAGCCACACUGGAACUGAGACACGGUC
+#=GR 00841::Escherichia_coli::J01695 SS >>..<<<<<<<<....>>>>...>>>>>>>.<<<<<<..........>>>
+#=GC SS_cons                            >>,,<<<<<<<<____>>>>--->>>>]]],<<<<<<__________>>>
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         CAGACUCCUACGGGAGGCAGCAGUGGGGAAUAUUGCACAAUGGGCGCAAG
+#=GR 00841::Escherichia_coli::J01695 SS >>>.<<<<....>>>>...>>>>>>.>.....<.<<<...<<<<<....>
+#=GC SS_cons                            >>>,<<<<____>>>>,,,}}}}}}-},,,,,<-<<<---<<<<<____>
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         CCUG-AUGCAGCCAUGCCGCGUGUAUGAAGAAGGCC-UUCG-GGUUGUAA
+#=GR 00841::Escherichia_coli::J01695 SS >>>>..>>>>.>>.>>>>>>..<<<<......<<<<......>>>>....
+#=GC SS_cons                            >>>>-->>>>,}}-}}}}}},,<<<<------<<<<______>>>>----
+#=GC RF                                 xxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx.xxxxxxxx
+
+00841::Escherichia_coli::J01695         AGUACUUUCAGCGGGGAGGAA-GGGAGUAAAGUUAAUACCUUUGCUCA-U
+#=GR 00841::Escherichia_coli::J01695 SS .>>>>...<<<<<<<...<.....<<<<<<<<.......>>>>>>>>...
+#=GC SS_cons                            ->>>>,,,<<<<<<<---<-----<<<<<<<<_______>>>>>>>>---
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.x
+
+00841::Escherichia_coli::J01695         UGACGUUACCCG-CAGAAGAAGCACCGGCUAACUCCGUGCCAGCAGCCGC
+#=GR 00841::Escherichia_coli::J01695 SS ...>....>>>>.>>...>..<<<<<......<<<<<.....<<....>>
+#=GC SS_cons                            --->---->>>>->>--->,,<<<<<------<<<<<-----<<____>>
+#=GC RF                                 xxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GGUAAUACGGAGGGUGCAAGCGUUAAUCGGAAUUACUGGGCGUAAAGCGC
+#=GR 00841::Escherichia_coli::J01695 SS .......>>>>>>>>>>.>>>>>>>>>>..........<<<.....<.<<
+#=GC SS_cons                            ------->>>>>>>>>>,}}}}}}}}}}::::::::::{{{-----{,[[
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         ACGCAGGCGGUUUGUUAAGUCA-G-AUGUGAAAUCCCCGGGCUCAACCUG
+#=GR 00841::Escherichia_coli::J01695 SS <<.<.<<<.<<<<<<<.<<<<<.<.<<<<<....<<<<<<<.....>>>>
+#=GC SS_cons                            [[-[-[[[,<<<<<<<-<<<<<-<-<<<<<----<<<<<<<_____>>>>
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxx.x.xxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GGAACUGCAUCUGAUACUGGCAAGCUUGAGUCUCGUAGAGGGGGGUAGAA
+#=GR 00841::Escherichia_coli::J01695 SS >>>..>>>>>>>>>..>>>>>>>>>...<<<<<<<<<..<<<<<<<<<..
+#=GC SS_cons                            >>>-->>>>>>>>>-->>>>>>>>>,,,(((((((((--(((((((<<--
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         UUCCAGGUGUAGCGGUGAAAUGCGUAGAG-AUCUGGAGGAAUACCGG-UG
+#=GR 00841::Escherichia_coli::J01695 SS <<<<<<<<...<<<......>>>.......>>>>>>>>..>>....<...
+#=GC SS_cons                            <<<<<<<<---<<<______>>>------->>>>>>>>-->>,,,,<---
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxx.xx
+
+00841::Escherichia_coli::J01695         GCGAAGGCGGCCCCCUGGACGAAG-ACUGACGCUCAG-GUGCGAAAGCGU
+#=GR 00841::Escherichia_coli::J01695 SS <<....>>>>>>>>>>.>>>>>.>.>>>...>>>>...>>>>....<<<<
+#=GC SS_cons                            <<____>>>)))))))-)))))-)-))),,,]]]]---]]]],,,,<<<<
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GGGGAGCAAACAGGAUUAGAUACCCUGGUAGUCCACGCCGUAAACGAUGU
+#=GR 00841::Escherichia_coli::J01695 SS <<...<<...<<<<.........>>>>...>>>>>>>>..........<<
+#=GC SS_cons                            <<---<<---<<<<_________>>>>--->>>>>>>>,,,,,,,,,,((
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         CGACUUGGAGGUUGUGCC--CUUGA---GGCGUGGCUUCCGGAGCUAACG
+#=GR 00841::Escherichia_coli::J01695 SS <<<<..<<<<<<<<<<<<..........>>>>>>>>>>>>...<<....>
+#=GC SS_cons                            ((((,,<<<<<<<<<<<<__________>>>>>>>>>>>>,,,<<____>
+#=GC RF                                 xxxxxxxxxxxxxxxxxxx.xxxxxx..xxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         CGUUAAGUCGACCGCCUGGGGAGUACGGCCGCAAGGUUAAAACUCAAA-U
+#=GR 00841::Escherichia_coli::J01695 SS >.....>>>>>>>>>>.<<<......<<<<....>>>>....>>>.....
+#=GC SS_cons                            >,,,,,))))))}}}}:<<<------<<<<____>>>>---->>>:::::
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.x
+
+00841::Escherichia_coli::J01695         GAAUUG-ACGGGGGCCCGCACAAGCGGUGGAGCAUGUGGUUUAAUUCGAU
+#=GR 00841::Escherichia_coli::J01695 SS ....<<.<<<.<<<<<<<.<<..<<<<<<<<<<<<<<<<<....<<<<..
+#=GC SS_cons                            ::::{{-{{{-{{{{{{{-{{,,{{{{{{{{{{{{{{{{{,,,,<<<<__
+#=GC RF                                 xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GCAACGCGAAGAACCUUACCUGGUCUUGAC-AUC--CACGG--AAGUUUU
+#=GR 00841::Escherichia_coli::J01695 SS ......>>>>........<<<<<<<......<<<..<<<<<....<<<<<
+#=GC SS_cons                            ______>>>>,,,,,,,,{{{{{{{,,,,,,((((-(((((,,,,<<<<<
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx.xxxxx..xxxxxxx
+
+00841::Escherichia_coli::J01695         CAGAGAUGAG-AAUG--UG----CCUU---------CG-GG----AA-CC
+#=GR 00841::Escherichia_coli::J01695 SS <<....>>>>.>>>...<<....<<..............>>....>>.>>
+#=GC SS_cons                            <<____>>>>->>>,,,<<----<<______________>>---->>,))
+#=GC RF                                 xxxxxxxxxx.xxxx..xx....xxxx........xxx.xx....xx.xx
+
+00841::Escherichia_coli::J01695         GUGAGACAGGUGCUGCAUGGCUGUCGUCAGCUCGUGUUGUGAAAUGUUGG
+#=GR 00841::Escherichia_coli::J01695 SS >>>.>>>.<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<
+#=GC SS_cons                            ))))))),[[-[[[[--[[[[[[[[[,,,((((((<<<____>>>,,<<<
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GUUAAGUCCCGCAACGAGCGCAACCCUUAUCCUUUGUUGCCAGCGG----
+#=GR 00841::Escherichia_coli::J01695 SS <......>>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<....
+#=GC SS_cons                            <______>>>>,,)))))),,,,,((((,<<<<<<<---<<--<<<-<<<
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxx
+
+00841::Escherichia_coli::J01695         --UCCGG----CCGGGA-ACUCAAAGGAGACUGCCAGUGAUAAACUG-GA
+#=GR 00841::Escherichia_coli::J01695 SS ...........>>>>>.....>>>>>>>..<<<<<<<<.....>>>>.>>
+#=GC SS_cons                            _______>>>->>>>>----->>>>>>>,,<<<<<<<<_____>>>>->>
+#=GC RF                                 .xxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xx
+
+00841::Escherichia_coli::J01695         GGAAGGUGGGGAUGACGUCAAGUCAUCAUGGCCCUUACG-ACCAGGGCUA
+#=GR 00841::Escherichia_coli::J01695 SS >>.....>>>>....>>>>.>>>...>>>>>>>>....>.>>>>>>...>
+#=GC SS_cons                            >>,,,,,)))),,,,]]]]-]]]---]]]]]]]],,,,}-}}}}}},,,}
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxx
+
+00841::Escherichia_coli::J01695         CACACGUGCUACAAUGGCGCAUACAAAGAGAAGCGACCUCGCGAGAGCAA
+#=GR 00841::Escherichia_coli::J01695 SS >.>>>>>>>>>>...<<<<<<<.....<<<..<<...<<<....>>>...
+#=GC SS_cons                            }-}}}}}}}}}},,,<<<<<<<-----<<<--<<---<<<____>>>---
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         GCGGACCUCAU-AAAGUGCGUCGUAGUCCGGAUUGGAGUCUGCAACUCGA
+#=GR 00841::Escherichia_coli::J01695 SS >>....>>>......>>>>>>>......<...<<<<<<<<........>>
+#=GC SS_cons                            >>---->>>------>>>>>>>,,,,,,<---<<<<<<<<________>>
+#=GC RF                                 xxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         CUCCAUGAAGUCGGAAUCGCUAGUAAUCGUGGAUCAGA-AUGCCACGGUG
+#=GR 00841::Escherichia_coli::J01695 SS >>>>>>...>.....>>>>>.....<<<<<<<<........>>>>>>>>.
+#=GC SS_cons                            >>>>>>--->,,,,,}}}}},,,,,<<<<<<<<________>>>>>>>>,
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         AAUACGUUCCCGGGCCUUGUACACACCGCCCGUCACACCAUGGGAGUGGG
+#=GR 00841::Escherichia_coli::J01695 SS .....>>...>>>>>>>>>>.>>..<.<<.<<.<.<<<<<<<<..<<<<<
+#=GC SS_cons                            ,,,,,}}---}}}}}}}}}}-}}::<-<<-<<---<<<<<<<<--<<<<<
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+00841::Escherichia_coli::J01695         UUGCAAAAGAAG-UAGG-UAGCUUAACC------UUCG-------GGAGG
+#=GR 00841::Escherichia_coli::J01695 SS <<<<<<<....<.<<<<.<.<<<<..<<.................>>.>>
+#=GC SS_cons                            <<<<<<<----<-<<<<-<-<<<<--<<<_______________>>>->>
+#=GC RF                                 xxxxxxxxxxxx.xxxx.xxxxxxxxxxx.....xxxxx.....xxxxxx
+
+00841::Escherichia_coli::J01695         GCGCUUA-CCACUUUGUGAUUCAUGACUGGGGUGAAGUCGUAACAA-GGU
+#=GR 00841::Escherichia_coli::J01695 SS >>>>>>>.>...>>>>>>>>>>>>..>>>>>>>>..>.>>..>>...>.<
+#=GC SS_cons                            >>>>>>>->--->>>>>>>>>>>>-->>>>>>>>---->>-->>--->:<
+#=GC RF                                 xxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxx
+
+00841::Escherichia_coli::J01695         AACCGUAGGGGAACCUGCGGUUGGAUCACCUCCUUA---
+#=GR 00841::Escherichia_coli::J01695 SS <<<<<<<<<....>>>>>>>>>>................
+#=GC SS_cons                            <<<<<<<<<____>>>>>>>>>>::::::::::::::::
+#=GC RF                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+//

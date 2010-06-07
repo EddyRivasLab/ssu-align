@@ -1,0 +1,55 @@
+%Organizing document for the ssu-align User's Guide
+%
+% SVN $Id: main.tex 2375 2008-03-31 22:24:06Z nawrockie $
+
+\documentclass[10pt]{article}
+\usepackage[pdftex]{graphicx}  
+\usepackage{html}		% From the LaTeX2html translator
+\usepackage{apalike}
+\usepackage{rotating}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{fancyvrb}
+\usepackage{verbatim}
+\usepackage{rotating}
+
+\setcounter{secnumdepth}{1}
+
+\renewcommand{\familydefault}{\sfdefault}
+\input{macros}
+
+\begin{document}
+
+\bibliographystyle{apalike}
+
+\input{titlepage}
+\input{copyright}
+\newpage
+\tableofcontents
+
+\newpage
+\include{intro}
+\newpage
+\include{install}
+\newpage
+\include{background}
+\newpage
+\include{tutorial}
+\newpage
+\include{models}
+\newpage
+\include{masks}
+\newpage
+\include{output}
+\newpage
+\include{stats}
+\newpage
+\include{manpages}
+
+%\newpage
+%\section*{Index of frequently asked questions}
+%\listoffaqs
+
+\newpage
+\bibliography{master,lab,epn_thesis,uguide}
+\end{document}

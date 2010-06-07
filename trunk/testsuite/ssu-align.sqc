@@ -1,0 +1,9 @@
+# ssu-draw's crash exercises, in sqc command format.
+# These exercises are meant to test each option at least
+# once, and some in more than one circumstance.
+#
+# EPN, Tue Nov 10 16:16:45 2009
+#
+1  exercise  help:ssu-align    @ssu-align@ -h
+1  exercise  seed-6:ssu-align  @ssu-align@ -F seed-6.fa seed-6
+

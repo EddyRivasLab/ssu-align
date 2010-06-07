@@ -1,0 +1,312 @@
+.TH "ssu-prep" 1 "@RELEASEDATE@" "@PACKAGE@ @RELEASE@" "@PACKAGE@ Manual"
+
+.SH NAME
+ssu-prep - prepare SSU rRNA sequences for parallel ssu-align jobs
+
+.SH SYNOPSIS
+
+.PP
+Add a prefix and suffix to ssu-align job commands as defined in <prefix-suffix-file>:
+.PP
+.B ssu-prep
+.I [options]
+.I seqfile
+.I output-dir
+.I n
+.I prefix-suffix-file
+
+.PP
+Run all jobs in parallel on one machine with <n> cores:
+.PP
+.B ssu-prep -x
+.I [options]
+.I seqfile
+.I output-dir
+.I n
+
+.PP
+Omit prefixes and suffixes from ssu-align job commands, to be manually added later:
+.PP
+.B ssu-prep -y
+.I [options]
+.I seqfile
+.I output-dir
+.I n
+
+.SH DESCRIPTION
+
+.PP
+.B ssu-prep 
+reads the unaligned FASTA-formatted 
+.I seqfile,
+splits it up into 
+.I n 
+smaller sequence files and creates a shell
+script that will execute 
+.I n 
+.B ssu-align 
+jobs in parallel, each processing
+one of the small sequence files. The results of all jobs will automatically be
+merged together by the final job, giving the same results as if a single
+.B ssu-align 
+job was run for the complete 
+.I seqfile.
+The advantage of using 
+.B ssu-prep
+is that it allows the 
+.I n
+smaller jobs to be run simultaneously, in parallel, either on a
+multi-core machine or on a compute cluster, so the final result
+is obtained up to (nearly)
+.I n 
+times faster.
+The merging is performed by an internal call to the 
+.B ssu-merge
+script. See the 
+.B ssu-merge 
+manual page for more information. 
+
+.PP
+All of the 
+.B ssu-align 
+options (see the  
+.B ssu-align
+manual page) are available to
+.B ssu-prep.
+Any of these options that are set on the 
+.B ssu-prep
+command line will identically set in the 
+.B ssu-align
+job commands in the output shell script.
+
+The output shell script will be named
+.I <output-dir>.ssu-align.sh
+and can be executed with the command
+.B sh <output-dir>.ssu-align.sh.
+
+.PP
+The smaller sequence files created by 
+.B ssu-prep
+will be named as 
+.I seqfile.<i>
+where 
+.I <i>
+is a number ranging from 1 to 
+.I n.
+By default, 
+.B ssu-prep
+will try to divide the sequences such that, as nearly as possible, all
+jobs process the same number of nucleotides, with the restriction that
+sequences are never reordered (by concatenating the
+.I n
+smaller sequence files in numerical order, the original 
+.B seqfile
+would be reproduced). 
+
+.PP
+.B ssu-prep
+will create an output directory called
+.I output-dir
+into which all output files
+will be placed,
+including the small sequence files.
+When the 
+.B ssu-align 
+jobs are run, each one will create a subdirectory within 
+.I output-dir
+called
+.I output-dir.<i>
+and place its output files there. When the 
+.I n
+jobs are merged, these directories will be emptied and removed
+(unless the 
+.B --keep-merge
+option is set).
+
+.SH CUSTOMIZING PARALLELIZATION FOR THE SSU-ALIGN JOBS USING PREFIXES AND SUFFIXES
+
+The main purpose of
+.B ssu-prep
+is to allow simple parallelization of large 
+.B ssu-align 
+jobs by breaking large jobs into many smaller ones, each of which will
+run separately. Currently, the 
+.B SSU-ALIGN
+package does not support more respectable paralellization strategies
+such as MPI, nor does it use threads.
+
+.PP
+In order to allow jobs to run in parallel,
+.B ssu-prep
+allows the user to set a fixed prefix and suffix string to be
+added before and after each 
+.B ssu-align 
+job command. The three different usages listed in the SYNOPSIS above
+control how this prefix and suffix are defined.
+
+.PP
+In the first case, if neither the
+.B -x
+nor the
+.B -y 
+options are used, the prefix and suffix are defined in the
+.I <prefix-suffix-file>
+as discussed in FORMAT OF THE PREFIX-SUFFIX-FILE below.
+
+.PP
+Secondly, if 
+.B -x 
+is used the job commands will be run all at once on a single multi-core
+machine, and so no prefix or suffix is necessary. (Actually, in this
+case the suffix used will be ' > /dev/null & ' for all but the final
+job, which makes the jobs silently and simultaneously run in the background.)
+
+.PP
+Finally, if the user specifies 
+.B -y,
+no prefix or suffix will be added to the 
+.B ssu-align 
+job commands, but the user should manually add their own later.
+The
+.B -y 
+option is meant to be useful for users who want the 
+jobs to have prefixes and suffixes that are not constant, or that are
+more complex than those possible by the simplistic use of a two-line
+.B prefix-suffix-file.
+For example, the 
+.B ssu-align
+commands might need to be preceded by a 'ssh <host>;' command, but
+where <host> is different for each command.
+
+.SH FORMAT OF THE PREFIX-SUFFIX-FILE
+
+The 
+.I prefix-suffix-file
+must contain exactly two non-comment lines (comment lines begin with '#'). 
+The first line will become a prefix for all 
+.B ssu-align
+commands and the second line will become a suffix.
+For example, if the first line is:
+
+.PP
+.B qsub -N ssu-align -o /dev/null -b y -j y -cwd -V '
+
+.PP
+And the second line is:
+
+.PP
+.B '
+
+.PP
+Then a resulting ssu-align job command in the output shell script
+might be:
+
+.PP
+.B qsub -N ssu-align -o /dev/null -b y -j y -cwd -V ' ssu-align foo/foo.1/my.fa.1 foo/foo.1 '
+
+.PP
+In contrast, if the 
+.B -y
+option is used, specifying no prefix or suffix, the same job command would
+appear as:
+
+.PP
+.B ssu-align foo/foo.1/my.fa.1 foo/foo.1
+
+.PP
+in the output shell script.
+
+.SH SPECIFYING OPTIONS FOR THE PARALLEL ALIGNMENT JOBS
+
+All 
+.B ssu-align
+options can be set on the 
+.B ssu-prep
+command line, and they will be added to the 
+.B ssu-align
+command-line of the resulting parallel jobs in the output shell
+script. See the
+.B ssu-align
+manual page for a list of available options. Additionally, 
+.B ssu-prep
+specific options are listed below.
+
+.SH OPTIONS
+
+.TP
+.B -h
+Print brief help; includes version number and summary of
+all options.
+
+.TP
+.B -x
+Specify that all 
+.I n
+jobs in should be run in parallel on a single machine that has 
+.I n
+processors (cores).
+See the CUSTOMIZING PARALLELIZATION section above for more details.
+Note that 
+.B ssu-prep 
+does not check to make sure your computer actually has 
+.I n
+processors.
+
+.TP
+.B -y
+Specify that the 
+.B ssu-align 
+jobs should have no prefix or suffix. The user should manually add
+them to the output shell script later in order to ensure the jobs
+actually run in parallel. 
+See the CUSTOMIZING PARALLELIZATION section above for more details.
+
+.TP
+.B -f
+Allow output directory 
+.I output-dir
+to be deleted and
+overwritten. Without this option, if the
+.I output-dir
+directory already exists, 
+.B ssu-prep
+exits with an error.
+
+.TP
+.B -q
+Specify that the third 
+.B ssu-prep 
+command-line argument, 
+.I n,
+specifies the desired number of sequences per job, not the number of
+total jobs. The number of total jobs will be dependent on the number
+of sequences in 
+.I seqfile.
+
+.TP
+.B -e
+Specify that each job should process the same number of sequences,
+instead of the same number of total nucleotides, which is the default
+behavior.
+
+.TP 
+.B --no-bash
+Specify that the output shell script that will submit/run all 
+.I n
+jobs not be written in BASH shell syntax, which it is by default.
+
+.TP 
+.B --no-merge
+Specify that the final job should not automatically merge the results
+of all jobs. The user can still manually merge the jobs using the 
+.B ssu-merge 
+program after all jobs are finished running.
+
+.TP 
+.B --keep-merge
+Do not automatically remove the smaller per-job output files once they
+have successfully been merged together. If this option is selected,
+a shell script called
+.I output-dir.cleanup.sh 
+will be created that can be used to remove all the smaller per-job
+output files at a later time.

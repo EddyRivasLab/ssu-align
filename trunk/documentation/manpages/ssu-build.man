@@ -1,0 +1,287 @@
+.TH "ssu-build" 1 "@RELEASEDATE@" "@PACKAGE@ @RELEASE@" "@PACKAGE@ Manual"
+
+.SH NAME
+ssu-build - build SSU rRNA covariance models
+
+.SH SYNOPSIS
+
+.PP
+Build models using a user-created Stockholm alignment:
+
+.PP
+.B ssu-build
+.I [options]
+.I alignment-file
+
+.PP
+Build models using default SSU-ALIGN seed alignment:
+
+.PP
+.B ssu-build -d 
+.I [options]
+.I seed-name
+
+.SH DESCRIPTION
+
+.PP
+.B ssu-build
+reads a multiple alignment of SSU rRNA sequences from 
+.I alignment-file,
+constructs a covariance model and saves the CM 
+to a file. 
+.PP
+The alignment file must be in Stockholm format, and
+must contain consensus secondary structure annotation.
+
+.PP 
+Alternatively, with the 
+.B -d 
+option, 
+.B ssu-build 
+uses the default SSU-ALIGN seed alignment for family
+.I seed-name 
+as the input alignment. Possible choices for
+.I seed-name 
+are 
+.I archaea, 
+.I bacteria 
+and
+.I eukarya.
+The 
+.B -d
+option is expected to mainly be useful in combination
+with the
+.BI --trunc " <s>"
+option, which specifies that a subset of the input alignment be used
+to construct a non-full length model of a SSU rRNA, such as within
+positions spanned by a specific set of primers designed to target a
+variable region. (See the description of the
+.BI --trunc " <s>"
+option below for details on its usage.)
+
+.PP
+When the
+.B -d 
+option is used in combination with the
+.BI --trunc " <s>"
+option, 
+.B ssu-build
+will create secondary structure diagrams that highlight the specific
+SSU rRNA region that the newly constructed model represents.
+
+.PP
+The 
+.BI --trunc " <s>"
+option requires the user to know the beginning and ending 
+.I consensus
+position of the desired region. Running
+.B ssu-build
+with the 
+.I --num 
+option will cause it to reformat the input alignment such that its
+consensus columns are numbered to make it easier to determine the
+appropriate column range. Additionally, the secondary structure
+diagrams of the default seed models
+included in the User's Guide have consensus positions of the default
+models numbered which may help determine column ranges when 
+.B -d
+is being used in combination with
+.B --trunc.
+
+.PP
+.B ssu-build
+uses the program 
+.B cmbuild 
+from the 
+INFERNAL
+package to construct CMs. Interested and motivated users can use
+.B cmbuild
+directly to create models. The version installed with 
+SSU-ALIGN
+is actually called 
+.B ssu-cmbuild
+to distinguish it from any versions of the program distributed 
+with  INFERNAL on your system.
+
+.SH OPTIONS
+
+.TP
+.B -h
+Print brief help; includes version number and summary of
+all options.
+
+.TP
+.B -d
+Specify that the command-line argument is the name of a SSU-ALIGN 0.1
+seed alignment, either 'archaea', 'bacteria', or 'eukarya'.
+
+.TP
+.B -f
+Allow overwriting of the CM file. 
+
+.TP
+.BI -o " <s>"
+Specify that the CM file be named 
+.I <s>.
+Without this option,
+.B ssu-build
+will automatically name the CM file based on the input alignment file
+name and command-line options that are used.
+
+.TP
+.BI -n " <s>"
+Specify that the CM itself be named 
+.I <s>.
+Without this option,
+.B ssu-build
+will automatically name the CM based on the input alignment file
+name and command-line options that are used. The name of the CM is
+important because it will be included as part of all output file names
+for files created by other SSU-ALIGN scripts that use this CM.
+
+.TP
+.BI --append " <s>"
+Append this CM to CM file 
+.I <s>
+that already exists. This allows creation of multi-CM files that can
+be used for discriminating between SSU sequences from different
+phylogenetic clades, such as the default SSU-ALIGN 0.1 CM file, which
+contains 3 CMs, one for each of the three domains of life.
+
+.TP
+.BI --key-out " <s>"
+Include the string 
+.I <s>
+as part of all output file names from
+.B ssu-build,
+immediately before the suffix. For example, foo.<s>.cm would be
+created instead of foo.cm.
+
+.SH OPTIONS FOR BUILDING MODELS FROM A TRUNCATED VERSION OF THE ALIGNMENT:
+
+.TP
+.BI --trunc " <s>"
+Specify the range of alignment consensus columns to use for building
+the model. 
+Without this option, the full alignment will be used. The
+.I <s>
+string must not contain any whitespace and must be formatted as
+.I <start>-<end>
+where <start> is the first consensus position to include and <end> is
+the final one, separated by a single '-' character.
+This option can be useful for creating a model that matches
+a specific region of the SSU molecule. For example, running
+.B ssu-build -d --trunc 525-765 archaea
+will build a CM that matches the so-called hypervariable V4 region of
+the archaeal SSU molecule.
+See the 
+.B --num
+option for how to create alignments with consensus columns numbered to
+facilitate choosing start and end positions.
+
+.SH OPTIONS FOR REFORMATTING INPUT ALIGNMENTS
+
+.TP
+.BI --num
+Do not build a CM. Instead, create a new alignment that is identical
+to the input alignment (or default seed alignment if
+.B -d) 
+but that has extra annotation numbering consensus positions. This
+option is meant to be helpful for determining start and end positions
+to use with the
+.B --trunc
+option. 
+
+.TP
+.B -i
+Output alignments in interleaved Stockholm format of a fixed width
+that may be more convenient for reading. Without this option,
+output alignments will contain one line per sequence, and thus may
+contain very long lines. 
+
+.SH OPTIONS FOR DEFINING CONSENSUS COLUMNS
+
+.TP
+.B --rf
+Use reference coordinate annotation (#=GC RF line in the input
+Stockholm alignment) to determine which columns in the input alignment
+are consensus, and
+which are not. Any non-gap character indicates a consensus
+column. (For example, mark consensus columns with "x", and insert
+columns with "."). This is true by default if the 
+.B -d
+option is used, in which case 
+.B ssu-build
+will use the #=GC RF annotation in the default seed model. 
+However, if 
+.B -d
+is not used, the default is to determine which columns are consensus
+automatically; if the frequency of gap characters in a column is
+greater than a threshold, gapthresh (0.8 by default, but settable
+with the 
+.B --gapthresh 
+option), the column is not consensus.
+
+.TP
+.BI --gapthresh " <x>"
+Determine which columns in the input alignment are consensus based on
+the frequency of gap characters in each column. If less than or equal
+to 
+.I <x>
+then the column is defined as a consensus one. As discussed in the
+description of the 
+.B --rf
+option, this is default unless the 
+.B -d
+and/or
+.B --rf
+options are enabled, with an
+.I <x>
+of 0.8. 
+
+.SH OPTIONS CONTROLLING OUTPUT OF STRUCTURE DIAGRAMS
+
+.TP
+.BI --ps2pdf " <s>"
+Specify that an executable named 
+.I <s>
+in your PATH can be used for converting postscript files to pdf files
+with the usage: 
+.B <s> foo.ps foo.pdf
+This executable will be used for creating a pdf diagram of the
+showing the location of a truncated model on the SSU molecule if the 
+.B --trunc 
+and 
+.B -d 
+options are used.
+By default, 
+.B ssu-build
+will use the executable program named 
+.B ps2pdf 
+if it is in your PATH to do this conversion. If 
+.B ps2pdf 
+does not exist, a postscript file will be generated.
+
+.TP
+.B --ps-only
+Specify that postscript output is preferable to pdf. 
+No postscript to pdf conversion will be attempted.
+
+.SH EXPERT OPTIONS FOR MODEL CONSTRUCTION
+
+.TP
+.B --eent
+Use the entropy weighting strategy to determine the effective sequence
+number that gives a target mean match state relative entropy. 
+The default target mean match state relative entropy is 0.59 bits but can be
+changed to 
+.I <x> 
+with 
+.BI --ere " <x>".
+
+.TP 
+.BI --ere " <x>"
+Set the target mean match state relative entropy as 
+.I <x>.
+By default the target relative entropy per match position is 0.59 bits.
+

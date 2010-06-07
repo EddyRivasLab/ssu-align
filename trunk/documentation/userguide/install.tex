@@ -1,0 +1,299 @@
+% EPN, Thu Jun  3 08:04:50 2010
+% NOTE: this install section was created by taking the first half of
+% the HMMER3 installation section and the second half of the Infernal
+% installation sections, glueing them together and making the
+% necessary changes: substituting file names, adding text and removing
+% parts that either don't apply, or don't work in SSU-ALIGN.
+
+\section{Installation}
+\label{sec:install}
+
+\subsection{Quick installation instructions}
+Download the source tarball (\prog{ssu-align.tar.gz}) from 
+\url{http://selab.janelia.org/software.html}, or directly from 
+\url{ftp://selab.janelia.org/software/ssu-align/ssu-align-0.1.tar.gz}; \\
+untar; and change into the newly created directory \prog{ssu-align-0.1}:
+
+\user{wget ftp://selab.janelia.org/pub/software/ssu-align/ssu-align-0.1.tar.gz}\\
+\user{tar xf ssu-align-0.1.tar.gz}\\
+\user{cd ssu-align-0.1}
+
+Configure for your system, and build the programs:
+
+\user{./configure}\\
+\user{make}
+
+Run the automated testsuite. This is optional. It takes about 10
+minutes, and all these tests should pass:
+
+\user{make check}
+
+\begin{comment}
+At this point, the programs are in the \prog{src} subdirectory, the
+\prog{infernal/src} subdirectory and the
+\prog{infernal/easel/miniapps} subdirectory. The
+user's guide (this document) is in the \\ 
+\prog{documentation/userguide}
+subdirectory. The man pages are in the \prog{documentation/manpages}
+subdirectory. You can manually move or copy all of these to
+appropriate locations if you want. You will want the programs to be in
+your \$PATH. 
+\end{comment}
+
+Install the man pages and programs in system-wide
+directories:
+
+\user{make install}
+
+This will install three types of files: programs, man pages, and data
+files.  By default, programs are installed in
+\prog{/usr/local/bin}. Installed programs include the six main
+SSU-ALIGN scripts (\prog{ssu-align}, \prog{ssu-build},
+\prog{ssu-draw}, \prog{ssu-mask}, \prog{ssu-merge} and
+\prog{ssu-prep}), the INFERNAL programs, each of which is prefixed
+with 'ssu-cm', e.g. \prog{ssu-cmsearch}, and EASEL programs called
+\emph{miniapps}, these are all named with a 'ssu-esl' prefix,
+e.g. \prog{ssu-esl-seqstat}. The INFERNAL and EASEL programs are
+called internally by the SSU-ALIGN scripts. Normal users will probably
+never need to run them.  By default, man pages for all programs are
+installed in \prog{/usr/local/man/man1}. The file \prog{ssu.1} in that
+directory is a special man page that summarizes the entire package.
+Finally, data files and a PERL module (\prog{ssu.pm}) required by the
+programs are placed in \prog{/usr/local/share/ssu-align-0.1}, by
+default. Data files include the default CM files, mask files, and
+postscript secondary structure template files.
+
+You might need special privileges to write to \prog{/usr/local}. (You may need to execute
+\prog{sudo make install}). You can change \prog{/usr/local} to any
+directory you want using the \prog{./configure --prefix} option, as in
+\prog{./configure --prefix /the/directory/you/want}.
+
+After installing, you'll see the following:
+
+\begin{sreoutput}
+=====================================
+SSU-ALIGN has been successfully built
+=====================================
+
+The final step is to update your environment variables:
+
+If you are using the bash shell, add the following three:
+lines to the '.bashrc' file in your home directory:
+
+export PATH="\$PATH:/usr/local/bin"
+export MANPATH="\$MANPATH:/usr/local/share/man"
+export SSUALIGNDIR="/usr/local/share/ssu-align-0.1"
+
+And then source that file to update your current
+environment with the command:
+
+sh ~/.bashrc
+
+If you are using the C shell, add the following three:
+lines to the '.cshrc' file in your home directory:
+
+setenv PATH "\$PATH:/usr/local/bin"
+setenv MANPATH "\$MANPATH:/usr/local/share/man"
+setenv SSUALIGNDIR "/usr/local/share/ssu-align-0.1"
+
+And then source that file to update your current
+environment with the command:
+
+sh ~/.cshrc
+
+(To determine which shell you use, type: 'echo \$SHELL')
+\end{sreoutput}
+
+Follow these instructions to update your environment for the current
+and every subsequent shell session.
+
+For instance, if you use the bash shell you'd 
+open your \prog{.bashrc} file in your home directory (e.g.
+\prog{Users/nawrockie/.bashrc}, or just \prog{~/.bashrc}) and add the
+three lines: 
+
+\prog{export PATH="\$PATH:/usr/local/bin"}
+
+\prog{export MANPATH="\$MANPATH:/usr/local/share/man"}
+
+\prog{export SSUALIGNDIR="/usr/local/share/ssu-align-0.1"}
+
+Note that these will only work for the current configuration (that is,
+they'll be different if you change the installation locations with
+\prog{--prefix} or something like it). Then, source this file to
+update the current session:
+
+\user{source ~/.bashrc}
+
+After doing this, you can test if your environment is setup correctly
+by checking the following two commands: 
+
+\user{which ssu-align} 
+
+should return the path to the \prog{ssu-align} script you
+just installed (\prog{/usr/local/bin/ssu-align} if you configured
+with default settings), and
+
+\user{echo \$SSUALIGNDIR}
+
+should return the path to the your data directory
+(\prog{/usr/local/share/ssu-align-0.1} if you configured with default
+settings).
+
+That's it. You can keep reading if you want to know more about
+customizing a \sft{ssu-align} installation, or you can skip ahead to
+section~\ref{sec:tutorial}, the tutorial.
+
+\subsection{More detailed installation notes}
+
+The six main programs in the SSU-ALIGN package:
+\prog{ssu-align}, \prog{ssu-build}, \prog{ssu-draw}, \prog{ssu-mask},\\
+\prog{ssu-merge} and \prog{ssu-prep} are PERL scripts. The
+package depends on, and includes, INFERNAL 
+which itself includes HMMER and the EASEL sequence analysis
+library; all of which are distributed as ANSI C source code. 
+
+SSU-ALIGN is designed to be built and used on UNIX platforms. It
+is developed mainly on Intel GNU/Linux systems and Mac OS, and
+intermittently tested on a variety of other UNIX platforms. It is not
+currently tested on Microsoft Windows, but it should work there; it
+should be possible to build it on any platform with an ANSI C
+compiler. The software itself is vanilla POSIX-compliant ANSI C and
+PERL. You may need to work around the configuration scripts and
+Makefiles to get it built on a non-UNIX platform.
+
+The GNU configure script that comes with SSU-ALIGN has a
+number of options. You can see them all by doing:
+
+\user{./configure --help}
+
+Be warned that some of these options (such as \prog{--enable-mpi}) will
+\emph{not} affect SSU-ALIGN performance. These options affect only how
+INFERNAL or HMMER is built underneath SSU-ALIGN,
+but have no impact on the toplevel SSU-ALIGN programs. 
+
+All customizations can and should be done at the \prog{./configure}
+command line, unless you're a guru delving into the details of the
+source code.
+
+\subsubsection{Setting installation targets}
+
+The most important options are those that let you set the installation
+directories for \prog{make install} to be appropriate to your system.
+What you need to know is that SSU-ALIGN installs three types
+of files: programs, man pages, and data files. It installs the programs in
+\prog{--bindir} (which defaults to \prog{/usr/local/bin}), the man pages in the
+\prog{man1} subdirectory of \prog{--mandir} (default
+\prog{/usr/local/man}) and the data files in a newly created
+subdirectory \prog{ssu-align-0.1} of \prog{--datadir} (which
+defaults to \prog{/usr/local/share}. Thus, say you want
+\prog{make install} to install programs in \prog{/usr/bioprogs/bin}, man pages in
+\prog{/usr/share/man/man1} and data files in \prog{/usr/share/ssu-align-0.1};
+you would configure with:
+
+\noindent \prog{> ./configure --mandir=/usr/share/man --bindir=/usr/bioprogs/bin --datatdir=/usr/share}
+
+That's really all you need to know, since SSU-ALIGN installs
+so few files. But just so you know; GNU configure is very flexible,
+and has shortcuts that accomodates several standard conventions for
+where programs get installed. One common strategy is to install all
+files under one directory, like the default \prog{/usr/local}. To
+change this prefix to something else, say \prog{/usr/mylocal}
+(so that programs go in \prog{/usr/mylocal/bin}, man pages in
+\prog{/usr/mylocal/man/man1}, and data files in
+\prog{/usr/mylocal/share/ssu-align-0.1}), you can use the
+\prog{--prefix} option:
+
+\user{./configure --prefix=/usr/mylocal}
+
+\begin{comment}
+% EPREFIX doesn't work with ssu-align's configure; not sure why
+Another common strategy (especially in multiplatform environments) is
+to put programs in an architecture-specific directory like
+\prog{/usr/share/Linux/bin} while keeping man pages in a shared,
+architecture-independent directory like \prog{/usr/share/man/man1}.
+GNU configure uses \prog{--exec-prefix} to set the path to
+architecture dependent files; normally it defaults to being the same
+as \prog{--prefix}. You could change this, for example, by:
+
+\user{./configure --prefix=/usr/share --exec-prefix=/usr/share/Linux}\\
+\end{comment}
+
+In summary, a complete list of the \prog{./configure} installation
+options that affect SSU-ALIGN:
+
+\begin{tabular}{lll}
+Option                       & Meaning                         & Default\\ \hline
+\prog{--prefix=PREFIX}       & all files                       & \prog{/usr/local} \\
+\prog{--bindir=DIR}          & programs                        & PREFIX/bin/\\
+\prog{--mandir=DIR}          & man pages                       & PREFIX/man/\\
+\prog{--datadir=DIR}         & data files                      & PREFIX/share/\\
+\end{tabular}
+
+
+\subsubsection{Setting compiler and compiler flags}
+
+By default, \prog{configure} searches first for the GNU C compiler
+\prog{gcc}, and if that is not found, for a compiler called \prog{cc}. 
+This can be overridden by specifying your compiler with the \prog{CC}
+environment variable.
+
+By default, the compiler's optimization flags are set to
+\prog{-g -O3} for \prog{gcc}, or \prog{-g} for other compilers.
+This can be overridden by specifying optimization flags with the
+\prog{CFLAGS} environment variable. 
+
+For example, to use an Intel C compiler in
+\prog{/usr/intel/ia32/bin/icc} with 
+optimization flags \prog{-O3 -ipo}, you would do:
+
+\user{env CC=/usr/intel/ia32/bin/icc CFLAGS="-O3 -ipo" ./configure}
+
+which is the one-line shorthand for:
+
+\user{setenv CC     /usr/intel/ia32/bin/icc}\\
+\user{setenv CFLAGS "-O3 -ipo"}\\
+\user{./configure}
+
+If you are using a non-GNU compiler, you will almost certainly want to
+set \prog{CFLAGS} to some sensible optimization flags for your
+platform and compiler. The \prog{-g} default generated unoptimized
+code. At a minimum, turn on your compiler's default optimizations with
+\prog{CFLAGS=-O}.
+
+\begin{comment}
+% This is unchanged from infernal
+\subsection{Example configuration}
+
+The Intel GNU/Linux version installed at Janelia Farm is configured as
+follows:
+
+{\scriptuser{env CFLAGS="-O3" ./configure --enable-mpi --enable-lfs --prefix=/usr/local/infernal-1}}
+\end{comment}
+
+% This is copied and modified from the HMMER3 installation section of
+% its user's guide
+\subsection{Makefile targets}
+
+\begin{sreitems}{\emprog{distclean}}
+\item[\emprog{all}]
+  Builds everything. Same as just saying \prog{make}.
+
+\item[\emprog{check}]
+  Runs the automated test for SSU-ALIGN.
+
+\item[\emprog{clean}]
+  Removes all files generated by compilation (by
+  \prog{make}). Configuration (files generated by
+  \prog{./configure}) is preserved.
+
+\item[\emprog{distclean}]
+  Removes all files generated by configuration (by \prog{./configure})
+  and by compilation (by \prog{make}). 
+
+  Note that if you want to make a new configuration you
+  should do a \prog{make distclean} (rather than a \prog{make
+    clean}), to be sure old configuration files aren't used
+  accidentally.
+\end{sreitems}
+

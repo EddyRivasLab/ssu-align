@@ -1,0 +1,32 @@
+# ssu-draw's crash exercises, in sqc command format.
+# These exercises are meant to test each option at least
+# once, and some in more than one circumstance.
+#
+# EPN, Tue Nov 10 16:16:45 2009
+#
+1  exercise  help:ssu-draw       @ssu-draw@ -h
+1  exercise  seed-15:ssu-align   @ssu-align@ -F ../tutorial/seed-15.fa seed-15
+1  exercise  seed-15:ssu-mask1   @ssu-mask@ seed-15
+1  exercise  seed-15:ssu-draw1   @ssu-draw@ seed-15
+1  exercise  seed-15:ssu-mask2   @ssu-mask@ --no-prob --key-out noprob seed-15
+1  exercise  seed-15:ssu-draw2   @ssu-draw@ --key-in noprob.mask --key-out 2 seed-15
+1  exercise  seed-15:ssu-draw3   @ssu-draw@ --use-masks --key-out 3 seed-15 
+1  exercise  seed-15:ssu-draw4   @ssu-draw@ -a --in-mask seed-15/seed-15.archaea.mask --key-out 4 seed-15/seed-15.archaea.stk
+1  exercise  seed-15:ssu-draw5   @ssu-draw@ --ps2pdf ps2pdfwr --key-out 5 seed-15
+1  exercise  seed-15:ssu-draw6   @ssu-draw@ --ps-keep --key-out 6 seed-15
+1  exercise  seed-15:ssu-draw7   @ssu-draw@ --ps-only --key-out 7 seed-15
+1  exercise  seed-15:ssu-draw8   @ssu-draw@ --prob --no-aln --key-out 8 seed-15 
+1  exercise  seed-15:ssu-draw9   @ssu-draw@ --ins --no-aln --key-out 9 seed-15 
+1  exercise  seed-15:ssu-draw10  @ssu-draw@ --dall --no-aln --key-out 10 seed-15 
+1  exercise  seed-15:ssu-draw11  @ssu-draw@ --dint --no-aln --key-out 11 seed-15 
+1  exercise  seed-15:ssu-draw12  @ssu-draw@ --dall --no-aln --key-out 12 seed-15 
+1  exercise  seed-15:ssu-draw13  @ssu-draw@ --info --no-aln --key-out 13 seed-15 
+1  exercise  seed-15:ssu-draw14  @ssu-draw@ --struct --no-aln --key-out 14 seed-15 
+1  exercise  seed-15:ssu-draw15  @ssu-draw@ --prob --ins --dall --dint --info --struct --key-out 15 seed-15 
+1  exercise  seed-15:ssu-draw16  @ssu-draw@ --indi --no-aln --key-out 16 seed-15 
+1  exercise  seed-15:ssu-draw17  @ssu-draw@ --indi --no-prob --no-aln --key-out 17 seed-15 
+1  exercise  seed-15:ssu-draw18  @ssu-draw@ --cons --no-aln --key-out 18 seed-15 
+1  exercise  seed-15:ssu-draw19  @ssu-draw@ --prob --ins --dall --dint --info --struct --indi --cons --key-out 19 seed-15
+1  exercise  seed-15:ssu-draw20  @ssu-draw@ --no-leg --key-out 20 seed-15 
+1  exercise  seed-15:ssu-draw21  @ssu-draw@ --no-head --key-out 21 seed-15 
+1  exercise  seed-15:ssu-draw22  @ssu-draw@ --no-foot --key-out 22 seed-15 

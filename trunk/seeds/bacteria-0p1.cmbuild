@@ -1,0 +1,15 @@
+# cmbuild :: build RNA covariance model(s) from alignment
+# INFERNAL 1.0 (January 2009)
+# Copyright (C) 2009 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: ../../src/cmbuild -F --enone --gapthresh 0.8 bacteria-0p1.cm bacteria-0p1.stk
+# date:    Thu Aug 20 17:50:51 2009
+#
+#                                                                         rel entropy
+#                                                                        ------------
+#  aln  cm idx  name          nseq  eff_nseq    alen   clen   bps  bifs     CM    HMM
+# ----  ------  --------  --------  --------  ------  -----  ----  ----  -----  -----
+     1       1  bacteria        93     93.00    1689   1582   480    31  1.488  1.306
+#
+# CPU time: 0.48u 0.02s 00:00:00.50 Elapsed: 00:00:01

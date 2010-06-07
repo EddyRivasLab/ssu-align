@@ -1,0 +1,19 @@
+# SSU-ALIGN package's crash exercises, in sqc command format.
+# For more see ssu-align.sqc, ssu-build.sqc, ssu-draw.sqc, ssu-mask.sqc, ssu-merge.sqc
+# EPN, Tue Nov 11 15:45:00 2008
+#
+1  exercise  seed-6:ssu-align  @ssu-align@ -F seed-6.fa seed-6
+1  exercise  seed-6:ssu-mask   @ssu-mask@ seed-6 
+1  exercise  seed-6:ssu-draw   @ssu-draw@ seed-6 
+
+1  exercise  ecoli:ssu-build   @ssu-build@ -F bacteria-0p1.ecoli.stk
+
+1  exercise  ecoli:ssu-align   @ssu-align@ -F -m bacteria-0p1.ecoli.cm seed-6.fa ecoli
+1  exercise  ecoli:ssu-mask    @ssu-mask@ -m bacteria-0p1.ecoli.cm ecoli
+
+1  exercise  ecoli:ssu-align-2 @ssu-align@ -F -b 800 -m bacteria-0p1.ecoli.cm seed-6.fa ecoli-b800
+1  exercise  ecoli:ssu-mask-2  @ssu-mask@ -m bacteria-0p1.ecoli.cm ecoli
+
+1  exercise  ecoli:ssu-align-3 @ssu-align@ -F -l 1500 -m bacteria-0p1.ecoli.cm seed-6.fa ecoli-l1500
+
+

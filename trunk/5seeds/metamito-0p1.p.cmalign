@@ -1,0 +1,75 @@
+# cmalign :: align sequences to an RNA CM
+# INFERNAL 1.0 (January 2009)
+# Copyright (C) 2009 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: /Users/nawrockie/src/infernal-1.0/src/cmalign -p --sub -o metamito-0p1.p.stk metamito-0p1.cm metamito-0p1.fa
+# date:    Thu Jul  2 20:20:09 2009
+#
+# cm name                    algorithm  config  sub  bands     tau
+# -------------------------  ---------  ------  ---  -----  ------
+# metamito                     opt acc  global  yes    hmm   1e-07
+#
+#                                                                                      bit scores                           
+#                                                                                  ------------------                       
+# seq idx  seq name                                                           len     total    struct  avg prob      elapsed
+# -------  ---------------------------------------------------------------  -----  --------  --------  --------  -----------
+        1  00285::Mitochondrion_Amblysomus_hottentotus::M95108                952   1317.93     81.68     0.977  00:00:00.98
+        2  00676::Mitochondrion_Alligator_mississippiensis::L28074            939    903.81    173.52     0.978  00:00:01.06
+        3  00505::Mitochondrion_Anas_platyrhynchos::L16770                    985   1113.19    146.25     0.982  00:00:01.08
+        4  00224::Mitochondrion_Balaenoptera_musculus::X72204                 972   1338.05     77.32     0.987  00:00:01.04
+        5  00113::Mitochondrion_Cyprinus_carpio::X61010                       951   1120.28    138.97     0.988  00:00:00.98
+        6  00510::Mitochondrion_Coscoroba_coscoroba.::S76216                  983   1135.10    143.72     0.984  00:00:01.02
+        7  00567::Mitochondrion_Coturnix_coturnix::X57245                     971   1085.00    114.22     0.980  00:00:01.02
+        8  00108::Mitochondrion_Crossostoma_lacustre::M91245                  951   1158.02    150.03     0.983  00:00:01.01
+        9  00513::Mitochondrion_Cygnus_melancoryphus.::S76217                 989   1131.24    141.37     0.984  00:00:01.02
+       10  00569::Mitochondrion_Gallus_gallus::X52392                         976   1129.62    123.26     0.985  00:00:01.02
+       11  00645::Mitochondrion_Harpactes_ardens.::U94810                     957   1050.09    131.42     0.971  00:00:00.99
+       12  00459::Lutreolina_crassicaudata::U33494                            953   1287.46     93.30     0.991  00:00:01.02
+       13  00469::Macropus_giganteus::X86941                                  952   1288.33     82.15     0.986  00:00:01.12
+       14  00180::Mitochondrion_Oncorhynchus_mykiss::L29771                   944   1156.05    124.37     0.989  00:00:01.01
+       15  00191::Mitochondrion_Protopterus_dolloi::L42813                    933   1049.30    156.73     0.988  00:00:00.97
+       16  00315::Mitochondrion_Pan_troglodytes_common_chimpanzee_::D38113    949   1257.77     85.20     0.982  00:00:00.98
+       17  00799::Mitochondrion_Rana_catesbeiana::X12841                      937   1014.62    145.59     0.971  00:00:01.09
+       18  00100::Mitochondrion_Scyliorhinus_canicula.::Y16067                960   1124.58    142.42     0.989  00:00:01.08
+       19  00184::Mitochondrion_Salmo_salar::U12143                           948   1178.15    146.73     0.972  00:00:01.12
+       20  00231::Mitochondrion_Antilocapra_americana::M55540                 958   1340.48     61.19     0.984  00:00:01.00
+       21  00359::Acomys_cahirinus::X84387                                    940   1236.61     80.14     0.970  00:00:00.93
+       22  00210::Mitochondrion_Ailurus_fulgens.::Y08511                      964   1329.78     56.78     0.987  00:00:01.02
+       23  00332::Mitochondrion_Ateles_sp.::AF069978                          927   1196.40     99.39     0.986  00:00:00.99
+       24  00289::Mitochondrion_Blarina_brevicauda::M95110                    963   1360.67     76.29     0.983  00:00:01.04
+       25  00393::Mitochondrion_Dugong_dugon.::U60185                         957   1312.80     92.71     0.976  00:00:01.02
+       26  00414::Mitochondrion_Dasyurus_geoffroii.::AF009891                 954   1285.14     84.60     0.983  00:00:01.03
+       27  00282::Mitochondrion_Dasypus_novemcinctus.::Y11832                 966   1288.17     85.24     0.984  00:00:01.02
+       28  00295::Mitochondrion_Elephantulus_rufescens.::U97339               956   1269.68     85.35     0.977  00:00:01.03
+       29  00198::Mitochondrion_Felis_catus::U20753                           960   1341.51     62.49     0.980  00:00:01.02
+       30  00307::Mitochondrion_Gorilla_gorilla.::X93347                      950   1262.04     87.74     0.981  00:00:01.02
+       31  00230::Mitochondrion_Hippopotamus_amphibius.::AJ010957             968   1333.86     45.91     0.977  00:00:01.02
+       32  00202::Mitochondrion_Herpestes_auropunctatus.::Y08506              957   1332.97     69.63     0.977  00:00:01.02
+       33  00487::Mitochondrion_Hypsiprymnodon_moschatus.::AF027997           956   1284.12     84.69     0.991  00:00:00.96
+       34  00340::Mitochondrion_Lemur_catta.::AF038013                        954   1327.01     63.78     0.996  00:00:01.00
+       35  00303::Mitochondrion_Manis_sp.::U61079                             958   1280.01     91.08     0.985  00:00:01.04
+       36  00355::Mesocricetus_auratus::X84390                                953   1252.62    117.41     0.985  00:00:01.03
+       37  00366::Mitochondrion_Mus_musculus::J01420                          956   1259.62     87.37     0.985  00:00:01.03
+       38  00208::Mitochondrion_Mustela_putorius.::Y08516                     959   1328.54     66.85     0.981  00:00:01.03
+       39  00267::Mitochondrion_Nyctimene_robinsoni.::U93061                  969   1363.60     70.90     0.985  00:00:01.04
+       40  00491::Mitochondrion_Notoryctes_typhlops.::U61075                  952   1232.57     87.48     0.979  00:00:00.95
+       41  00396::Mitochondrion_Orycteropus_afer.::Y18475                     957   1289.99     63.99     0.976  00:00:01.00
+       42  00193::Ornithorhychus_anatinus::U33498_X83427                      944   1270.86    105.05     0.983  00:00:01.00
+       43  00240::Mitochondrion_Ovis_aries.::AF010406                         958   1321.71     69.30     0.985  00:00:01.12
+       44  00293::Mitochondrion_Oryctolagus_cuniculus.::AJ001588              957   1326.32     78.80     0.992  00:00:01.08
+       45  00247::Mitochondrion_Odocoileus_virginianus::M35874                953   1346.98     60.12     0.991  00:00:01.08
+       46  00485::Mitochondrion_Phascolarctos_cinereus.::U61076               952   1239.03     88.60     0.984  00:00:01.09
+       47  00376::Mitochondrion_Rattus_norvegicus_rat_::J01438                953   1226.03    100.89     0.985  00:00:01.09
+       48  00301::Mitochondrion_Rhinoceros_unicornis.::X97336                 971   1300.98     59.46     0.979  00:00:01.10
+       49  00391::Mitochondrion_Sciurus_aestuans.::AJ012746                   968   1314.47     99.58     0.984  00:00:01.09
+       50  00291::Mitochondrion_Scalopus_aquaticus.::AF069539                 965   1368.01     76.47     0.984  00:00:01.09
+       51  00250::Mitochondrion_Sus_scrofa.::AJ002189                         962   1377.20     66.26     0.980  00:00:01.07
+       52  00341::Mitochondrion_Tarsius_syrichta.::AF069976                   931   1256.60     73.12     0.983  00:00:01.04
+       53  00489::Mitochondrion_Vombatus_ursinus.::U61078                     958   1329.63     81.19     0.988  00:00:01.07
+       54  00752::Xenopus_laevis::M27605                                      945   1144.37    120.81     0.974  00:00:01.08
+       55  00218::Mitochondrion_Zalophus_californianus.::Y08525               962   1368.64     63.95     0.984  00:00:00.99
+
+# Alignment saved in file metamito-0p1.p.stk.
+#
+# CPU time: 56.96u 3.11s 00:01:00.07 Elapsed: 00:01:00
