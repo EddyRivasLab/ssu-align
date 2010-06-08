@@ -181,7 +181,7 @@ dist:
 	# Other keyword replacements
 	#
 	infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE}                        ../${BASENAME}-${RELEASE}/documentation/userguide/titlepage.tex
-	infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} ../${BASENAME}-${RELEASE}/00README
+	infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} ../${BASENAME}-${RELEASE}/README
 	for manpage in ../${BASENAME}-${RELEASE}/documentation/manpages/*; do\
 	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} $$manpage;\
 	done
@@ -291,11 +291,11 @@ actually-install:
 	done
 # copy the postscript templates
 	for file in $(PSLIBFILES); do\
-		cp seeds/ss-diagrams/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+		cp seeds/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
 	done
 # copy the default masks
 	for file in $(MASKLIBFILES); do\
-		cp seeds/masks/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+		cp seeds/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
 	done
 # copy the PERL module
 	for file in $(PERLMODULEFILES); do\

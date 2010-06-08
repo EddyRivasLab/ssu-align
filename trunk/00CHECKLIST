@@ -60,7 +60,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
         (cd documentation/userguide; make) 
         make check
 	make install
-	make REPOSITORY=https://svn.janelia.org/eddylab/eddys/src/infernal/trunk RELEASE=snapxxx dist
+	make REPOSITORY=https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk RELEASE=0.1 dist
 
    When trunk is clean,
         svn commit
