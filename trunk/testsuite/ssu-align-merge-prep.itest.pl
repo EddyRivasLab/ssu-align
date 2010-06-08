@@ -724,7 +724,6 @@ if(($testnum eq "") || ($testnum == $testctr)) {
 	if($output !~ /\s+archaea\s+1/)  { die "ERROR, problem with aligning (set $testctr, iteration: $iter_strA[$i])\n"; }
 	if($output !~ /\s+bacteria\s+2/) { die "ERROR, problem with aligning (set $testctr, iteration: $iter_strA[$i])\n"; }
 	if($output !~ /\s+eukarya\s+1/)  { die "ERROR, problem with aligning (set $testctr, iteration: $iter_strA[$i])\n"; }
-	exit 0;
     }
 }
 $testctr++;
