@@ -88,13 +88,13 @@ PACKAGE_URL="http://selab.janelia.org/software.html"
 INFERNAL_DATE="June 2010"
 INFERNAL_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 INFERNAL_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
-INFERNAL_VERSION=sa$PACKAGE_VERSION
+INFERNAL_VERSION=s$PACKAGE_VERSION
 INFERNAL_URL="http://infernal.janelia.org/"
 
 HMMER_DATE="June 2010"
 HMMER_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 HMMER_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
-HMMER_VERSION=sa$PACKAGE_VERSION
+HMMER_VERSION=s$PACKAGE_VERSION
 HMMER_URL="http://hmmer.org/"
 HMMER_ESLDIR="../easel"
 
@@ -102,7 +102,7 @@ EASEL_DATE="June 2010"
 EASEL_COPYRIGHT="Copyright (C) 2010 HHMI Janelia Farm Research Campus"
 EASEL_LICENSE="Freely distributed under the Janelia Software License."
 EASEL_LICENSETAG=jsl
-EASEL_VERSION="sa$PACKAGE_VERSION"
+EASEL_VERSION="s$PACKAGE_VERSION"
 EASEL_URL="http://bioeasel.org/"
 
 # Output variables  (AC_OUTPUT replaces @var@ in input files, such as Makefiles)

@@ -1,5 +1,30 @@
 # EPN, Tue Jun  8 13:27:18 2010
-# How to rebuild the default models from the seed alignments.
+#
+# seeds/ subdirectory of SSU-ALIGN source distribution.
+#
+# This directory contains files related to the three default
+# models used by SSU-ALIGN 0.1.  The following files exist 
+# For each family <fam>, where <fam> is either "archaea", 
+# "bacteria", or "eukarya"
+# 
+# <fam>-0p1.cm:   the CM file for the family
+# <fam>-0p1.stk:  the seed alignment for the family
+# <fam>-0p1.fa:   unaligned versions of the seed alignment sequences
+# <fam>-0p1.mask: the default mask for the family
+# <fam>-0p1.ps:   the postscript template file for the family
+#                 used by ssu-draw.
+#
+# The following files contain info on all three families. They
+# are simply the three per-family files concatenated together.
+#
+# ssu-align-0p1.cm:  All 3 default models.
+# ssu-align-0p1.stk: All 3 default seed alignments
+# ssu-align-0p1.ps:  All 3 default postscript template files.
+# 
+# build-default-models.sh: contains the commands used to build the 
+#                          default CMs from the default seeds.
+#
+
 # WARNING: these command will overwrite the existing default files.
 ../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 ssu3-0p1.cm ssu3-0p1.stk > ssu3-0p1.cmbuild
 ../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 archaea-0p1.cm archaea-0p1.stk > archaea-0p1.cmbuild
