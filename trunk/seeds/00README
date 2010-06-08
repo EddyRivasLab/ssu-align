@@ -1,14 +1,7 @@
-#Instructions on how to recreate some of the files in this directory.
-#WARNING: these commands will overwrite files.
-#
-#To build the default models:
-sh build-default-models.sh
-
-#To realign the seed seqs to the model:
-sh realign.sh
-
-#To use those realignments to construction posterior probability masks:
-sh create-realn-masks.sh
-
-#To create a bunch of secondary structures go to ./ss-diagrams and execute:
-sh draw-ss-diagrams.sh
+# EPN, Tue Jun  8 13:27:18 2010
+# How to rebuild the default models from the seed alignments.
+# WARNING: these command will overwrite the existing default files.
+../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 ssu3-0p1.cm ssu3-0p1.stk > ssu3-0p1.cmbuild
+../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 archaea-0p1.cm archaea-0p1.stk > archaea-0p1.cmbuild
+../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 bacteria-0p1.cm bacteria-0p1.stk > bacteria-0p1.cmbuild
+../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 eukarya-0p1.cm eukarya-0p1.stk > eukarya-0p1.cmbuild
