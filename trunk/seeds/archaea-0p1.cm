@@ -1,4 +1,4 @@
-INFERNAL-1 [1.0]
+INFERNAL-1 [s0.1]
 NAME     archaea
 STATES   4678
 NODES    1159
@@ -8,8 +8,8 @@ WBETA    1e-07
 NSEQ     23
 EFFNSEQ  23.000
 CLEN     1508
-BCOM     ../../src/cmbuild -F --enone --gapthresh 0.8 archaea-0p1.cm archaea-0p1.stk
-BDATE    Thu Aug 20 17:50:51 2009
+BCOM     ../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 archaea-0p1.cm archaea-0p1.stk
+BDATE    Tue Jun  8 16:33:43 2010
 NULL     0.000  0.000  0.000  0.000 
 MODEL:
 				[ ROOT    0 ]

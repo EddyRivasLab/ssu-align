@@ -67,23 +67,19 @@ fi
 # From them, it derives one more:
 #     PACKAGE_STRING    <package> <version>, e.g. "SSU-ALIGN 0.1"
 # We also define additional variables:
-#     PACKAGE_RELCODE     unique CVS tag without .'s: e.g. "ssualign0_1"
-#     PACKAGE_DATE        release date: e.g. "October 2007"
-#     PACKAGE_COPYRIGHT   one-line copyright string
-#     PACKAGE_LICENSE     one-line license string
-#     PACKAGE_LICENSETAG  which license to bundle from Licenses/ subdirectory.
-#     PACKAGE_VERSION     copy of version code, e.g. "1.0"
-#     PACKAGE_URL         URL home.
+#     SSUALIGN_DATE        release date: e.g. "June 2010"
+#     SSUALIGN_COPYRIGHT   one-line copyright string
+#     SSUALIGN_LICENSE     one-line license string
+#     SSUALIGN_VERSION     copy of version code, e.g. "0.1"
+#     SSUALIGN_URL         URL home for SSUALIGN.
 # And we have to define the relevant package variables for Infernal, Easel and HMMER as well.
 #
 ################################################################
-
-PACKAGE_DATE="June 2010"
-PACKAGE_COPYRIGHT="Copyright (C) 2010 HHMI Janelia Farm Research Campus"
-PACKAGE_LICENSE="Freely distributed under the GNU General Public License (GPLv3)"
-PACKAGE_LICENSETAG=gnu
-PACKAGE_VERSION=$PACKAGE_VERSION
-PACKAGE_URL="http://selab.janelia.org/software.html"
+SSUALIGN_DATE="June 2010"
+SSUALIGN_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
+SSUALIGN_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
+SSUALIGN_VERSION=$PACKAGE_VERSION
+SSUALIGN_URL="http://selab.janelia.org/software.html"
 
 INFERNAL_DATE="June 2010"
 INFERNAL_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
@@ -101,7 +97,6 @@ HMMER_ESLDIR="../easel"
 EASEL_DATE="June 2010"
 EASEL_COPYRIGHT="Copyright (C) 2010 HHMI Janelia Farm Research Campus"
 EASEL_LICENSE="Freely distributed under the Janelia Software License."
-EASEL_LICENSETAG=jsl
 EASEL_VERSION="s$PACKAGE_VERSION"
 EASEL_URL="http://bioeasel.org/"
 

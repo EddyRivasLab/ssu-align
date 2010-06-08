@@ -1,4 +1,4 @@
-INFERNAL-1 [1.0]
+INFERNAL-1 [s0.1]
 NAME     bacteria
 STATES   4905
 NODES    1228
@@ -8,8 +8,8 @@ WBETA    1e-07
 NSEQ     93
 EFFNSEQ  93.000
 CLEN     1582
-BCOM     ../../src/cmbuild -F --enone --gapthresh 0.8 bacteria-0p1.cm bacteria-0p1.stk
-BDATE    Thu Aug 20 17:50:51 2009
+BCOM     ../infernal/src/ssu-cmbuild -F --enone --gapthresh 0.8 bacteria-0p1.cm bacteria-0p1.stk
+BDATE    Tue Jun  8 16:33:44 2010
 NULL     0.000  0.000  0.000  0.000 
 MODEL:
 				[ ROOT    0 ]
