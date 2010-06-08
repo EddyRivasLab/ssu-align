@@ -74,6 +74,15 @@ INFPROGS = cmalign\
            cmsearch\
 	   cmstat
 
+SSUINFPROGS = ssu-cmalign\
+	      ssu-cmbuild\
+	      ssu-cmcalibrate\
+	      ssu-cmemit\
+	      ssu-cmfetch\
+	      ssu-cmscore\
+              ssu-cmsearch\
+	      ssu-cmstat
+
 ESLPROGS = esl-afetch\
 	   esl-alimanip\
 	   esl-alimap\
@@ -93,6 +102,26 @@ ESLPROGS = esl-afetch\
 	   esl-shuffle\
 	   esl-ssdraw\
 	   esl-weight
+
+SSUESLPROGS = ssu-esl-afetch\
+	      ssu-esl-alimanip\
+	      ssu-esl-alimap\
+	      ssu-esl-alimask\
+              ssu-esl-alimerge\
+              ssu-esl-alistat\
+              ssu-esl-cluster\
+	      ssu-esl-compalign\
+	      ssu-esl-compstruct\
+	      ssu-esl-histplot\
+	      ssu-esl-mask\
+	      ssu-esl-reformat\
+	      ssu-esl-selectn\
+	      ssu-esl-seqrange\
+	      ssu-esl-seqstat\
+	      ssu-esl-sfetch\
+	      ssu-esl-shuffle\
+	      ssu-esl-ssdraw\
+	      ssu-esl-weight
 
 # List of the files to be copied to the lib/ directory.
 #
@@ -406,17 +435,11 @@ clean:
 	if test -e infernal/hmmer/profmark/Makefile;  then (cd infernal/hmmer/profmark;  make clean); fi
 	if test -e infernal/hmmer/testsuite/Makefile; then (cd infernal/hmmer/testsuite; make clean); fi
 	if test -e infernal/hmmer/documentation/userguide/Makefile; then (cd infernal/hmmer/documentation/userguide; make clean); fi
-	for file in $(INFPROGS); do\
-		rm infernal/src/ssu-$$file;\
-	done;
-	for file in $(ESLPROGS); do\
-		rm infernal/easel/miniapps/ssu-$$file;\
-	done;
 
 # "make distclean" leaves a pristine source distribution.
 #
 distclean:
-	-rm -f  config.cache config.log config.status
+	-rm -f  config.cache config.log config.status infernal/src/$(SSUINFPROGS) infernal/easel/miniapps/$(SSUESLPROGS)
 	-rm -rf autom4te.cache
 	-rm -f *.o *~ Makefile.bak core TAGS gmon.out
 	(if cd documentation/userguide; then make distclean; fi)
@@ -430,10 +453,3 @@ distclean:
 	if test -e infernal/hmmer/testsuite/Makefile; then (cd infernal/hmmer/testsuite; make distclean); fi
 	if test -e infernal/hmmer/documentation/userguide/Makefile; then (cd infernal/hmmer/documentation/userguide; make distclean); fi
 	-rm Makefile
-	for file in $(INFPROGS); do\
-		rm infernal/src/ssu-$$file;\
-	done;
-	for file in $(ESLPROGS); do\
-		rm infernal/easel/miniapps/ssu-$$file;\
-	done;
-
