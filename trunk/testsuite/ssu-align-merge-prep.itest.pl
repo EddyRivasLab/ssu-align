@@ -852,6 +852,7 @@ $testctr++;
 ###################################################
 # test ssu-merge --rfonly
 if(($testnum eq "") || ($testnum == $testctr)) {
+    $presuf_file = "";
     $align_opts = ""; 
     $merge_opts = "--rfonly";
     $prep_opts  = "-y -f";
@@ -1019,6 +1020,7 @@ unlink $dir . ".presuf4";
 unlink $dir . ".presuf5";
 unlink $dir . ".presuf6";
 
+
 if(-d $dir) { 
     foreach $file (glob("$dir/*")) { 
 	unlink $file;
@@ -1026,6 +1028,7 @@ if(-d $dir) {
     rmdir $dir;
 }
 if(-e "$dir.ssu-align.sh") { unlink $dir . ".ssu-align.sh"; }
+if(-e " $trna_cmfile") { unlink $trna_cmfile; }
 
 printf("All commands completed successfully.\n");
 exit 0;
