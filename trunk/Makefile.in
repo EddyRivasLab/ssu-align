@@ -199,7 +199,7 @@ dist:
 	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} ../${BASENAME}-${RELEASE}/infernal/documentation/manpages/$$prog.man;\
 	done
 	for prog in $(ESLPROGS); do\
-	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/$$prog.man\;
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/$$prog.man;\
 	done
 	#
 	# Make the User's Guide, and copy to top level. (We'll
@@ -238,8 +238,6 @@ dist:
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/SUBPACKAGES
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/00WISHLIST
 	(cd ../${BASENAME}-${RELEASE}/infernal/easel; make implode)
-	(cd ../${BASENAME}-${RELEASE}/infernal/hmmer; make implode)
-	(cd ../${BASENAME}-${RELEASE}/infernal/; make implode)
 	(cd ../${BASENAME}-${RELEASE}/;      make distclean)
 	#
 	# Packaging commands
