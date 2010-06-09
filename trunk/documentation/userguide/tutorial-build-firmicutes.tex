@@ -38,7 +38,7 @@ used previously in this tutorial.
 The first step is to identify which of the sequences in the default
 bacteria seed are \emph{Firmicutes}. To do this, I ran the FASTA file
 with the unaligned bacterial seed sequences in
-\prog{seeds/bacteria-0p1.fa} through the RDP-CLASSIFIER tool
+\prog{models/bacteria-0p1.fa} through the RDP-CLASSIFIER tool
 using default parameters \cite{Wang07} on the RDP website: \\
 \htmladdnormallink{http://rdp.cme.msu.edu/classifier}{http://rdp.cme.msu.edu/classifier}\footnote{Version
   2.2 of RDP-CLASSIFIER was used with RDP training set 6.}
@@ -74,9 +74,9 @@ line, and \prog{firm-6.list} includes the same names but without the
 From the \prog{tutorial/} directory, we can create the two alignments
 that we want with two commands:
 
-\user{ssu-mask -a --seq-k firm-6.list --key-out firm-6 ../seeds/bacteria-0p1.stk}
+\user{ssu-mask -a --seq-k firm-6.list --key-out firm-6 ../models/bacteria-0p1.stk}
 
-\user{ssu-mask -a --seq-r firm-7.list --key-out nonfirm-86 ../seeds/bacteria-0p1.stk}
+\user{ssu-mask -a --seq-r firm-7.list --key-out nonfirm-86 ../models/bacteria-0p1.stk}
 
 The first command creates the six sequence \emph{Firmicutes}-only
 alignment in the file \\ \prog{bacteria-0p1.firm-6.seqk.stk} and the
@@ -87,7 +87,7 @@ to keep only the six sequences listed in \prog{firm-6.list} In the
 second command, the \prog{--seq-r} option tells \prog{ssu-mask} to
 remove only the seven sequences listed in \prog{firm-7.list} and keep
 all other sequences.  These commands only remove selected sequences
-from the default seed in \prog{../seeds/bacterial-0p1.stk}, none of
+from the default seed in \prog{../models/bacterial-0p1.stk}, none of
 the positions of the aligned nucleotides in the remaining sequences
 have been changed.
 
@@ -114,7 +114,7 @@ Since we'd also like to be able to differentiate archaeal and
 eukaryotic sequences from bacterial sequences, we can also append
 those default models:
 
-\user{cat ../seeds/archaea-0p1.cm ../seeds/eukarya-0p1.cm >> my.cm}
+\user{cat ../models/archaea-0p1.cm ../models/eukarya-0p1.cm >> my.cm}
 
 Now the file \prog{my.cm} includes four CMs. Let's run
 \prog{ssu-align} using this model on the \prog{seed-15.fa} dataset
