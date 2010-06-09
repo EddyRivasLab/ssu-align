@@ -274,7 +274,6 @@ dist:
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/00CHECKLIST
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/easel
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/tutorial
-	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/profmark
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/Licenses
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/configure.ac
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/easel/configure.ac
