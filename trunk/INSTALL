@@ -8,8 +8,7 @@ including customization, see the Installation chapter in the SSU-ALIG
 User's Guide (Userguide.pdf).
 
 Starting from a source distribution, ssu-align-0.1.tar.gz:
- uncompress:                uncompress ssu-align-0.1.tar.gz  
- unpack:                    tar xf ssu-align-0.1.tar
+ uncompress and unpack:     tar xvfz ssu-align.tar.gz
  move into new directory:   cd ssu-align-0.1
  configure:                 ./configure
  build:                     make

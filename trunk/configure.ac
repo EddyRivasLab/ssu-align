@@ -11,8 +11,8 @@
 # HMMER and Easel's configure script must also appear here. Since Infernal's
 # configure script is setup to configure HMMER and Easel as well, ensuring
 # everything from Infernal's configure script appears here should 
-# suffice.
-#
+# suffice. 
+# 
 # reminders to save re-reading autoconf manual for the n'th time:
 #   - output variables:
 #        are defined here as normal shell variables, e.g. FOO="my string"

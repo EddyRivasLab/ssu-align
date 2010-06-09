@@ -39,7 +39,7 @@ release candidate  <lineage>.<major-release>rc<n>                 1.0rc1
 snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap20080325
 
 1. Announce the intent to release to all developers. 
-   Commit working copies on all machines (including Infernal and Easel).
+   Commit working copies on all machines (including Infernal, HMMER, and Easel).
    Example of checking for stray or uncommitted files:
 	 ./configure
          make distclean
@@ -51,11 +51,9 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
 2. For a major release (where we're about to create a new branch):
    First test the development trunk.
    Compile should be entirely clean when compiled -Wall.
-   [MPI builds require being on login-eddy]
-   
 
         ssh login-eddy
-        ./configure --enable-debugging --enable-mpi --prefix=/groups/eddy/home/eddys/tmp/infernal
+        ./configure --enable-debugging --prefix=/groups/eddy/home/nawrockie/tmp/ssu-align
         make
         (cd documentation/userguide; make) 
         make check
@@ -67,15 +65,21 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    We're (usually) next going to move out of the trunk to the release branch.
 
 
-3. For a major release, create stable release branches for Infernal and Easel.
+3. If I ever do a major release, create stable release branches for Infernal, HMMER and Easel.
    All subsequent bugfix releases will happen in this branch, while trunk keeps moving.
    [Query replace the version # here]
-         svn copy https://svn.janelia.org/eddylab/eddys/src/infernal/trunk\
-                 https://svn.janelia.org/eddylab/eddys/src/infernal/branches/1.0\
+         svn copy https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk\
+                 https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/branches/1.0\
                  -m "created 1.0 release branch"          
+         svn copy https://svn.janelia.org/eddylab/eddys/src/infernal/trunk\
+                 https://svn.janelia.org/eddylab/eddys/src/infernal/branches/ssu-align/1.0\
+                 -m "created SSU-ALIGN 1.0 release branch"          
+         svn copy https://svn.janelia.org/eddylab/eddys/src/hmmer/trunk\
+                 https://svn.janelia.org/eddylab/eddys/src/hmmer/branches/ssu-align/1.0\
+                 -m "created SSU-ALIGN 1.0 release branch"          
          svn copy https://svn.janelia.org/eddylab/eddys/easel/trunk\
-                 https://svn.janelia.org/eddylab/eddys/easel/branches/infernal/1.0\
-                 -m "created Infernal 1.0 release branch"          
+                 https://svn.janelia.org/eddylab/eddys/easel/branches/ssu-align/1.0\
+                 -m "created SSU-ALIGN 1.0 release branch"          
 
 
 4. Move into a working copy of the release branch.
@@ -83,20 +87,27 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    For a dev snapshot, this is the normal working copy.
    For a major or minor release, this is a fresh working copy of the appropriate branch:
        cd ~/releases
-       svn checkout https://svn.janelia.org/eddylab/eddys/src/infernal/branches/1.0 infernal-release
+       svn checkout https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/branches/1.0 ssu-align-release
 
-   Don't call this working directory infernal-xx, nor infernal! Call it
-   infernal-release, because later "make dist" is going to try to create
-   infernal-xx as its release, and because you want to recognize that
-   it's different from src/infernal.  
+   Don't call this working directory ssu-align-xx, nor ssu-align! Call it
+   ssu-align-release, because later "make dist" is going to try to create
+   ssu-align-xx as its release, and because you want to recognize that
+   it's different from src/ssu-align.  
 
    If this is the first time (a new release branch), you also need to update the "svn:externals"
-   so Easel is checked out from the appropriate stable branch too.
+   so Infernal, HMMER and Easel are checked out from the their appropriate stable branches too.
+
+   NOTE: for the 0.1 release, I didn't have to do this (since branches
+   weren't used. So I'm not sure the below commands are correct. I
+   think I'll have to update externals for Infernal, and then for
+   easel and hmmer within infernal, but not for hmmer/easel???
 
          svn proplist --verbose https://svn.janelia.org/eddylab/eddys/src/infernal/branches/1.0
          svn propedit svn:externals infernal
-           easel   https://svn.janelia.org/eddylab/eddys/easel/branches/infernal/1.0
-         cd infernal
+           infernal         https://svn.janelia.org/eddylab/eddys/src/infernal/branches/ssu-align/1.0
+           infernal/easel   https://svn.janelia.org/eddylab/eddys/easel/branches/ssu-align/1.0
+           infernal/hmmer   https://svn.janelia.org/eddylab/eddys/src/hmmer/branches/ssu-align/1.0
+         cd ssu-align
          svn update
 	 svn commit
 
@@ -119,37 +130,30 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    
 
 5. Test.
-   The infernal testsuite is currently relatively weak. It needs to include
-   valgrind tests for memory leaks, for example.
+   The SSU-ALIGN testsuite is currently relatively weak; and its based
+   on PERL scripts. It needs to include valgrind tests for memory leaks, for example.
+   The INFERNAL testsuite does not do memory leak checking either.
 
    But even so, don't rely solely on the automated exercises and bug tests.
    Run some anecdotal examples by hand too.
 
-   On login-eddy, because we need mpicc:
-
     	 autoconf
-         (cd easel; autoconf)
-         (cd testsuite; ln -s ../easel/devkit/sqc .)
-     	 env CFLAGS="-g -Wall" ./configure --enable-mpi --prefix=/groups/eddy/home/eddys/tmp/infernal
+         (cd infernal/testsuite; ln -s ../easel/devkit/sqc .)
+     	 env CFLAGS="-g -Wall" ./configure --prefix=/groups/eddy/home/eddys/tmp/infernal
          make
          make check
 
-   Make a new DicF model in this version's format, for
-   backwards compatibility testing:
-         cd testsuite
-         ../src/cmbuild DicF-$RELEASE.cm DicF.seed
-         svn add DicF-$RELEASE.cm
-   Add a line to exercises.sqc.
-
    Run some anecdotes. Examples:
-        ../src/cmbuild foo.cm ../intro/trna.sto
-        ../src/cmsearch foo.cm trna-regression.fa
+        ../infernal/src/ssu-cmbuild foo.cm ../infernal/intro/trna.sto
+        ../infernal/src/ssu-cmsearch foo.cm trna-regression.fa
    Run those with valgrind, too.
 
    Check the User's Guide.
       cd documentation/userguide
       make
 
+   Check that the Infernal, HMMER and Easel user's guides build, but
+   place correct release numbers on their covers (e.g. 's0.1').
 
 6. Write (or update) release notes.
    For the first time on a new release branch, it's handy to look
@@ -160,27 +164,20 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
          emacs documentation/release-notes/RELEASE-${RELEASE}
 	 svn add documentation/release-notes/RELEASE-${RELEASE}
 
-                 sre/src                sre/easel
-   Release   from-rev   to-rev      from-rev    to-rev    
-   -------   --------   ------      --------    ------
-   0.6:       875        1477          ?          72
-   0.7:       1477       1534         72          84
-   0.71:      1534       1725         84         139
-   0.72:      1725       1862        139         149
-   0.8:       1862       1968        149         174
-       0.81 - bugfix release on 0.8 branch
-   1.0rc1     1968       2485        174         272    [1.0 branch]
-   1.0rc2     2485       2499        272         278    [1.0 branch] 
-   1.0rc3     2499       2594        278         293    [1.0 branch]
-   1.0rc4     2594       2633        293         303    [1.0 branch]
-   1.0rc5     2633       2670        303         309    [1.0 branch]            
-   1.0        2670       2700        309         314    [1.0 branch]
-   1.0.1      2700       2995        314         420    [1.0 branch]
-   1.0.2      2995       3019        420         426    [1.0 branch]
+	 repo=https://svn.janelia.org/eddylab/
+
+	 Different revision numbering histories:
+	 nawrockie/src is relevant for ssu-align
+	 eddys/src     is relevant for infernal/ and hmmer/
+	 eddys/easel   is relevant for easel
+                                           
+          nawrockie/src/            eddys/src/               eddys/easel/
+   Release   from-rev   to-rev      from-rev    to-rev    from-rev     to-rev
+   -------   --------   ------      --------    ------    ---------    ---------
+   0.1:             -    1058              -      3290            -         609
    
    These release notes will be merged back into the trunk later, if
    we're in a branch.
-
 
 7. Update the copyright, year stamps. 
 	- configure.ac (release, relcode, date)
