@@ -183,11 +183,17 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
 	- configure.ac (release, relcode, date)
 	- COPYRIGHT (year only)
 
-8. Commit to SVN; include release number in the log message
+8. Test a 'make dist' tarball:
+   I recommend doing a 'make dist' at this and testing that it
+   includes the exact set of files that you want. Sean's 00CHECKLIST
+   does not include this step here (he does include it later), but I
+   found this is good to do before Tagging. 
+
+9. Commit to SVN; include release number in the log message
 	 svn commit
     Remember to separately commit in Easel if changes were made there.
 
-9. Tag.
+10. Tag.
    We don't bother to tag snapshots.
    For a new major release, or a bugfix minor release,
    the tags are made from the relevant stable branch:
@@ -206,7 +212,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
      svn delete https://svn.janelia.org/eddylab/eddys/easel/tags/infernal/1.0.1\
                -m "needed to make more changes; deleted tag; new tag coming"
 
-10. Make a distribution tarball.
+11. Make a distribution tarball.
    (Remaking configure scripts w/ autoconf is needed)
 	 make distclean
          autoconf
@@ -228,7 +234,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    Go into infernal-$RELEASE and make sure it looks good from the 
    perspective of a new user: start by reading the README's.
 
-11. Build for our system (on login-eddy)
+12. Build for our system (on login-eddy)
 	 cd releases/infernal-xxx
 	 setenv OMPI_CC      "icc"
 	 setenv OMPI_CFLAGS  "-O3"
@@ -245,7 +251,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    just email Goran at this point.
 
 
-12. Put on the FTP site. (on selab)
+13. Put on the FTP site. (on selab)
           scp 00README                  selab:/opt/www/ftp/pub/software/infernal/
           scp documentation/release-notes/RELEASE-1.0.2  selab:/opt/www/ftp/pub/software/infernal/00RELEASE
           scp COPYRIGHT                 selab:/opt/www/ftp/pub/software/infernal
@@ -255,14 +261,14 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
           ssh selab  rm -f /opt/www/ftp/pub/software/infernal/infernal.tar.gz
           ssh selab  "(cd /opt/www/ftp/pub/software/infernal; ln -s infernal-1.0.2.tar.gz infernal.tar.gz)"
 
-13. Update the web site
+14. Update the web site
 	 cd ~/web/infernal/
          emacs index.html 
          make
 	 texclean
          svn commit
 
-14. Clean up. Don't remove the old directory though, we will (should) use it for regression testing 
+15. Clean up. Don't remove the old directory though, we will (should) use it for regression testing 
     at the next release.
 	cd ~/releases
         mv infernal-1.0.2.tar.gz ~/Archives/
@@ -271,7 +277,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
         cd ../infernal-1.0.2
 	make distclean
 
-15. Merge the changes from the "stabilized" release branch back into the trunk.
+16. Merge the changes from the "stabilized" release branch back into the trunk.
 
     If you're doing a minor bugfix release on a stable branch, you know the
     revs that introduced the bugfixes; merge them explicitly. For example:
