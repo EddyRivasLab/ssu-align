@@ -1,9 +1,14 @@
 # EPN, Tue Jun  8 13:27:18 2010
 #
-# README for the seeds/ subdirectory of SSU-ALIGN source distribution.
+# README for the models/ subdirectory of SSU-ALIGN source distribution.
 #
 # This directory contains files related to the three default
-# models used by SSU-ALIGN 0.1.  The following files exist 
+# models used by SSU-ALIGN 0.1.  The models are based on alignments
+# derived from the Comparative RNA Website (CRW; http://www.rna.ccbb.utexas.edu),
+# and are redistributed here with permission from Robin Gutell (see 
+# the email correspondence at the end of this file).
+# 
+# The following files exist 
 # For each family <fam>, where <fam> is either "archaea", 
 # "bacteria", or "eukarya"
 # 
@@ -21,5 +26,160 @@
 # ssu-align-0p1.stk: All 3 default seed alignments
 # ssu-align-0p1.ps:  All 3 default postscript template files.
 # 
-# build-default-models.sh: contains the commands used to build the 
-#                          default CMs from the default seeds.
+# rebuild-default-models.sh: contains the commands used to build the 
+#                            default CMs from the default seeds.
+#
+##################################################
+# Email from Robin Gutell concerning permission to redistribute
+# alignments derived from CRW:
+#
+Dear Eric,
+
+I just realized that I had not responded to your email from last
+May, although I thought that I did respond last May!
+
+Below is an email that I sent Elena last August (2007)
+
+You will see that I had already agreed to let your group distribute
+my lab's CRW Alignments - see my email to Elana.
+
+I'm glad that my lab can contribute to our efforts.
+
+Please let me know if this is adequate.
+
+I sincerely apologize for the very (very) slow response.
+
+With best wishes,
+Robin
+------------
+Date: Fri, 17 Aug 2007 13:47:02 -0400 (EDT)
+From: Elena Rivas <rivase@janelia.hhmi.org>
+Subject: Re: your mail
+To: Robin Gutell <robin.gutell@mail.utexas.edu>
+Cc: Elena Rivas PhD <rivase@janelia.hhmi.org>
+
+Hello Robin,
+
+thank you for your response. It is great news. The CRW site
+has been very useful, and not just for me. Other members of
+the lab (Eric Nawrocki and Diana Kolbe) who are working on
+new algorithms for Infernal, are also using or thinking of
+using the CRW alignements.
+
+> I'm pleased that data from the CRW Site is contributing to your
+> research. You are most welcome to make your reformatted CRW
+> alignments
+> available with your supplementary data. Is it possible to include
+> the
+> CRW name and URL in the alignment file, so people would know the
+> history of that alignment (and also include a statement about your
+> modifications to this alignment). I want people to alert the CRW
+> Site
+> if any of these alignments have problems. Our goal is to improve the
+> accuracy and utility of the CRW data.
+
+It should be straightforward to add the name, url and reference to
+the CRW Site into the Stockholm format to which we routinely convert the
+alignments. I will make sure I do that before I submit the paper.
+
+------------
+Date: Thu, 16 Aug 2007 19:14:35 -0500
+From: Robin Gutell <robin.gutell@mail.utexas.edu>
+Subject: Re: your mail
+To: Elena Rivas <rivase@janelia.hhmi.org>
+Cc: Robin Gutell <robin.gutell@mail.utexas.edu>
+
+Hello Elana,
+
+I'm pleased that data from the CRW Site is contributing to your
+research. You are most welcome to make your reformatted CRW alignments
+available with your supplementary data. Is it possible to include the
+CRW name and URL in the alignment file, so people would know the
+history of that alignment (and also include a statement about your
+modifications to this alignment). I want people to alert the CRW Site
+if any of these alignments have problems. Our goal is to improve the
+accuracy and utility of the CRW data.
+
+Once your manuscript is available for distribution, I would be very
+interested in receiving a copy.
+
+I have been wondering if Sean's Rfam and my lab's CRW Project might
+want to collaborate in some areas to enhance the amount, accuracy, and
+detail of the RNA information we make available to the larger
+scientific audience. Our efforts have been, in general, complementary.  We are
+working on a new data infrastructure that will allow us to increase
+the types of information at the CRW Site [e.g. RNAMap Secondary Structure
+Java Applet and Crystal Structure information (both in section 2A),
+and Structural Statistics (section 2D)]. These are the beginnings of a
+larger effort (and hopefully we will receive more funding to bring
+this effort to fruition).
+
+If you and Sean are interested in discussing this Rfam/CRW issue, then
+maybe we can arrange to meet when I'm on the east coast this upcoming
+October to attend a meeting with my database collaborators.
+
+
+
+With best wishes,
+Robin
+
+On Wed, Aug 15, 2007 at 10:58:05AM -0400, Elena Rivas wrote:
+> Date: Wed, 15 Aug 2007 10:58:05 -0400 (EDT)
+> From: Elena Rivas <rivase@janelia.hhmi.org>
+> To: robin.gutell@mail.utexas.edu
+>
+>
+> Dear Dr. Gutell,
+>
+> I am writing a manuscript that uses a reformatted subset of the SSU
+> and LSU rRNA sequence alignments from the CRW Site to benchmark a new
+> software application for phylogenetic inference. The source of the
+> alignments is cited in my paper following the guidelines of the CRW
+> Web Site.  I will also need to make my data files available as
+> supplementary material for my paper, in order for my benchmarks to be
+> reproducible.  Because this would amount to redistributing your data,
+> in accordance with the data access policy expressed on the CRW Web
+> site, may I have your written permission to release my reformatted
+> data as supplemental material for my manuscript?
+>
+> Thanks for your attention,
+> Elena Rivas
+------------
+On Fri, May 02, 2008 at 04:09:24PM -0400, Nawrocki, Eric P. wrote:
+> Date: Fri, 2 May 2008 16:09:24 -0400
+> From: "Nawrocki, Eric P." <nawrockie@janelia.hhmi.org>
+> Subject: SSU alignments question from Janelia Farm
+> To: robin.gutell@mail.utexas.edu
+>
+> Dr. Gutell,
+>
+> I hope everything is going well with you since your visit to Janelia
+> Farm last October. This e-mail is long overdue. We had spoken while
+> you were here at Janelia about using your SSU alignments to build
+> covariance models with our Infernal software. I asked if it was okay
+> with you if we distributed alignments based on your CRW alignments
+> provided that we emphasize the origin of the alignments (your website)
+> and stress that the website be cited if the alignments were useful for
+> any publication. My memory is that you said it was okay under those
+> terms. You had asked that I write you an e-mail that included this
+> information. Unfortunately I was working on other projects and forgot
+> to send the e-mail until now. I'm sorry it slipped my mind.
+>
+> The issue has come up again because we have been contacted about SSU
+> alignment from a group at the Broad institute asking us if we have any
+> good alignments for building SSU covariance models. I was planning on
+> sending our SSU alignments which are based on your CRW alignments and
+> stressing that if they lead to any publications they must cite your
+> website as the source of the data.
+>
+> Please let me know how you feel about us distributing our SSU
+> alignments that are based on your CRW SSU alignments.
+>
+> Thanks!
+>
+> Eric Nawrocki
+> Ph.D. Student
+> Eddy lab
+> Janelia Farm Research Campus
+> Howard Hughes Medical Institute
+
