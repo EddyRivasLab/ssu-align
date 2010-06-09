@@ -218,7 +218,7 @@ dist:
 	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} $$manpage;\
 	done
 	for manpage in ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/*.man; do\
-	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} $$manpage;\
+	   infernal/easel/devkit/sedition RELEASE ${RELEASE} RELEASEDATE ${RELEASEDATE} COPYRIGHT ${COPYRIGHT} PACKAGE ${PACKAGE} LICENSELINE ${LICENSELINE} EASEL_COPYRIGHT ${EASEL_COPYRIGHT} EASEL_LICENSE ${EASEL_LICENSE} EASEL_URL ${EASEL_URL} $$manpage;\
 	done
 
 	for prog in $(PROGS); do\
@@ -244,13 +244,14 @@ dist:
 	# wants it or not is a configuration-time decision.
 	#
 	for prog in $(PROGS); do\
-	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/documentation/manpages/$$prog.man;\
+	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/ssualign-boilerplate.trailer >> ../${BASENAME}-${RELEASE}/documentation/manpages/$$prog.man;\
 	done
 	for prog in $(INFPROGS); do\
-	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/infernal/documentation/manpages/$$prog.man;\
+	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/infernal-boilerplate.trailer >> ../${BASENAME}-${RELEASE}/infernal/documentation/manpages/$$prog.man;\
 	done
-	for prog in $(PROGS); do\
-	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/$$prog.man;\
+# Currently, no boilerplate tail used for Easel manpages. The AUTHOR section is included in each of those.
+#	for prog in $(PROGS); do\
+#	   cat ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer >> ../${BASENAME}-${RELEASE}/infernal/easel/miniapps/$$prog.man;\
 	done
 	-rm -f ../${BASENAME}-${RELEASE}/documentation/manpages/boilerplate.trailer
 	#
