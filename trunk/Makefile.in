@@ -262,7 +262,6 @@ dist:
 	-rm -rf ../${BASENAME}-${RELEASE}/00CHECKLIST
 	-rm -rf ../${BASENAME}-${RELEASE}/configure.ac
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/configure.ac
-	-rm -rf ../${BASENAME}-${RELEASE}/infernal/documentation/userguide
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/tutorial
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/benchmarks
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/Licenses
@@ -274,8 +273,8 @@ dist:
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/00WISHLIST
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/00CHECKLIST
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/easel
-	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/profmark
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/tutorial
+	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/profmark
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/Licenses
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/hmmer/configure.ac
 	-rm -rf ../${BASENAME}-${RELEASE}/infernal/easel/configure.ac
