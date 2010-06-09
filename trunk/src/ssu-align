@@ -282,7 +282,6 @@ if(! $opt_H{"--no-search"})  { PrintTiming("# CPU time (search):    ", $search_s
 if(! $opt_H{"--no-align"})   { PrintTiming("# CPU time (alignment): ", $align_seconds,  $time_hires_installed, 1, $sum_file); }
 $total_seconds += SecondsSinceEpoch($time_hires_installed);
 PrintTiming("# CPU time (total):     ", $total_seconds, $time_hires_installed, 1, $sum_file); 
-PrintStringToFile($sum_file, 1, sprintf("#                        hh:mm:ss\n"));
 PrintStringToFile($sum_file, 1, sprintf("#\n"));
 PrintStringToFile($sum_file, 0, "# SSU-ALIGN-SUCCESS\n");
 

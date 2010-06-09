@@ -252,7 +252,6 @@ sub PrintConclusion {
     }
     if($total_time ne "") { # don't print this if ssu-align is caller
 	PrintTiming("# CPU time: ", $total_time, $time_hires_installed, 1, $sum_file); 
-	PrintStringToFile($sum_file, 1, sprintf("#            hh:mm:ss\n"));
 	PrintStringToFile($sum_file, 1, sprintf("# \n"));
 	PrintStringToFile($sum_file, 0, "# SSU-ALIGN-SUCCESS\n");
     }
@@ -299,11 +298,11 @@ sub PrintTiming {
 
     if($time_hires_installed) { 
 	$tseconds = sprintf("%05.2f", $seconds);
-	PrintStringToFile($sum_file, $print_to_stdout, sprintf("%s %*s:%2s:%5s\n", $prefix, $ndig_hours, $thours, $tminutes, $tseconds));
+	PrintStringToFile($sum_file, $print_to_stdout, sprintf("%s %*s:%2s:%5s  (hh:mm:ss)\n", $prefix, $ndig_hours, $thours, $tminutes, $tseconds));
     }
     else { 
 	$tseconds = sprintf("%02d", $seconds);
-	PrintStringToFile($sum_file, $print_to_stdout, sprintf("%s %*s:%2s:%2s\n", $prefix, $ndig_hours, $thours, $tminutes, $tseconds));
+	PrintStringToFile($sum_file, $print_to_stdout, sprintf("%s %*s:%2s:%2s  (hh:mm:ss)\n", $prefix, $ndig_hours, $thours, $tminutes, $tseconds));
     }
 }
 

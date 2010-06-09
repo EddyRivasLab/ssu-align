@@ -467,8 +467,6 @@ if($summed_align_seconds ne "NA") {
 }
 PrintTiming("# Summed ssu-align CPU time (total):     ", $summed_total_seconds, $time_hires_installed, 1, $sum_file); 
 PrintTiming("# Summed ssu-align CPU time (total):     ", $summed_total_seconds, $time_hires_installed, 0, $ssu_align_sum_file); 
-PrintStringToFile($sum_file,           1, "#                                          hh:mm:ss\n");
-PrintStringToFile($ssu_align_sum_file, 0, "#                                          hh:mm:ss\n");
 
 
 ########################################
