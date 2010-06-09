@@ -136,25 +136,24 @@ directory:
 
 \begin{sreoutput}
 # Masking alignments using pre-existing masks...
+##                                                            mask    
+#                                                        ------------
+# file name                         in/out  type  #cols  incl.  excl.
+# --------------------------------  ------  ----  -----  -----  -----
+  myseqs.archaea.stk                 input   aln   1511      -      -
+  archaea-0p1.mask                   input  mask   1508   1376    132
+  myseqs.archaea.default.mask.pdf   output   pdf   1508   1376    132
+  myseqs.archaea.default.mask.stk   output   aln   1376      -      -
 #
-#                                                    mask    
-#                                                ------------
-# file name                 in/out  type  #cols  incl.  excl.
-# ------------------------  ------  ----  -----  -----  -----
-  myseqs.archaea.stk         input   aln   1511      -      -
-  archaea-0p1.mask           input  mask   1508   1376    132
-  myseqs.archaea.mask.pdf   output   pdf   1508   1376    132
-  myseqs.archaea.mask.stk   output   aln   1376      -      -
+  myseqs.bacteria.stk                input   aln   1597      -      -
+  bacteria-0p1.mask                  input  mask   1582   1376    206
+  myseqs.bacteria.default.mask.pdf  output   pdf   1582   1376    206
+  myseqs.bacteria.default.mask.stk  output   aln   1376      -      -
 #
-  myseqs.bacteria.stk        input   aln   1597      -      -
-  bacteria-0p1.mask          input  mask   1582   1376    206
-  myseqs.bacteria.mask.pdf  output   pdf   1582   1376    206
-  myseqs.bacteria.mask.stk  output   aln   1376      -      -
-#
-  myseqs.eukarya.stk         input   aln   2009      -      -
-  eukarya-0p1.mask           input  mask   1881   1343    538
-  myseqs.eukarya.mask.pdf   output   pdf   1881   1343    538
-  myseqs.eukarya.mask.stk   output   aln   1343      -      -
+  myseqs.eukarya.stk                 input   aln   2009      -      -
+  eukarya-0p1.mask                   input  mask   1881   1343    538
+  myseqs.eukarya.default.mask.pdf   output   pdf   1881   1343    538
+  myseqs.eukarya.default.mask.stk   output   aln   1343      -      -
 \end{sreoutput}
 
 The output is similar to the previous example, but note that the
