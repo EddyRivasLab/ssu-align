@@ -75,11 +75,17 @@ fi
 # And we have to define the relevant package variables for Infernal, Easel and HMMER as well.
 #
 ################################################################
+PACKAGE_DATE="June 2010"
+PACKAGE_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
+PACKAGE_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
+PACKAGE_VERSION=$PACKAGE_VERSION
+PACKAGE_URL="http://eddylab.org/software.html"
+
 SSUALIGN_DATE="June 2010"
 SSUALIGN_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 SSUALIGN_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
 SSUALIGN_VERSION=$PACKAGE_VERSION
-SSUALIGN_URL="http://selab.janelia.org/software.html"
+SSUALIGN_URL="http://eddylab.org/software.html"
 
 INFERNAL_DATE="June 2010"
 INFERNAL_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."

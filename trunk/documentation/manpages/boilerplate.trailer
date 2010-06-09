@@ -17,8 +17,8 @@ SSU-ALIGN distribution (Userguide.pdf).
 .SH COPYRIGHT
 
 .nf
-@PACKAGE_COPYRIGHT@.
-@PACKAGE_LICENSE@.
+@COPYRIGHT@.
+@LICENSELINE@.
 .fi
 
 .SH AUTHOR

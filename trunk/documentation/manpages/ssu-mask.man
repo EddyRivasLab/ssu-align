@@ -95,7 +95,7 @@ based on alignment confidence estimates in the alignment files
 (posterior probabilities) and applied to remove columns from the
 alignments, as described below. Alternatively, pre-computed masks can
 be used to enable comparison across multiple datasets. To use 
-the default @PACKAGE@-@PACKAGE_VERSION@ mask, see the 
+the default @PACKAGE@-@SSUALIGN_VERSION@ mask, see the 
 .B -d 
 option.
 
@@ -245,14 +245,14 @@ file, not a directory.
 
 .TP
 .B -d
-Use the pre-calculated, default @PACKAGE@-@PACKAGE_VERSION@ masks.
+Use the pre-calculated, default @PACKAGE@-@SSUALIGN_VERSION@ masks.
 These masks were determined by applying the default 95%/0.95 PP-based masking
 strategy described above on very deep SSU alignments. See the User's
 Guide for details. The default masks are named 
-.I archaea-@PACKAGE-VERSION@.mask,
-.I bacteria-@PACKAGE-VERSION@.mask,
+.I archaea-@RELEASE@.mask,
+.I bacteria-@RELEASE@.mask,
 and
-.I eukarya-@PACKAGE-VERSION@.mask
+.I eukarya-@RELEASE@.mask
 and are installed in SSUALIGNDIR (environment variable).
 
 .TP
@@ -303,7 +303,7 @@ either the current working directory or SSUALIGNDIR.
 Specify that the template postscript file to use for drawing secondary
 structure diagrams is file
 .I <f>. 
-If not used, the default @PACKAGE@-@PACKAGE-VERSION@ template file
+If not used, the default @PACKAGE@-@RELEASE@ template file
 will be used. 
 .I <f>
 must be a path that exists with respect to
