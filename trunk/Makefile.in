@@ -257,7 +257,7 @@ dist:
 	# Remove SVN-controlled files/directories that don't belong in the
 	# distro
 	#
-	-rm -rf ../${BASENAME}-${RELEASE}/5seeds
+	-rm -rf ../${BASENAME}-${RELEASE}/5models
 	-rm -rf ../${BASENAME}-${RELEASE}/5tutorial
 	-rm -rf ../${BASENAME}-${RELEASE}/00CHECKLIST
 	-rm -rf ../${BASENAME}-${RELEASE}/configure.ac
