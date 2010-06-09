@@ -184,7 +184,7 @@ sub PrintBanner {
     }
 
     PrintStringToFile($out_file, $print_to_stdout, sprintf("\# $script_name :: $script_desc\n"));
-    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# SSU-ALIGN 0.1 (May 2010)\n"));
+    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# SSU-ALIGN 0.1 (June 2010)\n"));
     PrintStringToFile($out_file, $print_to_stdout, sprintf("\# Copyright (C) 2010 HHMI Janelia Farm Research Campus\n"));
     PrintStringToFile($out_file, $print_to_stdout, sprintf("\# Freely distributed under the GNU General Public License (GPLv3)\n"));
     PrintStringToFile($out_file, $print_to_stdout, sprintf("\# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"));
