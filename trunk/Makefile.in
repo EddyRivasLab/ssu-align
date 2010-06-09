@@ -57,9 +57,9 @@ LICENSETAG  = gnu
 COMPRESS    = gzip
 REPOSITORY  = https://svn.janelia.org/eddylab/nawrockie/src/ssualign/
 
-EASEL_COPYRIGHT = "@EASEL_COPYRIGHT"
-EASEL_LICENSE   = "@EASEL_LICENSE"
-EASEL_URL       = "@EASEL_URL"
+EASEL_COPYRIGHT = "@EASEL_COPYRIGHT@"
+EASEL_LICENSE   = "@EASEL_LICENSE@"
+EASEL_URL       = "@EASEL_URL@"
 
 PROGS = ssu-align\
 	ssu-build\
