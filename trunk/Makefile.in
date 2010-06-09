@@ -326,15 +326,15 @@ actually-install:
 # copy the seed alignments, and CMs
 	mkdir -p ${datadir}/${BASENAME}-${RELEASE}
 	for file in $(SEEDLIBFILES); do\
-		cp seeds/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+		cp models/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
 	done
 # copy the postscript templates
 	for file in $(PSLIBFILES); do\
-		cp seeds/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+		cp models/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
 	done
 # copy the default masks
 	for file in $(MASKLIBFILES); do\
-		cp seeds/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
+		cp models/$$file ${datadir}/${BASENAME}-${RELEASE}/;\
 	done
 # copy the PERL module
 	for file in $(PERLMODULEFILES); do\
