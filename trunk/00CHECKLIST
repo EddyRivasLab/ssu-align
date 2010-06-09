@@ -87,7 +87,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    For a dev snapshot, this is the normal working copy.
    For a major or minor release, this is a fresh working copy of the appropriate branch:
        cd ~/releases
-       svn checkout https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/branches/1.0 ssu-align-release
+       svn checkout https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk ssu-align-release
 
    Don't call this working directory ssu-align-xx, nor ssu-align! Call it
    ssu-align-release, because later "make dist" is going to try to create
@@ -174,7 +174,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
           nawrockie/src/            eddys/src/               eddys/easel/
    Release   from-rev   to-rev      from-rev    to-rev    from-rev     to-rev
    -------   --------   ------      --------    ------    ---------    ---------
-   0.1:             -    1058              -      3290            -         609
+   0.1:             -    1076              -      3301            -         612
    
    These release notes will be merged back into the trunk later, if
    we're in a branch.
@@ -204,6 +204,12 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    For a new major release, or a bugfix minor release,
    the tags are made from the relevant stable branch:
 
+   ONLY if first time (0.1 release), create the tags/ssu-align subdirs:
+
+   svn mkdir https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align
+   svn mkdir https://svn.janelia.org/eddylab/eddys/src/hmmer/tags/ssu-align
+   svn mkdir https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align
+
       svn copy https://svn.janelia.org/eddylab/eddys/src/infernal/trunk \
                https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 \
                -m "tagged Infernal for SSU-ALIGN 0.1 release, from Infernal's trunk"          
@@ -211,13 +217,12 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
                https://svn.janelia.org/eddylab/eddys/src/hmmer/tags/ssu-align/0.1 \
                -m "tagged HMMER for SSU-ALIGN 0.1 release, from HMMER's trunk"          
       svn copy https://svn.janelia.org/eddylab/eddys/easel/trunk \
-               https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/easel/0.1 \
+               https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1 \
                  -m "tagged Easel for SSU-ALIGN 0.1 release, from Easel's trunk"
 
    Note: if you screw up somewhere below, and need to come back and
    re-tag, you must delete the previous tagged versions first:
-     svn delete https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 \
-               -m "needed to make more changes; deleted tag; new tag coming"
+     svn delete https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
      svn delete https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1\
                -m "needed to make more changes; deleted tag; new tag coming"
 
@@ -225,7 +230,9 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    (Remaking configure scripts w/ autoconf is needed)
 	 make distclean
          autoconf
-         (cd easel; autoconf)
+	 IS THIS NEC? (cd infernal; autoconf)
+         IS THIS NEC? (cd easel; autoconf)
+         IS THIS NEC? (cd ../hmmer; autoconf)
 	 ./configure          <-- makes a Makefile (needed for "make dist")
 
     major or minor:
@@ -233,6 +240,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
     snapshot:
 	 make REPOSITORY=https://svn.janelia.org/eddylab/eddys/src/infernal/trunk RELEASE=snap20080325 dist
 
+   NOT SURE WHAT THESE NEXT 2 LINES MEAN:
    Alternatively, make -n dist' and execute commands yourself one at a
    time, under a Bourne shell like 'bash' so the for loops work.
 
@@ -243,7 +251,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    Go into infernal-$RELEASE and make sure it looks good from the 
    perspective of a new user: start by reading the README's.
 
-12. Build for our system (on login-eddy)
+12. Build for our system (on login-eddy) (UPDATE ME FOR SSU-ALIGN)
 	 cd releases/infernal-xxx
 	 setenv OMPI_CC      "icc"
 	 setenv OMPI_CFLAGS  "-O3"
@@ -253,9 +261,6 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
          (cd testsuite; ./sqc -p ../squid/ -r ../../infernal-0.52/src 4 regressions.sqc ../src/)
                                                   ^^^^ replace w/ latest old version
          
-   Didn't run regressions at the 0.71 or later releases. Need to leave
-   old release in the releases subdir for the regressions test above to work.
-
    Currently, I don't have permission to install software on login-eddy, so 
    just email Goran at this point.
 
