@@ -15,7 +15,7 @@ Download the source tarball (\prog{ssu-align.tar.gz}) from
 untar; and change into the newly created directory \prog{ssu-align-0.1}:
 
 \user{wget ftp://selab.janelia.org/pub/software/ssu-align/ssu-align-0.1.tar.gz}\\
-\user{tar xf ssu-align-0.1.tar.gz}\\
+\user{tar xfz ssu-align-0.1.tar.gz}\\
 \user{cd ssu-align-0.1}
 
 Configure for your system, and build the programs:
@@ -55,8 +55,8 @@ installed in \prog{/usr/local/man/man1}. The file \prog{ssu.1} in that
 directory is a special man page that summarizes the entire package.
 Finally, data files and a PERL module (\prog{ssu.pm}) required by the
 programs are placed in \prog{/usr/local/share/ssu-align-0.1}, by
-default. Data files include the default CM files, mask files, and
-postscript secondary structure template files.
+default. Data files include the default CM files, the seed alignments,
+mask files, and postscript secondary structure template files.
 
 You might need special privileges to write to \prog{/usr/local}. (You may need to execute
 \prog{sudo make install}). You can change \prog{/usr/local} to any
