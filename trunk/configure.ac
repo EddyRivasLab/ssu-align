@@ -78,25 +78,25 @@ fi
 PACKAGE_DATE="June 2010"
 PACKAGE_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 PACKAGE_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
-PACKAGE_VERSION=$PACKAGE_VERSION
+PACKAGE_VERSION="$PACKAGE_VERSION"
 PACKAGE_URL="http://eddylab.org/software.html"
 
 SSUALIGN_DATE="June 2010"
 SSUALIGN_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 SSUALIGN_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
-SSUALIGN_VERSION=$PACKAGE_VERSION
+SSUALIGN_VERSION="$PACKAGE_VERSION"
 SSUALIGN_URL="http://eddylab.org/software.html"
 
 INFERNAL_DATE="June 2010"
 INFERNAL_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 INFERNAL_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
-INFERNAL_VERSION=s$PACKAGE_VERSION
+INFERNAL_VERSION="s$PACKAGE_VERSION"
 INFERNAL_URL="http://infernal.janelia.org/"
 
 HMMER_DATE="June 2010"
 HMMER_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
 HMMER_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
-HMMER_VERSION=s$PACKAGE_VERSION
+HMMER_VERSION="s$PACKAGE_VERSION"
 HMMER_URL="http://hmmer.org/"
 HMMER_ESLDIR="../easel"
 
@@ -142,11 +142,11 @@ AC_DEFINE_UNQUOTED(PACKAGE_COPYRIGHT, "$PACKAGE_COPYRIGHT")
 AC_DEFINE_UNQUOTED(PACKAGE_LICENSE,   "$PACKAGE_LICENSE")
 AC_DEFINE_UNQUOTED(PACKAGE_VERSION,   "$PACKAGE_VERSION")
 
-AC_DEFINE_UNQUOTED(INFERNAL_DATE,      "$HMMER_DATE")
-AC_DEFINE_UNQUOTED(INFERNAL_COPYRIGHT, "$HMMER_COPYRIGHT")
-AC_DEFINE_UNQUOTED(INFERNAL_LICENSE,   "$HMMER_LICENSE")
-AC_DEFINE_UNQUOTED(INFERNAL_VERSION,   "$HMMER_VERSION")
-AC_DEFINE_UNQUOTED(INFERNAL_URL,       "$HMMER_URL")
+AC_DEFINE_UNQUOTED(INFERNAL_DATE,      "$INFERNAL_DATE")
+AC_DEFINE_UNQUOTED(INFERNAL_COPYRIGHT, "$INFERNAL_COPYRIGHT")
+AC_DEFINE_UNQUOTED(INFERNAL_LICENSE,   "$INFERNAL_LICENSE")
+AC_DEFINE_UNQUOTED(INFERNAL_VERSION,   "$INFERNAL_VERSION")
+AC_DEFINE_UNQUOTED(INFERNAL_URL,       "$INFERNAL_URL")
 
 AC_DEFINE_UNQUOTED(HMMER_DATE,      "$HMMER_DATE")
 AC_DEFINE_UNQUOTED(HMMER_COPYRIGHT, "$HMMER_COPYRIGHT")
@@ -245,7 +245,7 @@ fi
 # code, but might still be able to turn on automatic compiler
 # vectorization.                                                                                                                              
 #                                                                     
-AC_ARG_ENABLE(sse,[AS_HELP_STRING([--enable-sse],[enable SSE optimizations])] ,           enable_sse=$enableval,   enable_sse=yes)
+AC_ARG_ENABLE(sse,[AS_HELP_STRING([--enable-sse],[enable SSE optimizations])] ,           enable_sse=$enableval,   enable_sse=check)
 AC_ARG_ENABLE(vmx,[AS_HELP_STRING([--enable-vmx],[enable Altivec/VMX optimizations])],    enable_vmx=$enableval,   enable_vmx=check)
 AC_ARG_ENABLE(dummy,[AS_HELP_STRING([--enable-dummy],[enable portable implementation])], enable_dummy=$enableval, enable_dummy=check)
 if test "$enable_sse" = "yes"; then

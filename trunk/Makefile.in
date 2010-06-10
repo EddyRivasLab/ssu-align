@@ -152,7 +152,7 @@ MASKLIBFILES = archaea-0p1.mask\
 all: core addssu
 
 core:
-	cd infernal;        make CC="$(CC)" CFLAGS="$(CFLAGS)" PACKAGE_VERSION="s$PACKAGE_VERSION";
+	cd infernal;        make CC="$(CC)" CFLAGS="$(CFLAGS)"
 #	cd infernal/easel;        make CC="$(CC)" CFLAGS="$(CFLAGS)" 
 #	cd infernal/hmmer;        make hmmer_lib PACKAGE_VERSION="$HMMER_VERSION"
 #	cd infernal/src;          make CC="$(CC)" CFLAGS="$(CFLAGS)" PACKAGE_VERSION="$INFERNAL_VERSION"
