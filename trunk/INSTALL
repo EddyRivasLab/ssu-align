@@ -12,8 +12,8 @@ Starting from a source distribution, ssu-align-0.1.tar.gz:
  move into new directory:   cd ssu-align-0.1
  configure:                 ./configure
  build:                     make
- automated tests:           make check
  automated install:         make install
+ automated tests:           make check
 
  setup environment:         Follow the instructions after the
                             'make install'. They'll explain how to

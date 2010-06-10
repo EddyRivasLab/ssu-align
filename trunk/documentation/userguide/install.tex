@@ -23,11 +23,6 @@ Configure for your system, and build the programs:
 \user{./configure}\\
 \user{make}
 
-Run the automated testsuite. This is optional. It takes about 10
-minutes, and all these tests should pass:
-
-\user{make check}
-
 \begin{comment}
 At this point, the programs are in the \prog{src} subdirectory, the
 \prog{infernal/src} subdirectory and the
@@ -105,7 +100,10 @@ sh ~/.cshrc
 \end{sreoutput}
 
 Follow these instructions to update your environment for the current
-and every subsequent shell session.
+and every subsequent shell session. This step is crucial because it
+ensures all the required executables are in your PATH. SSU-ALIGN
+internally calls INFERNAL and EASEL programs that were just installed,
+all of which must be in your PATH.
 
 For instance, if you use the bash shell you'd 
 open your \prog{.bashrc} file in your home directory (e.g.
@@ -139,6 +137,14 @@ with default settings), and
 should return the path to the your data directory
 (\prog{/usr/local/share/ssu-align-0.1} if you configured with default
 settings).
+
+If you want to, at this point you can run the automated
+testsuite. (You can't run the testsuite before installation because it
+requires all the INFERNAL and EASEL programs be in your path.)
+This step is optional. It takes about 10 minutes, and all these
+tests should pass: 
+
+\user{make check}
 
 That's it. You can keep reading if you want to know more about
 customizing a \sft{ssu-align} installation, or you can skip ahead to
