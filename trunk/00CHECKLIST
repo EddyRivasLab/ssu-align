@@ -223,8 +223,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    Note: if you screw up somewhere below, and need to come back and
    re-tag, you must delete the previous tagged versions first:
      svn delete https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
-     svn delete https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1\
-               -m "needed to make more changes; deleted tag; new tag coming"
+     svn delete https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
 
 11. Make a distribution tarball.
    (Remaking configure scripts w/ autoconf is needed)
