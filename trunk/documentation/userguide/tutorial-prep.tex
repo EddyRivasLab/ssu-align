@@ -138,7 +138,7 @@ look at the shell script \\ \prog{my30.ssu-align.sh}:
 # The for loop below will execute/submit the first 4 of 5 jobs.
 # The final ssu-align job is executed separately because it does the merging.
 #
-for i in {1..4}
+for (( i=1; i<=4; i++ ))
 do
 	echo "# Executing: qsub -N ssu-align -o /dev/null -b y -j y -cwd -V " ssu-align my30/seed-30.fa.$i my30/my30.$i ""
 	qsub -N ssu-align -o /dev/null -b y -j y -cwd -V " ssu-align my30/seed-30.fa.$i my30/my30.$i "
@@ -313,7 +313,7 @@ it is included below:
 # The for loop below will execute/submit the first 3 of 4 jobs.
 # The final ssu-align job is executed separately because it does the merging.
 #
-for i in {1..3}
+for (( i=1; i<=3; i++ ))
 do
 	echo "# Executing: ssu-align my30/seed-30.fa.$i my30/my30.$i > /dev/null &"
 	ssu-align my30/seed-30.fa.$i my30/my30.$i > /dev/null &
