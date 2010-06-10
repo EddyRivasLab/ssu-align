@@ -893,8 +893,8 @@ sub run_ssdraw_for_ssu_build {
 
 	if($command_worked) { 
 	    PrintStringToFile($sum_file, 1, sprintf("  %-*s\n", $max_width, $pdf_file));
+	    $keep_ps = 0;
 	}
-	$keep_ps = 0;
     }
     if($keep_ps) { # $keep_ps is set to 0 only if we successfully made a pdf above 
 	PrintStringToFile($sum_file, 1, sprintf("  %-*s\n", $max_width, $ps_file));
