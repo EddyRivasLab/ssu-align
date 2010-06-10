@@ -771,7 +771,7 @@ sub partition_seqfile_and_write_shell_script {
 	if($opt_HR->{"-x"}) { $command .= " > /dev/null &"; }
 	if($suffix ne "") { $command .= " " . $suffix; }
 	# Note: $suffix will be "" if -x
-	printf SH ("for i in \{1..%d\}\n", ($opt_HR->{"--no-merge"}) ? $njobs : ($njobs-1));
+	printf SH ("for \(\( i=1; i<=%d; i++ \)\)\n", ($opt_HR->{"--no-merge"}) ? $njobs : ($njobs-1));
 	printf SH ("do\n");
 	printf SH ("\techo \"\# Executing: %s\"\n", $command);
 	printf SH ("\t%s\n", $command);
