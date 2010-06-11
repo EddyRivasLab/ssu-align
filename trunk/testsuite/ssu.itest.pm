@@ -25,10 +25,14 @@ sub run_align_post_prep {
     my ($dir, $testctr) = @_;
     my $command;
     my $shell_script = $dir . ".ssu-align.sh";
-    $command = "sh $shell_script > /dev/null"; 
+    $command = "$shell_script > /dev/null"; 
     printf("Running align command for set %3d: $command\n", $testctr);
     system("$command");
-    if ($? != 0) { die "FAIL: ssu-align post-prep $testctr failed unexpectedly"; }
+    if ($? != 0) { 
+	$command = "/bin/bash $shell_script > /dev/null"; 
+	system("$command");
+	if ($? != 0) { die "FAIL: ssu-align post-prep $testctr failed unexpectedly"; }
+    }
     return;
 }
 #####################################################

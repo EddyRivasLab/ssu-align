@@ -797,9 +797,17 @@ sub partition_seqfile_and_write_shell_script {
 	printf SH ("%s\n", $command);
     }
     close(SH); 
-
+    
+    # Modify permissions of the script so it can be executed.
+    my $chmod_worked;
+    $chmod_worked = chmod(777, $shell_script);
     PrintStringToFile($sum_file, 1, sprintf("#\n################################################################################\n"));
-    PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with:\n#\tsh $shell_script\n", $njobs));
+    if($chmod_worked) { 
+	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with:\n#\t$shell_script\n", $njobs));
+    }
+    else { 
+	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with:\n#\t/bin/bash $shell_script\n", $njobs));
+    }
     PrintStringToFile($sum_file, 1, sprintf("################################################################################\n"));
     if(! $opt_H{"--no-merge"}) {
 	#                                                 1         2         3         4         5         6         7         8
