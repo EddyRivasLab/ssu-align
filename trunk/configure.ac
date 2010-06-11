@@ -356,15 +356,32 @@ AC_ARG_WITH([gsl],
 ################################################################
 
 ################################################################
+# EPN, Fri Jun 11 08:48:54 2010
+# Code in Infernal's configure.ac is below, commented out.
+# It works for most platforms, but not for FreeBSD. It needs
+# to be fixed in Infernal/. But for now, since SSU-ALIGN doesn't
+# use vector code, I'll make the default impl_choice=dummy
+################################################################
 # Select the vector implementation we'll use
 # (if user didn't already configure one)
 #
+# Here's the Infernal code: 
+#if test "$impl_choice" = "none"; then
+#  case $host in 
+#    ia64-*-*)      impl_choice=sse;;
+#    i?86-*-*)      impl_choice=sse;;
+#    x86*-*-*)      impl_choice=sse;;
+#    powerpc*-*-*)  impl_choice=vmx;;
+#    *)             impl_choice=dummy;;
+#  esac
+#fi
+# Here's the SSU-ALIGN code: 
 if test "$impl_choice" = "none"; then
   case $host in 
-    ia64-*-*)      impl_choice=sse;;
-    i?86-*-*)      impl_choice=sse;;
-    x86*-*-*)      impl_choice=sse;;
-    powerpc*-*-*)  impl_choice=vmx;;
+    ia64-*-*)      impl_choice=dummy;;
+    i?86-*-*)      impl_choice=dummy;;
+    x86*-*-*)      impl_choice=dummy;;
+    powerpc*-*-*)  impl_choice=dummy;;
     *)             impl_choice=dummy;;
   esac
 fi
