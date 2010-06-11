@@ -1316,14 +1316,23 @@ sub run_ssdraw_for_ssu_mask {
 	}
 	TryPs2Pdf($ps2pdf, $draw_ps, $draw_pdf, $tfilectr++, $die_if_fails, $print_output_upon_failure, $sum_file, $log_file, \$command_worked, $errmsg);
 	
-	if($command_worked) { 
-	    if($do_column_breakdown) { 
+	if($do_column_breakdown) { 
+	    if($command_worked) { 
 		PrintStringToFile($sum_file, 1, sprintf("  %-*s  %6s  %4s  %5s  %5s  %5s\n", $max_width, $draw_pdf2print, "output", "pdf", ($n0+$n1), $n1, $n0));
 	    }
 	    else { 
+		PrintStringToFile($sum_file, 1, sprintf("  %-*s  %6s  %4s  %5s  %5s  %5s\n", $max_width, $draw_pdf2print, "output", "ps", ($n0+$n1), $n1, $n0));
+	    }
+	}
+	else { #command didn't work
+	    if($command_worked) { 
 		PrintStringToFile($sum_file, 1, sprintf("  %-*s  %6s  %4s  %5s  %5s  %5s\n", $max_width, $draw_pdf2print, "output", "pdf", ($n0+$n1), "-", "-"));
 	    }
-            # we have a pdf, so we'll remove the ps eventually
+	    else { 
+		PrintStringToFile($sum_file, 1, sprintf("  %-*s  %6s  %4s  %5s  %5s  %5s\n", $max_width, $draw_pdf2print, "output", "ps", ($n0+$n1), "-", "-"));
+	    }
+	}
+	if($command_worked) { # we have a pdf, so we'll remove the ps eventually
 	    push(@{$files_to_unlink_AR}, $draw_ps);
 	}
     }
