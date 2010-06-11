@@ -1,0 +1,481 @@
+.TH "ssu-mask" 1 "@RELEASEDATE@" "@PACKAGE@ @RELEASE@" "@PACKAGE@ Manual"
+
+.SH NAME
+ssu-mask - mask (remove columns from) SSU rRNA multiple sequence alignments
+
+.SH SYNOPSIS
+
+.PP 
+Mask all alignments created by ssu-align in directory <dir>:
+
+.PP
+.B ssu-mask
+.I [options]
+.I dir
+
+.PP 
+Mask single alignment file <aln>:
+
+.PP
+.B ssu-mask -a
+.I [options]
+.I aln
+
+.PP 
+List sequences in alignments in <dir>:
+
+.PP
+.B ssu-mask --list
+.I [options]
+.I <dir>
+
+.PP 
+List sequences in alignment file <aln>:
+
+.PP
+.B ssu-mask -a --list
+.I [options]
+.I <aln>
+
+.PP 
+Convert Stockholm alignments in <dir> to aligned FASTA:
+
+.PP
+.B ssu-mask --stk2afa
+.I [options]
+.I <dir>
+
+.PP 
+Convert Stockholm alignment <aln> to aligned FASTA:
+
+.PP
+.B ssu-mask -a --stk2afa
+.I [options]
+.I <aln>
+
+.PP 
+Extract a subset of sequences from an alignment: 
+
+.PP
+.B ssu-mask -a --seq-k 
+.I <listfile>
+.I [options]
+.I <aln>
+
+.PP 
+Remove a subset of sequences from an alignment:
+
+.PP 
+.B ssu-mask -a --seq-r
+.I <listfile>
+.I [options]
+.I <aln>
+
+.SH DESCRIPTION
+
+.PP
+.B ssu-mask
+reads multiple sequence alignments created by 
+.B ssu-align
+in the directory
+.I dir,
+removes some columns from them (i.e. masks them), and then outputs the
+masked alignments into the same directory. 
+
+.PP 
+The 
+.B -a
+option specifies that the command line argument 
+is a single alignment file to mask, not a directory.
+
+.PP
+By default, the alignment masks are automatically computed by 
+.B ssu-mask
+based on alignment confidence estimates in the alignment files
+(posterior probabilities) and applied to remove columns from the
+alignments, as described below. Alternatively, pre-computed masks can
+be used to enable comparison across multiple datasets. To use 
+the default @PACKAGE@-@SSUALIGN_VERSION@ mask, see the 
+.B -d 
+option.
+
+.PP
+The main purpose of masking is to remove the columns from an
+alignment that are most likely to contain alignment errors
+prior to using it as input for a phylogenetic inference
+program.
+
+.PP
+An alignment mask defines which columns will be kept and which will be
+removed. 
+.B ssu-mask 
+can either calculate an appropriate mask for each alignment based
+on alignment posterior probability values (confidence levels in the
+alignment) and/or gap frequencies,  or use a pre-calculated mask from an
+input file.
+In all cases, all non-consensus columns
+(called insert columns) are automatically removed. Residues in
+these columns are 
+.B not aligned.
+.\" Their inclusion in the alignment in insert columns is informative only
+.\" it that it indicates their position relative to bordering consensus columns.
+In 
+.B ssu-align
+created alignments, consensus columns are those which have a non-gap
+(non-'.') character in the reference annotation for the alignment. The
+reference annotation appears in lines beginning with "#=GC RF".
+
+.PP
+By default, 
+.B ssu-mask
+determines a mask based on the 
+posterior probability (PP) annotation for aligned residues.
+PP annotation appears in #=GR PP lines in the alignments.
+Characters in Stockholm alignment PP annotation
+can have 12 possible values: the ten digits '0-9', '*',
+and '.'. If '.', the position corresponds to a gap in the sequence.
+A value of '0' indicates a posterior probability of
+between 0.0 and 0.05, '1' indicates between 0.05 and 0.15, '2'
+indicates between 0.15 and 0.25 and so on up to '9' which indicates
+between 0.85 and 0.95. A value of '*' indicates a posterior
+probability of between 0.95 and 1.0. Higher posterior probabilities
+correspond to greater confidence that the aligned residue belongs
+where it appears in the alignment.
+
+.PP 
+By default, any consensus column in which greater than 95% 
+of the sequences have a PP of 0.95 or better
+(i.e. have a PP value of '*') will be included by a PP-based
+masked. The 95% value can be changed to 
+.I <x>
+with the 
+.BI --pf " <x>" 
+option. And the 0.95 PP threshold can be changed to
+.I <y>
+with the 
+.BI --pt " <y>"
+option.
+
+.PP 
+The frequency of gaps in each column will also be considered 
+if the 
+.BI --gapthresh " <x>" 
+option is used. Any consensus column in which more than
+.I <x>
+fraction of the sequences contain gaps will be removed. 
+With 
+.B --gapthresh,
+additional columns will also be removed based on PP as described
+above unless the
+.B --gaponly 
+option is used, which specifies that gap frequency be the only
+determining factor for mask construction.
+
+.PP 
+Alternatively, pre-existing mask files can be used to remove columns from
+the alignments by using the 
+.B -d, -k,
+or 
+.B -s 
+options. See the description of those options below for details.
+A mask file defines which columns to keep/remove.  The mask is a
+string that may only contain the characters '0' and '1'. A '0' at position x of the
+mask indicates that column x is excluded by the mask and should be
+removed during masking.  A '1' at position x of the mask indicates
+that column x is included by the mask and should not be removed during
+masking.  All lines in the
+.I maskfile
+that begin with '#' are considered comment lines and are ignored.  All
+non-whitespace characters in non-comment lines are considered to be
+part of the mask. The length of the mask must equal the consensus
+length (number of consensus columns) of the alignment to be masked.
+
+
+.PP
+In addition to masking, 
+.B ssu-mask 
+can be also be used to list the names of sequences in alignments with the 
+.B --list 
+option, convert Stockholm formatted alignments to aligned FASTA format
+with the
+.B --stk2afa
+option, or remove a subset of sequences from an alignment with the
+.B --seq-k
+or 
+.B --seq-r
+options, as described below in the 
+.B OPTIONS 
+section.
+
+.PP
+.B ssu-mask
+is a PERL script that uses the C programs
+.B esl-alimask, 
+.B esl-alistat, 
+.B esl-reformat, 
+and
+.B esl-alimanip
+C programs 
+from the 
+EASEL
+package to mask alignments, list sequences, convert formats, and
+remove sequences, respectively. 
+The versions of these programs installed with 
+SSU-ALIGN
+are prefixed with 'ssu-'
+to distinguish them from any versions of the program distributed 
+with INFERNAL or HMMER on your system. For example, the version of
+.B esl-alimask
+called by 
+.B ssu-mask
+is actually called
+.B ssu-esl-alimask.
+
+.SH OPTIONS
+
+.TP
+.B -h
+Print brief help; includes version number and summary of
+all options.
+
+.TP
+.B -a
+Specify that the single command-line argument is a Stockholm alignment
+file, not a directory.
+
+.TP
+.B -d
+Use the pre-calculated, default @PACKAGE@-@SSUALIGN_VERSION@ masks.
+These masks were determined by applying the default 95%/0.95 PP-based masking
+strategy described above on very deep SSU alignments. See the User's
+Guide for details. The default masks are named 
+.I archaea-@RELEASE@.mask,
+.I bacteria-@RELEASE@.mask,
+and
+.I eukarya-@RELEASE@.mask
+and are installed in SSUALIGNDIR (environment variable).
+
+.TP
+.BI -s " <f>"
+Use the pre-calculated mask in file 
+.I <f>.
+This option will only work on a single alignment so either
+.B -a
+must be used, or 
+.I <dir> 
+must only contain a single alignment.
+The path and file specified by 
+.I <f>
+must exist either with respect to the current working directory or SSUALIGNDIR.
+
+.TP
+.BI -k " <s>"
+Use pre-calculated masks in files called
+.I <modelname>.<s>.mask
+for masking alignments created by 
+.B ssu-align 
+with models named
+.I <modelname>. 
+If 
+.B ssu-align
+was used with the default CM file, 
+.I <modelname> 
+will be 'archaea', 'bacteria' or 'eukarya'.
+The mask files must exist in either the current working directory, the
+directory that includes the alignments being masked, or SSUALIGNDIR. 
+
+.TP
+.BI -m " <f>"
+Specify that the CM file
+.I <f>
+was used by 
+.B ssu-align 
+to create the alignment(s) being masked with a command like
+.B ssu-align -m 
+.I <s>
+.B foo.fa foo.
+.I <f>
+must be a path that exists with respect to
+either the current working directory or SSUALIGNDIR. 
+
+.TP
+.BI -t " <f>"
+Specify that the template postscript file to use for drawing secondary
+structure diagrams is file
+.I <f>. 
+If not used, the default @PACKAGE@-@RELEASE@ template file
+will be used. 
+.I <f>
+must be a path that exists with respect to
+either the current working directory or SSUALIGNDIR. 
+
+.TP
+.B -i
+Specify that the 
+.B -i 
+option was used by
+.B ssu-align 
+to create the alignments being masked. 
+
+.SH OPTIONS FOR CONTROLLING MASK CONSTRUCTION:
+
+.TP 
+.BI --pf " <x>"
+Specify that a consensus column is kept (included by mask) if the
+fraction of sequences with a non-gap residue in that column with a 
+posterior probability of at least 
+.I <y>
+(from 
+.BI --pt " <y>"
+) is 
+.I <x>
+or greater. All other consensus columns and all non-consensus (insert)
+columns are removed (excluded by mask).
+By default 
+.I <x> 
+is 0.95. 
+
+.TP 
+.BI --pt " <y>"
+Specify that a column is kept (included by mask) if 
+.I <x>
+(from 
+.BI --pf " <x>"
+)
+fraction of sequences with a non-gap residue in that column have a 
+posterior probability of at least 
+.I <y>. 
+All other consensus columns and all non-consensus (insert)
+columns are removed (excluded by mask).
+By default 
+.I <y> 
+is 0.95. See the DESCRIPTION section for more on
+posterior probability (PP) masking. 
+Due to the granularity of the PP annotation, different 
+.I <y>
+values within a range covered by a single PP character will be
+have the same effect on masking. For example, using 
+.BI --pt " 0.86" 
+will have the same effect as using
+.BI --pt " 0.94".
+
+.TP 
+.B --rfonly
+Keep all consensus columns and remove all non-consensus (insert) columns. 
+Do not remove any consensus columns based on posterior probabilities
+or gap frequencies.
+
+.TP 
+.BI  --gapthresh " <x>"
+Remove all consensus columns for which the fraction of 
+sequences in the alignment that have a gap ('.', '-', or '_')
+at that position is greater than 
+.I <x>
+and all non-consensus (insert) columns.
+Other consensus columns may be removed based on posterior
+probabilities as well unless the 
+.B --gaponly 
+option is used.
+
+.TP 
+.B  --gaponly
+With
+.BI  --gapthresh " <x>", only
+remove consensus columns based on gap frequencies. Do not remove
+any columns based on PPs. 
+
+.SH MISCELLANEOUS OUTPUT OPTIONS:
+
+.TP 
+.B --afa
+Output alignments in aligned FASTA (afa) format instead of
+Stockholm. Note that the output alignments will not be valid input to
+the
+.B ssu-draw 
+or
+.B ssu-build
+programs.
+
+.TP 
+.B --dna
+Output DNA alignments, not RNA ones. By default, RNA alignments are output,
+even if the input is DNA.
+
+.TP
+.BI --key-out " <s>"
+Include the string 
+.I <s>
+as part of all output file names from
+.B ssu-mask,
+immediately before the suffix. For example, foo.archaea.<s>.mask would
+be created instead of foo.archaea.mask.
+
+
+.SH OPTIONS FOR CREATING SECONDARY STRUCTURE DIAGRAMS DISPLAYING MASKS:
+
+If 
+.B -d
+is used, 
+.B ssu-mask 
+will attempt to draw secondary structure diagrams displaying which
+consensus columns are kept and which are removed by the mask(s).
+The diagrams will initially be created as postscript files, but will be
+converted to pdf files if the program 
+.B ps2pdf
+(or another program <s> specified by 
+.BI --ps2pdf " <s>"
+) is installed and is in the user's PATH. Otherwise, the output
+diagrams will be postscript files.
+
+.TP
+.BI --ps2pdf " <s>"
+Specify that an executable named 
+.I <s>
+in your PATH can be used for converting postscript files to pdf files
+with the usage: 
+.BI <s> " foo.ps foo.pdf"
+
+.TP
+.B --ps-only
+Specify that postscript output is preferable to pdf. 
+No postscript to pdf conversion will be attempted.
+
+.TP
+.B --no-draw
+Do not draw any mask diagrams.
+
+.SH OPTIONS FOR ALTERNATIVES TO MASKING (LISTING, CONVERTING, OR REMOVING SEQUENCES):
+
+.TP 
+.B --list
+For each alignment, create a file that simply lists each sequence in
+the alignment on a separate line. Masking is not performed.
+
+.TP 
+.B --stk2afa
+Convert each Stockholm alignment to aligned FASTA format. Masking
+is not performed.
+
+.TP 
+.BI --seq-k " <f>"
+Remove all sequences 
+.B except 
+those listed in file 
+.I <f>.
+The file must contain each sequence name on a separate line. All names
+in the file must exist in the alignment. This file must be used in
+combination with 
+.B -a
+because it will only work on a single alignment.
+Masking is not performed.
+
+.TP 
+.BI --seq-r " <f>"
+Remove all sequences listed in file 
+.I <f>.
+The file must contain each sequence name on a separate line. All names
+in the file must exist in the alignment. This file must be used in
+combination with 
+.B -a
+because it will only work on a single alignment.
+Masking is not performed.

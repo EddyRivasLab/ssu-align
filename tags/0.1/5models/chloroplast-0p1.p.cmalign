@@ -1,0 +1,38 @@
+# cmalign :: align sequences to an RNA CM
+# INFERNAL 1.0 (January 2009)
+# Copyright (C) 2009 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: /Users/nawrockie/src/infernal-1.0/src/cmalign -p --sub -o chloroplast-0p1.p.stk chloroplast-0p1.cm chloroplast-0p1.fa
+# date:    Thu Jul  2 20:14:39 2009
+#
+# cm name                    algorithm  config  sub  bands     tau
+# -------------------------  ---------  ------  ---  -----  ------
+# chloroplast                  opt acc  global  yes    hmm   1e-07
+#
+#                                                                                  bit scores                           
+#                                                                              ------------------                       
+# seq idx  seq name                                                       len     total    struct  avg prob      elapsed
+# -------  -----------------------------------------------------------  -----  --------  --------  --------  -----------
+        1  00186::Cynomorium_coccineum::U67743                           1480   2300.46    130.93     0.997  00:00:01.91
+        2  00210::Cytinus_ruber::U47845                                  1497   2340.26    162.91     0.999  00:00:01.96
+        3  00047::Emiliania_huxleyi::X82156                              1483   2424.27    178.64     0.996  00:00:01.93
+        4  00058::Cyanidium_caldarium::X52985                            1492   2439.61    167.46     0.998  00:00:01.97
+        5  00069::Codium_fragile::U08345                                 1499   2317.55    203.70     0.996  00:00:01.99
+        6  00006::Cyanophora_paradoxa::X81840                            1506   2464.90    144.73     0.996  00:00:01.98
+        7  00073::chloroplast_Chlamydomonas_reinhardii::J01395           1474   2304.42    221.89     0.996  00:00:01.92
+        8  00028::Cryptomonas_sp.::X56806                                1493   2504.11    142.27     0.999  00:00:01.94
+        9  00041::chloroplast_Euglena_gracilis::X12890_V00159            1491   2255.58    189.79     0.997  00:00:01.95
+       10  00178::Hydnora_africana::U67745                               1504   2037.16    186.82     0.993  00:00:01.99
+       11  00303::chloroplast_Heterosigma_akashiwo::M82860_M34370        1537   2368.06    183.27     0.998  00:00:02.04
+       12  00136::chloroplast_Marchantia_polymorpha_liverwort_::X04465   1496   2462.86    125.93     0.998  00:00:01.94
+       13  00195::chloroplast_Nicotiana_tabacum_tabacco_::V00165         1486   2416.04    121.35     0.997  00:00:01.94
+       14  00301::Pilayella_littoralis::X14873                           1505   2317.99    188.20     0.997  00:00:01.97
+       15  00061::Palmaria_palmata::Z18289                               1486   2474.36    143.35     0.998  00:00:01.93
+       16  00087::Pyramimonas_parkeae::AF393608                          1518   2418.44    170.75     0.996  00:00:01.97
+       17  00223::Ricinis_communis::L37580|g625160                       1423   2319.00    117.76     0.997  00:00:01.82
+       18  00173::chloroplast_Zea_mays_maize_::Z00028                    1490   2382.21    118.34     0.997  00:00:01.95
+
+# Alignment saved in file chloroplast-0p1.p.stk.
+#
+# CPU time: 35.22u 2.45s 00:00:37.67 Elapsed: 00:00:38

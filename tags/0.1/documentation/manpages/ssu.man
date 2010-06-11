@@ -1,0 +1,133 @@
+.TH "SSU-ALIGN" 1 "@RELEASEDATE@" "@PACKAGE@ @RELEASE@" "@PACKAGE@ Manual"
+
+.SH NAME
+SSU-ALIGN(package) - alignment, masking and visualization of SSU rRNA sequences
+
+.SH SYNOPSIS
+
+.B ssu-align
+  Align small subunit ribosomal RNA (16S/18S SSU rRNA) sequences
+
+.B ssu-build
+  Build SSU rRNA covariance models from multiple sequence alignment(s)
+
+.B ssu-draw
+  Draw secondary structure diagrams of SSU rRNA
+
+.B ssu-mask
+  Mask (remove columns from) SSU rRNA multiple sequence alignments
+
+.B ssu-merge
+  Merge SSU rRNA alignments created by parallel ssu-align jobs
+
+.B ssu-prep
+  Prepare SSU rRNA sequences for parallel ssu-align jobs
+
+.SH DESCRIPTION
+
+.PP
+SSU-ALIGN is a suite of several programs for creating, masking and
+visualizing small subunit ribosomal RNA (SSU rRNA) multiple sequence
+alignments. It uses profile probabilistic models called "profile
+hidden Markov models" (profile HMMs) and "covariance models" (CMs)
+that represent archaeal 16S SSU rRNA, bacterial 16S SSU rRNA and
+eukaryotic 18S SSU rRNA. Each of these profile models was built from a
+reference alignment derived from Robin Gutell's Comparative RNA
+Website database (CRW) (Cannone et al., BMC Bionformatics. 2002; 3:2.)
+as described in the user's guide.  The alignments created by SSU-ALIGN
+explicitly take into account the conserved secondary structure of SSU
+as annotated by CRW. SSU-ALIGN output alignments are created at a rate
+of roughly one sequence per second for full length SSU sequences.
+
+.PP
+The main program,
+.B ssu-align
+takes a FASTA-formatted sequence file containing SSU sequences,
+classifies them by domain of life (i.e. archaea, bacteria, or eukarya)
+and creates structurally annotated domain-specific alignments. 
+
+.PP
+.B ssu-mask 
+removes columns from (masks) alignments created by 
+.B ssu-align
+that are likely to contain alignment errors. The set of columns to
+remove is determined based on per-nucleotide confidence estimates
+(posterior probabilities, annotated in 'PP' lines) contained within
+the alignments as calculated by
+.B ssu-align. 
+Alternatively, preset masks can be applied to remove a consistent set
+of columns to allow comparison across multiple datasets.
+.B ssu-mask
+can also be used to convert alignments to aligned FASTA and to remove
+a subset of sequences from an alignment. 
+
+.PP
+The 
+.B ssu-draw
+program generates secondary structure diagrams of SSU in postscript or PDF
+format from 
+.B ssu-align
+generated alignments. (PDF is possible only if a postscript to pdf
+converter like 'ps2pdf' is in your PATH). Diagrams of individual
+aligned sequences or alignment summary statistics can be generated. 
+
+.PP
+The
+.B ssu-prep
+program can be used for splitting up large sequence files into many
+smaller ones to be aligned separately in parallel on a cluster or
+multi-core machine. It outputs a shell
+script that will execute the set of parallel 
+.B ssu-align 
+jobs and then automatically merge their results. The final alignments will be identical
+to what would have been created by a single 
+.B ssu-align
+job that processed the full original sequence file. 
+
+.PP
+.B ssu-merge
+merges the results of a set of parallel 
+.B ssu-align 
+jobs created by 
+.B ssu-prep.
+It is automatically called by the final 
+.B ssu-align 
+job of the set, and so should only be necessary to be called manually
+on the command-line in the event that one or more of the jobs fail. If
+this happens, only the failed jobs need be rerun, and then the full
+set can be merged by executing
+.B ssu-merge. 
+
+.PP
+Finally, 
+.B ssu-build
+constructs new profile models (CMs) from input structurally
+annotated alignments. These can either be full length or partial SSU
+models. For example, models that represent only hypervariable region
+V4 can be constructed for aligning datasets from a PCR-based study
+that targetted the V4 region.
+
+.PP
+SSU-ALIGN is designed to be able to create and manipulate very large
+alignments (up to millions of sequences). The main limitation for large
+alignments is the time required to create them (about 1
+sequence/second/cpu). The memory requirements of 
+SSU-ALIGN are effectively independent of the number of sequences in
+the alignments.
+
+.PP
+Each of the six programs has its own man page.
+
+.PP
+The SSU-ALIGN programs internally execute programs from the INFERNAL
+package and the Easel sequence analysis library. INFERNAL is developed
+by Eric Nawrocki, Diana Kolbe, and Sean Eddy. Easel is developed by
+Sean Eddy. The INFERNAL and Easel programs installed with SSU-ALIGN
+include a
+.I ssu-
+prefix to distinguish them from separate installations
+of INFERNAL and/or Easel that may be on your system. For example, the
+.B cmsearch
+INFERNAL program used by SSU-ALIGN is called
+.B ssu-cmsearch. 
+Each of these programs has its own man page as well.

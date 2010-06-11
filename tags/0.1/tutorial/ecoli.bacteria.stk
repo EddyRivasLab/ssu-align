@@ -1,0 +1,207 @@
+# STOCKHOLM 1.0
+#=GF AU Infernal 1.0
+
+00841::Escherichia_coli::J01695             ----------------------AAAUUGAAGAGUUUGAUCAUGGCUCAGA
+#=GR 00841::Escherichia_coli::J01695 POSTX. ....................--9999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X ....................--9999999999999999999999999999
+#=GC SS_cons                                ....................::::::::::<<<<<_______>>>>>,{{
+#=GC RF                                     ....................UUuaAaUGGAGAGUUUGAUCCUGGCUCAGg
+
+00841::Escherichia_coli::J01695             UUGAACGCUGGCGGCAGGCCUAACACAUGCAAGUCGAACGGUAACA--G-
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9999999999999999999999999999999999999999999999..9-
+#=GR 00841::Escherichia_coli::J01695 POST.X 9999999999999999999999999999999999999999999999..7-
+#=GC SS_cons                                {{-{{{{{{,{{{{{{{{{----{{{-{{{,,<<<--<<<<<-.<-..-<
+#=GC RF                                     AUGAACGCUGGCGGCGuGCuUAACACAUGCAAGUCGAACGguA.CA..Ga
+
+00841::Escherichia_coli::J01695             GAAGAAGCU-UGCUUCUUU-G--CUGACGAGUGGCGG-ACGGGUGAGUAA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999.999999999-9..99999999999999.999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 689999999.999999985-5..79999999999999.999999999999
+#=GC SS_cons                                <<<<<<<__.__>>>>>>>>-..-.>>>->>>>>>,,.,,,,[[[,,,,,
+#=GC RF                                     aaaggacuU.cGguccuuggg..a.GacGAGUGGCGg.ACGGGUGAGUAA
+
+00841::Escherichia_coli::J01695             UGU-CUGGGA-AACUGCCUGAUGGAGG-GGGAUAACUACUGGAAACGGUA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999.999999-9999999999999999.9999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999.999999-9999999999999999.9999999999999999999999
+#=GC SS_cons                                ,((.((((((--((---(((((((,<<.<<----<<<<<<<____>>>>>
+#=GC RF                                     CgC.GUGGGuAAUCUGCCcuuuAGugg.GGGAUAACcccuGGAAACgggg
+
+00841::Escherichia_coli::J01695             GCUAAUACCGCAUAAC---------GUCGCAA-GAC---------CAAA-
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9999999999999999------.--9999999.999---------9999.
+#=GR 00841::Escherichia_coli::J01695 POST.X 9999999999999999------.--9999999.999---------9999.
+#=GC SS_cons                                >>----->>>>,,,,,<<<<<<.<<<<<____.>>>>>>>>>>>,,,,,.
+#=GC RF                                     GCUAAUACCgcAUAagaccacg.auacCGCAu.GguauugugguugAAA.
+
+00841::Escherichia_coli::J01695             GAGGGGGA-CC---UUCG--GG-CCUCUUGCCAUCGGAUGUGCCCAGAUG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999.99...9999..99.999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999.99...9999..99.999999999999999999999999999
+#=GC SS_cons                                <<<<<<--.<<...____..>>.>>>>>>,)))))))--))))))))))<
+#=GC RF                                     GaaGGGGA.UC...UUua..GA.CCUuuCGCUaaagGAUGAgCCCGCGuC
+
+00841::Escherichia_coli::J01695             GGAUUAGCUAGUAGGUG-GGGUAACGGCUCACCUAGGCGA-CGA-UCCCU
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999.9999999999999999999999.999.99999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999.9999999999999999999999.999.99999
+#=GC SS_cons                                <<--<-<<<--<<<<<<.<<_______>>>>>>>>>>>--.---.>>>>,
+#=GC RF                                     CcAUUAGCUAGUUGGUG.GGGUAAuGGCCCACCAAGGCGA.CGA.UgGGU
+
+00841::Escherichia_coli::J01695             AGCUGGUCUGAGAGGAUGACCAGCCACACUGGAACUGAGACACGGUCCAG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                ,<<<<<<<<____>>>>--->>>>]]],<<<<<<__________>>>>>>
+#=GC RF                                     AGCCGGuCUGAGAGGaUGAUCGGCCACACUGGGACUGAGACACGGCCCAG
+
+00841::Escherichia_coli::J01695             ACUCCUACGGGAGGCAGCAGUGGGGAAUAUUGCACAAUGGGCGCAAGCCU
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                ,<<<<____>>>>,,,}}}}}}-},,,,,<-<<<---<<<<<____>>>>
+#=GC RF                                     ACUCCUACGGGAGGCAGCAGUGGGGAAUAUUGCaCAAUGGGCGAAAGCCU
+
+00841::Escherichia_coli::J01695             G-AUGCAGCCAUGCCGCGUGUAUGAAGAAGGCC-UUCG-GGUUGUAAAGU
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9.9999999999999999999999999999999.9999.99999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 9.9999999999999999999999999999999.9999.99999999999
+#=GC SS_cons                                >.->>>>,}}-}}}}}},,<<<<------<<<<.____.>>>>----->>
+#=GC RF                                     G.AuGCAGCaACGCCGCGUGaGgGAUGAAGGCC.UUCG.GGUUGUAAAcC
+
+00841::Escherichia_coli::J01695             ACUUUCAGCGGGGAGGAA-GGGAGUAAAGUUAAUACCUUUGCUCA-UUGA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999999999999-79999999999999999999999999.999*
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999999999999-89999999999999999999999999.999*
+#=GC SS_cons                                >>,,,<<<<<<<---<-----<<<<<<<<_______>>>>>>>>-.----
+#=GC RF                                     uCUUUcaucAGGGAAGAAaAggcaagGgagUAAAAggcCcuugca.uUGA
+
+00841::Escherichia_coli::J01695             CGUUACCCG-CAGAAGAAGCACCGGCUAACUCCGUGCCAGCAGCCGCGGU
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999.9999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999.9999999999999999999999999999999999999999
+#=GC SS_cons                                >---->>>>.>>--->,,<<<<<------<<<<<-----<<____>>---
+#=GC RF                                     CGGUACCUg.aaGAAgAAGCaCCGGCUAACUaCGUGCCAGCAGCCGCGGU
+
+00841::Escherichia_coli::J01695             AAUACGGAGGGUGCAAGCGUUAAUCGGAAUUACUGGGCGUAAAGCGCACG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                ---->>>>>>>>>>,}}}}}}}}}},,,,,,,,,,{{{-----{,[[[[-
+#=GC RF                                     AAUACGuAGGGuGCAAGCGUUAUcCGGAAUUACUGGGCGUAAAGgGcGCG
+
+00841::Escherichia_coli::J01695             CAGGCGGUUUGUUAAGUCA-G-AUGUGAAAUCCCCGGGCUCAACCUGGGA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9999999999999999999.9.9999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 9999999999999999999.9.9999999999999999999999999999
+#=GC SS_cons                                [-[[[,<<<<<<<-<<<<<.<.<<<<<----<<<<<<<_____>>>>>>>
+#=GC RF                                     UAGGCGGuuuguUAAGUCa.G.aUGUGAAAgcCCagGGCUCAACCcuGGa
+
+00841::Escherichia_coli::J01695             ACUGCAUCUGAUACUGGCAAGCUUGAGUCUCGUAGAGGGGGGUAGAAUUC
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                -->>>>>>>>>-->>>>>>>>>,,,(((((((((--(((((((<<--<<<
+#=GC RF                                     aCUGCAuUuGAaACUGgcaaaCUAGAGUgcgGuAGAGGaagGcGGAAUUC
+
+00841::Escherichia_coli::J01695             CAGGUGUAGCGGUGAAAUGCGUAGAG-AUCUGGAGGAAUACCGG-UGGCG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999.99999999999999999.99999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999.99999999999999999.99999
+#=GC SS_cons                                <<<<<---<<<______>>>------.>>>>>>>>-->>,,,,<.--<<_
+#=GC RF                                     CugGUGUAGCGGUGAAAUGCGUAGAU.AUcaGGAGGAACACCGG.UGGCG
+
+00841::Escherichia_coli::J01695             AAGGCGGCCCCCUGGACGAAG-ACUGACGCUCAG-GUGCGAAAGCGUGGG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999999999999999-999999999999.999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999999999999999-999999999999.999999999999999
+#=GC SS_cons                                ___>>>)))))))-)))))-)-))),,,]]]]--.]]]],,,,<<<<<<-
+#=GC RF                                     AAGGCGgCcuuCUGGgCcgAuAACUGACGCUGAG.GCgCGAAAGCGUGGG
+
+00841::Escherichia_coli::J01695             GAGCAAACAGGAUUAGAUACCCUGGUAGUCCACGCCGUAAACGAUGUCGA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                --<<---<<<<_________>>>>--->>>>>>>>,,,,,,,,,,(((((
+#=GC RF                                     GAGCAAACAGGAUUAGAUACCCUGGUAGUCCACGCCGUAAACGAUGaauA
+
+00841::Escherichia_coli::J01695             CUUGGAGGUUGUGCC---CUUGA--GGCGUGGCUUCCGGAGCUAACGCGU
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999999999-..99999-.9999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999999999-..38888-.9999999999999999999999999
+#=GC SS_cons                                (,,<<<<<<<<<<<<_..______.>>>>>>>>>>>>,,,<<____>>,,
+#=GC RF                                     CUAGGUGUuGGgggcA..uUcaAC.gcccUCaGUGCCGcAGCUAACGCGU
+
+00841::Escherichia_coli::J01695             UAAGUCGACCGCCUGGGGAGUACGGCCGCAAGGUUAAAACUCAAA-UGAA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999999999999999999999999999999999999999.9999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999999999999999999999999999999999999999.9999
+#=GC SS_cons                                ,,,))))))}}}},<<<------<<<<____>>>>---->>>,,,.,,,,
+#=GC RF                                     UAAGUauuCCGCCUGGGGAGUACGccCGCAAGggUGAAACUCAAA.GGAA
+
+00841::Escherichia_coli::J01695             UUG-ACGGGGGCCCGCACAAGCGGUGGAGCAUGUGGUUUAAUUCGAUGCA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999.9999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999.9999999999999999999999999999999999999999999999
+#=GC SS_cons                                ,{{.{{{-{{{{{{{-{{,,{{{{{{{{{{{{{{{{{,,,,<<<<_____
+#=GC RF                                     UUG.ACGGGGGCCCGCACAAGCGGUGGAGCAUGUGGUUUAAUUCGAUGCA
+
+00841::Escherichia_coli::J01695             ACGCGAAGAACCUUACCUGGUCUUGAC-AUC--CACGG--AAGUUUUCAG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999999999999999999999.999-.99999..9999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999999999999999999999.999-.99999..9999999999
+#=GC SS_cons                                ___>>>>,,,,,,,,{{{{{{{,,,,,.((((.(((((..,,<<<<<<<_
+#=GC RF                                     ACGCGAAGAACCUUACCaGGgCUUGAC.AUgC.ccggG..AAuccuccAG
+
+00841::Escherichia_coli::J01695             AGAUGAG-AAUG--UG----CCUU----------CGGG---AA-CCGUGA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9999999.9999..99....9999.........-9999...99.999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 9999999.9999..99....9999.........-9999...99.999999
+#=GC SS_cons                                ___>>>>.>>>,..<<....<<__.........___>>...>>.))))))
+#=GC RF                                     AGAUgga.ggaG..uG....CCUU.........UcGGG...Aa.CccggG
+
+00841::Escherichia_coli::J01695             GACAGGUGCUGCAUGGCUGUCGUCAGCUCGUGUUGUGAAAUGUUGGGUUA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                ))),[[-[[[[--[[[[[[[[[,,,((((((<<<____>>>,,<<<<___
+#=GC RF                                     cACAGGUGCUGCAUGGCUGUCGUCAGCUCGUGUCGUGAGAUGUUGGGUUA
+
+00841::Escherichia_coli::J01695             AGUCCCGCAACGAGCGCAACCCUUAUCCUUUGUUGCCAGCGG------UC
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999999999999999999999999999999999999999999.---.-99
+#=GR 00841::Escherichia_coli::J01695 POST.X 999999999999999999999999999999999999999999.---.-99
+#=GC SS_cons                                ___>>>>,,)))))),,,,,((((,<<<<<<<---<<--<<<.<<<.___
+#=GC RF                                     AGUCCCGCAACGAGCGCAACCCUUGUCcUUAGUUGCCAGCAg.GCC.UUu
+
+00841::Escherichia_coli::J01695             CGG----CCGGGA-ACUCAAAGGAGACUGCCAGUGAUAAACUG-GAGGAA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999----999999.99999999999999999999999999999.999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999----999999.99999999999999999999999999999.999999
+#=GC SS_cons                                ___>>>->>>>>-.--->>>>>>>,,<<<<<<<<_____>>>>.>>>>,,
+#=GC RF                                     AGGGGUGcUGGGc.ACUCUAAgGAGACUGCCGGuGAcAAaCCG.GAGGAA
+
+00841::Escherichia_coli::J01695             GGUGGGGAUGACGUCAAGUCAUCAUGGCCCUUACG-ACCAGGGCUACACA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999.99999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999.99999999999999
+#=GC SS_cons                                ,,,)))),,,,]]]]-]]]---]]]]]]]],,,,}.}}}}}},,,}}-}}
+#=GC RF                                     GGUGGGGAUGACGUCAAGUCAUCAUGGCCCUUAUG.uCCuGGGCUACACA
+
+00841::Escherichia_coli::J01695             CGUGCUACAAUGGCGCAUACAAAGAGAAGCGACCUCGCGAGAGCAAGCGG
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                }}}}}}}},,,<<<<<<<-----<<<--<<---<<<____>>>--->>--
+#=GC RF                                     CGUGCUACAAUGGccGGuACAAAGgGcAGCGAaaCCGCGAGGuGGAGCuA
+
+00841::Escherichia_coli::J01695             ACCUCAU-AAAGUGCGUCGUAGUCCGGAUUGGAGUCUGCAACUCGACUCC
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9999999.999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 9999999.999999999999999999999999999999999999999999
+#=GC SS_cons                                -->>>--.--->>>>>>>,,,,,,<---<<<<<<<<________>>>>>>
+#=GC RF                                     AUCcCAa.AAAgCCggUCUCAGUUCGGAUUGgAGUCUGCAACUCGACUcC
+
+00841::Escherichia_coli::J01695             AUGAAGUCGGAAUCGCUAGUAAUCGUGGAUCAGA-AUGCCACGGUGAAUA
+#=GR 00841::Escherichia_coli::J01695 POSTX. 9999999999999999999999999999999999-999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 9999999999999999999999999999999999-999999999999999
+#=GC SS_cons                                >>--->,,,,,}}}}},,,,,<<<<<<<<________>>>>>>>>,,,,,
+#=GC RF                                     AUGAAGUCGGAAUCGCUAGUAAUCGCAGAUCAGCcAUGCUGCGGUGAAUA
+
+00841::Escherichia_coli::J01695             CGUUCCCGGGCCUUGUACACACCGCCCGUCACACCAUGGGAGUGGGUUGC
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999999999999999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999999999999999999999
+#=GC SS_cons                                ,}}---}}}}}}}}}}-}},,<-<<-<<---<<<<<<<<--<<<<<<<<<
+#=GC RF                                     CGUUCCCGGGCCUUGUACACACCGCCCGUCACACCAUGGGAGUuGGuaau
+
+00841::Escherichia_coli::J01695             AAAAGAAG-UAGG-UAGCUUAACC------UUCG-------GGAGGGCGC
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999.9999.9999999999-.....9999-.....-999999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999.9999.9999999999-.....9999-.....-999999999
+#=GC SS_cons                                <<<----<.<<<<.<-<<<<--<<<....._____.....>>>->>>>>>
+#=GC RF                                     ACCCGAAG.uCgg.UGgcCUAACCC.....guAAU.....GGGAGGgaGc
+
+00841::Escherichia_coli::J01695             UUA-CCACUUUGUGAUUCAUGACUGGGGUGAAGUCGUAACAA-GGUAACC
+#=GR 00841::Escherichia_coli::J01695 POSTX. 999.99999999999999999999999999999999999999.9999999
+#=GR 00841::Escherichia_coli::J01695 POST.X 999.99999999999999999999999999999999999999.9999999
+#=GC SS_cons                                >>>.>--->>>>>>>>>>>>-->>>>>>>>---->>-->>--.>,<<<<<
+#=GC RF                                     cGc.CcAaGGUaggaCUgGUGACUGGGGUGAAGUCGUAACAA.GGUAGCC
+
+00841::Escherichia_coli::J01695             GUAGGGGAACCUGCGGUUGGAUCACCUCCUUA---
+#=GR 00841::Escherichia_coli::J01695 POSTX. 99999999999999999999999999999999--.
+#=GR 00841::Escherichia_coli::J01695 POST.X 99999999999999999999999999999999--.
+#=GC SS_cons                                <<<<<____>>>>>>>>>>:::::::::::::::.
+#=GC RF                                     GUACCGGAAGGUGCGGCUGGAUCACCUCCUUUCU.
+//

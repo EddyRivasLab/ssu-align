@@ -1,0 +1,43 @@
+# cmalign :: align sequences to an RNA CM
+# INFERNAL 1.0 (January 2009)
+# Copyright (C) 2009 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: /Users/nawrockie/src/infernal-1.0/src/cmalign -p --sub -o archaea-0p1.p.stk archaea-0p1.cm archaea-0p1.fa
+# date:    Thu Jul  2 20:10:20 2009
+#
+# cm name                    algorithm  config  sub  bands     tau
+# -------------------------  ---------  ------  ---  -----  ------
+# archaea                      opt acc  global  yes    hmm   1e-07
+#
+#                                                                            bit scores                           
+#                                                                        ------------------                       
+# seq idx  seq name                                                 len     total    struct  avg prob      elapsed
+# -------  -----------------------------------------------------  -----  --------  --------  --------  -----------
+        1  00092::Archaeoglobus_fulgidus::X05567_AE000965          1492   2271.62    204.60     1.000  00:00:02.00
+        2  00136::Aeropyrum_pernix::AP000062                       1501   2193.46    167.42     0.997  00:00:01.97
+        3  00052::Halobacterium_sp.::AE005128                      1473   2295.11    266.03     1.000  00:00:01.90
+        4  00075::Haloarcula_marismortui::X61688                   1472   2261.01    264.64     1.000  00:00:01.91
+        5  00076::Haloarcula_marismortui::X61689                   1472   2251.47    311.07     1.000  00:00:01.90
+        6  00049::Haloferax_volcanii::K00421                       1474   2309.15    301.57     1.000  00:00:01.91
+        7  00013::Methanobacterium_formicicum::M36508              1476   2306.88    247.42     0.999  00:00:01.91
+        8  00022::Methanospirillum_hungatei::M60880                1466   2234.23    285.13     0.999  00:00:01.91
+        9  00016::Methanobacterium_thermoautotrophicum::AE000930   1479   2333.79    254.15     0.999  00:00:01.92
+       10  00017::Methanobacterium_thermoautotrophicum::AE000940   1479   2332.30    254.23     0.999  00:00:01.91
+       11  00010::Methanococcus_vannielii::M36507                  1466   2259.72    263.43     0.998  00:00:01.90
+       12  00062::Natronobacterium_bangense.::Y14028               1475   2263.79    292.50     0.999  00:00:01.93
+       13  00004::Nanoarchaeum_equitans::AJ318041                  1500   2094.59    265.20     0.996  00:00:01.94
+       14  00064::Natronobacterium_innermongoliae.::AF009601       1472   2282.21    286.03     1.000  00:00:01.90
+       15  00114::Pyrococcus_abyssi.::AJ248283                     1512   2302.68    178.85     1.000  00:00:01.97
+       16  00115::Pyrococcus_furiosus::U20163|g643670              1495   2268.45    165.52     0.998  00:00:01.94
+       17  00116::Pyrococcus_horikoshii::AP000001                  1500   2309.56    176.88     1.000  00:00:01.94
+       18  00132::Pyrodictium_occultum::M21087                     1497   2206.79    161.57     0.997  00:00:01.93
+       19  00153::Sulfolobus_acidocaldarius::D14876                1492   2178.38    279.45     0.998  00:00:01.93
+       20  00151::Sulfolobus_solfataricus::X03235                  1492   2177.93    281.72     0.998  00:00:01.93
+       21  00089::Thermoplasma_acidophilum::AL445067_M38637        1471   2186.59    337.67     1.000  00:00:01.91
+       22  00121::Thermococcus_celer::M21529                       1486   2309.87    174.98     0.998  00:00:01.91
+       23  00130::Thermoproteus_tenax.::M35966|g176260             1503   2150.17    226.27     0.997  00:00:01.95
+
+# Alignment saved in file archaea-0p1.p.stk.
+#
+# CPU time: 44.45u 2.73s 00:00:47.18 Elapsed: 00:00:53

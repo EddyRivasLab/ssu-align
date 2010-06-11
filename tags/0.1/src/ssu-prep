@@ -1,0 +1,832 @@
+#!/usr/bin/perl
+#
+# ssu-prep
+# Eric Nawrocki
+# EPN, Mon Apr  5 16:54:05 2010
+#
+# Usage: ssu-prep [-options] <sequence file> <output dir> <number of ssu-align jobs>
+#             
+# Synopsis:
+#
+# Prepares <n> parallel jobs of 'ssu-align' by splitting up the target fasta file 
+# into <n> smaller files and outputting a list of <n> 'ssu-align' commands. When
+# executed, each command will process one of the <n> files and the final command
+# will merge the <n> results together.
+#
+# See definition of $options_usage for options, below.
+#
+use Getopt::Long;
+use strict;
+use warnings FATAL => 'all';
+use Cwd;
+
+my $ssualigndir = $ENV{'SSUALIGNDIR'};
+if(! exists($ENV{'SSUALIGNDIR'})) { 
+    printf STDERR ("\nERROR, the environment variable SSUALIGNDIR is not set, please set it to the directory where you installed SSU-ALIGN.\n"); 
+    exit(1); 
+}
+if(! (-d $ssualigndir)) { 
+    printf STDERR ("\nERROR, the ssu-align directory specified by your environment variable SSUALIGNDIR does not exist, see the User's Guide Installation section.\n"); 
+    exit(1); 
+}    
+#Make sure the SSUALIGNDIR has the ssu.pm file
+my $subs_file = $ssualigndir . "/ssu.pm";
+if(! (-e $subs_file)) { 
+    printf STDERR ("\nERROR, the required perl module ssu.pm is not in the directory specified by your SSUALIGNDIR environment variable.\n"); 
+    exit(1); 
+}
+require $subs_file;
+
+# get global variables
+our %globals_H = ();
+GetGlobals(\%globals_H, $ssualigndir);
+my $tfilectr = 0;
+
+# Start timing, this is done differently depending on if Time::HiRes is installed or not
+my $time_hires_installed = UseModuleIfItExists("Time::HiRes qw(gettimeofday)");
+my $total_seconds = -1 * SecondsSinceEpoch($time_hires_installed);
+
+my $script_desc    = "prepare SSU rRNA sequences for parallel ssu-align jobs";
+my $date           = scalar localtime();
+my $usage          = "";
+$usage          = "Usage: ssu-prep    [-options] <seqfile> <output dir> <num jobs> <prefix/suffix file>\n";
+$usage         .= "Usage: ssu-prep -x [-options] <seqfile> <output dir> <num jobs>\n";
+$usage         .= "Usage: ssu-prep -y [-options] <seqfile> <output dir> <num jobs>\n";
+$usage         .= "\n";
+$usage         .= "ssu-prep splits up <seqfile> into <num jobs> smaller files and creates a shell\n";
+$usage         .= "script that will execute <num jobs> ssu-align jobs in parallel, each processing\n";
+$usage         .= "one of the small sequence files. The results of all jobs will automatically be\n";
+$usage         .= "merged together by the final job, giving the same results as if a single\n";
+$usage         .= "ssu-align job was run for the complete <seqfile>.\n";
+$usage         .= "\n";
+$usage         .= "The 3 different usages control how the prefix and suffix are defined for the jobs\n";
+$usage         .= "in the output shell script, allowing, for example, the user to wrap the ssu-align\n";
+$usage         .= "commands in a cluster submission command (such as Sun Grid Engine's \"qsub\"):\n";
+$usage         .= "\n";
+$usage         .= "Default: (neither -x nor -y enabled) prefix and suffix for ssu-align jobs in\n";
+$usage         .= "         output shell script are defined in <prefix/suffix file>. First line is\n";
+$usage         .= "         the prefix, second line is the suffix.\n";
+$usage         .= "With -x: do not specify <prefix/suffix file>; output shell script will run all\n";
+$usage         .= "         <num jobs> jobs in parallel on one machine with <num jobs> cores/cpus.\n";
+$usage         .= "With -y: do not specify <prefix/suffix file>; user will manually add the desired\n";
+$usage         .= "         prefix/suffix to ssu-align commands after ssu-prep finishes.";
+$usage         .= "\n";
+my $options_usage  = "where general options are:\n";
+#                           1         2         3         4         5         6         7         8         9        10
+#                  1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+$options_usage .= "  -h           : show brief help on version and usage\n";
+#$options_usage .= "  -x           : run all <n> jobs in parallel on a single <n>-core machine (see above)\n";
+#$options_usage .= "  -y           : no job prefix/suffix; user will manually add these later  (see above)\n";
+$options_usage .= "  -f           : force; if dir named <output dir> already exists, empty it first\n";
+$options_usage .= "  -q           : third command line arg is number of seqs per job, not number of jobs\n";
+$options_usage .= "  -e           : split seqs so each job has an equal number of seqs, not nucleotides\n";
+$options_usage .= "  --no-bash    : write generic shell script instead of a bash-specific one\n";
+$options_usage .= "  --no-merge   : do not have final ssu-align job automatically merge all jobs\n";
+$options_usage .= "  --keep-merge : have final ssu-align job not remove small files as they are merged\n";
+
+# Append all other option descriptions, this is done by a external function so it's always
+# sync'ed between ssu-align and ssu-prep (which also displays ssu-align's options)
+AppendSsuAlignOptionsUsage(\$options_usage, 1); # '1' indicates caller is ssu-prep
+
+
+###################
+# Process options #
+###################
+my %opt_H = ();              # key: option (example "-h"); value: option argument (example ("0" or "1") if option takes no arg, actual argument if option takes arg)
+my %opt_takes_arg_H  = ();   # key: option; value: "1" if option takes argument, "0" if not
+my @opt_order_A  = ();       # order of options for printing in banner
+my %opt_passed_H = ();       # key: option; value: "1" if option will get passed to ssu-align calls, "0" if not
+my $enabled_options = "";    # string of all enabled options and their arguments (prob not in same order as they were on cmd line)
+my $opt;
+
+$opt_takes_arg_H{"-x"}           = 0;  push(@opt_order_A, "-x");
+$opt_takes_arg_H{"-y"}           = 0;  push(@opt_order_A, "-y");
+$opt_takes_arg_H{"-q"}           = 0;  push(@opt_order_A, "-q");
+$opt_takes_arg_H{"-e"}           = 0;  push(@opt_order_A, "-e");
+$opt_takes_arg_H{"--no-bash"}    = 0;  push(@opt_order_A, "--no-bash");
+$opt_takes_arg_H{"--no-merge"}   = 0;  push(@opt_order_A, "--no-merge");
+$opt_takes_arg_H{"--keep-merge"} = 0;  push(@opt_order_A, "--keep-merge");
+
+#Update opt_takes_arg_H, opt_order_A and opt_passed_H for 
+InitializeSsuAlignOptions(\%opt_takes_arg_H, \@opt_order_A);
+
+#Finally, specify which options get passed to the ssu-align jobs:
+#Most do, so we initialize all of them to '1' (TRUE)
+foreach $opt (@opt_order_A) { $opt_passed_H{$opt} = 1; }
+#Now manually set some to '0' (FALSE):
+$opt_passed_H{"-h"}           = 0;
+$opt_passed_H{"-f"}           = 0;
+$opt_passed_H{"-x"}           = 0;
+$opt_passed_H{"-y"}           = 0;
+$opt_passed_H{"-q"}           = 0;
+$opt_passed_H{"-e"}           = 0;
+$opt_passed_H{"--no-bash"}    = 0;
+$opt_passed_H{"--no-merge"}   = 0;
+$opt_passed_H{"--keep-merge"} = 0;
+
+#set default options
+foreach $opt (keys %opt_takes_arg_H) { 
+    if($opt_takes_arg_H{$opt}) { $opt_H{$opt} = ""; }
+    else                       { $opt_H{$opt} = 0; }
+}
+
+Getopt::Long::Configure ("bundling");
+my $opt_return = GetOptions
+    ('h'          => \$opt_H{"-h"}, 
+     'e'          => \$opt_H{"-e"},
+     'q'          => \$opt_H{"-q"},
+     'x'          => \$opt_H{"-x"},
+     'y'          => \$opt_H{"-y"},
+     'no-bash'    => \$opt_H{"--no-bash"},
+     'no-merge'   => \$opt_H{"--no-merge"},
+     'keep-merge' => \$opt_H{"--keep-merge"},
+     'm=s'        => \$opt_H{"-m"},
+     'b=f'        => \$opt_H{"-b"},
+     'l=n'        => \$opt_H{"-l"},
+     'i'          => \$opt_H{"-i"},
+     'f'          => \$opt_H{"-f"},
+     'dna'        => \$opt_H{"--dna"},
+     'rfonly'     => \$opt_H{"--rfonly"},
+     'n=s'        => \$opt_H{"-n"},
+     'no-align'   => \$opt_H{"--no-align"},
+     'no-search'  => \$opt_H{"--no-search"},
+     'toponly'    => \$opt_H{"--toponly"},
+     'forward'    => \$opt_H{"--forward"},
+     'global'     => \$opt_H{"--global"},
+     'keep-int'   => \$opt_H{"--keep-int"},
+     'aln-one=s'  => \$opt_H{"--aln-one"},
+     'no-trunc'   => \$opt_H{"--no-trunc"},
+     'filter=f'   => \$opt_H{"--filter"},
+     'no-prob'    => \$opt_H{"--no-prob"},
+     'mxsize=s'   => \$opt_H{"--mxsize"});
+
+if($opt_return != 1) { print STDERR "\nERROR, GetOptions() did not return 1, but $opt_return\n"; exit(1); }
+
+if ($opt_H{"-h"}) { 
+    PrintBanner($0, $script_desc, $date, \%opt_H, \%opt_takes_arg_H, \@opt_order_A, \@ARGV, 1, \$enabled_options, "");
+    # passing "" as last arg tells PrintBanner not to print banner to a file (usually it does, to the ssu-align output file)
+    print $usage . "\n"; 
+    print $options_usage; 
+    exit(0);  
+}
+
+# Check for incompatible option combinations.
+# First, we check all options that are in common to both ssu-align/ssu-prep
+# using the CheckSsuAlignOptions() function (instead of repeating this 
+# code in both ssu-prep and ssu-align). 
+# CheckSsuAlignOptions() will die if any incompatible options/ranges exist.
+CheckSsuAlignOptions(\%opt_H);
+
+# Now check the 'ssu-prep'-specific options for incompatible combinations:
+if(($opt_H{"-q"}) && ($opt_H{"-e"})) { 
+    printf STDERR ("\nERROR, -q and -e are incompatible, choose one or the other.\n"); exit(1);
+}    
+if(($opt_H{"--no-merge"}) && ($opt_H{"--keep-merge"})) { 
+    printf STDERR ("\nERROR, --no-merge is incompatible with --keep-merge.\n"); exit(1);
+}    
+
+###################################################
+# Process command-line arguments and print banner #
+###################################################
+my $usage_is_correct = 0;
+if((scalar(@ARGV) == 4) && (! $opt_H{"-x"}) && (! $opt_H{"-y"})) { $usage_is_correct = 1; }
+if((scalar(@ARGV) == 3) && (  $opt_H{"-x"}) && (! $opt_H{"-y"})) { $usage_is_correct = 1; }
+if((scalar(@ARGV) == 3) && (! $opt_H{"-x"}) && (  $opt_H{"-y"})) { $usage_is_correct = 1; }
+
+if(! $usage_is_correct) { 
+    if(($opt_H{"-x"}) && ($opt_H{"-y"})) { print "-x and -y are incompatible.\n"; }
+    else                                 { print "Incorrect number of command line arguments.\n"; }
+    print $usage;
+    print "\nTo see more help on available options, do ssu-prep -h\n\n";
+    exit(1);
+}
+my ($seqfile, $out_dir, $third_cmdline_arg, $presuf_file) = ("", "", "", "");
+if(($opt_H{"-x"}) || ($opt_H{"-y"})) { 
+    ($seqfile, $out_dir, $third_cmdline_arg) = @ARGV;
+}
+else { 
+    ($seqfile, $out_dir, $third_cmdline_arg, $presuf_file) = @ARGV;
+}
+
+$out_dir=~ s/\/$//; # remove trailing slash if it exists
+if(($third_cmdline_arg !~ m/^\d+$/) || ($third_cmdline_arg <= 0)) { 
+    printf STDERR "ERROR, third command-line argument must be a positive integer\n";
+    exit(1);
+}
+
+#####################################################
+# Create the output directory and sum and log files #
+#####################################################
+my $out_root         = RemoveDirPath($out_dir);
+my $out_dir_and_root = $out_dir . "/" . $out_root;
+my ($sum_file, $sum_file2print);
+my ($log_file, $log_file2print);
+$sum_file       = $out_dir_and_root . ".ssu-prep.sum";
+$sum_file2print = $out_dir_and_root . ".ssu-prep.sum";
+$log_file       = $out_dir_and_root . ".ssu-prep.log";
+$log_file2print = $out_dir_and_root . ".ssu-prep.log";
+
+CreateSsuAlignOutputDir($out_dir, $out_root, \%opt_H, $sum_file, $log_file); 
+PrintBanner($0, $script_desc, $date, \%opt_H, \%opt_takes_arg_H, \@opt_order_A, \@ARGV, 1, \$enabled_options, $sum_file);
+PrintBanner($0, $script_desc, $date, \%opt_H, \%opt_takes_arg_H, \@opt_order_A, \@ARGV, 0, \$enabled_options, $log_file);
+PrintGlobalsToFile(\%globals_H, $log_file);
+
+##################################################################
+# Validate that everything is go and determine output file names #
+##################################################################
+my ($ssualign, $ssumerge, $cmsearch, $cmalign, $reformat, $sfetch, $seqstat, $weight, $cm_file, $errmsg);
+my @indi_cm_name_A = ();
+ValidateAndSetupSsuAlignOrPrep(\%globals_H, $ssualigndir, $seqfile, 
+			       1, # caller is ssu-prep 
+			       0, # caller doesn't need to be able to call ssu-merge
+			       \%opt_H, \$tfilectr, \$ssualign, \$ssumerge, \$cmsearch, \$cmalign, \$reformat, \$sfetch, \$seqstat, \$weight, \$cm_file, \@indi_cm_name_A, $sum_file, $log_file);
+
+#####################################
+# Read the prefix/suffix file, if nec
+#####################################
+my $prefix = "";
+my $suffix = "";
+if($presuf_file ne "") { # if $presuf_file is "", -x or -y was enabled, in which case we don't have a prefix/suffix file
+    read_prefix_suffix_file($ssualigndir, $presuf_file, \$prefix, \$suffix, $sum_file, $log_file); 
+} 
+
+# Get stats on the input sequences, including the length of each sequence
+my $seqstat_out_file = $out_dir_and_root . ".seqstat";
+my ($target_nres, $nseq_total, $target_format);
+my @target_order_A = ();
+my %target_len_H = ();
+PrintStringToFile($sum_file, 1, sprintf("#\n# Validating input sequence file ... "));
+SeqstatSeqFilePerSeq($seqstat, $seqfile, $seqstat_out_file, $tfilectr++, \$target_nres, \$nseq_total, \$target_format, \@target_order_A, \%target_len_H, $sum_file, $log_file); 
+# remove seqstat output
+UnlinkFile($seqstat_out_file, $log_file);
+
+# Ensure we've got a FASTA file
+$target_format =~ tr/a-z/A-Z/;
+if($target_format ne "FASTA") { PrintErrorAndExit("ERROR, the target sequence file must be FASTA formatted.", $sum_file, $log_file, 1); }
+PrintStringToFile($sum_file, 1, sprintf("done.\n"));
+
+##################################################
+# Determine the number of sequences for each job #
+##################################################
+my @nseq_per_job_A = ();
+my @nres_per_job_A = ();
+my $njobs = 0;
+determine_nseq_per_job(\%opt_H, $third_cmdline_arg, $nseq_total, \@target_order_A, \%target_len_H, \@nseq_per_job_A, \@nres_per_job_A, \$njobs, $sum_file, $log_file);
+
+################################################################
+# Partition the target sequence file and print ssu-align calls #
+################################################################
+my $shell_script; 
+partition_seqfile_and_write_shell_script($seqfile, $out_dir, $out_root, \%opt_H, \%opt_takes_arg_H, \%opt_passed_H, \@opt_order_A, 
+					 $ssualign, $cm_file, $njobs, $nseq_total, \@nseq_per_job_A, \@nres_per_job_A, \$shell_script, $sum_file, $log_file);
+
+############
+# Conclude #
+############
+$total_seconds += SecondsSinceEpoch($time_hires_installed);
+PrintConclusion($sum_file, $log_file, $sum_file2print, $log_file2print, $total_seconds, $time_hires_installed, 
+		-1,  # don't print any info on where output files were created (b/c fasta files and shell script created in different dirs)
+		\%globals_H);
+
+exit(0);
+
+
+#####################################################################
+# Subroutine: read_prefix_suffix_file()
+# Incept:     EPN, Tue Apr 13 13:44:08 2010
+# 
+# Purpose:    Read the prefix and suffix from an input file.
+#             Comment lines, prefixed with "#" are ignored,
+#             Exactly 2 non-comment lines are expected, but 
+#             we can deal if there's more than 2 as long as lines
+#             3 on contain only whitespace (so the program doesn't
+#             exit in error if the user left blank lines at the
+#             end of the file), or if there's less (we assume they're
+#             supposed to be blank).
+# 
+#             All possible cases:
+#             1. Exactly 2 non-comment lines
+#                OR 2 non-comment lines followed by >= 1 all whitespace lines
+#                This is okay. Either or both of the non-comment
+#                lines can be blank ("").
+#                Prefix is first  non-comment line (without \n)
+#                Suffix is second non-comment line (without \n)
+#             2. 1 non-comment lines, it is not blank.
+#                This is okay.
+#                Prefix is first non-comment line (without \n)
+#                Suffix is set as empty string ("")
+#             3. 0 non-comment lines.
+#                This is okay.
+#                Prefix is set as empty string ("")
+#                Suffix is set as empty string ("")
+#             4. >2 non-blank non-comment lines
+#                This is not okay.
+#             
+# Arguments:
+# $ssualigndir:       SSUALIGNDIR, environment variable
+# $presuf_file:       the prefix/suffix file
+# $prefix_R:          RETURN: the prefix
+# $suffix_R:          RETURN: the suffix
+# $sum_file:          summary file (only to print errors to)
+# $log_file:          log file (only to print errors to)
+#
+# Returns:    Nothing. Dies if there's any errors.
+#             
+####################################################################
+sub read_prefix_suffix_file {
+    my $narg_expected = 6;
+    if(scalar(@_) != $narg_expected) { printf STDERR ("ERROR, read_prefix_suffix_file() entered with %d != %d input arguments.\n", scalar(@_), $narg_expected); exit(1); } 
+    my ($ssualigndir, $presuf_file, $prefix_R, $suffix_R, $sum_file, $log_file) = @_;
+
+    my $line;
+    my $prefix = "";
+    my $suffix = "";
+
+    # First, find the prefix/suffix file, it could be in the path specified on the command line,
+    # OR in the $SSUALIGNDIR
+
+    my $actual_presuf_file = FindPossiblySharedFile($presuf_file, $ssualigndir);
+    if(!(-e $actual_presuf_file)) { PrintErrorAndExit("ERROR, prefix/suffix file $presuf_file does not exist\nrelative to the current dir, nor SSUALIGNDIR.", $sum_file, $log_file, 1); }
+
+    open(PRE, $actual_presuf_file) || FileOpenFailure($actual_presuf_file, $sum_file, $log_file, $!, "reading");
+
+    # first, skip comment lines
+    my $seen_line1 = 0;
+    my $seen_line2 = 0;
+    while($line = <PRE>) { 
+	chomp $line;
+	if($line !~ m/^#/) { 
+	    if   (! $seen_line1) { $prefix = $line; $seen_line1 = 1; }
+	    elsif(! $seen_line2) { $suffix = $line; $seen_line2 = 1; }
+	    else                 { 
+		if($line =~ m/\w/) { 
+		    PrintErrorAndExit("ERROR, prefix/suffix file $presuf_file has more than 2 non-blank non-comment (non-\# prefixed) lines.", $sum_file, $log_file, 1); 
+		}
+	    }
+	}
+    }    
+
+    $$prefix_R = $prefix;
+    $$suffix_R = $suffix;
+    return;
+}
+
+
+#####################################################################
+# Subroutine: determine_nseq_per_job()
+# Incept:     EPN, Sat Nov 28 10:15:39 2009
+# 
+# Purpose:    Determine number of sequences for each job. Handled
+#             differently for each of the three possible cases, 
+#             see comments embedded in code below.
+#
+# Arguments:
+# $opt_HR:            reference to the hash of command-line options
+# $third_cmdline_arg: third command line argument 
+#                     (if -q, this is num seqs per job, else it's num jobs)
+# $nseq_total:        total number of target sequences
+# $target_order_AR:   ref to array of seq names in order from target seq file
+# $target_len_HR:     ref to hash, key: seq name, value: seq length
+# $nseq_per_job_AR:   number of sequences to use for each job, filled here
+# $nres_per_job_AR:   number of residues in all seqs for each job, filled here
+# $njobs_R:           number of jobs, filled here
+# $sum_file:          summary file (only to print errors to)
+# $log_file:          log file (only to print errors to)
+#
+# Returns:    Nothing. 
+#             
+####################################################################
+sub determine_nseq_per_job {
+    my $narg_expected = 10;
+    if(scalar(@_) != $narg_expected) { printf STDERR ("ERROR, determine_nseq_per_job() entered with %d != %d input arguments.\n", scalar(@_), $narg_expected); exit(1); } 
+    my ($opt_HR, $third_cmdline_arg, $nseq_total, $target_order_AR, $target_len_HR, $nseq_per_job_AR, $nres_per_job_AR, $njobs_R, $sum_file, $log_file) = @_;
+
+    my $njobs = 0;
+    my $nseq_used = 0;
+    my $nseq_per_job = 0;
+    my $remainder = 0;
+    my $nres_total = 0;
+    my $nres_used = 0;
+    my $i;
+    my ($nres_this_job, $nseq_this_job, $nres_per_job, $nres_remaining, $nseq_remaining, $nseq_max, $seqname, $njobs_remaining);
+
+    #####################################
+    # 3 possible cases we have to handle:
+    #
+    # Case 1. -q enabled
+    #         Each job will have $njobs sequences 
+    #         ($njobs was 3rd cmd line arg, which is
+    #          not actually number of jobs with -q, 
+    #          but number of seqs per job).
+    #
+    # Case 2. -e enabled: 
+    #         Each of $njobs jobs will have an equal 
+    #         number of sequences (or as close as possible)
+    #
+    # Case 3. Default: Neither -q nor -e enabled: 
+    #         Each of $njobs jobs will have an equal number of total
+    #         residues (summed length of seqs) (or as close as possible)
+    #
+    # Note that -q and -e are mutually exclusive as enforced
+    # when the options were processed above.
+    #
+    #######################################
+
+    # Check to make sure we at least as many seqs as we have jobs
+    if(! $opt_HR->{"-q"}) { 
+	if($third_cmdline_arg > $nseq_total) { 
+	    PrintStringToFile($sum_file, 1, sprintf("# Note: $third_cmdline_arg jobs specified, but there are only $nseq_total sequences in the\n\# input sequence file. ssu-prep does not split up individual input sequences.\n"));
+	    PrintStringToFile($sum_file, 1, sprintf("#\n"));
+	}
+    }
+
+    if($opt_HR->{"-q"}) { 
+	# Case 1. -q enabled
+	#         Each job will have $njobs sequences 
+	#         ($njobs was 3rd cmd line arg, which is
+	#          not actually number of jobs with -q, 
+	#          but number of seqs per job).
+	$nseq_per_job = $third_cmdline_arg;
+	$njobs = int($nseq_total / ($nseq_per_job));
+	for($i = 0; $i < $njobs; $i++) { 
+	    $nseq_per_job_AR->[$i] = $nseq_per_job; 
+	    $nseq_used += $nseq_per_job;
+	}
+	$remainder  = $nseq_total - $nseq_used;
+	if($remainder > 0) { 
+	    $njobs++;
+	    $nseq_per_job_AR->[($njobs-1)] = $remainder;
+	    $nseq_used += $remainder;
+	}
+    }
+    elsif($opt_HR->{"-e"}) { 
+	# Case 2. -e enabled: 
+	#         Each of $njobs jobs will have an equal 
+	#         number of sequences (or as close as possible)
+	$njobs = $third_cmdline_arg;
+	$nseq_per_job = int($nseq_total / ($njobs));
+	$remainder  = $nseq_total - ($nseq_per_job * $njobs);
+	for($i = 0; $i < $remainder; $i++) { 
+	    $nseq_per_job_AR->[$i] = $nseq_per_job + 1;
+	    $nseq_used += $nseq_per_job + 1;
+	}
+	for($i = $remainder; $i < $njobs; $i++) { 
+	    $nseq_per_job_AR->[$i] = $nseq_per_job;
+	    $nseq_used += $nseq_per_job;
+	}
+    }
+    else { 
+	# Case 3. Default: neither -q nor -e enabled: 
+	#         Each of $njobs jobs will have an equal number of total
+	#         residues (summed length of seqs) (or as close as possible)
+	$njobs = $third_cmdline_arg;
+	foreach $seqname (keys %{$target_len_HR}) { $nres_total += $target_len_HR->{$seqname}; }
+	for($i = 0; $i < $njobs; $i++) { 
+	    $nseq_remaining  = $nseq_total - $nseq_used;
+	    $nres_remaining  = $nres_total - $nres_used;
+	    $njobs_remaining = $njobs - $i;
+	    $nres_this_job = 0;
+	    $nseq_this_job = 0;
+
+	    # Determine num res for even split b/t all remaining job (including current one <$i>), 
+	    # for remaining seqs. Updating this for each job based on remaining number of seqs and residues
+	    # (i.e. within the for($i = 0; $i < $njobs; $i++) loop) is the best greedy approach (I think).
+	    $nres_per_job = int($nres_remaining / $njobs_remaining);
+
+	    # Add 1 if we rounded down, that way putting $nres_per_job for all $njobs jobs
+	    # is guaranteed to cover the full seq file
+	    if($nres_remaining != ($nres_per_job * $njobs_remaining)) { $nres_per_job++; }
+
+	    # Determine the max number seqs we can put on this job: $nseq_max = $nseq_remaining - ($njobs_remaining - 1).
+	    # If we put $nseq_max seqs on this job, we'd have only 1 left for every remaining job.
+	    $nseq_max = $nseq_remaining - ($njobs_remaining - 1);
+
+	    while(($nres_this_job < $nres_per_job) && ($nseq_this_job < $nseq_max)) { 
+		$nres_this_job += $target_len_HR->{$target_order_AR->[$nseq_used]};
+		$nseq_this_job++;
+		$nseq_used++;
+	    }
+	    $nres_used += $nres_this_job;
+	    $nseq_per_job_AR->[$i] = $nseq_this_job;
+	    $nres_per_job_AR->[$i] = $nres_this_job;
+	    #printf("job %3d, %4d seqs  %6d/%6d total residues\n", $i+1, $nseq_per_job_AR->[$i], $nres_this_job, $nres_total);
+	}
+    }    
+
+    if($nseq_used != $nseq_total) { 
+	printf("nseq_used: %d nseq_total %d\n", $nseq_used, $nseq_total);
+	PrintErrorAndExit("ERROR, coding error: unable to split up sequences properly", $sum_file, $log_file, 1);
+    }
+
+    $$njobs_R = $njobs;
+    return;
+}
+
+
+#####################################################################
+# Subroutine: partition_seqfile_and_write_shell_script()
+# Incept:     EPN, Mon Nov  3 15:25:23 2008
+# 
+# Purpose:    Partition the target sequence file into <$njobs> chunks
+#             and write the shell script that will execute the
+#             <$njobs> ssu-align jobs.
+# 
+# Arguments:  
+# $seqfile                  the target sequence file
+# $out_dir                  output directory
+# $out_root                 lowest level subdir of $out_dir (equals $out_dir if $out_dir contains 0 subdirs)
+# $opt_HR:                  reference to the hash of command-line options
+# $opt_takes_arg_HR:        reference to the hash specifying if each option takes an arg or not
+# $opt_passed_HR:           reference to the hash of options that should be passed to children
+# $opt_order_AR:            order of options for children call
+# $ssualign:                the ssu-align executable command
+# $cm_file:                 the CM file 
+# $njobs:                   number of ssu-align jobs
+# $nseq_total:              number of sequences in $seqfile
+# $nseq_per_job_AR:         reference to array with num seqs for each job
+# $nres_per_job_AR:         reference to array with num residues for each job
+# $shell_script_R:          RETURN; name of shell script we create here
+# $sum_file:                file to print output file notices to
+# $log_file:                log file
+#
+# Returns:    Nothing.
+#
+# Exits:      Upon successful completion with a zero status code 
+#             (normal). Exits early upon failure with informative
+#             message and non-zero status code. 
+# 
+####################################################################
+sub partition_seqfile_and_write_shell_script {
+    my $narg_expected = 16;
+    if(scalar(@_) != $narg_expected) { printf STDERR ("ERROR, partition_seqfile_and_write_shell_script() entered with %d != %d input arguments.\n", scalar(@_), $narg_expected); exit(1); } 
+    my($seqfile, $out_dir, $out_root, $opt_HR, $opt_takes_arg_HR, $opt_passed_HR, $opt_order_AR, $ssualign, $cm_file, $njobs, $nseq_total, $nseq_per_job_AR, $nres_per_job_AR, $shell_script_R, $sum_file, $log_file) = @_;
+
+    my ($i, $n, $nseq_this_file, $nseq_total_regurg, $line, $target_subfile, $target_subfile_root, $str);
+
+    my $shell_script = $out_root . ".ssu-align.sh";
+    my $ndig_jobs = NumberOfDigits($njobs);
+    my $ndig_seqs = NumberOfDigits(MaxArray($nseq_per_job_AR));
+    my $ndig_res  = 0;
+    my $do_print_res = 0;
+    if(scalar(@{$nres_per_job_AR}) > 0) { $do_print_res = 1; } 
+    if($do_print_res) { $ndig_res = NumberOfDigits(MaxArray($nres_per_job_AR)); }
+    my $max_file_name_width = length($shell_script);
+    if($max_file_name_width < (length(RemoveDirPath($seqfile)) + $ndig_jobs)) { 
+	$max_file_name_width = length(RemoveDirPath($seqfile)) + $ndig_jobs;
+    }
+    if($max_file_name_width < (length("output file name"))) { 
+	$max_file_name_width = length("output file name"); 
+    }
+    
+    my $description_width = length("shell script that will execute  ssu-align jobs") + $ndig_jobs;
+    if($do_print_res) { 
+	if($description_width < length("partition  FASTA sequence file ( seqs;  nt)") + $ndig_jobs + $ndig_seqs + $ndig_res) { 
+	    $description_width = length("partition  FASTA sequence file ( seqs;  nt)") + $ndig_jobs + $ndig_seqs + $ndig_res;
+	}
+    }
+    else { 
+	if($description_width < length("partition  FASTA sequence file ( seqs") + $ndig_jobs + $ndig_seqs + $ndig_res) { 
+	    $description_width = length("partition  FASTA sequence file ( seqs)") + $ndig_jobs + $ndig_seqs + $ndig_res;
+	}
+    }
+    my $dashes1 = ""; for($i = 0; $i < $max_file_name_width; $i++) { $dashes1 .= "-"; } 
+    my $dashes2 = ""; for($i = 0; $i < $description_width; $i++)   { $dashes2 .= "-"; } 
+    PrintStringToFile($sum_file, 1, sprintf("#\n# Preparing %d ssu-align jobs ...\n", $njobs));
+    # write informative message regarding how seqs were split:
+    if($opt_HR->{"-q"} || $opt_HR->{"-e"})  { PrintStringToFile($sum_file, 1, sprintf("# Partitioning seqs with goal of equalizing number of sequences per job ...\n")); }
+    else                                    { PrintStringToFile($sum_file, 1, sprintf("# Partitioning seqs with goal of equalizing total number of nucleotides per job ...\n")); }
+    PrintStringToFile($sum_file, 1, sprintf("#\n"));
+    PrintStringToFile($sum_file, 1, sprintf("# %-*s  %-*s\n", $max_file_name_width, "output file name", $description_width, "description"));
+    PrintStringToFile($sum_file, 1, sprintf("# %-*s  %-*s\n", $max_file_name_width, $dashes1, $description_width, $dashes2));
+
+    ###############################
+    # Partition the sequence file #
+    ###############################
+    $nseq_this_file = 0;
+    $nseq_total_regurg = 0;
+    $n = 0;
+    my $command;
+    open(FULL, $seqfile)            || FileOpenFailure($seqfile, $sum_file, $log_file, $!, "reading");
+    while($line = <FULL>) { 
+	$line =~ s/^\s+//; # chomp up leading whitespace
+	if($line =~ m/^>/) { 
+	    # new sequence line
+	    if((($n == 0) && ($nseq_this_file == 0)) || # TRUE if first file, and we haven't printed any seqs
+	       (($n >  0) && ($nseq_this_file == $nseq_per_job_AR->[($n-1)]))) # TRUE if not first file, printed enough seqs
+	    {
+		if($n > 0) 
+		{ 
+		    # we've printed enough sequences to the current file, close it
+		    close(SUB); 
+		    PrintStringToFile($sum_file, 1, sprintf("  %-*s  partition %*d FASTA sequence file (%*d %s",
+							    $max_file_name_width, $target_subfile, $ndig_jobs, $n, $ndig_seqs, $nseq_this_file, (($nseq_this_file == 1) ? "seq " : "seqs")));
+		    if($do_print_res) { PrintStringToFile($sum_file, 1, sprintf("; %*d nt", $ndig_res, $nres_per_job_AR->[$n-1])); }
+		    PrintStringToFile($sum_file, 1, sprintf(")\n"));
+		    $nseq_this_file = 0;
+		}
+		# open a new file:
+		$n++;
+		$target_subfile_root = RemoveDirPath($seqfile) . "." . ($n);
+		$target_subfile      = $out_dir . "/" . $target_subfile_root;
+		open(SUB, ">". $target_subfile) || FileOpenFailure($target_subfile, $sum_file, $log_file, $!, "writing");
+	    }
+	    $nseq_this_file++;
+	    $nseq_total_regurg++;
+	}
+	if($line =~ m/\w+/) { print SUB ($line); } # print each line that has >= 1 alphanumeric
+    }
+    close(FULL);
+    # close the final file that was opened, but not closed
+    close(SUB);
+    if($nseq_this_file == 0) { # we opened a new sequence file for output, but didn't output anything to it
+	PrintErrorAndExit("ERROR, splitting up fasta file, final file got 0 sequences.\n", $sum_file, $log_file, 1);
+    }
+    PrintStringToFile($sum_file, 1, sprintf("  %-*s  partition %*d FASTA sequence file (%*d %s",
+					    $max_file_name_width, $target_subfile, $ndig_jobs, $n, $ndig_seqs, $nseq_this_file, (($nseq_this_file == 1) ? "seq " : "seqs")));
+    if($do_print_res) { PrintStringToFile($sum_file, 1, sprintf("; %*d nt", $ndig_res, $nres_per_job_AR->[$n-1])); }
+    PrintStringToFile($sum_file, 1, sprintf(")\n"));
+    if($nseq_total_regurg != $nseq_total) { 
+	PrintErrorAndExit(sprintf("ERROR, problem partitioning target FASTA file $seqfile into $njobs files, %d of the %d sequences were copied.", $nseq_total_regurg, $nseq_total), $sum_file, $log_file,  1);
+    }
+    if($n != $njobs) { 
+	PrintErrorAndExit("ERROR, problem partitioning target FASTA file $seqfile into $njobs files, $n files were successfully created.", $sum_file, $log_file, 1);
+    }    
+
+    ###############################################################
+    # Write the shell script that will execute the ssu-align jobs #
+    ###############################################################
+    open(SH, ">" . $shell_script) || FileOpenFailure($shell_script, $sum_file, $log_file, $!, "writing");
+    PrintStringToFile($sum_file, 1, sprintf("  %-*s  shell script that will execute %d ssu-align jobs\n", $max_file_name_width, $shell_script, $njobs));
+    my $ssualign_enabled_options = "";
+    my $ssualign_command = "";
+    my ($opt, $keep_merge_opt);
+    foreach $opt (@{$opt_order_AR}) { 
+	if($opt_passed_HR->{$opt}) { 
+	    if($opt eq "-m")                 { if($opt_HR->{"-m"} ne "") { $ssualign_enabled_options .= $opt . " " . $cm_file . " ";} } #special case, cm file must include full path to the file
+	    elsif($opt_takes_arg_HR->{$opt}) { if($opt_HR->{$opt} ne "") { $ssualign_enabled_options .= $opt . " " . $opt_HR->{$opt} . " ";} }
+	    else                             { if($opt_HR->{$opt})       { $ssualign_enabled_options .= $opt . " "; } }
+	}
+    }
+
+#	                  1         2         3         4         5         6         7         8
+#	        012345678901234567890123456789012345678901234567890123456789012345678901234567890
+    if(! $opt_HR->{"--no-bash"}) { 
+	printf SH ("#!/bin/bash\n");
+	printf SH ("# Bash shell script created by ssu-prep for running $njobs ssu-align jobs.\n");
+    }
+    else { 
+	printf SH ("# Shell script created by ssu-prep for running $njobs ssu-align jobs\n");
+    }
+    printf SH ("# Each job will process a separate partition of the sequence file:\n");
+    printf SH ("# \'$seqfile\'.\n");
+    printf SH ("#\n");
+    if($opt_HR->{"-x"}) { 
+	printf SH ("# This script will execute all %d jobs at once, in parallel. It is only\n", $njobs);
+	printf SH ("# meant to be executed on a system with %d cpus/cores. The first %d jobs\n", $njobs, ($njobs-1));
+	printf SH ("# will run in the background and output to /dev/null. The final job will\n");
+	printf SH ("# output to STDOUT, allowing you to follow its progress.\n#\n");
+    }
+    if(! $opt_HR->{"--no-merge"}) { 
+#	                      1         2         3         4         5         6         7         8
+#	            012345678901234567890123456789012345678901234567890123456789012345678901234567890
+	printf SH ("# The final job is special, after computing its alignments it will wait for all\n");
+	printf SH ("# other jobs to finish and then merge the output of all jobs together.\n");
+	printf SH ("# The merged output files will be in the directory: \'\/$out_dir\/\'\n");
+	printf SH ("#\n");
+	if(! $opt_HR->{"--no-bash"}) { 
+	    printf SH ("# The for loop below will execute/submit the first %d of %d jobs.\n", $njobs-1, $njobs);
+	    printf SH ("# The final ssu-align job is executed separately because it does the merging.\n");
+	    printf SH ("#\n");
+	}
+    }
+    else { 
+	printf SH ("# The --no-merge option was selected and so the user is responsible for manually\n");
+	printf SH ("# merging all jobs once they have all finished. To do this from the current\n");
+	printf SH ("# working directory, execute:\n");
+	printf SH ("#\tssu-merge $out_dir\n");
+	printf SH ("#\n");
+	if(! $opt_HR->{"--no-bash"}) { 
+	    printf SH ("# The for loop will execute all %d jobs:\n", $njobs-1, $njobs);
+	    printf SH ("#\n");
+	}
+    }
+    # If -y was set, we don't have a prefix or suffix and the shell script, 
+    # if left unmodified, will just execute all jobs in a serial fashion on the 
+    # machine on which it is executed. A non-expert user will probably not know
+    # this, so we tell them with a comment in the .sh file here:
+    if($opt_HR->{"-y"}) { 
+	$str = "#\n################################################################################\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# WARNING: -y was set on the command line.\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# This means this shell script will simply run the $njobs ssu-align jobs in\n";
+	printf SH ($str);
+	$str = "# This means that \'$shell_script\' will simply run the $njobs ssu-align jobs in\n";
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# succession, one after another, not in parallel. If you want to run the jobs in\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# parallel you'll either have to manually edit this file or rerun ssu-prep using\n";
+	printf SH ($str);
+	$str = "# parallel you'll either have to manually edit that file or rerun ssu-prep using\n";
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# the options listed above to specify prefix and/or suffix strings for the\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# ssu-align commands, so they are, for example, submitted to run on a cluster\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# using a queing system manager like SGE. Or you can run <n> jobs in parallel on\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# a single <n>-core machine by rerunning ssu-prep using \'-x\'.\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "# Do \'ssu-prep -h\' or see the User Guide for more information.\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+	$str = "################################################################################\n";
+	printf SH ($str);
+	PrintStringToFile($sum_file, 1, $str);
+    }	
+    if($opt_HR->{"--no-bash"}) { 
+	my $last_job2print = ($opt_HR->{"--no-merge"}) ? $njobs : $njobs-1;
+	for($i = 1; $i <= $last_job2print; $i++) { 
+	    $target_subfile_root = RemoveDirPath($seqfile) . ".$i";
+	    $command   = ($prefix eq "")           ? "" : $prefix . " ";
+	    $command  .= "$ssualign " . $ssualign_enabled_options . "$out_dir/$target_subfile_root $out_dir/$out_root.$i";
+	    if($opt_HR->{"-x"}) { $command .= " > /dev/null &"; }
+	    if($suffix ne "") { $command .= " " . $suffix; }
+	    # Note: $suffix will be "" if -x
+	    printf SH ("echo \"\# Executing: %s\"\n", $command);
+	    printf SH ("%s\n", $command);
+	}
+    }
+    else { # --no-bash not enabled
+	$target_subfile_root = RemoveDirPath($seqfile) . ".\$i";
+	$command   = ($prefix eq "")           ? "" : $prefix . " ";
+	$command  .= "$ssualign " . $ssualign_enabled_options . "$out_dir/$target_subfile_root $out_dir/$out_root.\$i";
+	if($opt_HR->{"-x"}) { $command .= " > /dev/null &"; }
+	if($suffix ne "") { $command .= " " . $suffix; }
+	# Note: $suffix will be "" if -x
+	printf SH ("for \(\( i=1; i<=%d; i++ \)\)\n", ($opt_HR->{"--no-merge"}) ? $njobs : ($njobs-1));
+	printf SH ("do\n");
+	printf SH ("\techo \"\# Executing: %s\"\n", $command);
+	printf SH ("\t%s\n", $command);
+	printf SH ("done\n");
+    }
+    # if we're merging, we print the final command separately, b/c it needs to supply --merge 
+    if(! $opt_HR->{"--no-merge"}) { 
+	$target_subfile_root = RemoveDirPath($seqfile) . ".$njobs";
+	$keep_merge_opt = "";
+	if($opt_HR->{"--keep-merge"}) { $keep_merge_opt = "--keep-merge "; }
+	$command  = ($prefix eq "")           ? "" : $prefix . " ";
+	$command .= "$ssualign --merge $njobs " . $keep_merge_opt . $ssualign_enabled_options . "$out_dir/$target_subfile_root $out_dir/$out_root.$njobs";
+	# Special handling of the final job, we remove its directory after it finishes, 
+	# it's important we put this rmdir command prior to the suffix (so it's part of a qsub command, for ex)
+	# because its impossible to remove it (at least on our system) while it is still running
+	# because its never actually empty (a temporary .nfs* file stays in it until ssu-align finishes).
+	if(! $opt_HR->{"--keep-merge"}) { 
+	    ;#$command .= "; if [ -d $out_dir/$out_root.$njobs ] then rmdir $out_dir/$out_root.$njobs fi;";
+	}
+	if($suffix ne "") { $command .= " " . $suffix; }
+	# Note: $suffix will be "" if -x
+	printf SH ("echo \"\# Executing: %s\"\n", $command);
+	printf SH ("%s\n", $command);
+    }
+    close(SH); 
+    
+    # Modify permissions of the script so it can be executed.
+    my $chmod_worked;
+    $chmod_worked = chmod(0777, $shell_script);
+    PrintStringToFile($sum_file, 1, sprintf("#\n################################################################################\n"));
+    if($chmod_worked) { 
+	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with the command:\n#\t\"$shell_script\"\n", $njobs));
+	PrintStringToFile($sum_file, 1, sprintf("# (it is an executable file)\n"));
+    }
+    else { 
+	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with the command:\n#\tbash \"$shell_script\"\n", $njobs));
+	PrintStringToFile($sum_file, 1, sprintf("# (or provide the full path to bash)\n"));
+    }
+    PrintStringToFile($sum_file, 1, sprintf("################################################################################\n"));
+    if(! $opt_H{"--no-merge"}) {
+	#                                                 1         2         3         4         5         6         7         8
+	#                                        12345678901234567890123456789012345678901234567890123456789012345678901234567890
+	PrintStringToFile($sum_file, 1, sprintf("#\n# The final job will merge the output from all jobs once they are all finished.\n"));
+
+	PrintStringToFile($sum_file, 1, sprintf("#\n# If one or more jobs fail: rerun the failed jobs, wait for them to finish,\n"));
+	PrintStringToFile($sum_file, 1, sprintf("# and then perform manual merge from this directory by executing:\n#\tssu-merge $out_dir\n"));
+    }
+    else { 
+	#                                                 1         2         3         4         5         6         7         8
+	#                                        12345678901234567890123456789012345678901234567890123456789012345678901234567890
+	PrintStringToFile($sum_file, 1, sprintf("#\n# Because you enabled --no-merge, the jobs will not be automatically merged.\n"));
+	PrintStringToFile($sum_file, 1, sprintf("# You can manually perform the merge from this directory once all jobs are\n"));
+	PrintStringToFile($sum_file, 1, sprintf("# finished, by executing:\n#\tssu-merge $out_dir\n"));
+    }
+
+    $$shell_script_R = $shell_script;
+    return;
+}

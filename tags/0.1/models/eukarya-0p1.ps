@@ -1,0 +1,2793 @@
+% begin ignore
+%
+% eukarya-0p1.ps:
+% An esl-ssdraw postscript template file for drawing
+% eukaryotic SSU rRNA secondary structure diagrams.
+% The input alignment must be of consensus length (nongap RF length)
+% of 1881. This corresponds to the SSU-ALIGN v0.1 eukaryotic
+% seed alignment derived from Robin Gutell and colleagues'
+% Comparative RNA Website (CRW) [http://www.rna.ccbb.utexas.edu/]
+% as described in Eric Nawrocki's PhD Thesis "Structural RNA
+% Homology Search and Alignment Using Covariance Models" 2009,
+% available from: [http://eddylab.org/publications.html].
+%
+% setup defaults
+/Helvetica findfont 8.00 scalefont setfont
+0.00 0.00 0.00 1.00 setcmykcolor
+1.00 setlinewidth
+% end ignore
+
+% begin modelname
+% eukarya
+% end modelname
+
+% begin legend
+% 1881 24. -24. 20 0.
+% end legend
+
+% begin scale 
+0.53 0.53 scale
+% end scale
+
+% begin regurgitate
+/Helvetica findfont 18.11 scalefont setfont
+(created by the SSU-ALIGN package (http://eddylab.org/software.html)) 510.00 70.00 moveto show
+(structure diagram derived from CRW database (http://www.rna.ccbb.utexas.edu/)) 460.00 50.00 moveto show
+/Helvetica findfont 8.00 scalefont setfont
+0.00 0.00 0.00 1.00 setcmykcolor
+(5') 479.88 805.67 moveto show
+(3') 615.68 704.07 moveto show
+2.00 setlinewidth
+0.00 0.00 0.00 1.00 setcmykcolor
+482.88 813.67 482.88 822.67 newpath moveto lineto stroke
+618.68 712.07 618.68 721.07 newpath moveto lineto stroke
+345.44 761.34 346.59 715.67 newpath moveto lineto stroke
+394.58 906.67 395.58 895.41 newpath moveto lineto stroke
+499.58 952.67 508.47 939.67 newpath moveto lineto stroke
+831.58 1300.67 848.58 1300.67 newpath moveto lineto stroke
+746.36 912.20 760.58 918.67 newpath moveto lineto stroke
+% end regurgitate
+
+% begin ignore
+% reset 8.0 fontsize
+/Helvetica findfont 8.00 scalefont setfont
+% end ignore
+
+% begin text positiontext
+(100) 292.74 538.56 moveto show
+(200) 279.60 190.47 moveto show
+(300) 257.21 337.29 moveto show
+(400) 240.49 570.84 moveto show
+(500) 229.78 807.77 moveto show
+(600) 405.48 865.96 moveto show
+(700) 181.13 1057.17 moveto show
+(800) 263.93 1129.17 moveto show
+(900) 101.13 1201.17 moveto show
+(1000) 391.21 1312.59 moveto show
+(1100) 488.20 1028.83 moveto show
+(1200) 562.69 899.68 moveto show
+(1300) 666.62 1164.07 moveto show
+(1400) 773.83 1326.64 moveto show
+(1500) 793.77 1242.92 moveto show
+(1600) 915.02 943.39 moveto show
+(1700) 641.73 854.32 moveto show
+(1800) 603.08 461.82 moveto show
+% end text positiontext
+
+% begin lines positionticks
+533.07 849.82 536.04 842.93 newpath moveto lineto stroke
+477.33 872.25 475.44 879.51 newpath moveto lineto stroke
+421.08 823.49 425.88 817.72 newpath moveto lineto stroke
+353.50 767.16 358.30 761.39 newpath moveto lineto stroke
+349.11 670.29 355.43 674.33 newpath moveto lineto stroke
+385.79 620.66 386.33 628.14 newpath moveto lineto stroke
+441.40 609.41 438.34 616.25 newpath moveto lineto stroke
+455.80 574.34 454.54 566.95 newpath moveto lineto stroke
+377.58 583.67 377.58 576.17 newpath moveto lineto stroke
+285.31 539.71 292.74 540.76 newpath moveto lineto stroke
+273.56 476.04 281.00 476.97 newpath moveto lineto stroke
+282.16 410.30 289.54 411.66 newpath moveto lineto stroke
+285.98 358.87 291.98 354.37 newpath moveto lineto stroke
+296.58 339.67 296.58 347.17 newpath moveto lineto stroke
+372.58 339.67 372.58 347.17 newpath moveto lineto stroke
+388.58 313.67 388.58 306.17 newpath moveto lineto stroke
+313.18 306.81 307.00 302.55 newpath moveto lineto stroke
+307.25 239.82 314.59 238.24 newpath moveto lineto stroke
+355.37 176.88 361.88 180.59 newpath moveto lineto stroke
+295.70 200.17 290.40 194.87 newpath moveto lineto stroke
+219.80 194.51 225.10 189.21 newpath moveto lineto stroke
+177.24 133.47 177.68 125.98 newpath moveto lineto stroke
+112.46 87.17 117.76 81.87 newpath moveto lineto stroke
+82.76 94.23 77.46 99.54 newpath moveto lineto stroke
+118.21 148.89 121.38 155.69 newpath moveto lineto stroke
+170.49 198.59 167.45 205.45 newpath moveto lineto stroke
+210.43 255.21 202.97 254.49 newpath moveto lineto stroke
+207.84 315.95 210.98 309.14 newpath moveto lineto stroke
+164.18 342.64 163.19 350.08 newpath moveto lineto stroke
+251.05 345.96 257.21 341.69 newpath moveto lineto stroke
+247.58 431.67 240.08 431.67 newpath moveto lineto stroke
+238.11 491.82 243.41 486.52 newpath moveto lineto stroke
+198.30 432.41 205.11 429.27 newpath moveto lineto stroke
+140.70 394.60 147.34 391.10 newpath moveto lineto stroke
+133.10 423.58 127.80 428.88 newpath moveto lineto stroke
+177.60 486.36 170.18 487.44 newpath moveto lineto stroke
+240.45 528.79 235.14 534.08 newpath moveto lineto stroke
+176.01 570.20 168.51 570.27 newpath moveto lineto stroke
+236.69 561.72 243.75 564.26 newpath moveto lineto stroke
+252.58 582.62 251.29 575.24 newpath moveto lineto stroke
+203.47 617.77 198.59 623.47 newpath moveto lineto stroke
+277.53 611.15 284.92 609.83 newpath moveto lineto stroke
+280.46 648.17 285.76 653.47 newpath moveto lineto stroke
+323.58 676.67 316.08 676.67 newpath moveto lineto stroke
+315.98 744.67 315.98 737.17 newpath moveto lineto stroke
+251.58 751.67 251.58 744.17 newpath moveto lineto stroke
+285.58 781.67 285.58 789.17 newpath moveto lineto stroke
+351.03 798.93 346.22 804.69 newpath moveto lineto stroke
+324.58 819.67 324.58 812.17 newpath moveto lineto stroke
+240.58 819.67 240.58 812.17 newpath moveto lineto stroke
+264.58 845.67 264.58 853.17 newpath moveto lineto stroke
+338.50 852.37 345.79 854.13 newpath moveto lineto stroke
+273.53 915.22 266.09 914.27 newpath moveto lineto stroke
+281.99 942.45 288.63 945.94 newpath moveto lineto stroke
+336.62 886.13 342.02 891.34 newpath moveto lineto stroke
+372.38 884.98 364.88 885.17 newpath moveto lineto stroke
+371.58 917.67 364.08 917.67 newpath moveto lineto stroke
+371.65 997.36 364.34 999.00 newpath moveto lineto stroke
+416.84 947.66 423.85 944.98 newpath moveto lineto stroke
+397.98 868.34 405.48 868.16 newpath moveto lineto stroke
+429.01 863.94 424.21 869.70 newpath moveto lineto stroke
+451.49 940.35 457.73 936.18 newpath moveto lineto stroke
+454.10 1002.24 448.15 997.68 newpath moveto lineto stroke
+394.20 1053.72 386.95 1051.81 newpath moveto lineto stroke
+343.93 1025.67 343.93 1033.17 newpath moveto lineto stroke
+263.93 1025.67 263.93 1033.17 newpath moveto lineto stroke
+183.93 1025.67 183.93 1033.17 newpath moveto lineto stroke
+103.93 1025.67 103.93 1033.17 newpath moveto lineto stroke
+111.93 1049.67 111.93 1057.17 newpath moveto lineto stroke
+191.93 1049.67 191.93 1057.17 newpath moveto lineto stroke
+271.93 1049.67 271.93 1057.17 newpath moveto lineto stroke
+332.93 1062.67 325.43 1062.67 newpath moveto lineto stroke
+263.93 1067.67 263.93 1060.17 newpath moveto lineto stroke
+183.93 1073.67 183.93 1081.17 newpath moveto lineto stroke
+103.93 1073.67 103.93 1081.17 newpath moveto lineto stroke
+111.93 1097.67 111.93 1105.17 newpath moveto lineto stroke
+191.93 1097.67 191.93 1105.17 newpath moveto lineto stroke
+271.93 1097.67 271.93 1105.17 newpath moveto lineto stroke
+332.93 1110.67 325.43 1110.67 newpath moveto lineto stroke
+263.93 1121.67 263.93 1129.17 newpath moveto lineto stroke
+183.93 1121.67 183.93 1129.17 newpath moveto lineto stroke
+103.93 1121.67 103.93 1129.17 newpath moveto lineto stroke
+111.93 1145.67 111.93 1153.17 newpath moveto lineto stroke
+191.93 1145.67 191.93 1153.17 newpath moveto lineto stroke
+271.93 1145.67 271.93 1153.17 newpath moveto lineto stroke
+332.93 1158.67 325.43 1158.67 newpath moveto lineto stroke
+263.93 1169.67 263.93 1177.17 newpath moveto lineto stroke
+183.93 1169.67 183.93 1177.17 newpath moveto lineto stroke
+103.93 1169.67 103.93 1177.17 newpath moveto lineto stroke
+111.93 1193.67 111.93 1201.17 newpath moveto lineto stroke
+191.93 1193.67 191.93 1201.17 newpath moveto lineto stroke
+271.93 1193.67 271.93 1201.17 newpath moveto lineto stroke
+345.19 1177.51 338.08 1175.13 newpath moveto lineto stroke
+372.58 1172.67 365.08 1172.67 newpath moveto lineto stroke
+372.58 1247.67 365.08 1247.67 newpath moveto lineto stroke
+311.58 1269.67 311.58 1262.17 newpath moveto lineto stroke
+230.08 1269.71 231.33 1262.32 newpath moveto lineto stroke
+242.66 1302.36 235.36 1304.07 newpath moveto lineto stroke
+311.58 1295.67 311.58 1303.17 newpath moveto lineto stroke
+390.01 1307.38 391.21 1314.79 newpath moveto lineto stroke
+438.54 1269.48 441.10 1262.43 newpath moveto lineto stroke
+398.55 1216.10 405.97 1217.18 newpath moveto lineto stroke
+398.58 1137.67 406.08 1137.67 newpath moveto lineto stroke
+433.76 1074.26 440.93 1076.47 newpath moveto lineto stroke
+470.58 1083.60 463.08 1083.60 newpath moveto lineto stroke
+467.73 1147.72 460.62 1145.35 newpath moveto lineto stroke
+473.11 1230.28 469.43 1236.82 newpath moveto lineto stroke
+502.16 1166.53 508.78 1170.06 newpath moveto lineto stroke
+495.41 1077.98 499.99 1083.92 newpath moveto lineto stroke
+509.88 1025.91 504.40 1031.03 newpath moveto lineto stroke
+575.68 1032.30 568.44 1034.29 newpath moveto lineto stroke
+619.46 1094.11 612.05 1095.27 newpath moveto lineto stroke
+669.11 1128.57 675.12 1133.05 newpath moveto lineto stroke
+627.51 1060.81 633.66 1056.52 newpath moveto lineto stroke
+593.32 1003.40 599.17 1008.09 newpath moveto lineto stroke
+584.13 964.93 580.69 958.27 newpath moveto lineto stroke
+518.61 987.25 511.19 986.19 newpath moveto lineto stroke
+519.47 939.67 519.47 947.17 newpath moveto lineto stroke
+577.58 939.67 577.58 947.17 newpath moveto lineto stroke
+558.03 907.76 562.69 901.88 newpath moveto lineto stroke
+530.31 891.49 527.20 884.67 newpath moveto lineto stroke
+613.78 894.07 613.78 901.57 newpath moveto lineto stroke
+681.51 886.97 686.31 892.74 newpath moveto lineto stroke
+760.58 929.67 753.08 929.67 newpath moveto lineto stroke
+762.01 1009.12 758.08 1002.73 newpath moveto lineto stroke
+705.78 971.00 710.03 964.82 newpath moveto lineto stroke
+710.66 1021.69 703.55 1024.06 newpath moveto lineto stroke
+760.58 1051.67 753.08 1051.67 newpath moveto lineto stroke
+723.04 1104.86 718.18 1099.15 newpath moveto lineto stroke
+660.40 1159.88 666.62 1164.07 newpath moveto lineto stroke
+597.74 1211.47 591.99 1206.66 newpath moveto lineto stroke
+649.29 1210.83 654.01 1216.67 newpath moveto lineto stroke
+722.08 1140.26 727.02 1145.90 newpath moveto lineto stroke
+760.91 1139.04 754.23 1142.46 newpath moveto lineto stroke
+760.58 1213.67 753.08 1213.67 newpath moveto lineto stroke
+739.58 1278.67 739.58 1271.17 newpath moveto lineto stroke
+680.79 1253.56 673.83 1250.77 newpath moveto lineto stroke
+677.89 1347.08 670.43 1346.36 newpath moveto lineto stroke
+713.81 1318.08 717.13 1324.80 newpath moveto lineto stroke
+773.62 1321.34 773.83 1328.84 newpath moveto lineto stroke
+866.60 1303.50 864.14 1310.59 newpath moveto lineto stroke
+941.58 1303.67 941.58 1311.17 newpath moveto lineto stroke
+1031.75 1309.67 1031.75 1317.17 newpath moveto lineto stroke
+1032.75 1269.67 1032.75 1262.17 newpath moveto lineto stroke
+951.26 1271.25 946.21 1265.71 newpath moveto lineto stroke
+878.58 1277.67 878.58 1270.17 newpath moveto lineto stroke
+852.58 1208.67 860.08 1208.67 newpath moveto lineto stroke
+826.58 1192.67 819.08 1192.67 newpath moveto lineto stroke
+829.42 1272.15 836.57 1269.88 newpath moveto lineto stroke
+786.49 1246.94 793.77 1245.12 newpath moveto lineto stroke
+791.69 1182.92 796.27 1176.98 newpath moveto lineto stroke
+792.72 1121.17 795.89 1127.96 newpath moveto lineto stroke
+786.58 1051.67 794.08 1051.67 newpath moveto lineto stroke
+786.58 977.67 794.08 977.67 newpath moveto lineto stroke
+809.78 919.98 813.27 926.61 newpath moveto lineto stroke
+862.54 968.16 857.98 974.12 newpath moveto lineto stroke
+912.39 1018.64 910.85 1025.98 newpath moveto lineto stroke
+974.39 1037.67 969.86 1043.64 newpath moveto lineto stroke
+963.90 987.75 965.14 980.36 newpath moveto lineto stroke
+907.52 945.36 915.02 945.59 newpath moveto lineto stroke
+842.19 904.05 846.74 898.08 newpath moveto lineto stroke
+812.15 844.20 818.05 848.83 newpath moveto lineto stroke
+836.16 766.29 841.83 771.20 newpath moveto lineto stroke
+809.54 764.10 802.47 761.57 newpath moveto lineto stroke
+781.41 841.37 775.04 837.41 newpath moveto lineto stroke
+729.63 878.16 737.11 877.63 newpath moveto lineto stroke
+758.93 809.58 765.41 813.36 newpath moveto lineto stroke
+747.78 767.49 740.56 765.43 newpath moveto lineto stroke
+706.28 828.73 702.41 822.31 newpath moveto lineto stroke
+664.11 862.97 657.93 858.72 newpath moveto lineto stroke
+587.78 855.27 587.78 847.77 newpath moveto lineto stroke
+569.66 793.99 562.35 792.31 newpath moveto lineto stroke
+569.58 708.67 562.08 708.67 newpath moveto lineto stroke
+569.58 634.67 562.08 634.67 newpath moveto lineto stroke
+565.66 553.96 558.38 552.19 newpath moveto lineto stroke
+569.58 474.22 562.08 474.22 newpath moveto lineto stroke
+569.58 394.22 562.08 394.22 newpath moveto lineto stroke
+571.74 309.97 567.14 304.05 newpath moveto lineto stroke
+595.58 386.22 603.08 386.22 newpath moveto lineto stroke
+595.58 466.22 603.08 466.22 newpath moveto lineto stroke
+595.43 545.30 602.57 542.99 newpath moveto lineto stroke
+595.58 626.67 603.08 626.67 newpath moveto lineto stroke
+595.58 708.67 603.08 708.67 newpath moveto lineto stroke
+595.54 787.14 602.95 788.31 newpath moveto lineto stroke
+621.08 816.33 627.32 820.49 newpath moveto lineto stroke
+700.69 818.46 703.48 825.42 newpath moveto lineto stroke
+642.58 791.67 642.58 784.17 newpath moveto lineto stroke
+621.68 732.57 629.18 732.57 newpath moveto lineto stroke
+% end lines positionticks
+
+% begin lines bpconnects
+478.93 862.16 480.63 855.58 newpath moveto lineto stroke
+486.68 864.16 488.37 857.58 newpath moveto lineto stroke
+494.42 866.16 496.12 859.58 newpath moveto lineto stroke
+502.17 868.16 503.87 861.57 newpath moveto lineto stroke
+509.92 870.16 511.61 863.57 newpath moveto lineto stroke
+455.61 873.48 459.95 868.26 newpath moveto lineto stroke
+449.46 868.36 453.81 863.14 newpath moveto lineto stroke
+443.31 863.24 447.67 858.01 newpath moveto lineto stroke
+434.36 855.77 438.71 850.55 newpath moveto lineto stroke
+428.22 850.65 432.56 845.43 newpath moveto lineto stroke
+422.07 845.53 426.42 840.30 newpath moveto lineto stroke
+415.93 840.40 420.27 835.18 newpath moveto lineto stroke
+409.78 835.28 414.13 830.06 newpath moveto lineto stroke
+403.64 830.16 407.98 824.94 newpath moveto lineto stroke
+397.49 825.04 401.84 819.81 newpath moveto lineto stroke
+381.65 810.51 385.91 805.23 newpath moveto lineto stroke
+374.81 806.13 379.16 800.91 newpath moveto lineto stroke
+368.67 801.01 373.01 795.79 newpath moveto lineto stroke
+362.52 795.89 366.87 790.66 newpath moveto lineto stroke
+356.38 790.76 360.72 785.54 newpath moveto lineto stroke
+350.23 785.64 354.58 780.42 newpath moveto lineto stroke
+342.21 778.95 346.55 773.73 newpath moveto lineto stroke
+336.06 773.83 340.41 768.61 newpath moveto lineto stroke
+332.40 711.75 339.19 711.81 newpath moveto lineto stroke
+332.38 683.87 339.18 683.87 newpath moveto lineto stroke
+332.38 675.87 339.18 675.87 newpath moveto lineto stroke
+332.38 667.87 339.18 667.87 newpath moveto lineto stroke
+332.38 659.87 339.18 659.87 newpath moveto lineto stroke
+332.38 651.87 339.18 651.87 newpath moveto lineto stroke
+332.38 643.87 339.18 643.87 newpath moveto lineto stroke
+368.78 592.47 368.78 599.27 newpath moveto lineto stroke
+376.78 592.47 376.78 599.27 newpath moveto lineto stroke
+391.78 592.47 391.78 599.27 newpath moveto lineto stroke
+399.78 592.47 399.78 599.27 newpath moveto lineto stroke
+407.78 592.47 407.78 599.27 newpath moveto lineto stroke
+433.83 592.47 433.83 599.27 newpath moveto lineto stroke
+441.83 592.47 441.83 599.27 newpath moveto lineto stroke
+283.38 559.27 288.18 554.47 newpath moveto lineto stroke
+277.72 553.61 282.52 548.81 newpath moveto lineto stroke
+272.07 547.96 276.87 543.16 newpath moveto lineto stroke
+256.38 498.87 263.18 498.87 newpath moveto lineto stroke
+256.38 490.87 263.18 490.87 newpath moveto lineto stroke
+256.38 482.87 263.18 482.87 newpath moveto lineto stroke
+256.38 474.87 263.18 474.87 newpath moveto lineto stroke
+256.38 450.87 263.18 450.87 newpath moveto lineto stroke
+256.38 442.87 263.18 442.87 newpath moveto lineto stroke
+256.38 430.87 263.18 430.87 newpath moveto lineto stroke
+256.38 422.87 263.18 422.87 newpath moveto lineto stroke
+256.38 386.86 263.18 386.86 newpath moveto lineto stroke
+256.38 378.86 263.18 378.86 newpath moveto lineto stroke
+256.38 370.86 263.18 370.86 newpath moveto lineto stroke
+254.38 362.87 265.18 362.87 newpath moveto lineto stroke
+287.78 322.47 287.78 329.27 newpath moveto lineto stroke
+295.78 322.47 295.78 329.27 newpath moveto lineto stroke
+303.78 322.47 303.78 329.27 newpath moveto lineto stroke
+311.78 322.47 311.78 329.27 newpath moveto lineto stroke
+347.78 322.47 347.78 329.27 newpath moveto lineto stroke
+355.78 322.47 355.78 329.27 newpath moveto lineto stroke
+363.78 322.47 363.78 329.27 newpath moveto lineto stroke
+371.78 322.47 371.78 329.27 newpath moveto lineto stroke
+379.78 322.47 379.78 329.27 newpath moveto lineto stroke
+387.78 322.47 387.78 329.27 newpath moveto lineto stroke
+395.78 322.47 395.78 329.27 newpath moveto lineto stroke
+290.38 217.47 295.18 222.27 newpath moveto lineto stroke
+296.04 211.81 300.84 216.61 newpath moveto lineto stroke
+301.69 206.16 306.49 210.96 newpath moveto lineto stroke
+307.35 200.50 312.15 205.30 newpath moveto lineto stroke
+313.01 194.84 317.81 199.64 newpath moveto lineto stroke
+328.99 178.85 333.80 183.66 newpath moveto lineto stroke
+334.65 173.20 339.45 178.00 newpath moveto lineto stroke
+224.38 222.27 229.18 217.47 newpath moveto lineto stroke
+218.72 216.61 223.52 211.81 newpath moveto lineto stroke
+213.07 210.96 217.87 206.16 newpath moveto lineto stroke
+207.41 205.30 212.21 200.50 newpath moveto lineto stroke
+201.75 199.64 206.55 194.84 newpath moveto lineto stroke
+196.09 193.99 200.90 189.18 newpath moveto lineto stroke
+149.89 147.78 154.69 142.98 newpath moveto lineto stroke
+144.23 142.12 149.03 137.32 newpath moveto lineto stroke
+138.58 136.47 143.38 131.67 newpath moveto lineto stroke
+132.92 130.81 137.72 126.01 newpath moveto lineto stroke
+94.41 92.30 99.21 87.50 newpath moveto lineto stroke
+88.75 86.64 93.55 81.84 newpath moveto lineto stroke
+83.09 80.99 87.90 76.18 newpath moveto lineto stroke
+229.78 331.27 229.78 324.47 newpath moveto lineto stroke
+221.78 331.27 221.78 324.47 newpath moveto lineto stroke
+213.78 331.27 213.78 324.47 newpath moveto lineto stroke
+205.78 331.27 205.78 324.47 newpath moveto lineto stroke
+195.78 331.27 195.78 324.47 newpath moveto lineto stroke
+187.78 331.27 187.78 324.47 newpath moveto lineto stroke
+179.78 331.27 179.78 324.47 newpath moveto lineto stroke
+171.78 331.27 171.78 324.47 newpath moveto lineto stroke
+231.38 508.27 236.18 503.47 newpath moveto lineto stroke
+225.72 502.61 230.52 497.81 newpath moveto lineto stroke
+220.07 496.96 224.87 492.16 newpath moveto lineto stroke
+208.58 487.69 213.98 480.75 newpath moveto lineto stroke
+190.38 466.27 195.18 461.47 newpath moveto lineto stroke
+184.72 460.61 189.52 455.81 newpath moveto lineto stroke
+179.07 454.96 183.87 450.16 newpath moveto lineto stroke
+167.38 444.27 172.18 439.47 newpath moveto lineto stroke
+161.72 438.61 166.52 433.81 newpath moveto lineto stroke
+156.07 432.96 160.87 428.16 newpath moveto lineto stroke
+150.41 427.30 155.21 422.50 newpath moveto lineto stroke
+144.75 421.64 149.55 416.84 newpath moveto lineto stroke
+139.09 415.99 143.90 411.18 newpath moveto lineto stroke
+133.44 410.33 138.24 405.53 newpath moveto lineto stroke
+127.78 404.67 132.58 399.87 newpath moveto lineto stroke
+252.19 543.96 249.37 537.78 newpath moveto lineto stroke
+244.91 547.27 242.09 541.09 newpath moveto lineto stroke
+237.62 550.58 234.81 544.40 newpath moveto lineto stroke
+230.34 553.89 227.52 547.71 newpath moveto lineto stroke
+218.19 559.96 215.37 553.78 newpath moveto lineto stroke
+210.91 563.27 208.09 557.09 newpath moveto lineto stroke
+203.62 566.58 200.81 560.40 newpath moveto lineto stroke
+196.34 569.89 193.52 563.71 newpath moveto lineto stroke
+270.36 595.22 269.20 588.52 newpath moveto lineto stroke
+262.48 596.60 261.32 589.90 newpath moveto lineto stroke
+254.60 597.98 253.44 591.28 newpath moveto lineto stroke
+246.72 599.36 245.56 592.66 newpath moveto lineto stroke
+238.84 600.74 237.68 594.04 newpath moveto lineto stroke
+230.96 602.12 229.79 595.41 newpath moveto lineto stroke
+284.18 629.27 279.38 624.47 newpath moveto lineto stroke
+278.52 634.93 273.72 630.13 newpath moveto lineto stroke
+272.87 640.58 268.07 635.78 newpath moveto lineto stroke
+267.21 646.24 262.41 641.44 newpath moveto lineto stroke
+317.78 767.27 317.78 760.47 newpath moveto lineto stroke
+310.78 767.27 310.78 760.47 newpath moveto lineto stroke
+302.78 767.27 302.78 760.47 newpath moveto lineto stroke
+294.78 767.27 294.78 760.47 newpath moveto lineto stroke
+274.78 767.27 274.78 760.47 newpath moveto lineto stroke
+266.78 767.27 266.78 760.47 newpath moveto lineto stroke
+258.78 767.27 258.78 760.47 newpath moveto lineto stroke
+250.78 767.27 250.78 760.47 newpath moveto lineto stroke
+242.78 767.27 242.78 760.47 newpath moveto lineto stroke
+331.78 835.27 331.78 828.47 newpath moveto lineto stroke
+323.78 835.27 323.78 828.47 newpath moveto lineto stroke
+315.78 835.27 315.78 828.47 newpath moveto lineto stroke
+303.78 835.27 303.78 828.47 newpath moveto lineto stroke
+295.78 835.27 295.78 828.47 newpath moveto lineto stroke
+287.78 835.27 287.78 828.47 newpath moveto lineto stroke
+279.78 835.27 279.78 828.47 newpath moveto lineto stroke
+271.78 835.27 271.78 828.47 newpath moveto lineto stroke
+263.78 835.27 263.78 828.47 newpath moveto lineto stroke
+255.78 835.27 255.78 828.47 newpath moveto lineto stroke
+247.78 835.27 247.78 828.47 newpath moveto lineto stroke
+239.78 835.27 239.78 828.47 newpath moveto lineto stroke
+231.78 835.27 231.78 828.47 newpath moveto lineto stroke
+303.64 905.81 298.84 901.01 newpath moveto lineto stroke
+297.98 911.47 293.18 906.67 newpath moveto lineto stroke
+290.85 916.60 285.71 912.14 newpath moveto lineto stroke
+285.18 924.27 280.38 919.47 newpath moveto lineto stroke
+279.52 929.93 274.72 925.13 newpath moveto lineto stroke
+273.87 935.58 269.07 930.78 newpath moveto lineto stroke
+387.18 851.78 380.38 851.96 newpath moveto lineto stroke
+387.38 859.78 380.58 859.96 newpath moveto lineto stroke
+387.58 867.78 380.78 867.95 newpath moveto lineto stroke
+387.78 875.77 380.98 875.95 newpath moveto lineto stroke
+387.98 883.77 381.18 883.95 newpath moveto lineto stroke
+388.18 891.77 381.38 891.95 newpath moveto lineto stroke
+387.18 908.87 380.38 908.87 newpath moveto lineto stroke
+387.18 916.87 380.38 916.87 newpath moveto lineto stroke
+387.18 924.87 380.38 924.87 newpath moveto lineto stroke
+387.18 932.87 380.38 932.87 newpath moveto lineto stroke
+387.18 979.90 380.38 979.90 newpath moveto lineto stroke
+387.18 987.90 380.38 987.90 newpath moveto lineto stroke
+492.18 962.87 485.38 962.87 newpath moveto lineto stroke
+492.18 970.87 485.38 970.87 newpath moveto lineto stroke
+492.18 978.87 485.38 978.87 newpath moveto lineto stroke
+493.15 991.32 452.01 1016.52 newpath moveto lineto stroke
+445.73 1044.65 441.83 1039.09 newpath moveto lineto stroke
+439.17 1049.24 435.28 1043.68 newpath moveto lineto stroke
+432.63 1053.83 428.72 1048.26 newpath moveto lineto stroke
+426.07 1058.42 422.16 1052.85 newpath moveto lineto stroke
+404.73 1073.65 400.83 1068.09 newpath moveto lineto stroke
+398.17 1078.24 394.28 1072.68 newpath moveto lineto stroke
+391.63 1082.83 387.72 1077.26 newpath moveto lineto stroke
+388.18 1128.87 381.38 1128.87 newpath moveto lineto stroke
+388.18 1136.87 381.38 1136.87 newpath moveto lineto stroke
+388.18 1144.87 381.38 1144.87 newpath moveto lineto stroke
+388.18 1152.87 381.38 1152.87 newpath moveto lineto stroke
+388.18 1163.87 381.38 1163.87 newpath moveto lineto stroke
+388.18 1171.87 381.38 1171.87 newpath moveto lineto stroke
+388.18 1179.87 381.38 1179.87 newpath moveto lineto stroke
+388.18 1187.87 381.38 1187.87 newpath moveto lineto stroke
+388.18 1195.87 381.38 1195.87 newpath moveto lineto stroke
+388.18 1214.87 381.38 1214.87 newpath moveto lineto stroke
+388.18 1222.87 381.38 1222.87 newpath moveto lineto stroke
+388.18 1230.87 381.38 1230.87 newpath moveto lineto stroke
+388.18 1238.87 381.38 1238.87 newpath moveto lineto stroke
+388.18 1246.87 381.38 1246.87 newpath moveto lineto stroke
+388.18 1254.87 381.38 1254.87 newpath moveto lineto stroke
+388.18 1262.87 381.38 1262.87 newpath moveto lineto stroke
+366.78 1285.27 366.78 1278.47 newpath moveto lineto stroke
+358.78 1285.27 358.78 1278.47 newpath moveto lineto stroke
+334.78 1285.27 334.78 1278.47 newpath moveto lineto stroke
+326.78 1285.27 326.78 1278.47 newpath moveto lineto stroke
+318.78 1285.27 318.78 1278.47 newpath moveto lineto stroke
+310.78 1285.27 310.78 1278.47 newpath moveto lineto stroke
+302.78 1285.27 302.78 1278.47 newpath moveto lineto stroke
+294.78 1285.27 294.78 1278.47 newpath moveto lineto stroke
+286.78 1285.27 286.78 1278.47 newpath moveto lineto stroke
+278.78 1285.27 278.78 1278.47 newpath moveto lineto stroke
+244.78 1285.27 244.78 1278.47 newpath moveto lineto stroke
+236.78 1285.27 236.78 1278.47 newpath moveto lineto stroke
+228.78 1285.27 228.78 1278.47 newpath moveto lineto stroke
+402.78 1278.47 402.78 1285.27 newpath moveto lineto stroke
+419.78 1278.47 419.78 1285.27 newpath moveto lineto stroke
+427.78 1278.47 427.78 1285.27 newpath moveto lineto stroke
+486.18 1074.80 479.38 1074.80 newpath moveto lineto stroke
+486.18 1082.80 479.38 1082.80 newpath moveto lineto stroke
+486.18 1090.80 479.38 1090.80 newpath moveto lineto stroke
+486.18 1098.80 479.38 1098.80 newpath moveto lineto stroke
+486.18 1106.80 479.38 1106.80 newpath moveto lineto stroke
+486.18 1114.80 479.38 1114.80 newpath moveto lineto stroke
+486.18 1132.87 479.38 1132.87 newpath moveto lineto stroke
+486.18 1140.87 479.38 1140.87 newpath moveto lineto stroke
+486.18 1170.87 479.38 1170.87 newpath moveto lineto stroke
+486.18 1178.87 479.38 1178.87 newpath moveto lineto stroke
+486.18 1186.87 479.38 1186.87 newpath moveto lineto stroke
+486.18 1194.87 479.38 1194.87 newpath moveto lineto stroke
+506.78 1000.47 506.78 1007.27 newpath moveto lineto stroke
+514.78 1000.47 514.78 1007.27 newpath moveto lineto stroke
+522.78 1000.47 522.78 1007.27 newpath moveto lineto stroke
+533.80 1000.47 533.80 1007.27 newpath moveto lineto stroke
+541.80 1000.47 541.80 1007.27 newpath moveto lineto stroke
+549.80 1000.47 549.80 1007.27 newpath moveto lineto stroke
+579.57 1009.92 573.99 1013.82 newpath moveto lineto stroke
+584.16 1016.47 578.58 1020.37 newpath moveto lineto stroke
+588.75 1023.02 583.17 1026.92 newpath moveto lineto stroke
+600.50 1039.28 594.92 1043.19 newpath moveto lineto stroke
+605.08 1045.84 599.51 1049.74 newpath moveto lineto stroke
+609.67 1052.40 604.10 1056.30 newpath moveto lineto stroke
+614.26 1058.95 608.68 1062.86 newpath moveto lineto stroke
+618.84 1065.51 613.27 1069.41 newpath moveto lineto stroke
+623.42 1072.07 617.86 1075.97 newpath moveto lineto stroke
+628.01 1078.61 622.44 1082.52 newpath moveto lineto stroke
+632.59 1085.17 627.03 1089.07 newpath moveto lineto stroke
+637.36 1091.99 631.79 1095.89 newpath moveto lineto stroke
+641.95 1098.55 636.38 1102.45 newpath moveto lineto stroke
+646.53 1105.09 640.96 1108.99 newpath moveto lineto stroke
+589.38 971.47 594.18 976.27 newpath moveto lineto stroke
+595.04 965.81 599.84 970.61 newpath moveto lineto stroke
+510.67 922.47 510.67 929.27 newpath moveto lineto stroke
+518.67 922.47 518.67 929.27 newpath moveto lineto stroke
+526.67 922.47 526.67 929.27 newpath moveto lineto stroke
+560.78 922.47 560.78 929.27 newpath moveto lineto stroke
+568.78 922.47 568.78 929.27 newpath moveto lineto stroke
+576.78 922.47 576.78 929.27 newpath moveto lineto stroke
+584.78 922.47 584.78 929.27 newpath moveto lineto stroke
+573.78 870.47 573.78 877.27 newpath moveto lineto stroke
+581.78 870.47 581.78 877.27 newpath moveto lineto stroke
+591.78 870.47 591.78 877.27 newpath moveto lineto stroke
+599.78 870.47 599.78 877.27 newpath moveto lineto stroke
+607.78 870.47 607.78 877.27 newpath moveto lineto stroke
+617.78 870.47 617.78 877.27 newpath moveto lineto stroke
+625.78 870.47 625.78 877.27 newpath moveto lineto stroke
+633.78 870.47 633.78 877.27 newpath moveto lineto stroke
+641.78 870.47 641.78 877.27 newpath moveto lineto stroke
+649.78 870.47 649.78 877.27 newpath moveto lineto stroke
+657.78 870.47 657.78 877.27 newpath moveto lineto stroke
+665.78 870.47 665.78 877.27 newpath moveto lineto stroke
+678.79 870.47 678.79 877.27 newpath moveto lineto stroke
+686.79 870.47 686.79 877.27 newpath moveto lineto stroke
+722.37 883.18 718.80 888.97 newpath moveto lineto stroke
+729.18 887.39 725.61 893.17 newpath moveto lineto stroke
+735.98 891.59 732.41 897.37 newpath moveto lineto stroke
+742.79 895.79 739.22 901.58 newpath moveto lineto stroke
+749.60 900.00 746.03 905.78 newpath moveto lineto stroke
+776.18 920.87 769.38 920.87 newpath moveto lineto stroke
+776.18 928.87 769.38 928.87 newpath moveto lineto stroke
+776.18 936.87 769.38 936.87 newpath moveto lineto stroke
+776.18 944.87 769.38 944.87 newpath moveto lineto stroke
+776.18 952.87 769.38 952.87 newpath moveto lineto stroke
+776.18 960.87 769.38 960.87 newpath moveto lineto stroke
+776.18 968.87 769.38 968.87 newpath moveto lineto stroke
+776.18 976.87 769.38 976.87 newpath moveto lineto stroke
+776.18 984.87 769.38 984.87 newpath moveto lineto stroke
+776.18 992.87 769.38 992.87 newpath moveto lineto stroke
+776.18 1002.87 769.38 1002.87 newpath moveto lineto stroke
+776.18 1010.87 769.38 1010.87 newpath moveto lineto stroke
+717.38 1015.27 722.18 1010.47 newpath moveto lineto stroke
+711.72 1009.61 716.52 1004.81 newpath moveto lineto stroke
+706.07 1003.96 710.87 999.16 newpath moveto lineto stroke
+700.41 998.30 705.21 993.50 newpath moveto lineto stroke
+776.18 1042.87 769.38 1042.87 newpath moveto lineto stroke
+776.18 1050.87 769.38 1050.87 newpath moveto lineto stroke
+776.18 1058.87 769.38 1058.87 newpath moveto lineto stroke
+776.18 1066.87 769.38 1066.87 newpath moveto lineto stroke
+776.18 1074.87 769.38 1074.87 newpath moveto lineto stroke
+776.18 1082.87 769.38 1082.87 newpath moveto lineto stroke
+776.18 1090.87 769.38 1090.87 newpath moveto lineto stroke
+733.02 1116.43 728.54 1111.31 newpath moveto lineto stroke
+726.99 1121.69 722.52 1116.58 newpath moveto lineto stroke
+720.97 1126.96 716.50 1121.85 newpath moveto lineto stroke
+714.95 1132.23 710.48 1127.12 newpath moveto lineto stroke
+708.93 1137.50 704.46 1132.39 newpath moveto lineto stroke
+654.91 1192.51 650.65 1187.23 newpath moveto lineto stroke
+648.69 1197.54 644.42 1192.25 newpath moveto lineto stroke
+642.46 1202.56 638.20 1197.28 newpath moveto lineto stroke
+636.24 1207.59 631.97 1202.30 newpath moveto lineto stroke
+630.01 1212.61 625.75 1207.33 newpath moveto lineto stroke
+623.79 1217.64 619.52 1212.35 newpath moveto lineto stroke
+776.18 1118.87 769.38 1118.87 newpath moveto lineto stroke
+776.18 1126.87 769.38 1126.87 newpath moveto lineto stroke
+776.18 1136.87 769.38 1136.87 newpath moveto lineto stroke
+776.18 1144.87 769.38 1144.87 newpath moveto lineto stroke
+776.18 1152.87 769.38 1152.87 newpath moveto lineto stroke
+776.18 1160.87 769.38 1160.87 newpath moveto lineto stroke
+776.18 1172.87 769.38 1172.87 newpath moveto lineto stroke
+776.18 1181.87 769.38 1181.87 newpath moveto lineto stroke
+776.18 1196.87 769.38 1196.87 newpath moveto lineto stroke
+776.18 1204.87 769.38 1204.87 newpath moveto lineto stroke
+776.18 1212.87 769.38 1212.87 newpath moveto lineto stroke
+776.18 1222.87 769.38 1222.87 newpath moveto lineto stroke
+776.18 1230.87 769.38 1230.87 newpath moveto lineto stroke
+776.18 1238.87 769.38 1238.87 newpath moveto lineto stroke
+776.18 1246.87 769.38 1246.87 newpath moveto lineto stroke
+754.78 1294.27 754.78 1287.47 newpath moveto lineto stroke
+746.78 1294.27 746.78 1287.47 newpath moveto lineto stroke
+738.78 1294.27 738.78 1287.47 newpath moveto lineto stroke
+730.78 1294.27 730.78 1287.47 newpath moveto lineto stroke
+722.78 1294.27 722.78 1287.47 newpath moveto lineto stroke
+714.78 1294.27 714.78 1287.47 newpath moveto lineto stroke
+690.38 1278.87 697.18 1278.87 newpath moveto lineto stroke
+690.38 1270.87 697.18 1270.87 newpath moveto lineto stroke
+690.38 1262.87 697.18 1262.87 newpath moveto lineto stroke
+697.18 1314.87 690.38 1314.87 newpath moveto lineto stroke
+697.18 1322.87 690.38 1322.87 newpath moveto lineto stroke
+697.18 1330.87 690.38 1330.87 newpath moveto lineto stroke
+697.18 1338.87 690.38 1338.87 newpath moveto lineto stroke
+794.75 1286.47 794.75 1293.27 newpath moveto lineto stroke
+802.75 1286.47 802.75 1293.27 newpath moveto lineto stroke
+810.75 1286.47 810.75 1293.27 newpath moveto lineto stroke
+818.75 1286.47 818.75 1293.27 newpath moveto lineto stroke
+850.78 1286.47 850.78 1293.27 newpath moveto lineto stroke
+858.78 1286.47 858.78 1293.27 newpath moveto lineto stroke
+866.78 1286.47 866.78 1293.27 newpath moveto lineto stroke
+877.78 1286.47 877.78 1293.27 newpath moveto lineto stroke
+885.78 1286.47 885.78 1293.27 newpath moveto lineto stroke
+893.78 1286.47 893.78 1293.27 newpath moveto lineto stroke
+901.78 1286.47 901.78 1293.27 newpath moveto lineto stroke
+924.78 1286.47 924.78 1293.27 newpath moveto lineto stroke
+932.78 1286.47 932.78 1293.27 newpath moveto lineto stroke
+940.78 1286.47 940.78 1293.27 newpath moveto lineto stroke
+948.78 1286.47 948.78 1293.27 newpath moveto lineto stroke
+835.38 1239.87 842.18 1239.87 newpath moveto lineto stroke
+835.38 1231.87 842.18 1231.87 newpath moveto lineto stroke
+835.38 1223.87 842.18 1223.87 newpath moveto lineto stroke
+835.38 1215.87 842.18 1215.87 newpath moveto lineto stroke
+835.38 1207.87 842.18 1207.87 newpath moveto lineto stroke
+835.38 1199.87 842.18 1199.87 newpath moveto lineto stroke
+835.38 1191.87 842.18 1191.87 newpath moveto lineto stroke
+835.38 1183.87 842.18 1183.87 newpath moveto lineto stroke
+822.84 901.17 818.72 906.57 newpath moveto lineto stroke
+829.20 906.02 825.08 911.42 newpath moveto lineto stroke
+835.56 910.88 831.44 916.28 newpath moveto lineto stroke
+841.92 915.73 837.80 921.13 newpath moveto lineto stroke
+848.28 920.58 844.16 925.98 newpath moveto lineto stroke
+854.64 925.44 850.51 930.84 newpath moveto lineto stroke
+861.00 930.29 856.87 935.69 newpath moveto lineto stroke
+897.73 958.32 893.60 963.72 newpath moveto lineto stroke
+904.09 963.18 899.96 968.57 newpath moveto lineto stroke
+910.45 968.03 906.32 973.43 newpath moveto lineto stroke
+943.57 992.84 939.45 998.25 newpath moveto lineto stroke
+949.93 997.70 945.81 1003.10 newpath moveto lineto stroke
+964.46 1009.26 960.34 1014.67 newpath moveto lineto stroke
+970.82 1014.12 966.70 1019.52 newpath moveto lineto stroke
+977.18 1018.97 973.06 1024.37 newpath moveto lineto stroke
+983.54 1023.83 979.42 1029.23 newpath moveto lineto stroke
+789.51 843.95 796.05 845.79 newpath moveto lineto stroke
+801.58 811.73 807.98 814.01 newpath moveto lineto stroke
+804.28 804.19 810.68 806.48 newpath moveto lineto stroke
+806.98 796.66 813.38 798.95 newpath moveto lineto stroke
+809.68 789.13 816.08 791.42 newpath moveto lineto stroke
+812.38 781.60 818.78 783.89 newpath moveto lineto stroke
+815.08 774.07 821.48 776.36 newpath moveto lineto stroke
+817.77 766.54 824.18 768.83 newpath moveto lineto stroke
+820.47 759.01 826.88 761.30 newpath moveto lineto stroke
+727.84 828.16 733.72 831.58 newpath moveto lineto stroke
+731.87 821.25 737.75 824.67 newpath moveto lineto stroke
+735.90 814.34 741.78 817.76 newpath moveto lineto stroke
+739.94 807.43 745.81 810.85 newpath moveto lineto stroke
+743.97 800.52 749.84 803.94 newpath moveto lineto stroke
+748.00 793.61 753.87 797.03 newpath moveto lineto stroke
+752.03 786.70 757.90 790.12 newpath moveto lineto stroke
+756.06 779.79 761.93 783.21 newpath moveto lineto stroke
+611.18 837.87 576.08 837.87 newpath moveto lineto stroke
+585.18 819.87 578.38 819.87 newpath moveto lineto stroke
+585.18 811.87 578.38 811.87 newpath moveto lineto stroke
+585.18 793.87 578.38 793.87 newpath moveto lineto stroke
+585.18 785.87 578.38 785.87 newpath moveto lineto stroke
+585.18 765.87 578.38 765.87 newpath moveto lineto stroke
+585.18 747.87 578.38 747.87 newpath moveto lineto stroke
+585.18 739.87 578.38 739.87 newpath moveto lineto stroke
+585.18 731.87 578.38 731.87 newpath moveto lineto stroke
+585.18 723.87 578.38 723.87 newpath moveto lineto stroke
+585.18 715.87 578.38 715.87 newpath moveto lineto stroke
+585.18 707.87 578.38 707.87 newpath moveto lineto stroke
+585.18 699.87 578.38 699.87 newpath moveto lineto stroke
+585.18 691.87 578.38 691.87 newpath moveto lineto stroke
+585.18 667.87 578.38 667.87 newpath moveto lineto stroke
+585.18 657.87 578.38 657.87 newpath moveto lineto stroke
+585.18 649.87 578.38 649.87 newpath moveto lineto stroke
+585.18 641.87 578.38 641.87 newpath moveto lineto stroke
+585.18 633.87 578.38 633.87 newpath moveto lineto stroke
+585.18 625.87 578.38 625.87 newpath moveto lineto stroke
+585.18 617.87 578.38 617.87 newpath moveto lineto stroke
+585.18 609.87 578.38 609.87 newpath moveto lineto stroke
+585.18 601.87 578.38 601.87 newpath moveto lineto stroke
+585.18 593.87 578.38 593.87 newpath moveto lineto stroke
+585.18 585.87 578.38 585.87 newpath moveto lineto stroke
+585.18 577.87 578.38 577.87 newpath moveto lineto stroke
+585.18 569.87 578.38 569.87 newpath moveto lineto stroke
+585.18 545.42 578.38 545.42 newpath moveto lineto stroke
+585.18 537.42 578.38 537.42 newpath moveto lineto stroke
+585.18 529.42 578.38 529.42 newpath moveto lineto stroke
+585.18 521.42 578.38 521.42 newpath moveto lineto stroke
+585.18 513.42 578.38 513.42 newpath moveto lineto stroke
+585.18 505.42 578.38 505.42 newpath moveto lineto stroke
+585.18 497.42 578.38 497.42 newpath moveto lineto stroke
+585.18 489.42 578.38 489.42 newpath moveto lineto stroke
+585.18 481.42 578.38 481.42 newpath moveto lineto stroke
+585.18 473.42 578.38 473.42 newpath moveto lineto stroke
+585.18 465.42 578.38 465.42 newpath moveto lineto stroke
+585.18 457.42 578.38 457.42 newpath moveto lineto stroke
+585.18 449.42 578.38 449.42 newpath moveto lineto stroke
+585.18 441.42 578.38 441.42 newpath moveto lineto stroke
+585.18 433.42 578.38 433.42 newpath moveto lineto stroke
+585.18 425.42 578.38 425.42 newpath moveto lineto stroke
+585.18 417.42 578.38 417.42 newpath moveto lineto stroke
+585.18 409.42 578.38 409.42 newpath moveto lineto stroke
+585.18 401.42 578.38 401.42 newpath moveto lineto stroke
+585.18 393.42 578.38 393.42 newpath moveto lineto stroke
+585.18 385.42 578.38 385.42 newpath moveto lineto stroke
+585.18 377.42 578.38 377.42 newpath moveto lineto stroke
+585.19 362.09 578.37 361.75 newpath moveto lineto stroke
+585.18 353.42 578.38 353.42 newpath moveto lineto stroke
+585.18 345.42 578.38 345.42 newpath moveto lineto stroke
+585.18 337.42 578.38 337.42 newpath moveto lineto stroke
+617.78 800.47 617.78 807.27 newpath moveto lineto stroke
+625.78 800.47 625.78 807.27 newpath moveto lineto stroke
+633.78 800.47 633.78 807.27 newpath moveto lineto stroke
+641.78 800.47 641.78 807.27 newpath moveto lineto stroke
+649.78 800.47 649.78 807.27 newpath moveto lineto stroke
+657.78 800.47 657.78 807.27 newpath moveto lineto stroke
+665.78 800.47 665.78 807.27 newpath moveto lineto stroke
+673.78 800.47 673.78 807.27 newpath moveto lineto stroke
+681.78 800.47 681.78 807.27 newpath moveto lineto stroke
+689.78 800.47 689.78 807.27 newpath moveto lineto stroke
+% end lines bpconnects
+
+% begin text nucleotides
+(A) 479.88 822.67 moveto show
+(A) 479.88 830.67 moveto show
+(C) 479.88 838.67 moveto show
+(C) 480.08 846.99 moveto show
+(U) 487.82 848.99 moveto show
+(G) 495.57 850.99 moveto show
+(G) 503.32 852.98 moveto show
+(U) 511.06 854.98 moveto show
+(U) 518.68 849.07 moveto show
+% nucleotide 10 on the next line
+(G) 528.88 849.57 moveto show
+(A) 536.28 856.67 moveto show
+(U) 537.42 867.18 moveto show
+(C) 529.83 869.71 moveto show
+(C) 522.24 872.24 moveto show
+(U) 514.18 874.17 moveto show
+(G) 506.07 874.35 moveto show
+(C) 498.32 872.35 moveto show
+(C) 490.57 870.35 moveto show
+(A) 482.83 868.35 moveto show
+% nucleotide 20 on the next line
+(G) 475.08 866.35 moveto show
+(U) 468.28 864.57 moveto show
+(A) 461.98 860.99 moveto show
+(G) 455.84 855.87 moveto show
+(U) 449.69 850.74 moveto show
+(C) 449.58 841.67 moveto show
+(A) 440.74 843.28 moveto show
+(U) 434.59 838.16 moveto show
+(A) 428.45 833.03 moveto show
+(U) 422.30 827.91 moveto show
+% nucleotide 30 on the next line
+(G) 416.16 822.79 moveto show
+(C) 410.01 817.67 moveto show
+(U) 403.87 812.54 moveto show
+(U) 403.57 798.65 moveto show
+(G) 387.86 797.89 moveto show
+(U) 381.19 793.64 moveto show
+(C) 375.04 788.52 moveto show
+(U) 368.90 783.39 moveto show
+(C) 362.75 778.27 moveto show
+(A) 356.61 773.15 moveto show
+% nucleotide 40 on the next line
+(A) 348.58 766.46 moveto show
+(A) 342.44 761.34 moveto show
+(G) 343.59 709.67 moveto show
+(A) 351.58 710.67 moveto show
+(U) 357.58 703.67 moveto show
+(U) 360.58 696.67 moveto show
+(A) 357.58 689.67 moveto show
+(A) 351.58 682.67 moveto show
+(G) 343.58 681.67 moveto show
+(C) 343.58 673.67 moveto show
+% nucleotide 50 on the next line
+(C) 343.58 665.67 moveto show
+(A) 350.68 662.57 moveto show
+(U) 343.58 657.67 moveto show
+(G) 343.58 649.67 moveto show
+(C) 343.58 641.67 moveto show
+(A) 354.88 630.77 moveto show
+(U) 362.68 617.27 moveto show
+(G) 366.58 603.67 moveto show
+(U) 374.58 603.67 moveto show
+(C) 375.58 611.67 moveto show
+% nucleotide 60 on the next line
+(U) 382.58 614.67 moveto show
+(A) 389.58 610.67 moveto show
+(A) 389.58 603.67 moveto show
+(G) 397.58 603.67 moveto show
+(U) 405.58 603.67 moveto show
+(A) 408.06 611.48 moveto show
+(U) 414.62 616.24 moveto show
+(A) 422.71 616.21 moveto show
+(A) 429.23 611.40 moveto show
+(A) 431.63 603.67 moveto show
+% nucleotide 70 on the next line
+(C) 439.63 603.67 moveto show
+(A) 445.44 609.85 moveto show
+(A) 453.30 613.04 moveto show
+(C) 461.76 612.63 moveto show
+(U) 469.27 608.69 moveto show
+(U) 474.42 601.95 moveto show
+(U) 476.25 593.68 moveto show
+(A) 474.42 585.40 moveto show
+(U) 469.28 578.66 moveto show
+(A) 461.77 574.72 moveto show
+% nucleotide 80 on the next line
+(C) 453.30 574.30 moveto show
+(U) 445.45 577.49 moveto show
+(G) 439.63 583.67 moveto show
+(U) 431.63 583.67 moveto show
+(G) 426.44 577.38 moveto show
+(A) 418.61 575.02 moveto show
+(A) 410.78 577.37 moveto show
+(A) 405.58 583.67 moveto show
+(C) 397.58 583.67 moveto show
+(U) 389.58 583.67 moveto show
+% nucleotide 90 on the next line
+(G) 374.58 583.67 moveto show
+(C) 366.58 583.67 moveto show
+(G) 360.98 569.57 moveto show
+(A) 352.78 558.87 moveto show
+(A) 342.28 550.47 moveto show
+(U) 330.08 544.97 moveto show
+(G) 316.78 542.57 moveto show
+(G) 303.38 543.47 moveto show
+(C) 290.65 547.60 moveto show
+(U) 284.99 541.94 moveto show
+% nucleotide 100 on the next line
+(C) 279.34 536.29 moveto show
+(A) 286.48 531.37 moveto show
+(U) 290.98 524.07 moveto show
+(U) 292.18 515.47 moveto show
+(A) 289.78 507.17 moveto show
+(A) 284.18 500.57 moveto show
+(A) 276.38 496.87 moveto show
+(U) 267.58 496.67 moveto show
+(C) 267.58 488.67 moveto show
+(A) 267.58 480.67 moveto show
+% nucleotide 110 on the next line
+(G) 267.58 472.67 moveto show
+(U) 269.58 464.67 moveto show
+(U) 269.58 456.67 moveto show
+(A) 267.58 448.67 moveto show
+(U) 267.58 440.67 moveto show
+(A) 274.42 438.34 moveto show
+(G) 274.45 431.05 moveto show
+(U) 267.58 428.67 moveto show
+(U) 267.58 420.67 moveto show
+(U) 273.23 414.48 moveto show
+% nucleotide 120 on the next line
+(A) 276.21 406.75 moveto show
+(U) 276.19 398.47 moveto show
+(U) 273.18 390.76 moveto show
+(U) 267.58 384.66 moveto show
+(G) 267.58 376.66 moveto show
+(A) 267.58 368.66 moveto show
+(U) 269.58 360.67 moveto show
+(G) 269.58 352.67 moveto show
+(G) 269.58 344.67 moveto show
+(U) 277.58 350.67 moveto show
+% nucleotide 130 on the next line
+(U) 280.58 357.67 moveto show
+(C) 286.58 362.67 moveto show
+(C) 293.58 363.67 moveto show
+(U) 300.58 363.67 moveto show
+(U) 303.58 356.67 moveto show
+(A) 301.58 349.67 moveto show
+(C) 295.58 343.67 moveto show
+(U) 288.58 343.67 moveto show
+(A) 281.58 340.67 moveto show
+(C) 285.58 333.67 moveto show
+% nucleotide 140 on the next line
+(U) 293.58 333.67 moveto show
+(U) 301.58 333.67 moveto show
+(G) 309.58 333.67 moveto show
+(G) 315.51 339.91 moveto show
+(A) 323.35 343.25 moveto show
+(U) 331.88 343.24 moveto show
+(A) 339.72 339.86 moveto show
+(A) 345.58 333.67 moveto show
+(C) 353.58 333.67 moveto show
+(C) 361.58 333.67 moveto show
+% nucleotide 150 on the next line
+(G) 369.58 333.67 moveto show
+(U) 377.58 333.67 moveto show
+(A) 385.58 333.67 moveto show
+(G) 393.58 333.67 moveto show
+(U) 402.22 336.15 moveto show
+(A) 410.32 332.13 moveto show
+(A) 413.61 323.70 moveto show
+(U) 410.36 315.25 moveto show
+(U) 402.27 311.20 moveto show
+(C) 393.58 313.67 moveto show
+% nucleotide 160 on the next line
+(U) 385.58 313.67 moveto show
+(A) 377.58 313.67 moveto show
+(G) 369.58 313.67 moveto show
+(A) 361.58 313.67 moveto show
+(G) 353.58 313.67 moveto show
+(C) 345.58 313.67 moveto show
+(U) 342.59 305.63 moveto show
+(A) 336.11 299.80 moveto show
+(A) 327.65 297.67 moveto show
+(U) 319.18 299.73 moveto show
+% nucleotide 170 on the next line
+(A) 312.65 305.51 moveto show
+(C) 309.58 313.67 moveto show
+(A) 301.58 313.67 moveto show
+(U) 293.58 313.67 moveto show
+(G) 285.58 313.67 moveto show
+(C) 292.81 301.80 moveto show
+(A) 298.03 289.65 moveto show
+(A) 301.54 276.89 moveto show
+(A) 303.27 263.78 moveto show
+(A) 303.20 250.55 moveto show
+% nucleotide 180 on the next line
+(A) 301.32 237.45 moveto show
+(A) 297.65 224.74 moveto show
+(C) 303.31 219.08 moveto show
+(C) 308.96 213.43 moveto show
+(C) 314.62 207.77 moveto show
+(C) 320.28 202.11 moveto show
+(G) 328.73 200.43 moveto show
+(A) 334.32 194.59 moveto show
+(C) 336.27 186.13 moveto show
+(U) 341.92 180.47 moveto show
+% nucleotide 190 on the next line
+(U) 349.76 172.39 moveto show
+(U) 352.73 161.51 moveto show
+(U) 345.73 155.51 moveto show
+(C) 335.84 158.50 moveto show
+(G) 327.78 166.33 moveto show
+(G) 322.12 171.98 moveto show
+(A) 313.38 173.10 moveto show
+(A) 307.26 179.16 moveto show
+(G) 306.14 187.97 moveto show
+(G) 300.48 193.63 moveto show
+% nucleotide 200 on the next line
+(G) 294.82 199.29 moveto show
+(G) 289.17 204.94 moveto show
+(U) 283.51 210.60 moveto show
+(G) 273.88 206.89 moveto show
+(U) 263.24 204.90 moveto show
+(A) 252.42 204.85 moveto show
+(U) 241.77 206.76 moveto show
+(U) 231.65 210.60 moveto show
+(U) 225.99 204.94 moveto show
+(A) 220.34 199.29 moveto show
+% nucleotide 210 on the next line
+(U) 214.68 193.63 moveto show
+(U) 209.02 187.97 moveto show
+(A) 203.37 182.31 moveto show
+(G) 204.76 174.32 moveto show
+(A) 204.76 166.48 moveto show
+(U) 203.41 159.11 moveto show
+(A) 200.80 152.46 moveto show
+(A) 196.08 144.46 moveto show
+(A) 190.08 138.46 moveto show
+(A) 182.43 134.46 moveto show
+% nucleotide 220 on the next line
+(A) 174.07 133.46 moveto show
+(A) 165.23 133.46 moveto show
+(A) 157.16 136.11 moveto show
+(C) 151.50 130.45 moveto show
+(C) 145.85 124.80 moveto show
+(A) 140.19 119.14 moveto show
+(A) 137.21 108.34 moveto show
+(U) 129.41 100.56 moveto show
+(G) 118.65 97.60 moveto show
+(C) 112.99 91.94 moveto show
+% nucleotide 230 on the next line
+(C) 107.34 86.29 moveto show
+(G) 101.68 80.63 moveto show
+(G) 96.02 74.97 moveto show
+(C) 90.37 69.31 moveto show
+(U) 84.08 62.13 moveto show
+(U) 76.54 60.13 moveto show
+(U) 69.54 62.67 moveto show
+(G) 67.19 70.67 moveto show
+(U) 71.19 76.64 moveto show
+(G) 76.22 83.46 moveto show
+% nucleotide 240 on the next line
+(C) 81.88 89.11 moveto show
+(C) 87.54 94.77 moveto show
+(G) 93.20 100.43 moveto show
+(U) 98.85 106.08 moveto show
+(U) 104.51 111.74 moveto show
+(U) 98.88 118.64 moveto show
+(U) 94.64 126.92 moveto show
+(U) 92.64 136.12 moveto show
+(A) 96.64 145.12 moveto show
+(U) 105.64 144.67 moveto show
+% nucleotide 250 on the next line
+(U) 113.95 143.17 moveto show
+(U) 120.22 137.89 moveto show
+(U) 126.05 133.28 moveto show
+(G) 131.71 138.94 moveto show
+(G) 137.36 144.59 moveto show
+(U) 143.02 150.25 moveto show
+(G) 143.62 161.10 moveto show
+(A) 146.78 171.10 moveto show
+(U) 152.25 180.07 moveto show
+(U) 159.70 187.46 moveto show
+% nucleotide 260 on the next line
+(C) 168.71 192.85 moveto show
+(A) 178.74 195.92 moveto show
+(U) 189.22 196.46 moveto show
+(A) 194.88 202.11 moveto show
+(A) 200.54 207.77 moveto show
+(U) 206.20 213.43 moveto show
+(A) 211.85 219.08 moveto show
+(A) 217.51 224.74 moveto show
+(C) 214.18 233.78 moveto show
+(U) 211.82 243.04 moveto show
+% nucleotide 270 on the next line
+(U) 210.42 252.49 moveto show
+(U) 210.01 262.03 moveto show
+(U) 210.57 271.57 moveto show
+(C) 212.11 281.00 moveto show
+(G) 214.62 290.22 moveto show
+(G) 218.06 299.13 moveto show
+(A) 222.39 307.65 moveto show
+(U) 227.58 315.67 moveto show
+(C) 219.58 315.67 moveto show
+(G) 211.58 315.67 moveto show
+% nucleotide 280 on the next line
+(C) 203.58 315.67 moveto show
+(A) 198.58 309.67 moveto show
+(U) 193.58 315.67 moveto show
+(G) 185.58 315.67 moveto show
+(G) 177.58 315.67 moveto show
+(C) 169.58 315.67 moveto show
+(C) 161.58 314.67 moveto show
+(U) 154.58 317.67 moveto show
+(U) 152.58 325.67 moveto show
+(G) 154.58 333.67 moveto show
+% nucleotide 290 on the next line
+(U) 161.58 336.67 moveto show
+(G) 169.58 335.67 moveto show
+(C) 177.58 335.67 moveto show
+(C) 185.58 335.67 moveto show
+(G) 193.58 335.67 moveto show
+(G) 203.58 335.67 moveto show
+(C) 211.58 335.67 moveto show
+(G) 219.58 335.67 moveto show
+(A) 227.58 335.67 moveto show
+(U) 236.58 339.67 moveto show
+% nucleotide 300 on the next line
+(G) 245.58 344.67 moveto show
+(C) 245.58 352.67 moveto show
+(A) 245.58 360.67 moveto show
+(U) 247.58 368.66 moveto show
+(C) 247.58 376.66 moveto show
+(A) 247.58 384.66 moveto show
+(U) 244.08 392.67 moveto show
+(U) 241.58 401.67 moveto show
+(C) 242.58 411.67 moveto show
+(A) 247.58 420.67 moveto show
+% nucleotide 310 on the next line
+(A) 247.58 428.67 moveto show
+(A) 247.58 440.67 moveto show
+(U) 247.58 448.67 moveto show
+(U) 244.58 456.67 moveto show
+(U) 244.58 464.67 moveto show
+(C) 247.58 472.67 moveto show
+(U) 247.58 480.67 moveto show
+(G) 247.58 488.67 moveto show
+(C) 247.58 496.67 moveto show
+(C) 238.65 496.60 moveto show
+% nucleotide 320 on the next line
+(C) 232.99 490.94 moveto show
+(U) 227.34 485.29 moveto show
+(A) 229.78 476.77 moveto show
+(U) 222.98 469.97 moveto show
+(C) 215.82 473.33 moveto show
+(A) 209.48 461.67 moveto show
+(A) 197.65 454.60 moveto show
+(C) 191.99 448.94 moveto show
+(U) 186.34 443.29 moveto show
+(U) 192.58 438.67 moveto show
+% nucleotide 330 on the next line
+(U) 192.58 430.67 moveto show
+(C) 186.58 425.67 moveto show
+(G) 178.58 426.67 moveto show
+(A) 174.65 432.60 moveto show
+(U) 168.99 426.94 moveto show
+(G) 163.34 421.29 moveto show
+(G) 157.68 415.63 moveto show
+(U) 152.02 409.97 moveto show
+(A) 146.37 404.31 moveto show
+(G) 140.71 398.66 moveto show
+% nucleotide 340 on the next line
+(G) 135.05 393.00 moveto show
+(G) 133.38 384.77 moveto show
+(U) 126.48 378.37 moveto show
+(A) 117.08 377.17 moveto show
+(U) 108.78 381.47 moveto show
+(U) 104.38 389.77 moveto show
+(G) 105.58 399.17 moveto show
+(G) 111.98 406.07 moveto show
+(C) 120.91 407.14 moveto show
+(C) 126.57 412.80 moveto show
+% nucleotide 350 on the next line
+(U) 132.22 418.46 moveto show
+(A) 137.88 424.11 moveto show
+(C) 143.54 429.77 moveto show
+(C) 149.20 435.43 moveto show
+(A) 154.85 441.08 moveto show
+(U) 160.51 446.74 moveto show
+(G) 172.20 457.43 moveto show
+(G) 177.85 463.08 moveto show
+(U) 183.51 468.74 moveto show
+(U) 178.65 475.11 moveto show
+% nucleotide 360 on the next line
+(G) 177.57 482.93 moveto show
+(U) 180.83 490.10 moveto show
+(A) 187.43 494.42 moveto show
+(A) 195.31 494.55 moveto show
+(C) 202.34 490.71 moveto show
+(G) 213.20 499.43 moveto show
+(G) 218.85 505.08 moveto show
+(G) 224.51 510.74 moveto show
+(U) 229.58 514.67 moveto show
+(A) 234.58 519.67 moveto show
+% nucleotide 370 on the next line
+(A) 239.58 523.67 moveto show
+(C) 244.44 529.57 moveto show
+(G) 237.16 532.88 moveto show
+(G) 229.88 536.19 moveto show
+(A) 222.59 539.50 moveto show
+(G) 210.44 545.57 moveto show
+(A) 203.16 548.88 moveto show
+(A) 195.88 552.19 moveto show
+(U) 188.59 555.50 moveto show
+(U) 179.71 558.69 moveto show
+% nucleotide 380 on the next line
+(A) 176.01 567.17 moveto show
+(G) 179.87 575.58 moveto show
+(G) 188.71 578.31 moveto show
+(G) 196.87 573.70 moveto show
+(U) 204.15 570.39 moveto show
+(U) 211.44 567.08 moveto show
+(C) 218.72 563.77 moveto show
+(G) 221.48 571.47 moveto show
+(A) 229.28 571.47 moveto show
+(U) 234.48 564.57 moveto show
+% nucleotide 390 on the next line
+(U) 230.87 557.70 moveto show
+(C) 238.15 554.39 moveto show
+(C) 245.44 551.08 moveto show
+(G) 252.72 547.77 moveto show
+(G) 265.20 550.43 moveto show
+(A) 270.85 556.08 moveto show
+(G) 276.51 561.74 moveto show
+(A) 271.18 570.17 moveto show
+(G) 265.86 579.82 moveto show
+(G) 257.98 581.20 moveto show
+% nucleotide 400 on the next line
+(G) 250.10 582.58 moveto show
+(A) 242.22 583.96 moveto show
+(G) 234.34 585.34 moveto show
+(C) 226.45 586.71 moveto show
+(C) 219.75 582.37 moveto show
+(U) 211.70 581.52 moveto show
+(G) 204.12 584.34 moveto show
+(A) 198.59 590.24 moveto show
+(G) 196.27 597.99 moveto show
+(A) 197.64 605.96 moveto show
+% nucleotide 410 on the next line
+(A) 202.42 612.49 moveto show
+(A) 209.61 616.20 moveto show
+(C) 217.70 616.32 moveto show
+(G) 224.99 612.83 moveto show
+(G) 229.90 606.42 moveto show
+(C) 237.78 605.04 moveto show
+(U) 245.66 603.66 moveto show
+(A) 253.54 602.28 moveto show
+(C) 261.42 600.90 moveto show
+(C) 269.30 599.52 moveto show
+% nucleotide 420 on the next line
+(A) 271.58 608.67 moveto show
+(C) 272.51 617.60 moveto show
+(A) 266.85 623.26 moveto show
+(U) 261.20 628.91 moveto show
+(C) 255.54 634.57 moveto show
+(C) 248.78 640.87 moveto show
+(A) 248.28 650.27 moveto show
+(A) 254.98 656.87 moveto show
+(G) 264.38 656.27 moveto show
+(G) 269.68 648.71 moveto show
+% nucleotide 430 on the next line
+(A) 275.34 643.05 moveto show
+(A) 280.99 637.40 moveto show
+(G) 286.65 631.74 moveto show
+(G) 294.58 636.67 moveto show
+(C) 303.58 640.67 moveto show
+(A) 313.58 641.67 moveto show
+(G) 323.58 641.67 moveto show
+(C) 323.58 649.67 moveto show
+(A) 323.58 657.67 moveto show
+(G) 323.58 665.67 moveto show
+% nucleotide 440 on the next line
+(G) 323.58 673.67 moveto show
+(C) 323.58 681.67 moveto show
+(G) 323.33 695.09 moveto show
+(C) 323.60 709.49 moveto show
+(G) 322.97 717.74 moveto show
+(C) 322.64 726.22 moveto show
+(A) 322.63 734.71 moveto show
+(A) 322.95 743.20 moveto show
+(A) 323.58 751.67 moveto show
+(U) 315.58 751.67 moveto show
+% nucleotide 450 on the next line
+(U) 312.98 744.67 moveto show
+(A) 308.58 751.67 moveto show
+(C) 300.58 751.67 moveto show
+(C) 292.58 751.67 moveto show
+(C) 289.58 743.67 moveto show
+(A) 282.58 740.67 moveto show
+(A) 275.58 743.67 moveto show
+(U) 272.58 751.67 moveto show
+(C) 264.58 751.67 moveto show
+(C) 256.58 751.67 moveto show
+% nucleotide 460 on the next line
+(U) 248.58 751.67 moveto show
+(G) 240.58 751.67 moveto show
+(A) 231.58 753.67 moveto show
+(C) 226.58 761.67 moveto show
+(A) 231.58 769.67 moveto show
+(C) 240.58 771.67 moveto show
+(A) 248.58 771.67 moveto show
+(G) 256.58 771.67 moveto show
+(G) 264.58 771.67 moveto show
+(G) 272.58 771.67 moveto show
+% nucleotide 470 on the next line
+(A) 282.58 775.67 moveto show
+(G) 292.58 771.67 moveto show
+(G) 300.58 771.67 moveto show
+(U) 308.58 771.67 moveto show
+(A) 315.58 771.67 moveto show
+(G) 323.58 771.67 moveto show
+(U) 329.63 776.70 moveto show
+(G) 335.78 781.82 moveto show
+(A) 336.54 789.49 moveto show
+(C) 343.80 788.51 moveto show
+% nucleotide 480 on the next line
+(A) 349.95 793.63 moveto show
+(A) 356.09 798.76 moveto show
+(G) 362.24 803.88 moveto show
+(A) 368.38 809.00 moveto show
+(A) 375.30 813.45 moveto show
+(A) 363.99 817.44 moveto show
+(U) 354.81 818.38 moveto show
+(A) 345.61 819.07 moveto show
+(A) 336.39 819.50 moveto show
+(C) 329.58 819.67 moveto show
+% nucleotide 490 on the next line
+(A) 321.58 819.67 moveto show
+(A) 313.58 819.67 moveto show
+(U) 301.58 819.67 moveto show
+(A) 293.58 819.67 moveto show
+(C) 285.58 819.67 moveto show
+(A) 277.58 819.67 moveto show
+(G) 269.58 819.67 moveto show
+(G) 261.58 819.67 moveto show
+(G) 253.58 819.67 moveto show
+(C) 245.58 819.67 moveto show
+% nucleotide 500 on the next line
+(C) 237.58 819.67 moveto show
+(C) 229.58 819.67 moveto show
+(U) 219.98 818.40 moveto show
+(U) 212.65 824.79 moveto show
+(U) 212.63 834.51 moveto show
+(U) 219.94 840.93 moveto show
+(G) 229.58 839.67 moveto show
+(G) 237.58 839.67 moveto show
+(G) 245.58 839.67 moveto show
+(U) 253.58 839.67 moveto show
+% nucleotide 510 on the next line
+(C) 261.58 839.67 moveto show
+(U) 269.58 839.67 moveto show
+(U) 277.58 839.67 moveto show
+(G) 285.58 839.67 moveto show
+(U) 293.58 839.67 moveto show
+(A) 301.58 839.67 moveto show
+(A) 306.90 846.15 moveto show
+(U) 313.58 839.67 moveto show
+(U) 321.58 839.67 moveto show
+(G) 329.58 839.67 moveto show
+% nucleotide 520 on the next line
+(G) 332.58 848.67 moveto show
+(A) 325.58 856.27 moveto show
+(A) 318.58 863.87 moveto show
+(U) 311.58 871.47 moveto show
+(G) 304.58 879.07 moveto show
+(A) 297.58 886.67 moveto show
+(G) 291.97 894.14 moveto show
+(U) 286.31 899.80 moveto show
+(A) 278.52 905.62 moveto show
+(C) 269.58 904.67 moveto show
+% nucleotide 530 on the next line
+(A) 273.51 912.60 moveto show
+(A) 267.85 918.26 moveto show
+(U) 262.20 923.91 moveto show
+(U) 253.37 925.89 moveto show
+(U) 247.34 932.70 moveto show
+(A) 246.24 941.73 moveto show
+(A) 250.47 949.78 moveto show
+(A) 258.52 954.01 moveto show
+(U) 267.55 952.91 moveto show
+(C) 274.36 946.88 moveto show
+% nucleotide 540 on the next line
+(C) 276.34 938.05 moveto show
+(C) 281.99 932.40 moveto show
+(U) 287.65 926.74 moveto show
+(U) 293.64 918.72 moveto show
+(A) 302.58 921.67 moveto show
+(A) 300.45 913.94 moveto show
+(C) 306.11 908.28 moveto show
+(G) 311.58 901.67 moveto show
+(A) 318.20 894.79 moveto show
+(G) 324.83 887.92 moveto show
+% nucleotide 550 on the next line
+(G) 331.46 881.05 moveto show
+(A) 338.08 874.17 moveto show
+(U) 344.70 867.29 moveto show
+(C) 351.33 860.42 moveto show
+(A) 357.96 853.55 moveto show
+(A) 364.58 846.67 moveto show
+(U) 371.58 849.92 moveto show
+(U) 371.78 857.92 moveto show
+(G) 371.98 865.91 moveto show
+(G) 372.18 873.91 moveto show
+% nucleotide 560 on the next line
+(A) 372.38 881.91 moveto show
+(G) 372.58 889.91 moveto show
+(G) 363.58 887.67 moveto show
+(G) 356.58 884.67 moveto show
+(C) 349.58 888.67 moveto show
+(A) 349.00 898.66 moveto show
+(A) 350.80 906.22 moveto show
+(G) 356.29 910.10 moveto show
+(U) 364.99 910.03 moveto show
+(C) 371.58 906.67 moveto show
+% nucleotide 570 on the next line
+(U) 371.58 914.67 moveto show
+(G) 371.58 922.67 moveto show
+(G) 371.58 930.67 moveto show
+(U) 363.62 936.42 moveto show
+(G) 358.39 944.65 moveto show
+(C) 356.58 954.22 moveto show
+(C) 358.42 963.79 moveto show
+(A) 363.67 972.00 moveto show
+(G) 371.58 977.70 moveto show
+(C) 371.58 985.70 moveto show
+% nucleotide 580 on the next line
+(A) 371.58 993.70 moveto show
+(G) 375.58 1003.51 moveto show
+(C) 387.58 1003.51 moveto show
+(C) 391.58 993.70 moveto show
+(G) 391.58 985.70 moveto show
+(C) 391.58 977.70 moveto show
+(G) 399.83 975.20 moveto show
+(G) 406.60 969.93 moveto show
+(U) 411.05 962.60 moveto show
+(A) 412.60 954.16 moveto show
+% nucleotide 590 on the next line
+(A) 411.04 945.73 moveto show
+(U) 406.57 938.40 moveto show
+(U) 399.79 933.15 moveto show
+(C) 391.58 930.67 moveto show
+(C) 391.58 922.67 moveto show
+(A) 391.58 914.67 moveto show
+(G) 391.58 906.67 moveto show
+(C) 392.58 889.41 moveto show
+(U) 392.38 881.41 moveto show
+(C) 392.18 873.41 moveto show
+% nucleotide 600 on the next line
+(C) 391.98 865.42 moveto show
+(A) 391.78 857.42 moveto show
+(A) 391.58 849.42 moveto show
+(U) 390.58 840.67 moveto show
+(A) 391.06 827.91 moveto show
+(G) 397.21 833.03 moveto show
+(C) 403.35 838.15 moveto show
+(G) 409.50 843.27 moveto show
+(U) 415.64 848.40 moveto show
+(A) 421.79 853.52 moveto show
+% nucleotide 610 on the next line
+(U) 427.93 858.64 moveto show
+(A) 436.89 866.11 moveto show
+(U) 443.03 871.23 moveto show
+(U) 449.18 876.35 moveto show
+(A) 443.68 884.42 moveto show
+(A) 439.84 893.17 moveto show
+(A) 437.64 902.49 moveto show
+(G) 437.18 912.04 moveto show
+(U) 438.45 921.52 moveto show
+(U) 441.42 930.61 moveto show
+% nucleotide 620 on the next line
+(G) 446.00 939.02 moveto show
+(U) 452.02 946.45 moveto show
+(U) 459.29 952.66 moveto show
+(G) 467.57 957.46 moveto show
+(C) 476.58 960.67 moveto show
+(A) 476.58 968.67 moveto show
+(G) 476.58 976.67 moveto show
+(U) 477.08 986.27 moveto show
+(U) 469.28 988.97 moveto show
+(A) 459.28 994.37 moveto show
+% nucleotide 630 on the next line
+(A) 453.48 1001.07 moveto show
+(A) 448.08 1008.97 moveto show
+(A) 444.18 1017.77 moveto show
+(A) 442.08 1027.17 moveto show
+(G) 435.85 1031.48 moveto show
+(C) 429.29 1036.07 moveto show
+(U) 422.74 1040.65 moveto show
+(C) 416.18 1045.24 moveto show
+(G) 407.82 1041.62 moveto show
+(U) 399.18 1044.08 moveto show
+% nucleotide 640 on the next line
+(A) 394.10 1051.49 moveto show
+(G) 394.85 1060.48 moveto show
+(U) 388.29 1065.07 moveto show
+(U) 381.74 1069.65 moveto show
+(G) 375.18 1074.24 moveto show
+(G) 369.93 1061.67 moveto show
+(A) 364.68 1051.17 moveto show
+(U) 359.43 1040.67 moveto show
+(U) 354.18 1030.17 moveto show
+(U) 348.93 1019.67 moveto show
+% nucleotide 650 on the next line
+(C) 340.93 1019.67 moveto show
+(G) 332.93 1019.67 moveto show
+(G) 324.93 1019.67 moveto show
+(G) 316.93 1019.67 moveto show
+(U) 308.93 1019.67 moveto show
+(U) 300.93 1019.67 moveto show
+(U) 292.93 1019.67 moveto show
+(G) 284.93 1019.67 moveto show
+(G) 276.93 1019.67 moveto show
+(G) 268.93 1019.67 moveto show
+% nucleotide 660 on the next line
+(C) 260.93 1019.67 moveto show
+(C) 252.93 1019.67 moveto show
+(U) 244.93 1019.67 moveto show
+(G) 236.93 1019.67 moveto show
+(G) 228.93 1019.67 moveto show
+(C) 220.93 1019.67 moveto show
+(C) 212.93 1019.67 moveto show
+(G) 204.93 1019.67 moveto show
+(G) 196.93 1019.67 moveto show
+(U) 188.93 1019.67 moveto show
+% nucleotide 670 on the next line
+(C) 180.93 1019.67 moveto show
+(G) 172.93 1019.67 moveto show
+(A) 164.93 1019.67 moveto show
+(G) 156.93 1019.67 moveto show
+(C) 148.93 1019.67 moveto show
+(C) 140.93 1019.67 moveto show
+(C) 132.93 1019.67 moveto show
+(U) 124.93 1019.67 moveto show
+(U) 116.93 1019.67 moveto show
+(A) 108.93 1019.67 moveto show
+% nucleotide 680 on the next line
+(U) 100.93 1019.67 moveto show
+(G) 92.93 1019.67 moveto show
+(G) 84.93 1019.67 moveto show
+(C) 76.93 1019.67 moveto show
+(G) 76.93 1027.67 moveto show
+(A) 76.93 1035.67 moveto show
+(G) 76.93 1043.67 moveto show
+(U) 84.93 1043.67 moveto show
+(G) 92.93 1043.67 moveto show
+(U) 100.93 1043.67 moveto show
+% nucleotide 690 on the next line
+(G) 108.93 1043.67 moveto show
+(G) 116.93 1043.67 moveto show
+(G) 124.93 1043.67 moveto show
+(C) 132.93 1043.67 moveto show
+(C) 140.93 1043.67 moveto show
+(A) 148.93 1043.67 moveto show
+(U) 156.93 1043.67 moveto show
+(C) 164.93 1043.67 moveto show
+(U) 172.93 1043.67 moveto show
+(G) 180.93 1043.67 moveto show
+% nucleotide 700 on the next line
+(C) 188.93 1043.67 moveto show
+(A) 196.93 1043.67 moveto show
+(C) 204.93 1043.67 moveto show
+(G) 212.93 1043.67 moveto show
+(U) 220.93 1043.67 moveto show
+(G) 228.93 1043.67 moveto show
+(C) 236.93 1043.67 moveto show
+(U) 244.93 1043.67 moveto show
+(U) 252.93 1043.67 moveto show
+(C) 260.93 1043.67 moveto show
+% nucleotide 710 on the next line
+(U) 268.93 1043.67 moveto show
+(C) 276.93 1043.67 moveto show
+(C) 284.93 1043.67 moveto show
+(G) 292.93 1043.67 moveto show
+(U) 300.93 1043.67 moveto show
+(C) 308.93 1043.67 moveto show
+(C) 316.93 1043.67 moveto show
+(U) 324.93 1043.67 moveto show
+(U) 332.93 1043.67 moveto show
+(C) 332.93 1051.67 moveto show
+% nucleotide 720 on the next line
+(C) 332.93 1059.67 moveto show
+(U) 332.93 1067.67 moveto show
+(U) 324.93 1067.67 moveto show
+(U) 316.93 1067.67 moveto show
+(U) 308.93 1067.67 moveto show
+(U) 300.93 1067.67 moveto show
+(U) 292.93 1067.67 moveto show
+(C) 284.93 1067.67 moveto show
+(U) 276.93 1067.67 moveto show
+(A) 268.93 1067.67 moveto show
+% nucleotide 730 on the next line
+(C) 260.93 1067.67 moveto show
+(G) 252.93 1067.67 moveto show
+(U) 244.93 1067.67 moveto show
+(G) 236.93 1067.67 moveto show
+(G) 228.93 1067.67 moveto show
+(A) 220.93 1067.67 moveto show
+(U) 212.93 1067.67 moveto show
+(U) 204.93 1067.67 moveto show
+(G) 196.93 1067.67 moveto show
+(G) 188.93 1067.67 moveto show
+% nucleotide 740 on the next line
+(G) 180.93 1067.67 moveto show
+(G) 172.93 1067.67 moveto show
+(G) 164.93 1067.67 moveto show
+(A) 156.93 1067.67 moveto show
+(U) 148.93 1067.67 moveto show
+(G) 140.93 1067.67 moveto show
+(A) 132.93 1067.67 moveto show
+(C) 124.93 1067.67 moveto show
+(G) 116.93 1067.67 moveto show
+(U) 108.93 1067.67 moveto show
+% nucleotide 750 on the next line
+(U) 100.93 1067.67 moveto show
+(G) 92.93 1067.67 moveto show
+(U) 84.93 1067.67 moveto show
+(C) 76.93 1067.67 moveto show
+(U) 76.93 1075.67 moveto show
+(G) 76.93 1083.67 moveto show
+(G) 76.93 1091.67 moveto show
+(C) 84.93 1091.67 moveto show
+(C) 92.93 1091.67 moveto show
+(C) 100.93 1091.67 moveto show
+% nucleotide 760 on the next line
+(U) 108.93 1091.67 moveto show
+(U) 116.93 1091.67 moveto show
+(A) 124.93 1091.67 moveto show
+(A) 132.93 1091.67 moveto show
+(C) 140.93 1091.67 moveto show
+(U) 148.93 1091.67 moveto show
+(G) 156.93 1091.67 moveto show
+(A) 164.93 1091.67 moveto show
+(G) 172.93 1091.67 moveto show
+(U) 180.93 1091.67 moveto show
+% nucleotide 770 on the next line
+(U) 188.93 1091.67 moveto show
+(G) 196.93 1091.67 moveto show
+(U) 204.93 1091.67 moveto show
+(C) 212.93 1091.67 moveto show
+(G) 220.93 1091.67 moveto show
+(G) 228.93 1091.67 moveto show
+(G) 236.93 1091.67 moveto show
+(C) 244.93 1091.67 moveto show
+(G) 252.93 1091.67 moveto show
+(G) 260.93 1091.67 moveto show
+% nucleotide 780 on the next line
+(U) 268.93 1091.67 moveto show
+(C) 276.93 1091.67 moveto show
+(G) 284.93 1091.67 moveto show
+(G) 292.93 1091.67 moveto show
+(U) 300.93 1091.67 moveto show
+(C) 308.93 1091.67 moveto show
+(U) 316.93 1091.67 moveto show
+(C) 324.93 1091.67 moveto show
+(G) 332.93 1091.67 moveto show
+(G) 332.93 1099.67 moveto show
+% nucleotide 790 on the next line
+(C) 332.93 1107.67 moveto show
+(C) 332.93 1115.67 moveto show
+(C) 324.93 1115.67 moveto show
+(A) 316.93 1115.67 moveto show
+(G) 308.93 1115.67 moveto show
+(G) 300.93 1115.67 moveto show
+(A) 292.93 1115.67 moveto show
+(C) 284.93 1115.67 moveto show
+(A) 276.93 1115.67 moveto show
+(U) 268.93 1115.67 moveto show
+% nucleotide 800 on the next line
+(C) 260.93 1115.67 moveto show
+(C) 252.93 1115.67 moveto show
+(A) 244.93 1115.67 moveto show
+(C) 236.93 1115.67 moveto show
+(C) 228.93 1115.67 moveto show
+(U) 220.93 1115.67 moveto show
+(U) 212.93 1115.67 moveto show
+(U) 204.93 1115.67 moveto show
+(U) 196.93 1115.67 moveto show
+(A) 188.93 1115.67 moveto show
+% nucleotide 810 on the next line
+(C) 180.93 1115.67 moveto show
+(U) 172.93 1115.67 moveto show
+(G) 164.93 1115.67 moveto show
+(U) 156.93 1115.67 moveto show
+(G) 148.93 1115.67 moveto show
+(A) 140.93 1115.67 moveto show
+(A) 132.93 1115.67 moveto show
+(A) 124.93 1115.67 moveto show
+(A) 116.93 1115.67 moveto show
+(A) 108.93 1115.67 moveto show
+% nucleotide 820 on the next line
+(A) 100.93 1115.67 moveto show
+(U) 92.93 1115.67 moveto show
+(U) 84.93 1115.67 moveto show
+(A) 76.93 1115.67 moveto show
+(G) 76.93 1123.67 moveto show
+(A) 76.93 1131.67 moveto show
+(G) 76.93 1139.67 moveto show
+(U) 84.93 1139.67 moveto show
+(G) 92.93 1139.67 moveto show
+(U) 100.93 1139.67 moveto show
+% nucleotide 830 on the next line
+(U) 108.93 1139.67 moveto show
+(C) 116.93 1139.67 moveto show
+(A) 124.93 1139.67 moveto show
+(A) 132.93 1139.67 moveto show
+(A) 140.93 1139.67 moveto show
+(G) 148.93 1139.67 moveto show
+(C) 156.93 1139.67 moveto show
+(A) 164.93 1139.67 moveto show
+(G) 172.93 1139.67 moveto show
+(G) 180.93 1139.67 moveto show
+% nucleotide 840 on the next line
+(C) 188.93 1139.67 moveto show
+(U) 196.93 1139.67 moveto show
+(U) 204.93 1139.67 moveto show
+(U) 212.93 1139.67 moveto show
+(U) 220.93 1139.67 moveto show
+(C) 228.93 1139.67 moveto show
+(U) 236.93 1139.67 moveto show
+(G) 244.93 1139.67 moveto show
+(C) 252.93 1139.67 moveto show
+(C) 260.93 1139.67 moveto show
+% nucleotide 850 on the next line
+(U) 268.93 1139.67 moveto show
+(U) 276.93 1139.67 moveto show
+(G) 284.93 1139.67 moveto show
+(A) 292.93 1139.67 moveto show
+(A) 300.93 1139.67 moveto show
+(U) 308.93 1139.67 moveto show
+(A) 316.93 1139.67 moveto show
+(C) 324.93 1139.67 moveto show
+(A) 332.93 1139.67 moveto show
+(U) 332.93 1147.67 moveto show
+% nucleotide 860 on the next line
+(U) 332.93 1155.67 moveto show
+(A) 332.93 1163.67 moveto show
+(G) 324.93 1163.67 moveto show
+(C) 316.93 1163.67 moveto show
+(A) 308.93 1163.67 moveto show
+(U) 300.93 1163.67 moveto show
+(G) 292.93 1163.67 moveto show
+(G) 284.93 1163.67 moveto show
+(A) 276.93 1163.67 moveto show
+(A) 268.93 1163.67 moveto show
+% nucleotide 870 on the next line
+(U) 260.93 1163.67 moveto show
+(A) 252.93 1163.67 moveto show
+(A) 244.93 1163.67 moveto show
+(U) 236.93 1163.67 moveto show
+(A) 228.93 1163.67 moveto show
+(G) 220.93 1163.67 moveto show
+(A) 212.93 1163.67 moveto show
+(A) 204.93 1163.67 moveto show
+(U) 196.93 1163.67 moveto show
+(A) 188.93 1163.67 moveto show
+% nucleotide 880 on the next line
+(G) 180.93 1163.67 moveto show
+(G) 172.93 1163.67 moveto show
+(A) 164.93 1163.67 moveto show
+(C) 156.93 1163.67 moveto show
+(U) 148.93 1163.67 moveto show
+(U) 140.93 1163.67 moveto show
+(U) 132.93 1163.67 moveto show
+(G) 124.93 1163.67 moveto show
+(G) 116.93 1163.67 moveto show
+(U) 108.93 1163.67 moveto show
+% nucleotide 890 on the next line
+(U) 100.93 1163.67 moveto show
+(G) 92.93 1163.67 moveto show
+(G) 84.93 1163.67 moveto show
+(U) 76.93 1163.67 moveto show
+(U) 76.93 1171.67 moveto show
+(C) 76.93 1179.67 moveto show
+(U) 76.93 1187.67 moveto show
+(A) 84.93 1187.67 moveto show
+(U) 92.93 1187.67 moveto show
+(U) 100.93 1187.67 moveto show
+% nucleotide 900 on the next line
+(U) 108.93 1187.67 moveto show
+(U) 116.93 1187.67 moveto show
+(G) 124.93 1187.67 moveto show
+(U) 132.93 1187.67 moveto show
+(U) 140.93 1187.67 moveto show
+(G) 148.93 1187.67 moveto show
+(G) 156.93 1187.67 moveto show
+(U) 164.93 1187.67 moveto show
+(U) 172.93 1187.67 moveto show
+(U) 180.93 1187.67 moveto show
+% nucleotide 910 on the next line
+(G) 188.93 1187.67 moveto show
+(U) 196.93 1187.67 moveto show
+(A) 204.93 1187.67 moveto show
+(G) 212.93 1187.67 moveto show
+(G) 220.93 1187.67 moveto show
+(A) 228.93 1187.67 moveto show
+(C) 236.93 1187.67 moveto show
+(C) 244.93 1187.67 moveto show
+(G) 252.93 1187.67 moveto show
+(C) 260.93 1187.67 moveto show
+% nucleotide 920 on the next line
+(A) 268.93 1187.67 moveto show
+(A) 276.93 1187.67 moveto show
+(G) 284.93 1187.67 moveto show
+(U) 292.93 1187.67 moveto show
+(A) 300.93 1187.67 moveto show
+(A) 308.93 1187.67 moveto show
+(U) 316.93 1187.67 moveto show
+(G) 324.93 1187.67 moveto show
+(A) 332.93 1187.67 moveto show
+(U) 340.93 1187.67 moveto show
+% nucleotide 930 on the next line
+(U) 345.03 1175.47 moveto show
+(A) 349.13 1163.27 moveto show
+(A) 353.23 1151.07 moveto show
+(U) 357.33 1138.87 moveto show
+(A) 361.43 1126.67 moveto show
+(G) 372.58 1126.67 moveto show
+(G) 372.58 1134.67 moveto show
+(G) 372.58 1142.67 moveto show
+(A) 372.58 1150.67 moveto show
+(C) 372.58 1161.67 moveto show
+% nucleotide 940 on the next line
+(A) 372.58 1169.67 moveto show
+(G) 372.58 1177.67 moveto show
+(U) 372.58 1185.67 moveto show
+(U) 372.58 1193.67 moveto show
+(G) 364.77 1198.40 moveto show
+(G) 364.81 1207.98 moveto show
+(G) 372.58 1212.67 moveto show
+(G) 372.58 1220.67 moveto show
+(G) 372.58 1228.67 moveto show
+(C) 372.58 1236.67 moveto show
+% nucleotide 950 on the next line
+(A) 372.58 1244.67 moveto show
+(U) 372.58 1252.67 moveto show
+(U) 372.58 1260.67 moveto show
+(C) 364.58 1269.67 moveto show
+(G) 356.58 1269.67 moveto show
+(U) 348.58 1265.67 moveto show
+(A) 340.58 1265.67 moveto show
+(U) 332.58 1269.67 moveto show
+(U) 324.58 1269.67 moveto show
+(C) 316.58 1269.67 moveto show
+% nucleotide 960 on the next line
+(C) 308.58 1269.67 moveto show
+(A) 300.58 1269.67 moveto show
+(U) 292.58 1269.67 moveto show
+(U) 284.58 1269.67 moveto show
+(G) 276.58 1269.67 moveto show
+(U) 269.58 1262.67 moveto show
+(C) 259.58 1259.67 moveto show
+(A) 249.58 1262.67 moveto show
+(G) 242.58 1269.67 moveto show
+(A) 234.58 1269.67 moveto show
+% nucleotide 970 on the next line
+(G) 226.58 1269.67 moveto show
+(G) 218.58 1266.97 moveto show
+(U) 210.48 1269.17 moveto show
+(G) 205.48 1275.87 moveto show
+(A) 205.48 1284.27 moveto show
+(A) 210.48 1290.97 moveto show
+(A) 218.58 1293.17 moveto show
+(U) 226.58 1289.67 moveto show
+(U) 234.58 1289.67 moveto show
+(C) 242.58 1289.67 moveto show
+% nucleotide 980 on the next line
+(U) 242.58 1298.67 moveto show
+(U) 246.58 1306.67 moveto show
+(G) 254.58 1311.67 moveto show
+(G) 264.58 1311.67 moveto show
+(A) 272.58 1306.67 moveto show
+(U) 276.58 1298.67 moveto show
+(U) 276.58 1289.67 moveto show
+(U) 284.58 1289.67 moveto show
+(A) 292.58 1289.67 moveto show
+(U) 300.58 1289.67 moveto show
+% nucleotide 990 on the next line
+(G) 308.58 1289.67 moveto show
+(G) 316.58 1289.67 moveto show
+(A) 324.58 1289.67 moveto show
+(A) 332.58 1289.67 moveto show
+(G) 340.58 1293.67 moveto show
+(A) 348.58 1293.67 moveto show
+(C) 356.58 1289.67 moveto show
+(G) 364.58 1289.67 moveto show
+(A) 369.84 1296.69 moveto show
+(A) 377.66 1300.91 moveto show
+% nucleotide 1000 on the next line
+(C) 386.53 1301.42 moveto show
+(U) 394.79 1298.14 moveto show
+(A) 400.58 1289.67 moveto show
+(C) 405.25 1295.80 moveto show
+(U) 412.93 1295.79 moveto show
+(G) 417.58 1289.67 moveto show
+(C) 425.58 1289.67 moveto show
+(G) 434.52 1290.03 moveto show
+(A) 440.97 1284.06 moveto show
+(A) 440.96 1275.27 moveto show
+% nucleotide 1010 on the next line
+(A) 434.51 1269.30 moveto show
+(G) 425.58 1269.67 moveto show
+(C) 417.58 1269.67 moveto show
+(A) 400.58 1269.67 moveto show
+(U) 392.58 1260.67 moveto show
+(U) 392.58 1252.67 moveto show
+(U) 392.58 1244.67 moveto show
+(G) 392.58 1236.67 moveto show
+(C) 392.58 1228.67 moveto show
+(C) 392.58 1220.67 moveto show
+% nucleotide 1020 on the next line
+(A) 392.58 1212.67 moveto show
+(A) 395.12 1203.17 moveto show
+(G) 392.58 1193.67 moveto show
+(G) 392.58 1185.67 moveto show
+(A) 392.58 1177.67 moveto show
+(U) 392.58 1169.67 moveto show
+(G) 392.58 1161.67 moveto show
+(U) 398.88 1155.27 moveto show
+(U) 392.58 1150.67 moveto show
+(U) 392.58 1142.67 moveto show
+% nucleotide 1030 on the next line
+(U) 392.58 1134.67 moveto show
+(C) 392.58 1126.67 moveto show
+(A) 394.88 1114.77 moveto show
+(U) 392.68 1102.77 moveto show
+(U) 386.65 1090.63 moveto show
+(A) 393.21 1086.04 moveto show
+(A) 399.76 1081.45 moveto show
+(U) 406.31 1076.86 moveto show
+(C) 414.41 1079.93 moveto show
+(A) 422.78 1077.46 moveto show
+% nucleotide 1040 on the next line
+(A) 427.89 1070.38 moveto show
+(G) 427.65 1061.63 moveto show
+(A) 434.21 1057.04 moveto show
+(A) 440.76 1052.45 moveto show
+(C) 447.31 1047.86 moveto show
+(G) 453.58 1043.57 moveto show
+(A) 453.98 1052.27 moveto show
+(A) 457.18 1060.47 moveto show
+(A) 462.98 1067.07 moveto show
+(G) 470.58 1072.60 moveto show
+% nucleotide 1050 on the next line
+(U) 470.58 1080.60 moveto show
+(U) 470.58 1088.60 moveto show
+(A) 470.58 1096.60 moveto show
+(G) 470.58 1104.60 moveto show
+(G) 470.58 1112.60 moveto show
+(G) 462.73 1114.29 moveto show
+(G) 458.97 1121.20 moveto show
+(A) 462.10 1128.41 moveto show
+(U) 470.58 1130.67 moveto show
+(C) 470.58 1138.67 moveto show
+% nucleotide 1060 on the next line
+(G) 467.58 1145.67 moveto show
+(A) 465.58 1153.67 moveto show
+(A) 466.58 1161.67 moveto show
+(G) 470.58 1168.67 moveto show
+(A) 470.58 1176.67 moveto show
+(C) 470.58 1184.67 moveto show
+(G) 470.58 1192.67 moveto show
+(A) 464.58 1199.67 moveto show
+(U) 462.58 1208.67 moveto show
+(C) 464.58 1217.67 moveto show
+% nucleotide 1070 on the next line
+(A) 471.58 1224.67 moveto show
+(G) 480.58 1226.67 moveto show
+(A) 489.58 1224.67 moveto show
+(U) 496.58 1217.67 moveto show
+(A) 498.58 1208.67 moveto show
+(C) 496.58 1199.67 moveto show
+(C) 490.58 1192.67 moveto show
+(G) 490.58 1184.67 moveto show
+(U) 490.58 1176.67 moveto show
+(C) 490.58 1168.67 moveto show
+% nucleotide 1080 on the next line
+(G) 496.51 1162.12 moveto show
+(U) 498.60 1153.62 moveto show
+(A) 496.47 1145.14 moveto show
+(G) 490.58 1138.67 moveto show
+(U) 490.58 1130.67 moveto show
+(C) 490.58 1112.60 moveto show
+(U) 490.58 1104.60 moveto show
+(U) 490.58 1096.60 moveto show
+(A) 490.58 1088.60 moveto show
+(A) 490.58 1080.60 moveto show
+% nucleotide 1090 on the next line
+(C) 490.58 1072.60 moveto show
+(C) 499.58 1073.67 moveto show
+(A) 507.58 1072.47 moveto show
+(U) 515.38 1068.97 moveto show
+(A) 521.78 1063.17 moveto show
+(A) 525.98 1055.67 moveto show
+(A) 527.68 1047.27 moveto show
+(C) 526.48 1038.67 moveto show
+(U) 522.78 1030.97 moveto show
+(A) 516.78 1024.77 moveto show
+% nucleotide 1100 on the next line
+(U) 509.08 1020.87 moveto show
+(G) 504.58 1011.67 moveto show
+(C) 512.58 1011.67 moveto show
+(C) 520.58 1011.67 moveto show
+(G) 531.60 1011.67 moveto show
+(A) 539.60 1011.67 moveto show
+(C) 547.60 1011.67 moveto show
+(U) 556.39 1012.21 moveto show
+(A) 566.39 1015.41 moveto show
+(G) 570.98 1021.96 moveto show
+% nucleotide 1110 on the next line
+(G) 575.57 1028.51 moveto show
+(G) 575.00 1036.60 moveto show
+(A) 579.89 1043.50 moveto show
+(U) 587.31 1044.77 moveto show
+(C) 591.90 1051.32 moveto show
+(G) 596.49 1057.88 moveto show
+(G) 601.07 1064.44 moveto show
+(G) 605.66 1070.99 moveto show
+(G) 610.25 1077.55 moveto show
+(G) 614.83 1084.10 moveto show
+% nucleotide 1120 on the next line
+(A) 619.42 1090.65 moveto show
+(U) 617.02 1098.09 moveto show
+(G) 624.18 1097.47 moveto show
+(U) 628.77 1104.03 moveto show
+(U) 633.35 1110.57 moveto show
+(A) 632.63 1117.68 moveto show
+(A) 634.98 1126.42 moveto show
+(U) 641.58 1130.99 moveto show
+(U) 649.58 1131.38 moveto show
+(U) 657.33 1129.38 moveto show
+% nucleotide 1130 on the next line
+(U) 663.71 1123.77 moveto show
+(A) 666.99 1116.45 moveto show
+(U) 664.06 1108.49 moveto show
+(C) 657.18 1102.12 moveto show
+(G) 649.74 1099.11 moveto show
+(A) 645.16 1092.57 moveto show
+(C) 640.57 1086.01 moveto show
+(U) 635.80 1079.19 moveto show
+(C) 631.22 1072.63 moveto show
+(C) 626.63 1066.09 moveto show
+% nucleotide 1140 on the next line
+(C) 622.05 1059.53 moveto show
+(U) 617.47 1052.97 moveto show
+(C) 612.88 1046.42 moveto show
+(G) 608.29 1039.86 moveto show
+(G) 603.71 1033.30 moveto show
+(C) 603.62 1025.66 moveto show
+(A) 599.06 1019.64 moveto show
+(C) 591.95 1017.03 moveto show
+(C) 587.36 1010.48 moveto show
+(U) 582.77 1003.93 moveto show
+% nucleotide 1150 on the next line
+(U) 587.98 998.52 moveto show
+(A) 591.98 992.45 moveto show
+(U) 594.91 985.80 moveto show
+(G) 596.65 978.74 moveto show
+(A) 602.31 973.08 moveto show
+(G) 610.58 967.67 moveto show
+(A) 612.58 956.67 moveto show
+(A) 603.58 950.67 moveto show
+(A) 595.58 950.67 moveto show
+(U) 588.17 958.94 moveto show
+% nucleotide 1160 on the next line
+(C) 582.51 964.60 moveto show
+(A) 571.14 967.73 moveto show
+(A) 561.32 973.62 moveto show
+(A) 553.25 981.74 moveto show
+(G) 547.60 991.67 moveto show
+(U) 539.60 991.67 moveto show
+(C) 531.60 991.67 moveto show
+(U) 534.58 984.67 moveto show
+(U) 530.58 977.67 moveto show
+(U) 522.58 977.67 moveto show
+% nucleotide 1170 on the next line
+(G) 518.58 984.67 moveto show
+(G) 520.58 991.67 moveto show
+(G) 512.58 991.67 moveto show
+(U) 504.58 991.67 moveto show
+(U) 496.58 985.67 moveto show
+(C) 496.58 976.67 moveto show
+(U) 496.58 968.67 moveto show
+(G) 496.58 960.67 moveto show
+(G) 496.58 952.67 moveto show
+(G) 508.47 933.67 moveto show
+% nucleotide 1180 on the next line
+(G) 516.47 933.67 moveto show
+(G) 524.47 933.67 moveto show
+(G) 525.81 941.47 moveto show
+(A) 530.55 947.78 moveto show
+(G) 537.61 951.30 moveto show
+(U) 545.50 951.29 moveto show
+(A) 552.55 947.75 moveto show
+(U) 557.27 941.43 moveto show
+(G) 558.58 933.67 moveto show
+(G) 566.58 933.67 moveto show
+% nucleotide 1190 on the next line
+(U) 574.58 933.67 moveto show
+(C) 582.58 933.67 moveto show
+(G) 591.88 934.97 moveto show
+(C) 598.88 928.67 moveto show
+(A) 598.88 919.27 moveto show
+(A) 591.88 912.97 moveto show
+(G) 582.58 913.67 moveto show
+(G) 574.58 913.67 moveto show
+(C) 566.58 913.67 moveto show
+(U) 558.58 913.67 moveto show
+% nucleotide 1200 on the next line
+(G) 553.17 907.11 moveto show
+(A) 545.66 903.43 moveto show
+(A) 537.30 903.45 moveto show
+(A) 529.81 907.15 moveto show
+(C) 524.47 913.67 moveto show
+(U) 516.47 913.67 moveto show
+(U) 508.47 913.67 moveto show
+(A) 511.79 906.63 moveto show
+(A) 516.49 900.39 moveto show
+(A) 522.19 895.07 moveto show
+% nucleotide 1210 on the next line
+(G) 528.56 891.22 moveto show
+(G) 536.15 888.69 moveto show
+(A) 543.74 886.16 moveto show
+(A) 552.58 883.67 moveto show
+(U) 562.28 881.77 moveto show
+(U) 571.58 881.67 moveto show
+(G) 579.58 881.67 moveto show
+(A) 589.58 881.67 moveto show
+(C) 597.58 881.67 moveto show
+(G) 605.58 881.67 moveto show
+% nucleotide 1220 on the next line
+(G) 610.78 888.07 moveto show
+(A) 615.58 881.67 moveto show
+(A) 623.58 881.67 moveto show
+(G) 631.58 881.67 moveto show
+(G) 639.58 881.67 moveto show
+(G) 647.58 881.67 moveto show
+(C) 655.58 881.67 moveto show
+(A) 663.58 881.67 moveto show
+(C) 665.73 890.12 moveto show
+(C) 674.44 890.13 moveto show
+% nucleotide 1230 on the next line
+(A) 676.59 881.67 moveto show
+(C) 684.59 881.67 moveto show
+(C) 693.04 885.46 moveto show
+(A) 702.98 889.24 moveto show
+(G) 713.13 892.38 moveto show
+(G) 719.94 896.59 moveto show
+(A) 726.74 900.79 moveto show
+(G) 733.55 904.99 moveto show
+(U) 740.36 909.20 moveto show
+(G) 760.58 918.67 moveto show
+% nucleotide 1240 on the next line
+(G) 760.58 926.67 moveto show
+(A) 760.58 934.67 moveto show
+(G) 760.58 942.67 moveto show
+(C) 760.58 950.67 moveto show
+(C) 760.58 958.67 moveto show
+(U) 760.58 966.67 moveto show
+(G) 760.58 974.67 moveto show
+(C) 760.58 982.67 moveto show
+(G) 760.58 990.67 moveto show
+(G) 760.58 1000.67 moveto show
+% nucleotide 1250 on the next line
+(C) 760.58 1008.67 moveto show
+(U) 754.39 1004.48 moveto show
+(U) 747.22 1001.73 moveto show
+(A) 739.62 1000.63 moveto show
+(A) 731.96 1001.25 moveto show
+(U) 724.65 1003.60 moveto show
+(U) 718.99 997.94 moveto show
+(U) 713.34 992.29 moveto show
+(G) 707.68 986.63 moveto show
+(A) 706.88 977.47 moveto show
+% nucleotide 1260 on the next line
+(C) 701.08 970.47 moveto show
+(U) 692.48 967.57 moveto show
+(C) 683.58 969.57 moveto show
+(A) 677.18 975.97 moveto show
+(A) 675.08 984.87 moveto show
+(C) 677.58 994.67 moveto show
+(A) 684.88 999.27 moveto show
+(C) 693.54 1000.77 moveto show
+(G) 699.20 1006.43 moveto show
+(G) 704.85 1012.08 moveto show
+% nucleotide 1270 on the next line
+(G) 710.51 1017.74 moveto show
+(A) 709.58 1026.27 moveto show
+(A) 711.08 1034.97 moveto show
+(A) 715.18 1042.77 moveto show
+(A) 721.58 1048.87 moveto show
+(C) 729.58 1052.67 moveto show
+(U) 738.28 1053.77 moveto show
+(U) 746.98 1052.07 moveto show
+(A) 753.98 1045.37 moveto show
+(C) 760.58 1040.67 moveto show
+% nucleotide 1280 on the next line
+(C) 760.58 1048.67 moveto show
+(A) 760.58 1056.67 moveto show
+(G) 760.58 1064.67 moveto show
+(G) 760.58 1072.67 moveto show
+(U) 760.58 1080.67 moveto show
+(C) 760.58 1088.67 moveto show
+(C) 751.58 1088.67 moveto show
+(A) 743.58 1090.67 moveto show
+(G) 735.58 1094.67 moveto show
+(A) 728.58 1098.67 moveto show
+% nucleotide 1290 on the next line
+(C) 721.99 1104.14 moveto show
+(A) 715.97 1109.41 moveto show
+(U) 709.95 1114.68 moveto show
+(A) 703.93 1119.95 moveto show
+(G) 697.91 1125.22 moveto show
+(U) 689.68 1127.76 moveto show
+(A) 681.46 1131.43 moveto show
+(A) 673.76 1136.09 moveto show
+(G) 666.70 1141.66 moveto show
+(G) 660.38 1148.07 moveto show
+% nucleotide 1300 on the next line
+(A) 654.91 1155.21 moveto show
+(U) 650.36 1162.98 moveto show
+(U) 646.80 1171.25 moveto show
+(G) 644.30 1179.89 moveto show
+(A) 638.07 1184.91 moveto show
+(C) 631.85 1189.94 moveto show
+(A) 625.62 1194.96 moveto show
+(G) 619.40 1199.99 moveto show
+(A) 613.17 1205.01 moveto show
+(U) 604.34 1205.43 moveto show
+% nucleotide 1310 on the next line
+(U) 597.04 1210.40 moveto show
+(G) 593.42 1218.46 moveto show
+(A) 594.55 1227.22 moveto show
+(G) 600.10 1234.09 moveto show
+(A) 608.43 1237.05 moveto show
+(G) 617.07 1235.20 moveto show
+(C) 623.47 1229.11 moveto show
+(U) 625.74 1220.58 moveto show
+(C) 631.96 1215.55 moveto show
+(U) 638.19 1210.53 moveto show
+% nucleotide 1320 on the next line
+(U) 644.41 1205.50 moveto show
+(U) 650.64 1200.48 moveto show
+(C) 656.86 1195.45 moveto show
+(U) 668.13 1192.04 moveto show
+(U) 678.59 1186.84 moveto show
+(G) 688.04 1179.98 moveto show
+(A) 696.22 1171.65 moveto show
+(U) 702.90 1162.07 moveto show
+(U) 707.90 1151.51 moveto show
+(C) 711.08 1140.27 moveto show
+% nucleotide 1330 on the next line
+(U) 717.10 1135.00 moveto show
+(A) 723.12 1129.73 moveto show
+(U) 729.14 1124.46 moveto show
+(G) 735.17 1119.20 moveto show
+(G) 742.58 1114.67 moveto show
+(G) 749.58 1111.67 moveto show
+(U) 758.58 1109.67 moveto show
+(G) 760.58 1116.67 moveto show
+(G) 760.58 1124.67 moveto show
+(U) 754.18 1130.17 moveto show
+% nucleotide 1340 on the next line
+(G) 760.58 1134.67 moveto show
+(G) 760.58 1142.67 moveto show
+(U) 760.58 1150.67 moveto show
+(G) 760.58 1158.67 moveto show
+(C) 752.58 1159.67 moveto show
+(A) 752.58 1168.67 moveto show
+(U) 760.58 1170.67 moveto show
+(G) 760.58 1179.67 moveto show
+(G) 760.58 1194.67 moveto show
+(C) 760.58 1202.67 moveto show
+% nucleotide 1350 on the next line
+(C) 760.58 1210.67 moveto show
+(G) 760.58 1220.67 moveto show
+(U) 760.58 1228.67 moveto show
+(U) 760.58 1236.67 moveto show
+(C) 760.58 1244.67 moveto show
+(U) 757.58 1252.67 moveto show
+(U) 757.58 1260.77 moveto show
+(A) 757.58 1268.77 moveto show
+(G) 752.58 1278.67 moveto show
+(U) 744.58 1278.67 moveto show
+% nucleotide 1360 on the next line
+(U) 736.58 1278.67 moveto show
+(G) 728.58 1278.67 moveto show
+(G) 720.58 1278.67 moveto show
+(U) 712.58 1278.67 moveto show
+(G) 701.58 1276.67 moveto show
+(G) 701.58 1268.67 moveto show
+(A) 701.58 1260.67 moveto show
+(G) 701.58 1251.67 moveto show
+(U) 695.58 1245.67 moveto show
+(G) 687.58 1245.67 moveto show
+% nucleotide 1370 on the next line
+(A) 680.58 1251.67 moveto show
+(U) 681.58 1260.67 moveto show
+(U) 681.58 1268.67 moveto show
+(U) 681.58 1276.67 moveto show
+(G) 681.58 1288.87 moveto show
+(U) 681.58 1300.07 moveto show
+(C) 681.58 1312.67 moveto show
+(U) 681.58 1320.67 moveto show
+(G) 681.58 1328.67 moveto show
+(G) 681.58 1336.67 moveto show
+% nucleotide 1380 on the next line
+(U) 677.88 1344.37 moveto show
+(U) 679.98 1353.17 moveto show
+(A) 687.08 1358.67 moveto show
+(A) 696.08 1358.67 moveto show
+(U) 703.18 1353.17 moveto show
+(U) 705.28 1344.37 moveto show
+(C) 701.58 1336.67 moveto show
+(C) 701.58 1328.67 moveto show
+(G) 701.58 1320.67 moveto show
+(U) 701.58 1312.67 moveto show
+% nucleotide 1390 on the next line
+(U) 709.48 1312.39 moveto show
+(A) 714.14 1306.46 moveto show
+(A) 712.58 1298.67 moveto show
+(C) 720.58 1298.67 moveto show
+(G) 728.58 1298.67 moveto show
+(A) 736.58 1298.67 moveto show
+(A) 744.58 1298.67 moveto show
+(C) 752.58 1298.67 moveto show
+(G) 755.26 1307.19 moveto show
+(A) 761.82 1313.29 moveto show
+% nucleotide 1400 on the next line
+(G) 770.54 1315.34 moveto show
+(A) 779.14 1312.81 moveto show
+(C) 785.35 1306.35 moveto show
+(C) 792.55 1297.67 moveto show
+(U) 800.55 1297.67 moveto show
+(U) 808.55 1297.67 moveto show
+(A) 816.55 1297.67 moveto show
+(G) 825.58 1297.67 moveto show
+(C) 848.58 1297.67 moveto show
+(C) 856.58 1297.67 moveto show
+% nucleotide 1410 on the next line
+(U) 864.58 1297.67 moveto show
+(G) 870.17 1302.38 moveto show
+(C) 875.58 1297.67 moveto show
+(U) 883.58 1297.67 moveto show
+(A) 891.58 1297.67 moveto show
+(A) 899.58 1297.67 moveto show
+(A) 906.58 1301.67 moveto show
+(U) 915.58 1301.67 moveto show
+(A) 922.58 1297.67 moveto show
+(G) 930.58 1297.67 moveto show
+% nucleotide 1420 on the next line
+(U) 938.58 1297.67 moveto show
+(U) 946.58 1297.67 moveto show
+(G) 957.63 1304.10 moveto show
+(C) 972.75 1303.67 moveto show
+(G) 980.75 1303.67 moveto show
+(C) 988.75 1303.67 moveto show
+(G) 996.75 1303.67 moveto show
+(A) 1004.75 1303.67 moveto show
+(A) 1012.75 1303.67 moveto show
+(U) 1020.75 1303.67 moveto show
+% nucleotide 1430 on the next line
+(C) 1028.75 1303.67 moveto show
+(A) 1038.57 1303.67 moveto show
+(U) 1046.15 1303.67 moveto show
+(U) 1054.15 1303.67 moveto show
+(U) 1062.15 1297.17 moveto show
+(U) 1066.15 1286.67 moveto show
+(U) 1062.15 1276.17 moveto show
+(G) 1054.15 1269.67 moveto show
+(G) 1046.17 1269.67 moveto show
+(U) 1040.62 1269.67 moveto show
+% nucleotide 1440 on the next line
+(U) 1029.75 1269.67 moveto show
+(G) 1020.75 1269.67 moveto show
+(U) 1012.75 1269.67 moveto show
+(U) 1004.75 1269.67 moveto show
+(U) 996.75 1269.67 moveto show
+(G) 988.75 1269.67 moveto show
+(U) 980.75 1269.67 moveto show
+(G) 972.75 1269.67 moveto show
+(G) 965.07 1270.51 moveto show
+(U) 957.69 1267.54 moveto show
+% nucleotide 1450 on the next line
+(C) 950.28 1270.47 moveto show
+(A) 946.58 1277.67 moveto show
+(A) 938.58 1277.67 moveto show
+(C) 930.58 1277.67 moveto show
+(U) 922.58 1277.67 moveto show
+(U) 915.58 1271.67 moveto show
+(C) 906.58 1271.67 moveto show
+(U) 899.58 1277.67 moveto show
+(U) 891.58 1277.67 moveto show
+(A) 883.58 1277.67 moveto show
+% nucleotide 1460 on the next line
+(G) 875.58 1277.67 moveto show
+(A) 864.58 1277.67 moveto show
+(G) 856.58 1277.67 moveto show
+(G) 848.58 1277.67 moveto show
+(G) 848.78 1263.32 moveto show
+(A) 848.09 1250.46 moveto show
+(C) 846.58 1237.67 moveto show
+(U) 846.58 1229.67 moveto show
+(U) 846.58 1221.67 moveto show
+(U) 846.58 1213.67 moveto show
+% nucleotide 1470 on the next line
+(C) 846.58 1205.67 moveto show
+(G) 846.58 1197.67 moveto show
+(G) 846.58 1189.67 moveto show
+(C) 846.58 1181.67 moveto show
+(G) 849.04 1173.04 moveto show
+(U) 845.03 1164.94 moveto show
+(C) 836.61 1161.66 moveto show
+(U) 828.18 1164.90 moveto show
+(A) 824.13 1172.98 moveto show
+(G) 826.58 1181.67 moveto show
+% nucleotide 1480 on the next line
+(C) 826.58 1189.67 moveto show
+(C) 826.58 1197.67 moveto show
+(G) 826.58 1205.67 moveto show
+(A) 826.58 1213.67 moveto show
+(A) 826.58 1221.67 moveto show
+(G) 826.58 1229.67 moveto show
+(G) 826.58 1237.67 moveto show
+(A) 822.84 1245.72 moveto show
+(A) 820.42 1254.08 moveto show
+(G) 820.89 1261.64 moveto show
+% nucleotide 1490 on the next line
+(U) 823.56 1270.06 moveto show
+(U) 826.07 1277.94 moveto show
+(U) 816.55 1277.67 moveto show
+(G) 808.55 1277.67 moveto show
+(A) 800.55 1277.67 moveto show
+(G) 792.55 1277.67 moveto show
+(G) 784.58 1276.67 moveto show
+(C) 784.58 1268.77 moveto show
+(A) 784.58 1260.77 moveto show
+(A) 784.58 1252.67 moveto show
+% nucleotide 1500 on the next line
+(U) 780.58 1244.67 moveto show
+(A) 780.58 1236.67 moveto show
+(A) 780.58 1228.67 moveto show
+(C) 780.58 1220.67 moveto show
+(A) 786.98 1215.77 moveto show
+(G) 780.58 1210.67 moveto show
+(G) 780.58 1202.67 moveto show
+(U) 780.58 1194.67 moveto show
+(C) 786.85 1194.05 moveto show
+(U) 791.61 1188.17 moveto show
+% nucleotide 1510 on the next line
+(G) 786.86 1182.30 moveto show
+(U) 780.58 1179.67 moveto show
+(G) 785.66 1173.18 moveto show
+(A) 780.58 1170.67 moveto show
+(U) 780.58 1158.67 moveto show
+(G) 780.58 1150.67 moveto show
+(C) 780.58 1142.67 moveto show
+(C) 780.58 1134.67 moveto show
+(C) 780.58 1124.67 moveto show
+(U) 780.58 1116.67 moveto show
+% nucleotide 1520 on the next line
+(U) 788.45 1115.45 moveto show
+(A) 794.38 1110.23 moveto show
+(G) 796.58 1102.64 moveto show
+(A) 794.35 1095.06 moveto show
+(U) 788.39 1089.86 moveto show
+(G) 780.58 1088.67 moveto show
+(U) 780.58 1080.67 moveto show
+(U) 780.58 1072.67 moveto show
+(C) 780.58 1064.67 moveto show
+(U) 780.58 1056.67 moveto show
+% nucleotide 1530 on the next line
+(G) 780.58 1048.67 moveto show
+(G) 780.58 1040.67 moveto show
+(G) 785.58 1033.57 moveto show
+(C) 787.38 1024.67 moveto show
+(C) 787.38 1016.67 moveto show
+(G) 780.58 1008.67 moveto show
+(C) 780.58 1000.67 moveto show
+(A) 786.64 995.67 moveto show
+(C) 780.58 990.67 moveto show
+(G) 780.58 982.67 moveto show
+% nucleotide 1540 on the next line
+(C) 780.58 974.67 moveto show
+(G) 780.58 966.67 moveto show
+(C) 780.58 958.67 moveto show
+(G) 780.58 950.67 moveto show
+(C) 780.58 942.67 moveto show
+(U) 780.58 934.67 moveto show
+(A) 780.58 926.67 moveto show
+(C) 780.58 918.67 moveto show
+(A) 789.08 918.94 moveto show
+(C) 797.48 917.52 moveto show
+% nucleotide 1550 on the next line
+(U) 805.38 914.32 moveto show
+(G) 812.51 909.62 moveto show
+(A) 818.87 914.47 moveto show
+(U) 825.23 919.33 moveto show
+(G) 831.59 924.18 moveto show
+(C) 837.95 929.03 moveto show
+(A) 844.31 933.89 moveto show
+(G) 850.67 938.74 moveto show
+(U) 851.33 947.79 moveto show
+(C) 855.10 956.11 moveto show
+% nucleotide 1560 on the next line
+(A) 861.36 962.78 moveto show
+(A) 869.43 967.07 moveto show
+(C) 878.46 968.52 moveto show
+(G) 887.40 966.77 moveto show
+(A) 893.76 971.62 moveto show
+(G) 900.12 976.48 moveto show
+(U) 894.86 983.85 moveto show
+(U) 893.23 992.94 moveto show
+(U) 895.63 1001.85 moveto show
+(A) 901.60 1008.88 moveto show
+% nucleotide 1570 on the next line
+(U) 910.00 1012.70 moveto show
+(A) 919.23 1012.57 moveto show
+(A) 927.52 1008.52 moveto show
+(C) 933.24 1001.29 moveto show
+(C) 939.60 1006.15 moveto show
+(U) 940.47 1013.82 moveto show
+(U) 946.49 1018.59 moveto show
+(G) 954.13 1017.71 moveto show
+(G) 960.49 1022.57 moveto show
+(C) 966.85 1027.42 moveto show
+% nucleotide 1580 on the next line
+(C) 973.21 1032.28 moveto show
+(G) 980.76 1037.99 moveto show
+(A) 989.12 1037.65 moveto show
+(A) 994.60 1031.33 moveto show
+(A) 993.74 1023.01 moveto show
+(G) 985.35 1016.38 moveto show
+(G) 978.99 1011.52 moveto show
+(C) 972.63 1006.67 moveto show
+(C) 966.27 1001.82 moveto show
+(U) 966.78 992.78 moveto show
+% nucleotide 1590 on the next line
+(G) 960.40 987.71 moveto show
+(G) 951.74 990.25 moveto show
+(G) 945.38 985.40 moveto show
+(U) 943.02 976.41 moveto show
+(A) 938.03 968.55 moveto show
+(A) 930.58 962.95 moveto show
+(U) 921.65 960.32 moveto show
+(C) 912.25 960.58 moveto show
+(U) 905.89 955.73 moveto show
+(U) 899.53 950.87 moveto show
+% nucleotide 1600 on the next line
+(U) 901.52 942.27 moveto show
+(U) 900.06 933.39 moveto show
+(G) 895.44 925.68 moveto show
+(A) 888.31 920.20 moveto show
+(A) 879.66 917.73 moveto show
+(A) 870.71 918.62 moveto show
+(C) 862.80 922.84 moveto show
+(U) 856.44 917.99 moveto show
+(G) 850.09 913.13 moveto show
+(C) 843.73 908.28 moveto show
+% nucleotide 1610 on the next line
+(A) 837.37 903.43 moveto show
+(U) 831.01 898.57 moveto show
+(C) 824.65 893.72 moveto show
+(G) 828.01 885.26 moveto show
+(U) 828.97 876.17 moveto show
+(G) 827.33 867.17 moveto show
+(A) 823.21 859.01 moveto show
+(U) 816.95 852.35 moveto show
+(G) 809.06 847.73 moveto show
+(G) 800.20 845.39 moveto show
+% nucleotide 1620 on the next line
+(G) 806.79 839.35 moveto show
+(G) 811.06 831.55 moveto show
+(A) 812.98 822.87 moveto show
+(U) 811.99 814.04 moveto show
+(A) 814.69 806.51 moveto show
+(G) 817.39 798.98 moveto show
+(A) 820.09 791.45 moveto show
+(U) 822.79 783.92 moveto show
+(C) 825.49 776.39 moveto show
+(A) 828.19 768.86 moveto show
+% nucleotide 1630 on the next line
+(U) 830.89 761.33 moveto show
+(U) 838.98 756.39 moveto show
+(G) 843.10 747.96 moveto show
+(C) 842.10 738.63 moveto show
+(A) 836.30 731.25 moveto show
+(A) 827.47 728.09 moveto show
+(U) 818.30 730.11 moveto show
+(U) 811.62 736.69 moveto show
+(A) 809.45 745.82 moveto show
+(U) 812.06 754.58 moveto show
+% nucleotide 1640 on the next line
+(U) 809.36 762.11 moveto show
+(G) 806.67 769.64 moveto show
+(A) 803.97 777.17 moveto show
+(U) 801.27 784.70 moveto show
+(C) 798.57 792.23 moveto show
+(U) 795.87 799.76 moveto show
+(U) 793.17 807.30 moveto show
+(G) 786.30 813.40 moveto show
+(A) 781.65 821.51 moveto show
+(A) 779.81 830.67 moveto show
+% nucleotide 1650 on the next line
+(C) 780.96 839.95 moveto show
+(G) 771.26 844.42 moveto show
+(A) 762.70 851.69 moveto show
+(G) 756.69 861.39 moveto show
+(G) 753.98 872.48 moveto show
+(A) 754.81 883.86 moveto show
+(A) 750.87 892.18 moveto show
+(U) 744.06 887.98 moveto show
+(U) 737.25 883.77 moveto show
+(C) 730.45 879.57 moveto show
+% nucleotide 1660 on the next line
+(C) 723.64 875.37 moveto show
+(U) 729.80 870.38 moveto show
+(A) 734.90 864.04 moveto show
+(G) 738.32 856.66 moveto show
+(U) 739.84 848.67 moveto show
+(A) 739.39 840.55 moveto show
+(A) 737.22 832.71 moveto show
+(G) 741.25 825.80 moveto show
+(C) 745.28 818.89 moveto show
+(G) 749.31 811.98 moveto show
+% nucleotide 1670 on the next line
+(C) 753.34 805.07 moveto show
+(G) 757.37 798.16 moveto show
+(A) 761.40 791.25 moveto show
+(G) 765.43 784.34 moveto show
+(U) 772.70 780.09 moveto show
+(C) 776.47 772.49 moveto show
+(A) 774.54 763.64 moveto show
+(U) 769.14 757.02 moveto show
+(C) 761.23 755.46 moveto show
+(A) 752.70 758.34 moveto show
+% nucleotide 1680 on the next line
+(G) 747.66 765.31 moveto show
+(C) 748.16 774.26 moveto show
+(U) 744.13 781.17 moveto show
+(C) 740.10 788.08 moveto show
+(G) 736.07 794.99 moveto show
+(C) 732.04 801.90 moveto show
+(G) 728.00 808.81 moveto show
+(C) 723.97 815.72 moveto show
+(U) 719.94 822.63 moveto show
+(G) 712.13 824.81 moveto show
+% nucleotide 1690 on the next line
+(A) 704.83 828.30 moveto show
+(U) 698.33 833.13 moveto show
+(U) 692.89 839.13 moveto show
+(A) 688.72 846.06 moveto show
+(C) 685.96 853.68 moveto show
+(G) 684.59 861.67 moveto show
+(U) 676.59 861.67 moveto show
+(C) 675.05 852.64 moveto show
+(C) 669.07 847.69 moveto show
+(C) 661.11 853.62 moveto show
+% nucleotide 1700 on the next line
+(U) 663.58 861.67 moveto show
+(G) 655.58 861.67 moveto show
+(C) 647.58 861.67 moveto show
+(C) 639.58 861.67 moveto show
+(C) 631.58 861.67 moveto show
+(U) 623.58 861.67 moveto show
+(U) 615.58 861.67 moveto show
+(U) 605.58 861.67 moveto show
+(G) 597.58 861.67 moveto show
+(U) 589.58 861.67 moveto show
+% nucleotide 1710 on the next line
+(A) 584.78 855.27 moveto show
+(C) 579.58 861.67 moveto show
+(A) 571.58 861.67 moveto show
+(C) 567.28 853.67 moveto show
+(A) 567.28 844.67 moveto show
+(C) 567.28 835.67 moveto show
+(C) 567.28 826.67 moveto show
+(G) 569.58 817.67 moveto show
+(C) 569.58 809.67 moveto show
+(C) 565.65 800.68 moveto show
+% nucleotide 1720 on the next line
+(C) 569.58 791.67 moveto show
+(G) 569.58 783.67 moveto show
+(U) 566.58 772.67 moveto show
+(C) 569.58 763.67 moveto show
+(G) 565.28 754.67 moveto show
+(C) 569.58 745.67 moveto show
+(U) 569.58 737.67 moveto show
+(C) 569.58 729.67 moveto show
+(C) 569.58 721.67 moveto show
+(U) 569.58 713.67 moveto show
+% nucleotide 1730 on the next line
+(A) 569.58 705.67 moveto show
+(C) 569.58 697.67 moveto show
+(C) 569.58 689.67 moveto show
+(G) 565.58 681.67 moveto show
+(A) 565.58 673.67 moveto show
+(U) 569.58 665.67 moveto show
+(U) 563.58 660.67 moveto show
+(G) 569.58 655.67 moveto show
+(A) 569.58 647.67 moveto show
+(A) 569.58 639.67 moveto show
+% nucleotide 1740 on the next line
+(U) 569.58 631.67 moveto show
+(G) 569.58 623.67 moveto show
+(G) 569.58 615.67 moveto show
+(U) 569.58 607.67 moveto show
+(C) 569.58 599.67 moveto show
+(C) 569.58 591.67 moveto show
+(G) 569.58 583.67 moveto show
+(G) 569.58 575.67 moveto show
+(U) 569.58 567.67 moveto show
+(G) 565.58 559.67 moveto show
+% nucleotide 1750 on the next line
+(A) 565.58 551.67 moveto show
+(G) 569.58 543.22 moveto show
+(G) 569.58 535.22 moveto show
+(U) 569.58 527.22 moveto show
+(C) 569.58 519.22 moveto show
+(U) 569.58 511.22 moveto show
+(U) 569.58 503.22 moveto show
+(G) 569.58 495.22 moveto show
+(G) 569.58 487.22 moveto show
+(G) 569.58 479.22 moveto show
+% nucleotide 1760 on the next line
+(A) 569.58 471.22 moveto show
+(U) 569.58 463.22 moveto show
+(U) 569.58 455.22 moveto show
+(G) 569.58 447.22 moveto show
+(C) 569.58 439.22 moveto show
+(G) 569.58 431.22 moveto show
+(G) 569.58 423.22 moveto show
+(C) 569.58 415.22 moveto show
+(G) 569.58 407.22 moveto show
+(A) 569.58 399.22 moveto show
+% nucleotide 1770 on the next line
+(G) 569.58 391.22 moveto show
+(G) 569.58 383.22 moveto show
+(C) 569.58 375.22 moveto show
+(G) 565.58 367.22 moveto show
+(G) 569.58 359.22 moveto show
+(G) 569.58 351.22 moveto show
+(C) 569.58 343.22 moveto show
+(U) 569.58 335.22 moveto show
+(G) 567.58 327.22 moveto show
+(U) 565.58 317.22 moveto show
+% nucleotide 1780 on the next line
+(U) 570.58 309.34 moveto show
+(A) 579.58 306.34 moveto show
+(A) 588.58 309.34 moveto show
+(C) 593.58 317.22 moveto show
+(C) 591.58 327.22 moveto show
+(A) 589.58 335.22 moveto show
+(G) 589.58 343.22 moveto show
+(C) 589.58 351.22 moveto show
+(C) 589.58 360.22 moveto show
+(G) 589.58 375.22 moveto show
+% nucleotide 1790 on the next line
+(C) 589.58 383.22 moveto show
+(C) 589.58 391.22 moveto show
+(U) 589.58 399.22 moveto show
+(C) 589.58 407.22 moveto show
+(G) 589.58 415.22 moveto show
+(C) 589.58 423.22 moveto show
+(C) 589.58 431.22 moveto show
+(G) 589.58 439.22 moveto show
+(C) 589.58 447.22 moveto show
+(G) 589.58 455.22 moveto show
+% nucleotide 1800 on the next line
+(A) 589.58 463.22 moveto show
+(G) 589.58 471.22 moveto show
+(A) 589.58 479.22 moveto show
+(A) 589.58 487.22 moveto show
+(C) 589.58 495.22 moveto show
+(U) 589.58 503.22 moveto show
+(U) 589.58 511.22 moveto show
+(G) 589.58 519.22 moveto show
+(A) 589.58 527.22 moveto show
+(C) 589.58 535.22 moveto show
+% nucleotide 1810 on the next line
+(C) 589.58 543.22 moveto show
+(A) 594.58 550.67 moveto show
+(A) 594.58 559.67 moveto show
+(A) 589.58 567.67 moveto show
+(C) 589.58 575.67 moveto show
+(C) 589.58 583.67 moveto show
+(U) 589.58 591.67 moveto show
+(U) 589.58 599.67 moveto show
+(A) 589.58 607.67 moveto show
+(U) 589.58 615.67 moveto show
+% nucleotide 1820 on the next line
+(C) 589.58 623.67 moveto show
+(A) 589.58 631.67 moveto show
+(U) 589.58 639.67 moveto show
+(U) 589.58 647.67 moveto show
+(U) 589.58 655.67 moveto show
+(A) 589.58 665.67 moveto show
+(G) 593.58 673.67 moveto show
+(A) 593.58 681.67 moveto show
+(G) 589.58 689.67 moveto show
+(G) 589.58 697.67 moveto show
+% nucleotide 1830 on the next line
+(A) 589.58 705.67 moveto show
+(A) 589.58 713.67 moveto show
+(G) 589.58 721.67 moveto show
+(G) 589.58 729.67 moveto show
+(A) 589.58 737.67 moveto show
+(G) 589.58 745.67 moveto show
+(A) 595.58 751.67 moveto show
+(A) 595.58 759.67 moveto show
+(G) 589.58 763.67 moveto show
+(U) 592.58 772.67 moveto show
+% nucleotide 1840 on the next line
+(C) 589.58 783.67 moveto show
+(G) 589.58 791.67 moveto show
+(U) 596.58 796.45 moveto show
+(A) 596.55 804.95 moveto show
+(A) 589.58 809.67 moveto show
+(C) 589.58 817.67 moveto show
+(A) 595.58 824.67 moveto show
+(A) 605.58 828.67 moveto show
+(G) 615.58 835.67 moveto show
+(G) 615.58 823.67 moveto show
+% nucleotide 1850 on the next line
+(U) 615.58 811.67 moveto show
+(U) 623.58 811.67 moveto show
+(U) 631.58 811.67 moveto show
+(C) 639.58 811.67 moveto show
+(C) 647.58 811.67 moveto show
+(G) 655.58 811.67 moveto show
+(U) 663.58 811.67 moveto show
+(A) 671.58 811.67 moveto show
+(G) 679.58 811.67 moveto show
+(G) 687.58 811.67 moveto show
+% nucleotide 1860 on the next line
+(U) 696.58 812.67 moveto show
+(G) 702.58 805.67 moveto show
+(A) 702.58 797.67 moveto show
+(A) 696.58 790.67 moveto show
+(C) 687.58 791.67 moveto show
+(C) 679.58 791.67 moveto show
+(U) 671.58 791.67 moveto show
+(G) 663.58 791.67 moveto show
+(C) 655.58 791.67 moveto show
+(A) 647.58 791.67 moveto show
+% nucleotide 1870 on the next line
+(G) 639.58 791.67 moveto show
+(A) 631.58 791.67 moveto show
+(A) 623.58 791.67 moveto show
+(G) 615.58 791.67 moveto show
+(G) 615.68 780.57 moveto show
+(A) 615.68 772.07 moveto show
+(U) 615.68 763.57 moveto show
+(C) 615.68 755.07 moveto show
+(A) 615.68 746.57 moveto show
+(A) 615.68 738.07 moveto show
+% nucleotide 1880 on the next line
+(U) 615.68 729.57 moveto show
+(A) 615.68 721.07 moveto show
+% end text nucleotides
+
+% begin ignore
+showpage
+% end ignore

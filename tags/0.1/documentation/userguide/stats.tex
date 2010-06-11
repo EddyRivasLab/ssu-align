@@ -1,0 +1,158 @@
+\section{Running times and output file sizes for example datasets}
+\label{sec:stats}
+
+This section contains timing and output file size statistics for
+aligning, masking and drawing SSU sequences with the SSU-ALIGN
+package to give you an idea of how much time and disk space you'll
+need for processing various sized datasets.  The statistics are
+displayed in tables~\ref{tbl:sizes}, \ref{tbl:ttimes}, and
+\ref{tbl:ptimes} on the next two pages. The timing statistics reported
+are for single execution threads running on 3.0 Intel Xeon
+processors. All programs were run with default parameters (no
+options), with the exception that some of the \emph{synthetic-v4} datasets
+were processed with a truncated set of models as explained further
+below.
+
+%\input{tbl-stats.tex}
+
+Statistics are reported for real and synthetic datasets. The real
+datasets were obtained exclusively from existing SSU databases:
+GREENGENES \cite{DeSantis06a}, SILVA
+\cite{Pruesse07} and RDP \cite{Cole09}. For GREENGENES,
+two separate datasets were processed: the ``core set'', which is the
+reference alignment used by that database (\emph{Ggenes-core}
+dataset), and all the SSU sequences in the database
+(\emph{Ggenes-full} dataset) after the March 23, 2010 update. Two
+datasets from SILVA, \emph{Silva-Ref} and \emph{Silva-Parc}, were
+processed. dataset The Ref set is a subset of the Parc
+set that includes sequences that are generally longer and of higher
+quality than the other sequences in Parc. Both sets of sequences are
+from release 102 of the database. Finally, a single RDP dataset
+was analyzed: the full set of sequences in release 10, update 20. The
+\emph{Silva-Parc} and the \emph{RDP} datasets contain over 1 million
+sequences.
+
+The synthetic datasets were fabricated using the INFERNAL
+package. Specifically, the \prog{cmemit} program was used with default
+settings and the \prog{-n <N>} option to generate \prog{<N>}
+sequences, where \prog{<N>} is reported in the \emph{number of seqs}
+columns of the tables. For the \emph{synthetic-full} datasets, the
+default three SSU-ALIGN SSU CMs were used to generate the
+sequences, each contributing one third of the total sequences. For the
+\emph{synthetic-v4} datasets, smaller, truncated versions of the default
+archaeal and bacterial models were used to generate the sequences,
+half each. These CMs only model the V4 hypervariable region of
+SSU. They were constructed using the same \prog{ssu-build} commands
+from the tutorial section (section
+~\ref{sec:tutorial-build-v4}, page ~\pageref{sec:tutorial-build-v4}).
+
+For all datasets the default models were used to align, mask and draw
+sequences using \prog{ssu-align}, \prog{ssu-mask} and
+\prog{ssu-draw}. These runs with default settings are summarized in the
+rows of the tables that include \emph{default} in the \emph{models} column.
+Additionally, for the \emph{synthetic-v4} dataset, the smaller V4
+models were used for aligning and masking. Drawing was impossible for
+these runs because non-default models were used. These runs correspond
+to the rows in the tables marked \emph{v4} under \emph{model}.
+
+For all datasets with more than 10,000 sequences \prog{ssu-prep} was
+used to parallelize alignment. These datasets were split up into 100
+separate jobs and run in parallel on a cluster. This is indicated by
+the \emph{\# of procs} column in table~\ref{tbl:ttimes}.
+For these datasets, additional columns in table~\ref{tbl:ttimes}
+report the time required to run \prog{ssu-prep} and \prog{ssu-merge}
+(which is automatically executed by the final \prog{ssu-align} job),
+and the elapsed or \emph{wall} time required to perform all parallel
+alignment jobs plus the final merge.
+
+%~\ref{tbl:ptimes}. No such column exists in table ~\ref{tbl:sizes} because
+%parallelization does not affect the sizes of the final output files.
+
+As an example of a non-parallel run, the actual commands used to process the
+GREENGENES core set dataset were as follows. The FASTA file
+included the unaligned core set sequences is named \prog{ggcs-unaln.fa}. The
+following three commands would align, mask and draw the core
+set, respectively. All output files will be created in a directory called
+\prog{ggcs}. Importantly, the three commands  must be run in succession
+(masking cannot begin until alignment is complete). 
+
+\user{ssu-align ggcs-unaln.fa ggcs}
+
+\user{ssu-mask ggcs}
+
+\user{ssu-draw ggcs}
+
+As an example of a parallel run, the actual commands used to process the
+GREENGENES full dataset were as follows. The FASTA file
+included the unaligned core set sequences is named \prog{gg-unaln.fa}. The
+following four commands would partition, align, mask and draw the full
+dataset, respectively. All output files will be created in a directory
+called \prog{gg}. Importantly, the four commands must be run in succession
+(masking cannot begin until alignment is complete). 
+
+\user{ssu-prep gg-unaln.fa gg 100 janelia-cluster-presuf.txt}
+
+\user{sh gg.ssu-align.sh}
+
+\user{ssu-mask gg}
+
+\user{ssu-draw gg}
+
+The \prog{ssu-prep} command above creates the
+\prog{gg.ssu-align.sh} script that will submit 100 \prog{ssu-align}
+jobs to the cluster here at Janelia. The Janelia-specific prefixes and
+suffixes for the commands are in the file
+\prog{janelia-cluster-presuf.txt} which is in the \prog{tutorial/}
+subdirectory of SSU-ALIGN. See the tutorial
+section~\ref{sec:tutorial-prep}, 
+page~\pageref{sec:tutorial-prep} for more details on \prog{ssu-prep}.
+
+The statistics in tables~\ref{tbl:sizes}, \ref{tbl:ttimes} and
+\ref{tbl:ptimes} highlight some key points:
+
+\begin{itemize}
+
+\item Deep alignments are mostly composed of insert columns which
+  dramatically inflate the size of the alignment files
+  (table~\ref{tbl:sizes}). All insert columns will be removed
+  automatically by \prog{ssu-mask} (see section~\ref{sec:background}
+  for more discussion of insert versus consensus columns). 
+  The full \emph{RDP} bacterial alignment of about 1.2 million
+  sequences is 70 Gb and contains 29,736 total columns, 28,154 
+  of which are inserts (about 95\%). The masked alignment of 1397
+  columns is about 3.5 Gb. Note that insert columns will not be
+  included in output alignments of \prog{ssu-align} when the
+  \prog{--rfonly} option is used.
+
+%\item Alignment is by far the slowest step in the pipeline
+%  (table~\ref{tbl:ttimes}). Prep'ing, masking, drawing and merging are
+%  all much faster than alignment, but only the \prog{ssu-align} step
+%  can be parallelized. 
+
+\item \prog{ssu-align} creates alignments of SSU sequences at a rate
+  of roughly 1 sequence/second (table~\ref{tbl:ptimes}).
+
+\item Short ($\sim$240 nt) V4 subsequences are aligned at about 10
+  sequences per second with the default, full-length models (table~\ref{tbl:ptimes}).
+
+\item Aligning short sequences with truncated models is significantly
+  faster than with full models. V4 subsequences are aligned at about
+  100 sequences per second with V4-specific models
+  (table~\ref{tbl:ptimes}).
+
+\item Aligning 1 million typical SSU sequences requires about 300
+  CPU hours. This can be parallelized on a cluster of 100 processors
+  in about 3.5 hours. Note that for about 25 of the final 30
+  minutes only one processor is still running, this is the processor
+  that is performing the merge of the 100 per-job alignments. 
+  (table~\ref{tbl:ttimes}).
+
+%\item Masking and drawing, though much faster than aligning, takes 
+%  about an hour for a dataset of about 1 million sequences
+% (table~\ref{tbl:ttimes}). The majority of this time is spent reading
+%  in the huge alignment files. Using the \prog{ssu-align --rfonly}
+%  option, since it reduces alignment file sizes, speeds up these steps
+%  considerably (data not shown).
+\end{itemize}
+
+\input{tbl-stats.tex}

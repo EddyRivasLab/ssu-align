@@ -1,0 +1,109 @@
+# cmalign :: align sequences to an RNA CM
+# INFERNAL 1.0 (January 2009)
+# Copyright (C) 2009 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: /Users/nawrockie/src/infernal-1.0/src/cmalign -p --sub -o eukarya-0p1.p.stk eukarya-0p1.cm eukarya-0p1.fa
+# date:    Thu Jul  2 20:15:17 2009
+#
+# cm name                    algorithm  config  sub  bands     tau
+# -------------------------  ---------  ------  ---  -----  ------
+# eukarya                      opt acc  global  yes    hmm   1e-07
+#
+#                                                                                      bit scores                           
+#                                                                                  ------------------                       
+# seq idx  seq name                                                           len     total    struct  avg prob      elapsed
+# -------  ---------------------------------------------------------------  -----  --------  --------  --------  -----------
+        1  00917::Mytilis_edulis::L24489                                     1826   2406.07    217.59     0.970  00:00:02.97
+        2  01220::Audouinella_dasyae::L26181                                 1771   2651.41    221.68     0.982  00:00:02.83
+        3  00433::Aspergillus_flavus_18S_rRNA::D63696                        1761   2692.08    165.63     0.987  00:00:02.77
+        4  00247::Alexandrium_fundyense::U09048                              1801   2409.48    129.34     0.976  00:00:02.90
+        5  01223::Audouinella_hermannii.::AF026040                           1771   2669.05    216.63     0.983  00:00:02.82
+        6  00788::Allomyces_macrogynus::U23936                               1878   2640.41    149.58     0.970  00:00:03.05
+        7  01233::Ahnfeltia_plicata::Z14139                                  1765   2531.32    219.96     0.980  00:00:02.83
+        8  00382::Acanthocoepsis_unguiculata::L10823                         1780   2735.45    149.54     0.980  00:00:02.85
+        9  01139::Bangia_sp.__Northwest_Territories_NWT_::AF043355           1797   2614.69    147.62     0.977  00:00:02.87
+       10  01144::Bangia_sp.__Virgin_Islands_VIS7_::AF043364                 1804   2580.88    141.66     0.973  00:00:02.88
+       11  00116::Babesia_bigemina::X59604                                   1701   2417.21    157.14     0.975  00:00:02.74
+       12  00123::Babesia_canis::L19079                                      1711   2470.63    167.58     0.977  00:00:02.76
+       13  00789::Blastocladiella_emersonii::M54937                          1901   2640.47    156.45     0.969  00:00:03.09
+       14  01240::Batrachospermum_gelatinosum.::AF026045                     1765   2650.04    211.45     0.982  00:00:02.82
+       15  01257::Bonnemaisonia_hamifera::L26182                             1764   2565.36    206.32     0.982  00:00:02.83
+       16  01243::Batrachospermum_macrosporum.::AF026048                     1770   2596.99    209.08     0.983  00:00:02.83
+       17  01020::Balamuthia_mandrillaris.::AF019071                         1972   2508.48    145.79     0.974  00:00:03.16
+       18  01273::Bostrychia_moritziana.::AF203893                           1793   2393.20    226.62     0.971  00:00:02.90
+       19  00644::Candida_albicans::M60302                                   1787   2770.83    153.05     0.977  00:00:02.86
+       20  01792::Cymatosira_belgica::X85387                                 1803   2786.27    172.20     0.986  00:00:02.87
+       21  00227::Cyrtohymena_citrina.::AF164135                             1772   2619.74    143.96     0.981  00:00:02.83
+       22  01788::Corethron_criophilum.::X85400                              1798   2697.05    168.36     0.980  00:00:02.87
+       23  01400::Chondrus_crispus::Z14140                                   1778   2545.93    200.79     0.979  00:00:02.85
+       24  00461::Coccidiodes_immitis::M55627                                1798   2783.94    170.85     0.989  00:00:02.86
+       25  01602::Chlorella_luteoviridis__B_::X73998                         1800   2575.30    186.54     0.987  00:00:02.88
+       26  00718::Filobasidiella_neoformans_serotype_D::L05428               1805   2768.35    157.59     0.979  00:00:02.87
+       27  01311::Corallina_officinalis::L26184                              1786   2538.22    196.87     0.977  00:00:02.86
+       28  00977::Cyanophora_paradoxa::X68483                                1807   2825.84    168.74     0.986  00:00:02.87
+       29  01789::Coscinodiscus_radiatus::X77705                             1811   2574.81    163.50     0.985  00:00:02.88
+       30  01263::Ceramium_rubrum::L26183                                    1778   2543.69    204.04     0.971  00:00:02.86
+       31  01797::Ditylum_brightwelli.::X85386                               1800   2743.93    168.79     0.982  00:00:02.86
+       32  00388::Dermocystidium_sp.::U21336                                 1821   2766.26    133.42     0.980  00:00:02.90
+       33  00220::Euplotes_aediculatus.::M14590                              1882   2103.21    152.27     0.961  00:00:03.06
+       34  01204::Erythrotrichia_carnea::L26189                              1795   2763.05    153.05     0.983  00:00:02.86
+       35  00226::Engelmanniella_mobilis.::AF164134                          1773   2630.11    137.08     0.981  00:00:02.84
+       36  00270::Euglypha_rotunda::X77692                                   1811   2651.57    175.55     0.982  00:00:02.90
+       37  00853::unidentified_fungus_sp._QPX::AF261665                      1796   2781.31    166.60     0.977  00:00:02.86
+       38  01740::Fragaria_x_ananassa.::X15590                               1804   2675.91    129.81     0.980  00:00:02.87
+       39  00979::Glaucocystis_nostochinearum::X70803                        1816   2819.26    154.82     0.976  00:00:02.88
+       40  01442::Gracilariopsis_sp._England_1::M33639                       1782   2514.81    204.51     0.971  00:00:02.86
+       41  01772::Genicularia_spirotaenia::X74753                            1803   2749.12    147.27     0.985  00:00:02.87
+       42  00228::Gastrostyla_steinei.::AF164133                             1771   2641.16    141.13     0.984  00:00:02.84
+       43  01356::Gelidium_vagum::L26190                                     1769   2585.20    211.46     0.982  00:00:02.83
+       44  00982::Gloeochaete_wittrockiana.::X81901                          1801   2677.81    176.73     0.985  00:00:02.86
+       45  01451::Halymenia_plana.::U33133                                   1770   2588.40    215.36     0.980  00:00:02.82
+       46  01465::Hildenbrandia_rubra::L19345                                1781   2301.77    235.79     0.978  00:00:02.88
+       47  01796::Lauderia_borealis.::X85399                                 1808   2565.12    209.19     0.975  00:00:02.88
+       48  01884::Lagenidium_giganteum::M54939_X54266                        1822   2669.22    162.56     0.976  00:00:02.95
+       49  01863::Labyrinthuloides_minuta::L27634                            1802   2700.57    149.74     0.988  00:00:02.87
+       50  00831::Mucor_circinelloides_f._lusitanicus::AF113427              1728   2341.82    173.94     0.975  00:00:02.69
+       51  00836::Mucor_racemosus::X54863                                    1831   2506.66    178.64     0.977  00:00:02.94
+       52  01790::Melosira_varians.::X85402                                  1779   2499.93    173.82     0.976  00:00:02.85
+       53  00556::Neurospora_crassa::X04971                                  1795   2679.42    205.02     0.981  00:00:02.89
+       54  01011::Naegleria_gruberi::M18732                                  2019   1553.72    358.85     0.961  00:00:03.52
+       55  01467::Nemalion_helminthoides::L26196                             1769   2638.52    221.53     0.982  00:00:02.92
+       56  01254::Nemalionopsis_tortuosa::AF342743                           1790   2646.37    200.38     0.984  00:00:03.00
+       57  00230::Oxytricha_granulifera::X53486                              1778   2636.03    143.04     0.979  00:00:03.01
+       58  00229::Oxytricha_granulifera.::AF164122                           1774   2615.35    138.74     0.980  00:00:02.88
+       59  00231::Oxytricha_longa.::AF164125                                 1770   2628.66    141.34     0.983  00:00:03.02
+       60  00224::Onychodromus_quadricornutus::X53485                        1771   2618.96    129.88     0.984  00:00:03.20
+       61  01710::Oryza_sativa.::X00755                                      1812   2684.77    141.04     0.977  00:00:03.27
+       62  00672::Pneumocystis_carinii::X12708_X14982                        1804   2779.90    142.64     0.985  00:00:03.28
+       63  00271::Paulinella_chromatophora::X81811                           1817   2614.09    189.23     0.972  00:00:03.34
+       64  00393::Psorospermium_haeckelii::U33180                            1792   2506.88    133.26     0.977  00:00:03.35
+       65  00238::Pleurotricha_lanceolota.::AF164128                         1771   2636.27    134.87     0.983  00:00:03.30
+       66  00242::Paruroleptus_lepisma.::AF164132                            1772   2648.57    140.69     0.982  00:00:03.34
+       67  01474::Plocamiocolax_pulvinata::U09618                            1771   2558.24    223.83     0.980  00:00:03.36
+       68  00108::Plasmodium_vivax_El_Salvador_asexual_blood_stage::U07367   2063   1969.48    248.21     0.950  00:00:04.01
+       69  00225::Paraurostyla_weissei.::AF164127                            1771   2625.95    142.79     0.983  00:00:03.40
+       70  01809::Rhaphoneis_belgicae::X77703                                1790   2689.50    154.39     0.982  00:00:03.42
+       71  01478::Rhodogorgon_carriebowensis.::AF006089                      1841   2541.66    204.62     0.967  00:00:03.56
+       72  01508::Rhodymenia_leptophylla::U09621                             1771   2596.05    227.63     0.982  00:00:03.44
+       73  01212::Rhodella_maculata::U21217                                  1758   2554.14    158.19     0.975  00:00:03.29
+       74  00839::Rhizopus_arrhizus::AF113440                                1753   2390.29    167.75     0.972  00:00:03.32
+       75  01745::Sinapis_alba::X17062                                       1804   2709.89    124.37     0.985  00:00:03.44
+       76  00628::Saccharomyces_cerevisiae.::U53879                          1800   2753.53    162.93     0.973  00:00:03.51
+       77  01800::Skeletonema_costatum.::X85395                              1798   2696.09    209.13     0.984  00:00:03.42
+       78  00798::Smittium_culisetae::D29950                                 1830   2528.08    156.26     0.961  00:00:03.41
+       79  00385::rosette_agent::L29455                                      1809   2775.83    130.67     0.966  00:00:03.43
+       80  00239::Stylonychia_lemnae.::AF164124                              1770   2641.81    143.50     0.981  00:00:03.69
+       81  00240::Stylonychia_mytilus.::AF164123                             1771   2635.03    149.48     0.975  00:00:03.44
+       82  01791::Stephanopyxis_cf._broschii::M87330                         1805   2695.88    160.85     0.983  00:00:03.31
+       83  01729::Solanum_tuberosum::X67238                                  1807   2685.22    143.30     0.982  00:00:03.39
+       84  01805::Thalassiosira_eccentrica.::X85396                          1802   2747.84    180.54     0.986  00:00:03.60
+       85  01255::Thorea_violacea.::AF026042                                 1916   2610.21    210.29     0.981  00:00:03.56
+       86  00243::Uroleptus_gallina.::AF164130                               1775   2632.72    137.66     0.977  00:00:03.30
+       87  00245::Urostyla_grandis.::AF164129                                1768   2588.87    125.43     0.981  00:00:03.65
+       88  00787::Ustilago_maydis::X62396                                    1798   2584.57    180.31     0.984  00:00:03.25
+       89  00244::Uroleptus_pisces.::AF164131                                1772   2650.78    136.05     0.981  00:00:03.25
+
+# Alignment saved in file eukarya-0p1.p.stk.
+#
+# CPU time: 273.38u 15.53s 00:04:48.90 Elapsed: 00:04:52

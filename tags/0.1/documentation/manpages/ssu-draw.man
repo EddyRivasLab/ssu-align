@@ -1,0 +1,387 @@
+.TH "ssu-draw" 1  "@RELEASEDATE@" "@PACKAGE@ @RELEASE@" "@PACKAGE@ Manual"
+
+.SH NAME
+ssu-draw - draw secondary structure diagrams of SSU rRNA
+
+.SH SYNOPSIS
+
+.PP 
+Draw structure diagrams for all alignments created by ssu-align in directory <dir>:
+
+.PP
+.B ssu-draw
+.I [options]
+.I dir
+
+.PP 
+Draw structure diagrams for a single alignment file <aln>:
+
+.PP
+.B ssu-draw -a
+.I [options]
+.I aln
+
+.SH DESCRIPTION
+
+.PP
+.B ssu-draw
+reads alignments created by 
+.B ssu-align, 
+calculates per-consensus-column statistics on them and creates
+secondary structure diagrams that display those statistics using "heat
+map"-like color schemes. The statistics are also printed in tabular
+format to output text files for easy parsing. 
+.B ssu-draw
+can also draw secondary structure diagrams of individual
+sequences in the alignment with the 
+.B --indi
+option.
+
+.PP
+Alignment masks,
+which define a subset of consensus positions to exclude from an alignment
+for purposes such as phylogenetic inference, can be displayed on the
+structure diagrams. Positions excluded by the mask will be drawn as
+open circles. 
+Consensus columns are those which have a non-gap
+(non-'.') character in the reference annotation for the alignment. The
+reference annotation appears in lines beginning with "#=GC RF".
+.B ssu-draw 
+will automatically display masks created by
+.B ssu-mask
+if they exist in the same directory as the alignments.
+
+.PP
+An important caveat of 
+.B ssu-draw
+is that only consensus positions of the SSU models
+models are drawn. Inserted residues (i.e. any target residue that does
+not align to a consensus alignment position) are not drawn. 
+Another important limitation is that 
+.B ssu-draw 
+cannot draw diagrams for alignments created by 
+.B ssu-align
+using models other than the default ones (with the 
+.B -m
+option to 
+.B ssu-align
+) unless the motivated user creates their own template postscript
+file for the models being used. For more information on this, see the 
+.B ssu-esl-ssdraw
+manual page.
+
+.SH OUTPUT
+The secondary structure diagrams created by
+.B ssu-draw
+are either pdf or postscript files. 
+If the executable program
+.B ps2pdf
+exists in the user's path, the files will be pdf. If not,
+they will be postscript. The 
+.B --ps2pdf
+and 
+.B --ps-only 
+options, described below, can be used to modify this default behavior.
+
+.PP
+By default, a single pdf or postscript that contains nine pages will
+be drawn for each alignment. The nine pages are alignment summary
+diagrams and display the alignment consensus
+sequence, information content, mutual information, insert
+frequency, average insert length, deletion frequency, internal
+deletion frequency, average posterior probability and fraction of
+sequences that span each position, respectively. The consensus
+sequence can be displayed on these alignment summary diagrams if the 
+.B --cnt
+option is used.
+
+Additionally, the alignment statistics that are displayed in the
+structure diagrams are printed in tabular format to output text
+files ending with the ".drawtab" suffix to allow easy parsing.
+
+.SH OPTIONS
+
+.TP
+.B -h
+Print brief help; includes version number and summary of
+all options.
+
+.TP
+.B -a
+Specify that the single command-line argument is a Stockholm alignment
+file, not a directory.
+
+.TP
+.B -f
+Force; override the limitation that structure diagram files 
+file, not a directory.
+
+.TP
+.B -d
+Display the pre-calculated, default @PACKAGE@-@SSUALIGN_VERSION@ masks
+on the secondary structure diagrams. Positions excluded by the mask
+will appear as open circles. 
+
+.TP
+.BI -s " <f>"
+Display the pre-calculated mask in file 
+.I <f>.
+This option will only work on a single alignment, so either
+.B -a
+must be used, or 
+.I <dir> 
+must only contain a single alignment.
+The path and file specified by 
+.I <f>
+must exist either with respect to the current working directory or
+SSUALIGNDIR (environment variable)..
+
+.TP
+.BI -k " <s>"
+Display pre-calculate masks in files called
+.I <modelname>.<s>.mask
+on the secondary structure diagrams
+for alignments created by 
+.B ssu-align 
+with models named
+.I <modelname>. 
+If 
+.B ssu-align
+was used with the default CM file, 
+.I <modelname> 
+will be 'archaea', 'bacteria' or 'eukarya'.
+The mask files must exist in either the current working directory, the
+directory that includes the alignments being masked, or SSUALIGNDIR. 
+
+.TP
+.BI -m " <f>"
+Specify that the CM file
+.I <f>
+was used by 
+.B ssu-align 
+to create the alignment(s) being masked with a command like
+.B ssu-align -m 
+.I <s>
+.B foo.fa foo.
+.I <f>
+must be a path that exists with respect to
+either the current working directory or SSUALIGNDIR. 
+
+.TP
+.BI -t " <f>"
+Specify that the template postscript file to use for drawing secondary
+structure diagrams is file
+.I <f>. 
+If not used, the default @PACKAGE@-@RELEASE@ template file
+will be used. 
+.I <f>
+must be a path that exists with respect to
+either the current working directory or SSUALIGNDIR. 
+
+.TP
+.B -i
+Specify that the 
+.B -i 
+option was used by
+.B ssu-align 
+to create the alignments being masked. 
+
+.SH MISCELLANEOUS INPUT/OUTPUT OPTIONS:
+
+.TP
+.BI --ps2pdf " <s>"
+Specify that an executable named 
+.I <s>
+in your PATH can be used for converting postscript files to pdf files
+with the usage: 
+.BI <s> " foo.ps foo.pdf"
+
+.TP
+.B --ps-only
+Specify that postscript output is preferable to pdf. 
+No postscript to pdf conversion will be attempted.
+
+.TP
+.BI --ifile " <f>"
+Insert information for the alignment, created by 
+.B ssu-align,
+is in file 
+.I <f>.
+This option only works in combination with 
+.B -a.
+
+.TP
+.BI --key-out " <s>"
+Include the string 
+.I <s>
+as part of all output file names from
+.B ssu-draw,
+immediately before the suffix. For example, foo.archaea.<s>.pdf would
+be created instead of foo.archaea.pdf.
+
+.TP
+.BI --no-mask
+Do not display masks on the structure diagrams. By default, 
+.B ssu-draw
+will display masks created by
+.B ssu-mask
+if they exist in the same directory as the alignments.
+
+.TP
+.BI --mask-key " <s>"
+Specify that the mask files created by 
+.B ssu-mask
+include the string 
+.I <s>
+before the ".mask" suffix. This will be true if the
+.BI --key-out " <s>"
+option was used when 
+.B ssu-mask
+was run.
+
+.SH OPTIONS FOR ONE PAGE ALIGNMENT SUMMARY DIAGRAMS:
+In addition to the default nine page diagram displaying all available
+alignment statistics, each of the nine statistics can be drawn on
+single page diagrams using the following options. The output files
+will be named automatically based on the alignment file name.
+
+.TP 
+.B --prob
+Draw a single page diagram displaying average posterior probability
+per consensus position for each alignment to a file.
+
+.TP 
+.B --ifreq
+Draw a single page diagram displaying frequency of inserts after each
+consensus position for each alignment to a file.
+
+.TP 
+.B --iavglen
+Draw a single page diagram displaying average insert length after each
+consensus position for each alignment to a file.
+
+.TP 
+.B --dall
+Draw a single page diagram displaying the fraction of sequences that
+have a gap (deletion) at each consensus position for each alignment to a
+file.
+
+.TP 
+.B --dint
+Draw a single page diagram displaying the fraction of sequences that
+have an internal gap (internal deletion) at each consensus position for each
+alignment to a file. An internal gap for a sequence is one that
+occurs after (3' of) the first aligned nongap residue in the sequence
+and before (5' of) the final aligned nongap residue in the sequence.
+
+.TP 
+.B --span
+Draw a single page diagram displaying the fraction of sequences that
+span each consensus position for each alignment to a file.  A sequence
+s spans consensus position 'x' that is actual alignment position 'a'
+if s has at least one non-gap residue aligned to a position 'b' <= 'a'
+and at least one non-gap residue aligned to a position 'c' >= 'a'
+
+.TP 
+.B --info
+Draw a single page diagram displaying the information content
+of each consensus position for each alignment to a file. 
+
+.TP 
+.B --mutinfo
+Draw a single page diagram displaying the mutual information per
+basepaired position for each alignment to a file. 
+
+.TP 
+.B --cnt
+Draw consensus nucleotides on all alignment summary diagrams
+
+.TP 
+.B --no-aln
+Do not draw the default nine page diagram displaying all available
+statistics.
+
+.SH OPTIONS FOR DRAWING STRUCTURE DIAGRAMS FOR INDIVIDUAL SEQUENCES:
+
+Structure diagrams for individual sequences can be drawn, one sequence
+per page. For each sequence, an additional page displaying the
+posterior probability for the sequence will be drawn. To draw all
+sequences in the alignment, use the 
+.B --indi
+option. 
+The resulting pdf or postscript files will be large for large
+alignments. For pdfs, the file size will be about 1
+Mb for every 20 sequences. For postscript file, the size will be about
+1 Mb for every 2 sequences. 
+
+If you only want to draw individual diagrams for a subset of the
+sequences in the alignment, use
+.B ssu-mask
+with the 
+.B --seq-r 
+or 
+.B --seq-k
+options to create an alignment of the subset of sequences you want to
+draw, and then run
+.B ssu-draw
+on that alignment with the
+.B -a
+option. See the 
+.B ssu-mask 
+manual page for more information.
+
+.TP 
+.B --indi
+Draw sequence and posterior probability diagrams for all sequences 
+in each alignment.
+
+.TP 
+.B --rf
+Draw a single page diagram displaying the model's reference 
+sequence/structure to a file. The sequence displayed will be the
+exact sequence from the #=GC RF annotation of the alignment file. 
+
+.TP 
+.B --cons
+Draw a single page diagram displaying the alignment consensus 
+sequence to a file. The consensus sequence is defined as the most
+frequent nucleotide at each position. Nucleotides that occur in at
+least 75% of the sequences that do not have a gap at the position will
+be uppercase; others will be lowercase.
+
+.TP 
+.B --no-pp
+With 
+.B --indi,
+do not draw posterior probability diagrams, only draw individual
+sequence diagrams.
+
+.TP 
+.B --no-bp
+With 
+.B --indi, --rf, 
+or 
+.B --cons,
+do not color nucleotides based on their basepair type.
+
+.TP 
+.B --no-ol
+With 
+.B --indi,
+do not outline nucleotides that are not the most common nucleotide in
+the alignment at their respective consensus position.
+
+.SH OPTIONS FOR OMITTING SECTIONS OF STRUCTURE DIAGRAMS:
+
+.TP 
+.B --no-leg 
+Omit the legend from all structure diagrams.
+
+.TP 
+.B --no-head
+Omit the header from all structure diagrams.
+
+.TP 
+.B --no-foot
+Omit the footer from all structure diagrams.
+

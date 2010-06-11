@@ -1,0 +1,113 @@
+# cmalign :: align sequences to an RNA CM
+# INFERNAL 1.0 (January 2009)
+# Copyright (C) 2009 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: /Users/nawrockie/src/infernal-1.0/src/cmalign -p --sub -o bacteria-0p1.p.stk bacteria-0p1.cm bacteria-0p1.fa
+# date:    Thu Jul  2 20:11:14 2009
+#
+# cm name                    algorithm  config  sub  bands     tau
+# -------------------------  ---------  ------  ---  -----  ------
+# bacteria                     opt acc  global  yes    hmm   1e-07
+#
+#                                                                                               bit scores                           
+#                                                                                           ------------------                       
+# seq idx  seq name                                                                    len     total    struct  avg prob      elapsed
+# -------  ------------------------------------------------------------------------  -----  --------  --------  --------  -----------
+        1  00004::Aquifex_aeolicus.::AE000709_AE000751                                1587   2048.70    369.58     0.994  00:00:02.16
+        2  01020::Arthrobacter_globiformis::M23411                                    1531   2378.64    237.67     0.996  00:00:02.06
+        3  00127::Nostoc_muscorum::X59559                                             1489   2277.21    284.74     0.998  00:00:02.02
+        4  00338::Agrobacterium_tumefaciens::M11223                                   1489   2333.00    258.18     0.998  00:00:02.06
+        5  00185::Borrelia_burgdorferi.::M88329                                       1537   2182.49    342.37     0.996  00:00:02.09
+        6  00163::Borrelia_burgdorferi::AE001147                                      1538   2181.80    346.16     0.996  00:00:02.10
+        7  00035::Bacteroides_fragilis::M61006|g143965                                1537   2122.69    376.86     0.998  00:00:02.09
+        8  01088::Bacillus_halodurans.::AB013373                                      1553   2452.26    262.20     0.995  00:00:02.14
+        9  00308::Bradyrhizobium_japonicum.::Z35330|g515768__bases_841_to_2330_       1490   2296.82    273.37     0.999  00:00:02.02
+       10  00353::Bartonella_quintana::M11927                                         1493   2324.04    276.25     0.997  00:00:02.04
+       11  01106::Bacillus_subtilis::K00637                                           1552   2440.64    274.80     0.997  00:00:02.14
+       12  00126::_Chlorogloeopsis__sp.::X68780                                       1483   2222.11    271.27     0.997  00:00:02.00
+       13  00946::Campylobacter_jejuni::Z29326|g440400__bases_264_to_1776_            1513   2232.27    348.70     0.997  00:00:02.06
+       14  00947::Campylobacter_jejuni_subsp._jejuni_NCTC_11168::AL139074             1513   2236.01    346.36     0.997  00:00:02.06
+       15  00068::Chlamydia_muridarum_Nigg::AE002280                                  1549   2229.22    325.58     0.999  00:00:02.09
+       16  01382::Clostridium_perfringens::M69264                                     1513   2352.45    275.00     0.998  00:00:02.04
+       17  00107::Chlamydophila_pneumoniae::L06108                                    1554   2232.91    341.34     0.997  00:00:02.11
+       18  00106::Chlamydophila_pneumoniae_J138.::AP002548                            1554   2224.62    341.19     0.997  00:00:02.10
+       19  00401::Comamonas_testosteroni::M11224                                      1536   2348.92    285.76     0.999  00:00:02.08
+       20  01375::Clostridium_tetani::X74770|g509282                                  1508   2300.73    256.50     0.997  00:00:02.04
+       21  00072::Chlamydia_trachomatis.::AE001345                                    1550   2196.95    328.39     0.999  00:00:02.09
+       22  00071::Chlamydia_trachomatis.::U68443                                      1554   2211.28    332.75     0.999  00:00:02.16
+       23  00053::Chlorobium_vibrioforme::M62791                                      1507   2182.19    322.16     0.997  00:00:02.04
+       24  00904::Desulfovibrio_desulfuricans::M34113                                 1551   2365.83    277.35     0.998  00:00:02.10
+       25  00563::Dichelobacter_nodosus::M35016                                       1532   2358.25    277.28     0.999  00:00:02.08
+       26  00027::Deinococcus_radiodurans::M21413                                     1502   2203.09    327.50     0.995  00:00:02.04
+       27  00026::Deinococcus_radiodurans.::AE001871                                  1502   2207.51    315.08     0.996  00:00:02.04
+       28  00055::Deferribacter_thermophilus::U75602|g2058494                         1551   2286.87    247.26     0.991  00:00:02.10
+       29  00841::Escherichia_coli::J01695                                            1542   2398.43    303.43     1.000  00:00:02.08
+       30  00963::Frankia_sp.::M55343                                                 1512   2350.52    204.84     0.998  00:00:02.10
+       31  00566::Francisella_tularensis::Z21931                                      1521   2276.56    258.65     0.997  00:00:02.06
+       32  00215::Gluconacetobacter_liquefaciens::X75617|g510680                      1486   2275.97    227.84     0.998  00:00:02.00
+       33  00010::Geotoga_subterranea::L10659                                         1530   2047.26    343.68     0.993  00:00:02.10
+       34  00896::Haemophilus_influenzae::U32741_U32744_U32755_U32847_U32697_U32708   1539   2304.57    315.35     0.999  00:00:02.09
+       35  00936::Helicobacter_pylori_26695.::AE000620                                1499   2191.29    290.38     0.994  00:00:02.04
+       36  00938::Helicobacter_pylori_J99.::AE001534_AE001535                         1501   2229.84    292.90     0.998  00:00:02.04
+       37  00187::Leptonema_illini::M88719|g175128                                    1527   2231.53    265.09     0.997  00:00:02.06
+       38  00186::Leptospira_borgpetersenii::X17547                                   1508   2271.13    278.20     0.998  00:00:02.04
+       39  01295::Lactococcus_lactis_subsp._lactis.::AE006456                         1551   2384.13    285.14     0.995  00:00:02.10
+       40  01327::Mycoplasma_capricolum::X00921                                       1524   2276.84    292.68     0.998  00:00:02.06
+       41  01351::Mycoplasma_gallisepticum::M22441                                    1519   2117.49    378.29     0.996  00:00:02.06
+       42  01356::Mycoplasma_hyopneumoniae::Y00149                                    1537   2141.89    365.26     0.998  00:00:02.09
+       43  01055::Mycobacterium_leprae.::X56657                                       1548   2296.25    245.56     0.994  00:00:02.11
+       44  01056::Mycobacterium_leprae::AL583920                                      1549   2290.21    245.52     0.994  00:00:02.11
+       45  00357::Mesorhizobium_loti::AP003001                                        1482   2355.06    253.83     0.999  00:00:02.00
+       46  01058::Mycobacterium_tuberculosis.::Z83862                                 1537   2321.46    238.49     0.995  00:00:02.08
+       47  00908::Myxococcus_xanthus::M34114                                          1540   2322.00    267.08     0.997  00:00:02.10
+       48  00396::Neisseria_gonorrhoeae::X07714                                       1544   2337.13    303.35     0.999  00:00:02.09
+       49  00388::Neisseria_meningitidis.::AE002364                                   1544   2368.66    323.22     0.998  00:00:02.10
+       50  00392::Neisseria_meningitidis_Z2491::AL162752                              1544   2373.52    320.23     0.998  00:00:02.10
+       51  00632::Pseudomonas_aeruginosa::AE004501                                    1536   2414.85    268.00     0.998  00:00:02.06
+       52  00897::Pasteurella_multocida.::AE006192                                    1542   2313.57    321.61     0.998  00:00:02.09
+       53  00886::Proteus_vulgaris::X07652                                            1543   2387.00    311.09     0.999  00:00:02.09
+       54  00223::Rickettsia_bellii::U11014|g506778                                   1501   2293.26    277.63     0.997  00:00:02.04
+       55  01062::Rhodococcus_erythropolis::AF001265                                  1519   2376.39    229.97     0.994  00:00:02.04
+       56  00225::Rickettsia_prowazekii::M21789                                       1502   2271.61    274.15     0.997  00:00:02.04
+       57  00224::Rickettsia_prowazekii.::AJ235272                                    1501   2261.51    272.48     0.997  00:00:02.04
+       58  00977::Streptomyces_acidiscabies::D63865|g971130                           1530   2413.32    235.32     0.997  00:00:02.06
+       59  01010::Streptomyces_ambofaciens.::M27245|g341664__bases_738_to_2265_       1528   2413.62    234.35     0.997  00:00:02.06
+       60  01252::Staphylococcus_aureus::L36472|g567883__bases_8528_to_10082_         1555   2428.05    289.83     0.998  00:00:02.10
+       61  00995::Streptomyces_bikiniensis::X79851|g509104                            1517   2404.25    232.27     0.997  00:00:02.04
+       62  01005::Streptomyces_bluensis.::X79324|g488842                              1520   2401.71    227.59     0.997  00:00:02.04
+       63  00984::Streptomyces_bottropensis::D63868|g971133                           1531   2418.29    238.77     0.997  00:00:02.06
+       64  01011::Streptomyces_caelestis::X80824|g587528                              1518   2413.56    238.14     0.997  00:00:02.04
+       65  01012::Streptomyces_coelicolor::Y00411                                     1526   2393.98    233.77     0.997  00:00:02.06
+       66  00980::Streptomyces_diastatochromogenes::D63867|g971132                    1531   2418.83    239.05     0.997  00:00:02.06
+       67  01007::Streptomyces_espinosus::X80826|g587544                              1518   2370.37    212.44     0.994  00:00:02.04
+       68  01004::Streptomyces_eurythermus::D63870|g971135                            1531   2421.46    237.43     0.998  00:00:02.08
+       69  00985::Streptomyces_galbus::X79325|g488844                                 1517   2420.53    231.51     0.997  00:00:02.04
+       70  01008::Streptomyces_glaucescens.::X79322|g488843                           1519   2396.73    233.60     0.996  00:00:02.04
+       71  00990::Streptomyces_griseus::X61478                                        1528   2403.87    224.15     0.996  00:00:02.06
+       72  00987::Streptomyces_hygroscopicus.::X79853|g509121                         1517   2421.44    234.01     0.997  00:00:02.04
+       73  00986::Streptomyces_lincolnensis.::X79854|g509055                          1519   2411.98    239.40     0.996  00:00:02.04
+       74  01000::Streptomyces_mashuensis::X79323|g525282                             1518   2405.87    239.47     0.997  00:00:02.04
+       75  00979::Streptomyces_neyagawaensis::D63869|g971134                          1531   2414.67    238.58     0.997  00:00:02.06
+       76  00991::Streptomyces_nodosus.::AF114033                                     1528   2394.24    234.82     0.997  00:00:02.06
+       77  00992::Streptomyces_ornatus::X79326|g488846                                1517   2369.50    217.45     0.994  00:00:02.06
+       78  01009::Streptomyces_pseudogriseolus::X80827|g587549                        1516   2396.34    231.99     0.997  00:00:02.04
+       79  01305::Streptococcus_pyogenes::AE006473                                    1549   2370.50    288.35     0.996  00:00:02.10
+       80  00998::Streptomyces_rimosus::X62884|g509401__bases_130_to_1658_            1529   2321.21    201.28     0.997  00:00:02.06
+       81  01002::Streptomyces_sampsonii::D63871|g971125                              1531   2413.13    230.92     0.998  00:00:02.08
+       82  00981::Streptomyces_scabies::D63862|g971124                                1530   2431.45    244.21     0.997  00:00:02.06
+       83  00989::Streptomyces_subrutilus::X80825|g587558                             1516   2419.00    226.69     0.997  00:00:02.04
+       84  00978::Streptomyces_sp.::D63866|g971131                                    1530   2407.31    222.38     0.996  00:00:02.06
+       85  00156::Synechococcus_sp.::X03538                                           1488   2286.27    263.04     0.998  00:00:02.02
+       86  00151::Synechocystis_PCC6803::D64000_D90916                                1489   2305.26    274.38     0.998  00:00:02.02
+       87  00012::Thermotoga_maritima::M21774                                         1562   2248.05    302.18     0.996  00:00:02.12
+       88  00013::Thermotoga_maritima.::AE001703                                      1559   2225.49    296.14     0.996  00:00:02.12
+       89  00161::Treponema_pallidum.::AE001204                                       1549   2207.77    293.59     0.997  00:00:02.10
+       90  00020::Thermus_thermophilus::X07998                                        1515   2142.09    255.43     0.996  00:00:02.06
+       91  00019::Thermus_thermophilus::M26923__bases_557_to_2331_                    1521   2150.29    260.05     0.996  00:00:02.08
+       92  00646::Vibrio_cholerae::AE004096                                           1541   2385.63    313.82     0.998  00:00:02.08
+       93  00560::Xylella_fastidiosa::AE003861                                        1545   2394.58    237.50     0.998  00:00:02.10
+
+# Alignment saved in file bacteria-0p1.p.stk.
+#
+# CPU time: 192.86u 11.12s 00:03:23.98 Elapsed: 00:03:26

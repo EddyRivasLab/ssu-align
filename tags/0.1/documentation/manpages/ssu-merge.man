@@ -1,0 +1,186 @@
+.TH "ssu-merge" 1 "@RELEASEDATE@" "@PACKAGE@ @RELEASE@" "@PACKAGE@ Manual"
+
+.SH NAME
+ssu-merge - merge SSU rRNA alignments created by parallel ssu-align jobs
+
+.SH SYNOPSIS
+
+.PP
+Merge results from parallel ssu-align jobs:
+.PP
+.B ssu-merge
+.I [options]
+.I output-dir-created-by-ssu-prep
+
+.PP
+Merge a list of alignments, all created with the same CM:
+.PP
+.B ssu-merge --list
+.I [options]
+.I list-file
+.I output-alignment
+
+.SH DESCRIPTION
+
+.PP
+.B ssu-merge 
+merges results from parallel
+.B ssu-align 
+jobs. The 
+.B ssu-align 
+jobs must have been executed by a shell script created by
+.B ssu-prep.
+Alternatively if
+.B --list
+is used, 
+.B ssu-merge
+merges all alignments in 
+.I list-file
+into a single alignment, outputs it as 
+.I output-alignment
+and exits.
+
+.PP
+When 
+.B --list
+is not used,
+.B ssu-merge
+first 
+examines the directory
+.I output-dir-created-by-ssu-prep
+to make sure that (a) it was created by 
+.B ssu-prep 
+and (b) all of the parallel 
+.B ssu-align 
+jobs created by 
+.B ssu-prep 
+have successfully finished running. If both (a) and (b) are true, 
+.B ssu-merge
+merges the output files from all of the jobs together, removing the
+individual job output files once it has successfully finished.
+
+.PP
+Users should rarely need to call
+.B ssu-merge
+directly. This is because it is called internally by the final 
+.B ssu-align 
+job in a set of parallel jobs created by 
+.B ssu-prep
+to automatically merge the output of all the jobs once they are all
+complete.  However, if the 
+.B --no-merge
+option was specified to 
+.B ssu-prep,
+or one of the jobs failed to finish successfully, it will be necessary
+for the user to directly execute 
+.B ssu-merge.
+
+.PP
+For example, given the original 
+.B ssu-prep 
+command:
+
+.B ssu-prep -x my.fa foo 8 
+
+.PP
+Followed by the execution of the resulting output shell script:
+
+.B sh foo.ssu-align.sh
+
+.PP
+The 8th and final job submitted by this shell script will
+wait for all jobs to finish and automatically merge the results of all
+the jobs by calling
+.B ssu-merge.
+However, if an error occurs preventing one or more of the jobs from
+successfully finishing, the final job will output an error
+message informing the user what jobs have failed and how to rerun
+them.
+
+.PP
+Once they have been rerun, the user will need to manually merge the
+output of all the jobs with the command:
+
+.B ssu-merge foo
+
+.PP
+If the
+.B --list
+option is used, 
+.B ssu-merge
+expects two command-line arguments. The first (
+.I list-file
+) is the name of a file
+that lists all input alignment files to merge. The second (
+.I output-alignment
+) is the desired name
+for the merged output alignment.  All input alignments must be in
+Stockholm format, include #=GC RF 'reference' annotation, and have the
+same number of nongap RF positions. In this mode,
+.B ssu-merge
+will simply merge all the input alignments in all the files into a single
+merged alignment, save it to
+.I output-alignment
+and exit. 
+
+.SH OPTIONS
+
+.TP
+.B -h
+Print brief help; includes version number and summary of
+all options.
+
+.TP
+.B -f
+Allow output files that already exist to be overwritten.
+This option should only be needed if 
+.B ssu-merge
+has already been executed on 
+.I <output-dir-created-by-ssu-prep>.
+
+.TP
+.B --rfonly
+When merging alignments, discard insert columns and only include
+consensus columns in the alignment. The alignments will be a fixed,
+predicted width (the number of consensus positions for each model),
+but will not include all target nucleotides. Note that insert columns
+are automatically removed by the 
+.B ssu-mask 
+program which is recommended prior to inputting alignments into
+phylogenetic inference programs and using 
+.B --rfonly
+can greatly reduce the size of the final merged alignments,
+especially for very deep alignments (hundreds of thousands of
+sequences). The
+.B --rfonly 
+option can also be specified to
+.B ssu-prep,
+in which case it will be set by the internal merge performed by the
+resulting final
+.B ssu-align
+job. 
+
+.SH OPTIONS FOR LIST MODE
+
+.TP 
+.B -i
+Input alignments are interleaved Stockholm format in which each
+sequence is split up across several lines, as opposed to so-called
+Pfam Stockholm format in which each sequence occurs on exactly one
+line. Alignments created by
+.B ssu-align
+are by default in Pfam Stockholm format, but will be interleaved
+Stockholm if the
+.B -i
+option was supplied to
+.B ssu-align.
+This option only works in combination with
+.B --list.
+
+.TP 
+.B --dna
+Output the merged alignment as DNA, not as RNA. By default, the output
+alignment will be RNA, even if the input alignments were DNA. 
+This option only works in combination with
+.B --list.
+

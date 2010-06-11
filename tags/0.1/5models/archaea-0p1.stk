@@ -1,0 +1,1704 @@
+# STOCKHOLM 1.0
+#=GF ID archaea
+#=GF CC The original data for this alignment were obtained from the
+#=GF CC Comparative RNA Web Site (CRW; http://www.rna.ccbb.utexas.edu)
+#=GF CC on May 13, 2009. The procedure used to convert the original CRW data
+#=GF CC into this alignment is described in my (Eric Nawrocki's) Ph.D. thesis,
+#=GF CC which is available from http://selab.janelia.org/publications.html.
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                ------------AUUCUGGUUGAUCCUGCCAGAGGCCGCUGCUAUCCGGC
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00136::Aeropyrum_pernix::AP000062                             ------------ACUCCGGUUGAUCCUGCCGGACCCGACCGCUAUCGGGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00052::Halobacterium_sp.::AE005128                            ------------AUUCCGGUUGAUCCUGCCGGAGGCCAUUGCUAUCGGAG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00075::Haloarcula_marismortui::X61688                         ------------AUUCCGGUUGAUCCUGCCGGAGGCCAUUGCUAUCGGAG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00076::Haloarcula_marismortui::X61689                         ------------AUUCCGGUUGAUCCUGCCGGAGGCCAUUGCUAUCGGAG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00049::Haloferax_volcanii::K00421                             ------------AUUCCGGUUGAUCCUGCCGGAGGUCAUUGCUAUUGGGG
+#=GR 00049::Haloferax_volcanii::K00421                     SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00013::Methanobacterium_formicicum::M36508                    ------------AGUCCGUUUGAUCCUGGCGGAGGCCACUGCUAUUGGGU
+#=GR 00013::Methanobacterium_formicicum::M36508            SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00022::Methanospirillum_hungatei::M60880                      ------------AUUCUGNUUGAUCCUGCCAGAGGCCACUGCUAUCGGGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         -------------GUCCGUUUGAUCCUGGCGGAGGCUACUGCUAUUGGGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         -------------UUCCGUUUGAUCCUGGCGGAGGCUACUGCUAUUGGGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00010::Methanococcus_vannielii::M36507                        ------------AUUCCGGUUGAUCCCGCCGGAGGCUACUGCUAUUGGGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00062::Natronobacterium_bangense.::Y14028                     ------------AUUCCGGUUGAUCCUGCCGGAGGUCAUUGCUAUUGGAG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00004::Nanoarchaeum_equitans::AJ318041                        ------------ACUCCCGUUGAUCCUGCGGGAGGCCACCGCUAUCUCCG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00064::Natronobacterium_innermongoliae.::AF009601             ------------AUUCCGGUUGAUCCUGCCGGAGGUCAUUGCUAUUGGAG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00114::Pyrococcus_abyssi.::AJ248283                           CGUACUCCCUUAAUUCCGGUUGAUCCUGCCGGAGGCCACUGCUAUGGGGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00115::Pyrococcus_furiosus::U20163|g643670                    ------------AUUCCGGUUGAUCCUGCCGGAGGCCACUGCUAUGGGGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00116::Pyrococcus_horikoshii::AP000001                        ------------AUUCCGGUUGAUCCUGCCGGAGGCCACUGCUAUGGGGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00132::Pyrodictium_occultum::M21087                           ------------ACUCCGGUUGAUCCUGCCGGGCCCGACCGCUAUCGGGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00153::Sulfolobus_acidocaldarius::D14876                      ------------AUUCCGGUUGAUCCUGCCGGACCCGACCGCUAUCGGGG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00151::Sulfolobus_solfataricus::X03235                        ------------AUUCCGGUUGAUCCUGCCGGACCCGACCGCUAUCGGGG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              ------------ACUCCGGUCGAUCCUGCCGGCGGUCACUGCUAUCAGGU
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00121::Thermococcus_celer::M21529                             ------------AUUCCGGUUGAUCCUGCCGGAGGCCACUGCUAUGGGGG
+#=GR 00121::Thermococcus_celer::M21529                     SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+00130::Thermoproteus_tenax.::M35966|g176260                   ------------AAACCGGUUGAUCCUGCCGGACCUGACCGCUAUCGGGG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS ...............<<<<<.......>>>>>.<<<<<<<<<<.<<<<<<
+#=GC SS_cons                                                  :::::::::::::::<<<<<_______>>>>>:{{{{{{{{{{,{{{{{{
+#=GC RF                                                       ............xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                ............00000000000000000000000000000000000000
+#=GC RFCOL.X..                                                ............00000000000000000000000000000000000000
+#=GC RFCOL..X.                                                ............00000000011111111112222222222333333333
+#=GC RFCOL...X                                                ............12345678901234567890123456789012345678
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                UGGGACUAAGCCAUGCGAGUCAAGGGGCUUGUAUCCCUU-CGGGGAUGCA
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<<.....<<<.<<<..<<<..<<<<<<<<<<<<<<.....>>>>>>>>
+00136::Aeropyrum_pernix::AP000062                             UAGGGCUAAGCCAUGGGAGUCGAACG-----CCCCGCCG-CUGCGGGG--
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<<.....<<<.<<<..<<<..<<<.....<<<<<<.....>>>>>>..
+00052::Halobacterium_sp.::AE005128                            UCCGAUUUAGCCAUGCUAGUUGUGCG--------GGUUU-AGACC-----
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00075::Haloarcula_marismortui::X61688                         UCCGAUUUAGCCAUGCUAGUCGCACG--------GGCUU-AGACC-----
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00076::Haloarcula_marismortui::X61689                         UCCGAUUUAGCCAUGCUAGUUGCACG--------AGUUU-AGACU-----
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00049::Haloferax_volcanii::K00421                             UCCGAUUUAGCCAUGCUAGUUGCACG--------AGUUC-AUACU-----
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00013::Methanobacterium_formicicum::M36508                    UUCGAUUAAGCCAUGCAAGUCGAACG-------AUCCUU-CGGGGU----
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<<.....<<<.<<<..<<<..<<<.......<<<<.....>>>>....
+00022::Methanospirillum_hungatei::M60880                      UUUGACUAAGCCAUGCGAGUCGAGAG---------GUGCAAGAC------
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<<.....<<<.<<<..<<<..<<<.........<<.....>>......
+00016::Methanobacterium_thermoautotrophicum::AE000930         UUCGAUUAAGCCAUGCAAGUCGAACG--------AACCUUGUGUU-----
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00017::Methanobacterium_thermoautotrophicum::AE000940         UUCGAUUAAGCCAUGCAAGUCGAACG--------AACCUUGUGUU-----
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00010::Methanococcus_vannielii::M36507                        UUCGACUAAGCCAUGCGAGUCU-AUG---------GUUU-CGGC------
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<<.....<<<.<<<..<<<..<<<.........<<.....>>......
+00062::Natronobacterium_bangense.::Y14028                     UCCGAUUUAGCCAUGCUAGUUGUACG--------AGUUU-GUACU-----
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00004::Nanoarchaeum_equitans::AJ318041                        UCCGGCUAACCCAUGGAAGGCGAGGG-----UCCCCGGG-UAAGGGGG--
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<<.....<<<.<<<..<<<..<<<.....<<<<<<.....>>>>>>..
+00064::Natronobacterium_innermongoliae.::AF009601             UCCGAUUUAGCCAUGCUAGUUGUACG--------AGUUU-AGACU-----
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00114::Pyrococcus_abyssi.::AJ248283                           UCCGACUAAGCCAUGCGAGUCAAGGGG---GCGUCCCUU-CUGGGACGC-
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<<.....<<<.<<<..<<<..<<<<...<<<<<<<.....>>>>>>>.
+00115::Pyrococcus_furiosus::U20163|g643670                    UCCGACUAAGCCAUGCGAGUCAAGGGG---GCGUCCCUU-CUGGGACGC-
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<<.....<<<.<<<..<<<..<<<<...<<<<<<<.....>>>>>>>.
+00116::Pyrococcus_horikoshii::AP000001                        UCCGACUAAGCCAUGCGAGUCAAGGGG---GCGUCCCUU-CUGGGACGC-
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<<.....<<<.<<<..<<<..<<<<...<<<<<<<.....>>>>>>>.
+00132::Pyrodictium_occultum::M21087                           UGGGACUAAGCCAUGGGAGUCGUGCG-----CCCCCGGA-CGCGGGGG--
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<<.....<<<.<<<..<<<..<<<.....<<<<<<.....>>>>>>..
+00153::Sulfolobus_acidocaldarius::D14876                      UAGGGAUAAGCCAUGGGAGUCUUACA-----CUCCCGGG-UAAGGGAG--
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<<.....<<<.<<<..<<<..<<<.....<<<<<.......>>>>>..
+00151::Sulfolobus_solfataricus::X03235                        UAGGGAUAAGCCAUGGGAGUCUUACA-----CUCCCGGG-UAAGGGAG--
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<<.....<<<.<<<..<<<..<<<.....<<<<<.......>>>>>..
+00089::Thermoplasma_acidophilum::AL445067_M38637              UCCGACUAAGCCAUGCAAGUCAUGGG--------GCCGU-AAGGC-----
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<<.....<<<.<<<..<<<..<<<........<<<.....>>>.....
+00121::Thermococcus_celer::M21529                             UCCGACUAAGCCAUGCGAGUCAUGGG-------GCGCCUUGCGCGC----
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<<.....<<<.<<<..<<<..<<<.......<<<<.....>>>>....
+00130::Thermoproteus_tenax.::M35966|g176260                   UGGGGCUAAGCCAUGCGAGUCGCGCG------CCCGGGG-CGCCGGG---
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<<.....<<<.<<<..<<<..<<<......<<<<<.....>>>>>...
+#=GC SS_cons                                                  {{{{-----{{{-{{{,,<<<--<<<<---<<<<<<<_____>>>>>>>-
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxx.....xxxxxxxx.xxxxxxxx..
+#=GC RFCOLX...                                                00000000000000000000000000.....00000000.00000000..
+#=GC RFCOL.X..                                                00000000000000000000000000.....00000000.00000000..
+#=GC RFCOL..X.                                                34444444444555555555566666.....66666777.77777778..
+#=GC RFCOL...X                                                90123456789012345678901234.....56789012.34567890..
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                AGCACCGGCGGACGGCUCAGUAACACGUGGACAACCUGCCCUCGGGUGGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00136::Aeropyrum_pernix::AP000062                             ---CGUGGCGGACGGCUGAGUAACACGUGGCUAACCUACCCUCGGGACGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00052::Halobacterium_sp.::AE005128                            ---CGCAGCGGAAAGCUCAGUAACACGUGGCCAAGCUACCCUGUGGACGG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00075::Haloarcula_marismortui::X61688                         ---CGUGGCAUAUAGCUCAGUAACACGUGGCCAAACUACCCUACAGACCG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00076::Haloarcula_marismortui::X61689                         ---CGUAGCAUAUAGCUCAGUAACACGUGGCCAAACUACCCUACAGACCG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00049::Haloferax_volcanii::K00421                             ---CGUGGCGAAAAGCUCAGUAACACGUGGCCAAACUACCCUACAGAGAA
+#=GR 00049::Haloferax_volcanii::K00421                     SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00013::Methanobacterium_formicicum::M36508                    ---CGUGGCGUACGGCUCAGUAACACGUGGAUAACCUAACCUUAGGACUG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00022::Methanospirillum_hungatei::M60880                      ---CUCGGCGUACUGCUCAGUAACACGUGGACAAUCUGCCCUGAAGAGGA
+#=GR 00022::Methanospirillum_hungatei::M60880              SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         ---CGUGGCGAACGGCUCAGUAACACGUGGAUAACCUGCCCUUGGGACCG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         ---CGUGGCGAACGGCUCAGUAACACGUGGAUAACCUGCCCUUGGGACCG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00010::Methanococcus_vannielii::M36507                        ---CAUGGCGGACGGCUCAUUAACACGUGGUUAACUUAACCUCAGGUGGA
+#=GR 00010::Methanococcus_vannielii::M36507                SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00062::Natronobacterium_bangense.::Y14028                     ---CGUAGCAGAUAGCUCAGUAACACGUGGCCAAACCACCCUAUGGAUCC
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00004::Nanoarchaeum_equitans::AJ318041                        ---CCCGCCGCACGGCUGAGUAACACGUCGGUAACCUACCCUCGGGACGG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00064::Natronobacterium_innermongoliae.::AF009601             ---CGUAGCAGAUAGCUCAGUAACACGUGGCCAAACUACCCUAUGGAUCC
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00114::Pyrococcus_abyssi.::AJ248283                           --CACCGGCGGACGGCUCAGUAACACGUCGGUAACCUACCCUCGGGAGGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS ..>>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00115::Pyrococcus_furiosus::U20163|g643670                    --CACCGGCGGACGGCUCAGUAACACGUCGGUAACCUACCCUCGGGAGGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS ..>>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00116::Pyrococcus_horikoshii::AP000001                        --CACCGGCGGACGGCUCAGUAACACGUCGGUAACCUACCCUCGGGAGGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS ..>>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00132::Pyrodictium_occultum::M21087                           ---CGCGGCGGACGGCUGAGUAACACGUGGCCAACCUACCCUCGGGACGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00153::Sulfolobus_acidocaldarius::D14876                      ---UGUGGCGGACGGCUGAGUAACACGUGGCUAACCUACCCUCGGGACGG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00151::Sulfolobus_solfataricus::X03235                        ---UGUGGCGGACGGCUGAGUAACACGUGGCUAACCUACCCUCGGGACGG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              ---ACCGGCGAACAGCUCAGUAACACGUGGAUAAUUUACCCUCAGGCGGG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00121::Thermococcus_celer::M21529                             ---ACCGGCGGACGGCUCAGUAACACGUCGGUAACCUACCCUCGGGAGGG
+#=GR 00121::Thermococcus_celer::M21529                     SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+00130::Thermoproteus_tenax.::M35966|g176260                   ---CGCGGCGCACGGCUCAGUAACACGUACCCAACCUAACCUCGGGAGGG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS ...>>>>>>......<<<......<<<<<<<<..<<...<<<<<<<.<<<
+#=GC SS_cons                                                  -->>>>>>>,,,,,,[[[,,,,,,((((((((--((---(((((((,<<<
+#=GC RF                                                       ...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                ...00000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                ...00000000000000000001111111111111111111111111111
+#=GC RFCOL..X.                                                ...88888888899999999990000000000111111111122222222
+#=GC RFCOL...X                                                ...12345678901234567890123456789012345678901234567
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCCAUAGGGGA-UGGGUAC
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<<.<<
+00136::Aeropyrum_pernix::AP000062                             GGAUAACCCCUCGGGAAACUGGGGCUAAUCCCCGAUAGGCGGGGGGUGCC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<.<<<
+00052::Halobacterium_sp.::AE005128                            GAAUACUCU--CGGGAAACUGAGGCUAAUCCCCGAUAACGCU-UUGCUCC
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<<.<<
+00075::Haloarcula_marismortui::X61688                         CGAUAACCU--CGGGAAACUGAGGCCAAUAGCGGAUAUAACU-CUCAUGU
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00076::Haloarcula_marismortui::X61689                         CAAUAACCU--CGGGAAACUGAGGCCAAUAGCGGAUAUAACU-CUCAUGC
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00049::Haloferax_volcanii::K00421                             CGAUAACCU--CGGGAAACUGAGGCUAAUAGUUCAUACGGGA-GUCAUGC
+#=GR 00049::Haloferax_volcanii::K00421                     SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00013::Methanobacterium_formicicum::M36508                    GGAUAACCC--UGGGAAACUGGGGAUAAUACCGGAUAUGUAG-GGCUGCC
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00022::Methanospirillum_hungatei::M60880                      GGAUAAUCC--CGGGAAACUGGGGGUAAUACUCCAUAGUUCG-UGCUGAC
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         GGAUAACCC--CGGGAAACUGGGGAUAAACCCGGAUAGGUGA-UGCUGCC
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         GGAUAACCC--CGGGAAACUGGGGAUAAACCCGGAUAGGUGA-UGCUGCC
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00010::Methanococcus_vannielii::M36507                        GCAUAACCU--UGGGAAACUGAGGAUAAUUCUCCAUAAGAAA-AGCAGUC
+#=GR 00010::Methanococcus_vannielii::M36507                SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00062::Natronobacterium_bangense.::Y14028                     GGAUAACCU--CGGGAAACUGAGGCCAAUCCGGAAUACGAUU-CCCAAGC
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00004::Nanoarchaeum_equitans::AJ318041                        GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCGAUAGGGGA-UGGGUGC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<<.<<
+00064::Natronobacterium_innermongoliae.::AF009601             AGACAACCU--CGGGAAACUGAGGCUAAUCUGGAAUACGACU-CUCAUCC
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00114::Pyrococcus_abyssi.::AJ248283                           GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCCAUAGGCCU-GGGGUAC
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<<.<<
+00115::Pyrococcus_furiosus::U20163|g643670                    GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCCAUAGGCCU-GGGGUAC
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <....<<<<..<<<....>>>>>>>.....>>>>...<<<<<.<<<<.<<
+00116::Pyrococcus_horikoshii::AP000001                        GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCCAUAGGCCU-GGGGUAC
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00132::Pyrodictium_occultum::M21087                           GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCGAUAGGCGA-GGGGGCC
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00153::Sulfolobus_acidocaldarius::D14876                      GGAUAACCC--CGGGAAACUGGGGAUAAUCCCCGAUAGGGAA-GGAGUCC
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00151::Sulfolobus_solfataricus::X03235                        GGAUAACCC--CGGGAAACUGGGGAUAAUCCCCGAUAGGGAA-GGAGUCC
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              GCAUAACCU--CGGGAAACUGAGGCUAAUUCCCCAUAGUCAU-UACAAAC
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<.<<<
+00121::Thermococcus_celer::M21529                             GGAUAACCC--CGGGAAACUGGGGCUAAUCCCCCAUAGGCCU-GAGGUAC
+#=GR 00121::Thermococcus_celer::M21529                     SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<<.<<
+00130::Thermoproteus_tenax.::M35966|g176260                   GGACAACCC--CGGGAAACUGGGGCUGAUCCCCCAUAGGGGA-AGGGCGC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <....<<<<..<<<....>>>>>>>.....>>>>....<<<<.<<<..<<
+#=GC SS_cons                                                  <----<<<<--<<<____>>>>>>>----->>>>,,,,<<<<-<<<<-<<
+#=GC RF                                                       xxxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxx
+#=GC RFCOLX...                                                000000000..0000000000000000000000000000000.0000000
+#=GC RFCOL.X..                                                111111111..1111111111111111111111111111111.1111111
+#=GC RFCOL..X.                                                223333333..3334444444444555555555566666666.6677777
+#=GC RFCOL...X                                                890123456..7890123456789012345678901234567.8901234
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                UGGAAU-GUCCCAUCUCCGAAA-GC-----------GCUUA---------
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS .......>>>>>>>>>>......<<.........................
+00136::Aeropyrum_pernix::AP000062                             UGGAAG-GGUCCUCCGCCGAAAGGGGCCGCGGGGGGUUAUCGCCCGCGGU
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS .......>>>>>>>>>>......<<<<<<<<<<.........>>>>>>>>
+00052::Halobacterium_sp.::AE005128                            UGGAAG-GGGCAAAGCCGGAAACGC-----------UCCG----------
+#=GR 00052::Halobacterium_sp.::AE005128                    SS .......>>>>>>>>>>......<<.........................
+00075::Haloarcula_marismortui::X61688                         UGGAGU-GCCGAGAGUUAGAAACGU-----------UCCG----------
+#=GR 00075::Haloarcula_marismortui::X61688                 SS .......>>.>>>>>>>......<<.........................
+00076::Haloarcula_marismortui::X61689                         UGGAGU-GCAGAGAGUUAGAAACGU-----------UCCG----------
+#=GR 00076::Haloarcula_marismortui::X61689                 SS .......>>.>>>>>>>......<<.........................
+00049::Haloferax_volcanii::K00421                             UGGAAU-GCCGACUCCCCGAAACGC-----------UCAG----------
+#=GR 00049::Haloferax_volcanii::K00421                     SS .......>>.>>>>>>>......<<.........................
+00013::Methanobacterium_formicicum::M36508                    UGGAAU-GGUUCCCUAUUGAAAUGU-----------UCCG----------
+#=GR 00013::Methanobacterium_formicicum::M36508            SS .......>>.>>>>>>>......<<.........................
+00022::Methanospirillum_hungatei::M60880                      UGGAAU-GUUAUGCGAACGAAA-GA-----------UCCG----------
+#=GR 00022::Methanospirillum_hungatei::M60880              SS .......>>.>>>>>>>......<<.........................
+00016::Methanobacterium_thermoautotrophicum::AE000930         UGGAAU-GGUUCUUCACCGAAACACC----------UUCG---------G
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS .......>>.>>>>>>>......<<<.......................>
+00017::Methanobacterium_thermoautotrophicum::AE000940         UGGAAU-GGUUCUUCACCGAAACACC----------UUCG---------G
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS .......>>.>>>>>>>......<<<.......................>
+00010::Methanococcus_vannielii::M36507                        UGGAAC-GAUUCUUUUCUGAAA-GC-----------AUAU----------
+#=GR 00010::Methanococcus_vannielii::M36507                SS .......>>.>>>>>>>......<<.........................
+00062::Natronobacterium_bangense.::Y14028                     UGGAACUGCUGGGAAUCCGAAACGC-----------UCAG----------
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS .......>>.>>>>>>>......<<.........................
+00004::Nanoarchaeum_equitans::AJ318041                        UGGAAG-GCCCCAUCCCCGAGAGGGGCUAGCGG-UACUUCCCCCGCUAGC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS .......>>>>>>>>>>......<<<<<<<<<<.........>>>>>>>>
+00064::Natronobacterium_innermongoliae.::AF009601             UGGAGU-GGAGAGAGUCCGAAACGC-----------UCCG----------
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS .......>>.>>>>>>>......<<.........................
+00114::Pyrococcus_abyssi.::AJ248283                           UGGAAG-GUCCCCAGGCCGAAAGGGAGCC-------GUAA------GGCU
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS .......>>>>>>>>>>......<<<<<<.................>>>>
+00115::Pyrococcus_furiosus::U20163|g643670                    UGGAAG-GUCCCCAGGCCGAAAGGGAGCC-------GUAA------GGC-
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS .......>>>>>>>>>>>.....<<.<<<.................>>>.
+00116::Pyrococcus_horikoshii::AP000001                        UGGAAG-GUCCCCAGGCCGAAAGGGAGCC-------GUAA------GGCU
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS .......>>.>>>>>>>......<<<<<<.................>>>>
+00132::Pyrodictium_occultum::M21087                           UGGAACGGGUCCCUCGCCGAAAGGGCGCGCGGA---GCCUC-CCCGCGCG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS .......>>.>>>>>>>......<<<<<<<<<...........>>>>>>>
+00153::Sulfolobus_acidocaldarius::D14876                      UGGAAU-GGUUCCUUCCCUAAAGGGCUAUAGGC-UAUUUCCCGUUUGUAG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS .......>>.>>>>>>>......<<<<<<<<<<.........>>>>>>>>
+00151::Sulfolobus_solfataricus::X03235                        UGGAAU-GGUUCCUUCCCUAAAGGGCUAUAGGC-UAUUUCCCGUUUGUAG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS .......>>.>>>>>>>......<<<<<<<<<<.........>>>>>>>>
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGGAAUGGUUGUAAUGAUGAAA-GC-----------UUCU----------
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS .......>>>>>>>>>>......<<.........................
+00121::Thermococcus_celer::M21529                             UGGAAG-GUCCUCAGGCCGAAAGGGGC----------UCU--------GC
+#=GR 00121::Thermococcus_celer::M21529                     SS .......>>>>>>>>>>......<<<<.....................>>
+00130::Thermoproteus_tenax.::M35966|g176260                   UGGAAG-GCCCCUUCCUCCAAAGGGAUCGCGGG--CGAUCU-CCCGCGGU
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS .......>>.>>>>>>>......<<<<<<<<<<.........>>>>>>>>
+#=GC SS_cons                                                  _______>>>>>>>>>>,,,,,,<<<<<<<<<<_________>>>>>>>>
+#=GC RF                                                       xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxx..xxxxxx.xxxxxxxx
+#=GC RFCOLX...                                                000000.00000000000000000000000000..000000.00000000
+#=GC RFCOL.X..                                                111111.11111111111111111112222222..222222.22222222
+#=GC RFCOL..X.                                                777778.88888888899999999990000000..000111.11111112
+#=GC RFCOL...X                                                567890.12345678901234567890123456..789012.34567890
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GCGCCCGAGGAUGGGUCUGCGGCGGAUUA-GGUUGUUGGUGGGGUAACGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00136::Aeropyrum_pernix::AP000062                             CCGCCCGAGGAUGGGGCUGCGGCCCAUCACGGUAGUUGGCGGGGUAAUGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00052::Halobacterium_sp.::AE005128                            GCGCCACAGGAUGCGGCUGCGGUCGAUUA-GGUAGACGGUGGGGUAACGG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00075::Haloarcula_marismortui::X61688                         GCGCUGUAGGAUGUGGCUGCGGCCGAUUA-GGUAGAUGGUGGGGUAACGG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00076::Haloarcula_marismortui::X61689                         GCGCUGUAGGAUGUGGCUGCGGCCGAUUA-GGUAGAUGGUGGGGUAACGG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00049::Haloferax_volcanii::K00421                             GCGCUGUAGGAUGUGGCUGCGGCCGAUUA-GGUAGACGGUGGGGUAACGG
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00013::Methanobacterium_formicicum::M36508                    ACGCCUAAGGAUGGAUCUGCGGCAGAUUA-GGUAGUUGGCGGGGUAAAUG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00022::Methanospirillum_hungatei::M60880                      UCGCUUCAGGAUGAGUCUGCGGCCGAUUA-GGUAGUUGUUGGGGUAACGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00016::Methanobacterium_thermoautotrophicum::AE000930         GUGCCCAAGGAUGGGUCUGCGGCCGAUUA-GGUUGUUGGUAGGGUAACGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00017::Methanobacterium_thermoautotrophicum::AE000940         GUGCCCAAGGAUGGGUCUGCGGCCGAUUA-GGUUGUUGGUAGGGUAACGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00010::Methanococcus_vannielii::M36507                        GCGCCCGAGGAUAGGACUGCGCUCGAUUA-GGUAGUUGGUGGGGUAAUGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00062::Natronobacterium_bangense.::Y14028                     GCGCCAUAGGAUGUGGCUGCGGCCGAUUA-GGUAGACGGUGGGGUAACGG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00004::Nanoarchaeum_equitans::AJ318041                        CCGCCCGAGGAUGGGCCGGCGGCCCAUCA-GGUAGUUGGCGGGGUAAUGG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00064::Natronobacterium_innermongoliae.::AF009601             GCGCCAUAGGAUGUGGCUGCGGCCGAUUA-GGUAGACGGUGGGGUAACGG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00114::Pyrococcus_abyssi.::AJ248283                           CCGCCCGAGGAUGGGCCGGCGGCCGAUUA-GGUAGUUGGUGGGGUAACGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00115::Pyrococcus_furiosus::U20163|g643670                    CCGCCCGAGGAUGCGGCGGCGGCCGAUUA-GGUAGUUGGUGGGGUAACGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00116::Pyrococcus_horikoshii::AP000001                        CCGCCCGAGGAUGGGCCGGCGGCCGAUUA-GGUAGUUGGUGGGGUAACGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00132::Pyrodictium_occultum::M21087                           CCGCCCGAGGAUGGGGCUGCGGCCCAUCA-GGUAGUUGGCGGGGUAACGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00153::Sulfolobus_acidocaldarius::D14876                      CCGCCCGAGGAUGGGGCUACGGCCCAUCA-GGCUGUCGGUGGGGUAAAGG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00151::Sulfolobus_solfataricus::X03235                        CCGCCCGAGGAUGGGGCUACGGCCCAUCA-GGCUGUCGGUGGGGUAAAGG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00089::Thermoplasma_acidophilum::AL445067_M38637              GCACCUGAGGAUAAGUCUGCGGCCUAUCA-GGUAGUAGGUGGUGUAAAGG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00121::Thermococcus_celer::M21529                             CCGCCCGAGGAUGGGCCGGCGGCCGAUUA-GGUAGUUGGUGGGGUAACGG
+#=GR 00121::Thermococcus_celer::M21529                     SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+00130::Thermoproteus_tenax.::M35966|g176260                   CCGCCCGAGGGUGGGGGUACGGCCCAUCA-GGUUGUUGGCGGGGUAACGG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>.>>>>>>>..>>>>>>>>>><<<..<..<<<..<<<<<<<<.......
+#=GC SS_cons                                                  >>,)))))))--))))))))))<<<--<--<<<--<<<<<<<<_______
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000.00000000000000000000
+#=GC RFCOL.X..                                                22222222222222222222222222222.22222222222222222222
+#=GC RFCOL..X.                                                22222222233333333334444444444.55555555556666666666
+#=GC RFCOL...X                                                12345678901234567890123456789.01234567890123456789
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCCACCAAGCCGAAGAUCCGUACGGGCCAUGAGAGUGG-GAGCCCGGAGA
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00136::Aeropyrum_pernix::AP000062                             CCCGCCAAGCCUACGACGGGUAGGGGCCGUGAGAGCGG-GAGCCCCCAGA
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00052::Halobacterium_sp.::AE005128                            CCCACCGUGCCCAUAAUCGGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00075::Haloarcula_marismortui::X61688                         CCCACCAUGCCGAUAAUCGGUACGGGUUGUGAGAGCAA-GAACCUGGAGA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00076::Haloarcula_marismortui::X61689                         CCCACCAUGCCGAUAAUCGGUACAGGUUGUGAGAGCAA-GAGCCUGGAGA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00049::Haloferax_volcanii::K00421                             CCCACCGUGCCGAUAAUCGGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00013::Methanobacterium_formicicum::M36508                    CCCACCAAGCCAGUAAUCUGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00022::Methanospirillum_hungatei::M60880                      CCCAACAAGCCUGUCAUCGGUACGGGUUGUGGGAGCAA-GAGCCCGGAGA
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00016::Methanobacterium_thermoautotrophicum::AE000930         CCUACCAAGCCGAUCAUCGGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00017::Methanobacterium_thermoautotrophicum::AE000940         CCUACCAAGCCGAUCAUCGGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00010::Methanococcus_vannielii::M36507                        CCCACCAAGCCUACGAUCGAUACGGGCCUUGAGAGAGG-GAGCCCGGAGA
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00062::Natronobacterium_bangense.::Y14028                     CCCACCGUGCCAAUAAUCGGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00004::Nanoarchaeum_equitans::AJ318041                        CCCGCCAAGCCGAAGACGGGUAGGGGCCGUGAGAGCGG-GAGCCCCCAGA
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00064::Natronobacterium_innermongoliae.::AF009601             CCCACCGUGCCAGUAAUCGGUACGGGUUGUGAGAGCAA-GAGCCCGGAGA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00114::Pyrococcus_abyssi.::AJ248283                           CCCACCAAGCCGAAGAUCGGUACGGGCCGUGAGAGCGG-GAGCCCGGAGA
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00115::Pyrococcus_furiosus::U20163|g643670                    CCCACCAAGCCGAAGAUCGGUACGGGCCGUGAGAGCGG-GAGCCCGGAGA
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00116::Pyrococcus_horikoshii::AP000001                        CCCACCAAGCCGAAGAUCGGUACGGGCCGUGAGAGCGG-GAGCCCGGAGA
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00132::Pyrodictium_occultum::M21087                           CCCGCCAAGCCGAUAACGGGUAGGGGCCGUGAGAGCGG-GAGNCCCCAGA
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00153::Sulfolobus_acidocaldarius::D14876                      CCCACCGAACCUAUAACGGGUAGGGGCCGUGGAAGCGG-GAGCCUCCAGU
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00151::Sulfolobus_solfataricus::X03235                        CCCACCGAACCUAUAACGGGUAGGGGCCGUGGAAGCGG-GAGCCUCCAGU
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00089::Thermoplasma_acidophilum::AL445067_M38637              ACCACCUAGCCUAAGACGGGUACGGGCCCUGAAAGGGG-GAGCCCGGAGA
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00121::Thermococcus_celer::M21529                             CCCACCAAGCCGAAGAUCGGUACGGGCCAUGAGAGUGG-GAGCCCGGAGA
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+00130::Thermoproteus_tenax.::M35966|g176260                   CCCGCCAAGCCGAAGACGGGUAGGGGCGGUGAGAGCCGUGAGCCCCGAGA
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>>>>>>>>.....>>>>..<<<<<<<<....>>>>....>>>>>>>.
+#=GC SS_cons                                                  >>>>>>>>>>>----->>>>,,<<<<<<<<____>>>>---->>>>]]],
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000.00000000000
+#=GC RFCOL.X..                                                22222222222222222222222222222233333333.33333333333
+#=GC RFCOL..X.                                                77777777778888888888999999999900000000.00111111111
+#=GC RFCOL...X                                                01234567890123456789012345678901234567.89012345678
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                UGGACCCUGAGACACGGGUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00136::Aeropyrum_pernix::AP000062                             UGGGCACUGAGACAAGGGCCCAGGCCCUACGGGGCGCACCAGGCGCGAAA
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00052::Halobacterium_sp.::AE005128                            CGGAAUCUGAGACAAGAUUCCGGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00075::Haloarcula_marismortui::X61688                         CGGUAUCUGAGACAAGAUACCGGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00076::Haloarcula_marismortui::X61689                         CGGUAUCUGAGACAAGAUACCGGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00049::Haloferax_volcanii::K00421                             CGGAAUCUGAGACAAGAUUCCGGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00013::Methanobacterium_formicicum::M36508                    UGGAACCUGAGACAAGGUUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00022::Methanospirillum_hungatei::M60880                      UGGAUUCUGAGACACGAAUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00016::Methanobacterium_thermoautotrophicum::AE000930         UGGAACCUGAGACAAGGUUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00017::Methanobacterium_thermoautotrophicum::AE000940         UGGAACCUGAGACAAGGUUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00010::Methanococcus_vannielii::M36507                        UGGGGACUGAGACACGGCCCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00062::Natronobacterium_bangense.::Y14028                     CGGUAUCUGAGACAAGAUACCGGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00004::Nanoarchaeum_equitans::AJ318041                        UCGGCACUGAGACAAGGGCCGAGGCCCUACGGGGCGCACCAGGGGCGAAA
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00064::Natronobacterium_innermongoliae.::AF009601             CGGUAUCUGAGACAAGAUACCGGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00114::Pyrococcus_abyssi.::AJ248283                           UGGACACUGAGACACGGGUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00115::Pyrococcus_furiosus::U20163|g643670                    UGGACACUGAGACACGGGUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00116::Pyrococcus_horikoshii::AP000001                        UGGACACUGAGACACGGGUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00132::Pyrodictium_occultum::M21087                           UGGGCACUGAGACAAGGGCCCAGGCCCUACGGGGCGCACCAGGCGCGAAA
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00153::Sulfolobus_acidocaldarius::D14876                      UGGGCACUGAGACAAGGGCCCAGGCCCUACGGGGCGCACCAGGCGCGAAA
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00151::Sulfolobus_solfataricus::X03235                        UGGGCACUGAGACAAGGGCCCAGGCCCUACGGGGCGCACCAGGCGCGAAA
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGGACUCUGAGACAACAGUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00121::Thermococcus_celer::M21529                             UGGACACUGAGACACGGGUCCAGGCCCUACGGGGCGCAGCAGGCGCGAAA
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+00130::Thermoproteus_tenax.::M35966|g176260                   UGGGCACUGAGACAAGGGCCCAGGCCCUACGGGGUGCAGCAGGCGCGAAU
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<<<<..........>>>>>>.<<<<....>>>>...>>>>>>.>....
+#=GC SS_cons                                                  <<<<<<__________>>>>>>,<<<<____>>>>,,,}}}}}}-},,,,
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                33333333333333333333333333333333333333333333333333
+#=GC RFCOL..X.                                                12222222222333333333344444444445555555555666666666
+#=GC RFCOL...X                                                90123456789012345678901234567890123456789012345678
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCUCCGCAAUGCGGGAAACCGCGACGGGGUCAGCCGGAGUGCUCGCGC--
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00136::Aeropyrum_pernix::AP000062                             ACUCCGCAAUGCGGGCAACCGUGACGGGGCUACCCCGAGUGCCCCC----
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<....
+00052::Halobacterium_sp.::AE005128                            CCUUUACACUGUACGAAAGUGCGAUAAGGGGACUCCGAGUGUGAAGGC--
+#=GR 00052::Halobacterium_sp.::AE005128                    SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00075::Haloarcula_marismortui::X61688                         CCUUUACACUGCACGACAGUGCGAUAGGGGGACUCCGAGUGUGAGGGC--
+#=GR 00075::Haloarcula_marismortui::X61688                 SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00076::Haloarcula_marismortui::X61689                         CCUUUACACUGCACGACAGUGCGAUAGGGGGACUCCGAGUGUGAGGGC--
+#=GR 00076::Haloarcula_marismortui::X61689                 SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00049::Haloferax_volcanii::K00421                             CCUUUACACUGCACGCAAGUGCGAUAAGGGGACCCCAAGUGCGAGGGC--
+#=GR 00049::Haloferax_volcanii::K00421                     SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00013::Methanobacterium_formicicum::M36508                    CCUCCGCAAUGCACGAAAGUGCGACGGGGGAAACCCAAGUGCCACUCU--
+#=GR 00013::Methanobacterium_formicicum::M36508            SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00022::Methanospirillum_hungatei::M60880                      ACUUUACCAUGCGGGCAACCGUGAUAAGGAAACCCCGAGUGCCAGC----
+#=GR 00022::Methanospirillum_hungatei::M60880              SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<....
+00016::Methanobacterium_thermoautotrophicum::AE000930         CCUCCGCAAUGCACGCAAGUGCGACGGGGGAACCCCAAGUGCCACUCU--
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00017::Methanobacterium_thermoautotrophicum::AE000940         CCUCCGCAAUGCACGCAAGUGCGACGGGGGAACCCCAAGUGCCACUCU--
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00010::Methanococcus_vannielii::M36507                        CCUCCGCAAUGCACGAAAGUGCGACGGGGGGACCCCAAGUGCUCAUGC--
+#=GR 00010::Methanococcus_vannielii::M36507                SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00062::Natronobacterium_bangense.::Y14028                     CCUUUACACUGCACGCCAGUGCGAUAAGGGGACUCCGAGUGCGAGGGC--
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00004::Nanoarchaeum_equitans::AJ318041                        CCUCCGCAAUGCGGGAAACCGUGACGGGGGGACGGAGAGUGCCGGAGGGC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<<<
+00064::Natronobacterium_innermongoliae.::AF009601             CCUUUACACUGCACGCCAGUGCGAUAAGGGGACUCCAAGUGCGAGGGC--
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00114::Pyrococcus_abyssi.::AJ248283                           CCUCCGCAAUGCGGGAAACCGCGACGGGGGGACCCCCAGUGCCGUGCC--
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00115::Pyrococcus_furiosus::U20163|g643670                    CCUCCGCAAUGCGGGAAACCGCGACGGGGGGACCCCCAGUGCCGUGCC--
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00116::Pyrococcus_horikoshii::AP000001                        CCUCCGCAAUGCGGGAAACCGCGACGGGGGGACCCCCAGUGCCGUGCC--
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00132::Pyrodictium_occultum::M21087                           CCUCCGCAAUGCGGGCAACCGUGACGGGGUCACCCCGAGUGCC--GCC--
+#=GR 00132::Pyrodictium_occultum::M21087                   SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<..<<<..
+00153::Sulfolobus_acidocaldarius::D14876                      CGUCCCCAAUGCGCGAAAGCGUGAGGGCGCUACCCCGAGUGCCUCC----
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<....
+00151::Sulfolobus_solfataricus::X03235                        CGUCCCCAAUGCGCGAAAGCGUGAGGGCGCUACCCCGAGUGCCUCC----
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<....
+00089::Thermoplasma_acidophilum::AL445067_M38637              ACUGUGCAAUGCGCGAAAGCGCGACACGGGGAGCCUGAGUGCCUUGAC--
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<<..
+00121::Thermococcus_celer::M21529                             CCUCCGCAAUGCGGGCAACCGCGACGGGGGGACCCCCAGUGCCGUGGC--
+#=GR 00121::Thermococcus_celer::M21529                     SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<...
+00130::Thermoproteus_tenax.::M35966|g176260                   ACUCCGCAAUGCGGGCAACCGCGACGGGGCCACCCCGAGUGCCGGGC---
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS .<.<<<...<<<<<....>>>>>.>>>>.>>>>>>>>>..<<<<<<<...
+#=GC SS_cons                                                  ,<-<<<---<<<<<____>>>>>->>>>,}}}}}}}}},,<<<<<<<<__
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..
+#=GC RFCOLX...                                                000000000000000000000000000000000000000000000000..
+#=GC RFCOL.X..                                                333333333333333333333333333333344444444444444444..
+#=GC RFCOL..X.                                                677777777778888888888999999999900000000001111111..
+#=GC RFCOL...X                                                901234567890123456789012345678901234567890123456..
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                -AUC---GCGCGGGCUGUCGGGGUGCCUAAAAAGCACCCCACAGCAAGGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00136::Aeropyrum_pernix::AP000062                             CUUGG----GGGGGCUUUUCCCCGCUGUAAGUAGGCGGGGG-AAUAAGCG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS .........>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00052::Halobacterium_sp.::AE005128                            AUAGA--GCCUUCACUUUUGUACACCGUAAGGUGGUGCACG-AAUAAGGA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00075::Haloarcula_marismortui::X61688                         AUAUA--GCCCUCGCUUUUCUGUACCGUAAGGUGGUACAGG-AACAAGGA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00076::Haloarcula_marismortui::X61689                         AUAUA--GCCCUCGCUUUUCUGUACCGUAAGGUGGUACAGG-AACAAGGA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00049::Haloferax_volcanii::K00421                             AUAUA--GUCCUCGCUUUUCUCGACCGUAAGGCGGUCGAGG-AAUAAGAG
+#=GR 00049::Haloferax_volcanii::K00421                     SS .......>>>>>>>>.<..<<<<<<<.......>>>>>>>...>...<<<
+00013::Methanobacterium_formicicum::M36508                    UAAC---GGGGUGGCUUUUCUUAAGUGUAAAAAGCUUUUGG-AAUAAGAG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00022::Methanospirillum_hungatei::M60880                      ACAG-----GCUGGCUGUCCACCAGUGUAAAUAACUGGUGA-AGAAAGGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS .........>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         UAAC---GGGGUGGCUUUUCAGAAGUGUAAAAAGCUUCUGG-AAUAAGGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         UAAC---GGGGUGGCUUUUCAGAAGUGUAAAAAGCUUCUGG-AAUAAGGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00010::Methanococcus_vannielii::M36507                        -ACA---GCAUGGGCUUUUAUCAAGUGUAAACAGCUUGAGG-AAUAAGGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00062::Natronobacterium_bangense.::Y14028                     AUAUA--GUCCUCGCUUUUCACCACCGUAAGGAGGUGGUAG-AAUAAGUG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00004::Nanoarchaeum_equitans::AJ318041                        GUUAUGCUCUCCGGCUUUUGGGGAGUGUAAGUAGCUCCCCG-AAUAAGCG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS .....>>>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00064::Natronobacterium_innermongoliae.::AF009601             AUAUA--GUCCUCGCUUUUUGCGACCGUAAGGUGGUCGCGG-AAUAAGUG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00114::Pyrococcus_abyssi.::AJ248283                           -UCU---GGCACGGCUUUUCCGGAGUGUAAAAAGCUCCGGG-AAUAAGGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00115::Pyrococcus_furiosus::U20163|g643670                    -UCU---GGCACGGCUUUUCCGGAGUGUAAAAAGCUCCGGG-AAUAAGGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS .......>>>>>>>>.<..<<<<<<<.......>>>>>>>...>...<<<
+00116::Pyrococcus_horikoshii::AP000001                        -UCU---GGCACGGCUUUUCCGGAGUGUAAAAAGCUCCGGG-AAUAAGGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00132::Pyrodictium_occultum::M21087                           GAUAA--GGC--GGCUGUUCCCCGCUGUAGGAAGGCGGGGG-AGUAAGCG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS .......>>>..>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00153::Sulfolobus_acidocaldarius::D14876                      GCAA-----GGAGGCUUUUCCCCGCUCUAAAAAGGCGGGGG-AAUAAGCG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS .........>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00151::Sulfolobus_solfataricus::X03235                        GCAA-----GGAGGCUUUUCCCCGCUCUAAAAAGGCGGGGG-AAUAAGCG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS .........>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              UUUUU--GUCAAGGCUUUUCUGAUGCCUAAAAAGCAUCAGG-AAUAAGGG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS .......>>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00121::Thermococcus_celer::M21529                             -AAC---GCCACGGCUUUUCCGGAGUGUAAAAAGCUCCGGG-AAUAAGGG
+#=GR 00121::Thermococcus_celer::M21529                     SS ........>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+00130::Thermoproteus_tenax.::M35966|g176260                   GAAGA---GCCCGGCUUUUGCCCGGUGUAAGGAGCCGGGCG-AAUAAGCG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS ........>>>>>>>...<<<<<<<<.......>>>>>>>....>..<<<
+#=GC SS_cons                                                  _______>>>>>>>>,,,<<<<<<<<_______>>>>>>>---->,,<<<
+#=GC RF                                                       xxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxx
+#=GC RFCOLX...                                                00000..0000000000000000000000000000000000.00000000
+#=GC RFCOL.X..                                                44444..4444444444444444444444444444444444.44444444
+#=GC RFCOL..X.                                                11122..2222222233333333334444444444555555.55556666
+#=GC RFCOL...X                                                78901..2345678901234567890123456789012345.67890123
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCGGGCAAGGCCGGUGGCAGCCGCCGCGGUAAUACCGGCGGCCCGAGUGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00136::Aeropyrum_pernix::AP000062                             GGGGGCAAGACUGGUGUCAGCCGCCGCGGUAAUACCAGCCCCGCGAGCGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00052::Halobacterium_sp.::AE005128                            CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCAGUCCGAGUGA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00075::Haloarcula_marismortui::X61688                         CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCAGUCCGAGUGA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00076::Haloarcula_marismortui::X61689                         CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCAGUCCGAGUGA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00049::Haloferax_volcanii::K00421                             CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCAGCUCAAGUGA
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00013::Methanobacterium_formicicum::M36508                    CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAACACCGGCAGCUCAAGUGG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00022::Methanospirillum_hungatei::M60880                      CCGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCGGCUCGAGUGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00016::Methanobacterium_thermoautotrophicum::AE000930         CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAACACCGGCAGCUCAAGUGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00017::Methanobacterium_thermoautotrophicum::AE000940         CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAACACCGGCAGCUCAAGUGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00010::Methanococcus_vannielii::M36507                        CUGGGCAAGUUCGGUGCCAGCAGCCGCGGUAAUACCGACGGCCCGAGUGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00062::Natronobacterium_bangense.::Y14028                     CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCAGCACGAGUGA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00004::Nanoarchaeum_equitans::AJ318041                        GUGGGCAAGAGGGGUGGCAGCCGCCGCGGGAACACCCCCACCGCGAGCGG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00064::Natronobacterium_innermongoliae.::AF009601             CUGGGCAAGACCGGUGCCAGCCGCCGCGGUAAUACCGGCAGCACGAGUGA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00114::Pyrococcus_abyssi.::AJ248283                           CUGGGCAAGGCCGGUGGCAGCCGCCGCGGUAAUACCGGCGGCCCGAGUGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00115::Pyrococcus_furiosus::U20163|g643670                    CUGGGCAAGGCCGGUGGCAGCCGCCGCGGUAAUACCGGCGGCCCGAGUGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00116::Pyrococcus_horikoshii::AP000001                        CUGGGCAAGGCCGGUGGCAGCCGCCGCGGUAAUACCGGCGGCCCGAGUGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00132::Pyrodictium_occultum::M21087                           GGGGGCAAGUCUGGUGUCAGCCGCCGCGGUAAUACCAGCCCCGCGAGCGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00153::Sulfolobus_acidocaldarius::D14876                      GGGGGCAAGUCUGGUGUCAGCCGCCGCGGUAAUACCAGCUCCGCGAGUGG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00151::Sulfolobus_solfataricus::X03235                        GGGGGCAAGUCUGGUGUCAGCCGCCGCGGUAAUACCAGCUCCGCGAGUGG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00089::Thermoplasma_acidophilum::AL445067_M38637              CUGGGCAAGACGGGUGCCAGCCGCCGCGGUAACACCCGCAGCUCGAGUGG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00121::Thermococcus_celer::M21529                             CUGGGCAAGGCCGGUGGCAGCCGCCGCGGUAAUACCGGCGGCCCGAGUGG
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+00130::Thermoproteus_tenax.::M35966|g176260                   GGGGGUAAGUCUGGUGUCAGCCGCCGCGGUAAUACCAGCCCCGCGAGUGG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<.......<<<<.....<<....>>.......>>>>>>>>>>.>>>>>
+#=GC SS_cons                                                  <<<-------<<<<-----<<____>>------->>>>>>>>>>,}}}}}
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                44444444444444444444444444444444444455555555555555
+#=GC RFCOL..X.                                                66666677777777778888888888999999999900000000001111
+#=GC RFCOL...X                                                45678901234567890123456789012345678901234567890123
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CGGCCACUUUUAUUGGGCCUAAAGCGUCCGUAGCCGGGCUGGUAAGUCCU
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00136::Aeropyrum_pernix::AP000062                             UCGGGGUGCUUACUGGGCCUAAAGCGCCCGUAGCCGGCUCGACAAGUCCC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00052::Halobacterium_sp.::AE005128                            UGGCCGAUCUUAUUGGGCCUAAAGCGUCCGUAGCUGGCUGAACAAGUCCG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00075::Haloarcula_marismortui::X61688                         UGGCCGAUAUUAUUGGGCCUAAAGCGUCCGUAGCCGGCCGAACAAGUCCG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00076::Haloarcula_marismortui::X61689                         UGGCCGAUAUUAUUGGGCCUAAAGCGUCCGUAGCUUGCUGUGUAAGUCCA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00049::Haloferax_volcanii::K00421                             UGACCGAUAUUAUUGGGCCUAAAGCGUCCGUAGCCGGCCACGAAGGUUCA
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>>..........<<<.......<<<<.<.<<<.<<<<<<<.<<<<<<
+00013::Methanobacterium_formicicum::M36508                    UGGCCGUUUUUAUUGGGCCUAAAGCGUUCGUAGCCGGCUUGAUAAGUCUC
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00022::Methanospirillum_hungatei::M60880                      UGGCCGCUAUUACUGGGCUUAAAGGGUCCGUAGCUGGAUAUACAAGUCCC
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         UAGCCGCUUUUAUUGGGCCUAAAGCGUCCGUAGCCGGUCUGAUAAGUCUC
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         UAGCCGCUUUUAUUGGGCCUAAAGCGUCCGUAGCCGGUCUGAUAAGUCUC
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00010::Methanococcus_vannielii::M36507                        UAGCCACUCUUAUUGGGCCUAAAGCGUCCGUAGCCGGUCCAGUAAGUCCC
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00062::Natronobacterium_bangense.::Y14028                     UGACCGCUAUUAUUGGGCCUAAAGCGUCCGUAGCUGGCCGUGCAAGUCUA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00004::Nanoarchaeum_equitans::AJ318041                        UGGCCGUGAUUAUUGGGCCUAAAGGGGCCGUAGCCGGGCCGGUGUGGCUC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00064::Natronobacterium_innermongoliae.::AF009601             UGACCGCUGUUAUUGGGCCUAAAGCGUCCGUAGCUGGCCGCGCAAGUCUA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00114::Pyrococcus_abyssi.::AJ248283                           UGGCCACUAUUAUUGGGCCUAAAGCGGCCGUAGCCGGGCCCGUAAGUCCC
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00115::Pyrococcus_furiosus::U20163|g643670                    UGGCCACUAUUAUUGGGCCUAAAGCGGCCGUAGCCGGGCCCGUAAGUCCC
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>>..........<<<.......<<<<.<.<<<.<<<<<<<.<<<<<<
+00116::Pyrococcus_horikoshii::AP000001                        UGGCCACUAUUAUUGGGCCUAAAGCGGCCGUAGCCGGGCCCGUAAGUCCC
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00132::Pyrodictium_occultum::M21087                           UCGGGAUGAUUACUGGGCCUAAAGCGCCCGUAGCCGGCCCGGUAAGUCCC
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00153::Sulfolobus_acidocaldarius::D14876                      UCGGGGUGAUUACUGGGCCUAAAGCGCCUGUAGCCGGCCCACCAAGUCGC
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00151::Sulfolobus_solfataricus::X03235                        UCGGGGUGAUUACUGGGCCUAAAGCGCCUGUAGCCGGCCCACCAAGUCGC
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGAUCACUUUUAUUGAGUCUAAAGCGUUCGUAACCGGUCUUAUAAAUCUU
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00121::Thermococcus_celer::M21529                             UGGCCGCUAUUAUUGGGCCUAAAGCGUCCGUAGCCGGGCCCGUAAGUCCC
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+00130::Thermoproteus_tenax.::M35966|g176260                   UCAGGGUGAUUACUGGGCUUAAAGCGCCCGUAGCCGGCCCGGCAAGUCGC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>>..........<<<.....<.<<<<.<.<<<.<<<<<<<.<<<<<<
+#=GC SS_cons                                                  }}}}}::::::::::{{{-----{,[[[[-[-[[[,<<<<<<<-<<<<<<
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                55555555555555555555555555555555555555555555555555
+#=GC RFCOL..X.                                                11111122222222223333333333444444444455555555556666
+#=GC RFCOL...X                                                45678901234567890123456789012345678901234567890123
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCGGGAAAUCUGGCGGCUUAACCGUCAGACUGCCGGAGGAUACUGCCA-G
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00136::Aeropyrum_pernix::AP000062                             CGCCUAAAGCCCCGGGCUCAACCCGGGGAG-UGGCGGGGAUACUGUCG-G
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00052::Halobacterium_sp.::AE005128                            UUGGGAAAUCUGUCCGCUUAACGGGCAGGCGUCCAGCGGAAACUGUUC-A
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00075::Haloarcula_marismortui::X61688                         UUGGGAAAUCGACGCGCUCAACGCGUCGGCGUCCAGCGGAAACUGUCC-G
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00076::Haloarcula_marismortui::X61689                         UUGGGAAAUCGACCAGCUCAACUGGUCGGCGUCCGGUGGAAACUACAC-A
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00049::Haloferax_volcanii::K00421                             UCGGGAAAUCCGCCAGCUCAACUGGCGGGCGUCCGGUGAAAACCACGU-G
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00013::Methanobacterium_formicicum::M36508                    UGGUGAAAUCUCACGGCUUAACCGUGAGAAUUGCUGGAGAUACUAUUA-G
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00022::Methanospirillum_hungatei::M60880                      UUGAGAAAUCCGCCGGCUUAACCGGUGGGCGUUCAGGGGAAACUGUAU-U
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00016::Methanobacterium_thermoautotrophicum::AE000930         UGGUGAAAUCCCACAGCUUAACUGUGGGAAUUGCUGGAGAUACUAUCAUG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00017::Methanobacterium_thermoautotrophicum::AE000940         UGGUGAAAUCCCACAGCUUAACUGUGGGAAUUGCUGGAGAUACUAUCAUG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00010::Methanococcus_vannielii::M36507                        UGUUUAAAUUCUCUGGCUUAACCAGAGGAC-UGGCAGGGAUACUGCUG-G
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00062::Natronobacterium_bangense.::Y14028                     UCGGGAAAUCUGUGUGCCUAACACACAGGCGUCCGGUGGAAACUGCUC-G
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00004::Nanoarchaeum_equitans::AJ318041                        CGGUGAAAUCCUCGGGCUCAACCCGAGGGCGCGCCGGAGCUACUACCG-G
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00064::Natronobacterium_innermongoliae.::AF009601             UCGGGAAAUCUCUUCGCUUAACGAAGAGGCGUCCGGUGGAAACUGUGU-G
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00114::Pyrococcus_abyssi.::AJ248283                           UGGCGAAAUCCCACGGCUCAACCGUGGGGCUCGCUGGGGAUACUGCGG-G
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00115::Pyrococcus_furiosus::U20163|g643670                    UGGCGAAAUCCCACGGCUCAACCGUGGGGCUCGCUGGGGAUACUGCGG-G
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00116::Pyrococcus_horikoshii::AP000001                        UGGCGAAAUCCCACGGCUCAACCGUGGGGCUCGCUGGGGAUACUGCGG-G
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00132::Pyrodictium_occultum::M21087                           CCCCUAAAGCCCCGGGCUCAACCCGGGGAG-UGGGGGGGAUACUGCCG-G
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00153::Sulfolobus_acidocaldarius::D14876                      CCCUUAAAGUCCCCGGCUCAACCGGGGAAC-UGGGGGCGAUACUGGUG-G
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00151::Sulfolobus_solfataricus::X03235                        CCCUUAAAGUCCCCGGCUCAACCGGGGAAC-UGGGGGCGAUACUGGUG-G
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00089::Thermoplasma_acidophilum::AL445067_M38637              CAGAUAAAUUCUUCCGCUUAACGGAAGAAC-UUCUGAAGAGACUGUAA-G
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00121::Thermococcus_celer::M21529                             UGGCGAAAUCCCACGGCUCAACCGUGGGGCUUGCUGGGGAUACUGCGG-G
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+00130::Thermoproteus_tenax.::M35966|g176260                   UCCUGAAAUCCCCAGGCUCAACCUGGGGGC-AGGGGGCGAUACUGCCG-G
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<<<....<<<<<<<.....>>>>>>>...>>>>>>>>>..>>>>>>.>
+#=GC SS_cons                                                  <<<<<----<<<<<<<_____>>>>>>>--->>>>>>>>>-->>>>>>->
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.x
+#=GC RFCOLX...                                                000000000000000000000000000000000000000000000000.0
+#=GC RFCOL.X..                                                555555555555555555555555555555555555666666666666.6
+#=GC RFCOL..X.                                                666666777777777788888888889999999999000000000011.1
+#=GC RFCOL...X                                                456789012345678901234567890123456789012345678901.2
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCUAGGGACCGGGAGAGGCCGGGGGUAUUCCCGGAGUAGGGGUGAAAUCC
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00136::Aeropyrum_pernix::AP000062                             GCUAGGGGGCGGGAGAGGCCGAGGGUACUCCCGGGGUAGGGGCGAAAUCC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00052::Halobacterium_sp.::AE005128                            GCUUGGGACCGGAAGACCUGAGGGGUACGUCUGGGGUAGGAGUGAAAUCC
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00075::Haloarcula_marismortui::X61688                         GCUUGGGGCCGGAAGACCUGAGGGGUACGUCCGGGGUAGGAGUGAAAUCC
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00076::Haloarcula_marismortui::X61689                         GCUUGGGGCCGAGAGACUCAACGGGUACGUCCGGGGUAGGAGUGAAAUCC
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00049::Haloferax_volcanii::K00421                             GCUUGGGACCGGAAGGCUCGAGGGGUACGUCCGGGGUAGGAGUGAAAUCC
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00013::Methanobacterium_formicicum::M36508                    GCUUGAGGCCGGGAGAGGUUAGCGGUACUCCCGGGGUAGGGGUGAAAUCC
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00022::Methanospirillum_hungatei::M60880                      UCUAGGGACCGGGAGAGGUGAGAGGUACUGCCGGGGUAGGAGUGAAAUCC
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00016::Methanobacterium_thermoautotrophicum::AE000930         ACUCGAGGUCGGGAGAGGCUGGAGGUACUCCCAGGGUAGGGGUGAAAUCC
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00017::Methanobacterium_thermoautotrophicum::AE000940         ACUCGAGGUCGGGAGAGGCUGGAGGUACUCCCAGGGUAGGGGUGAAAUCC
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00010::Methanococcus_vannielii::M36507                        ACUUGGGACCGGGAGAGGACAAGGGUACUCCAGGGGUAGCGGUGAAAUGU
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00062::Natronobacterium_bangense.::Y14028                     GCUUGGGACCGGAAGACCAGAGGGGUACGUCUGGGGUAGGAGUGAAAUCC
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00004::Nanoarchaeum_equitans::AJ318041                        CCUAGGGACCGGGAGGGGCCGACCGUACUCCCGGGGGAGCGGUGAAAUGC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00064::Natronobacterium_innermongoliae.::AF009601             GCUUGGGACCGGAAGACCAGAGGGGUACGUCUGGGGUAGGAGUGAAAUCC
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00114::Pyrococcus_abyssi.::AJ248283                           CCUUGGGACCGGGAGAGGCCGGGGGUACCCCCGGGGUAGGGGUGAAAUCC
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00115::Pyrococcus_furiosus::U20163|g643670                    CCUUGGGACCGGGAGAGGCCGGGGGUACCCCCGGGGUAGGGGUGAAAUCC
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00116::Pyrococcus_horikoshii::AP000001                        CCUUGGGACCGGGAGAGGCCGGGGGUACCCCCGGGGUAGGGGUGAAAUCC
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00132::Pyrodictium_occultum::M21087                           GCUAGGGGGCGGGAGAGGCCGAGGGUACUCCCGGGGUAGGGGCGAAAUCC
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00153::Sulfolobus_acidocaldarius::D14876                      GCUAGGGGGCGGGAGAGGCGGGGGGUACUCCCGGAGUAGGGGCGAAAUCC
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00151::Sulfolobus_solfataricus::X03235                        GCUAGGGGGCGGGAGAGGCGGGGGGUACUCCCGGAGUAGGGGCGAAAUCC
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00089::Thermoplasma_acidophilum::AL445067_M38637              ACUUGGGACCGGGUGAGGUUGAAUGUACUUUCAGGGUAGGGGUAAAAUCC
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00121::Thermococcus_celer::M21529                             CCUUGGGACCGGGAGAGGCCGGGGGUACCCCUGGGGUAGGGGUGAAAUCC
+#=GR 00121::Thermococcus_celer::M21529                     SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+00130::Thermoproteus_tenax.::M35966|g176260                   GCUAGGGGGCGGGAGAGGCCGCCGGUACUCCGGGGGUAGGGGCGAAAUCC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>...<<<<<<<<<..<<<<<<<<<..<<<<<<<<...<<<......>>>
+#=GC SS_cons                                                  >>,,,(((((((((--(((((((<<--<<<<<<<<---<<<______>>>
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                66666666666666666666666666666666666666666666666666
+#=GC RFCOL..X.                                                11111112222222222333333333344444444445555555555666
+#=GC RFCOL...X                                                34567890123456789012345678901234567890123456789012
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                UGUAAUCCCGGGAGGACCACCUGUGGCGAAGGCGCCCGGCUGGAACGGGU
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00136::Aeropyrum_pernix::AP000062                             AUUAAUCCCGGGAGGACCACCAGUGGCGAAGGCGCUCGGCUGGAACGCGC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00052::Halobacterium_sp.::AE005128                            UGUAAUCCUGGACGGACCGCCGGUGGCGAAAGCGCCUCAGGAGAACGGAU
+#=GR 00052::Halobacterium_sp.::AE005128                    SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00075::Haloarcula_marismortui::X61688                         UGUAAUCCUGGACGGACCACCAAUGGGGAAACCACCUCAGGAAGACGGAC
+#=GR 00075::Haloarcula_marismortui::X61688                 SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00076::Haloarcula_marismortui::X61689                         UGUAAUCCUGGACGGACCACCAAUGGGGAAACCACGUUGAGAGACCGGAC
+#=GR 00076::Haloarcula_marismortui::X61689                 SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00049::Haloferax_volcanii::K00421                             CGUAAUCCUGGACGGACCACCGAUGGCGAAAGCACCUCGAGAAGACGGAU
+#=GR 00049::Haloferax_volcanii::K00421                     SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00013::Methanobacterium_formicicum::M36508                    UAUAAUCCCGGGAGGACCACCUGUGGCGAAGGCGGCUAACUGGAACGGGC
+#=GR 00013::Methanobacterium_formicicum::M36508            SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00022::Methanospirillum_hungatei::M60880                      UGUAAUCCCGGUGGGACCACCUAUGGCGAAGGCAUCUCACCAGAACGGGU
+#=GR 00022::Methanospirillum_hungatei::M60880              SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00016::Methanobacterium_thermoautotrophicum::AE000930         UGUAAUCCUGGGAGGACCACCUGUGGCGAAGGCGUCCAGCUGGAACGAAC
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00017::Methanobacterium_thermoautotrophicum::AE000940         UGUAAUCCUGGGAGGACCACCUGUGGCGAAGGCGUCCAGCUGGAACGAAC
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00010::Methanococcus_vannielii::M36507                        GUUGAUCCUUGGAGGACCACCUAUGGCGAAGGCACUUGUCUGGAACGGGU
+#=GR 00010::Methanococcus_vannielii::M36507                SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00062::Natronobacterium_bangense.::Y14028                     CGUAAUCCUGGACGGACCACCGGUGGCGAAAGCGCCUCUGGAAGACGGAU
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00004::Nanoarchaeum_equitans::AJ318041                        UGUAAUCCCGGGAGGACGACCCGUGGCGAAAGCGGUCGGCCAGAACGGGU
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00064::Natronobacterium_innermongoliae.::AF009601             CGUAAUCCUGGACGGACCACCGGUGGCGAAAGCGCCUCUGGAAGACGGAU
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00114::Pyrococcus_abyssi.::AJ248283                           UAUAAUCCCGGGGGGACCGCCAGUGGCGAAGGCGCCCGGCUGGAACGGGU
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00115::Pyrococcus_furiosus::U20163|g643670                    UAUAAUCCCGGGGGGACCGCCAGUGGCGAAGGCGCCCGGCUGGAACGGGU
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00116::Pyrococcus_horikoshii::AP000001                        UAUAAUCCCGGGGGGACCGCCAGUGGCGAAGGCGCCCGGCUGGAACGGGU
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00132::Pyrodictium_occultum::M21087                           GAUAAUCCCGGGAGGACCACCAGUGGCGAAGGCGCUCGGCUGGAACGCGC
+#=GR 00132::Pyrodictium_occultum::M21087                   SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00153::Sulfolobus_acidocaldarius::D14876                      UUAGAUACCGGGAGGACCACCAGUGGCGGAAGCGCCCCGCUAGAACGCGC
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00151::Sulfolobus_solfataricus::X03235                        UUAGAUACCGGGAGGACCACCAGUGGCGGAAGCGCCCCGCUAGAACGCGC
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGUAAUCCUGAAAGGACGACCGGUGGCGAAAGCGUUCAACUAGAACGGAU
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00121::Thermococcus_celer::M21529                             UAUAAUCCCAGGGGGACCGCCAGUGGCGAAGGCGCCCGGCUGGAACGGGU
+#=GR 00121::Thermococcus_celer::M21529                     SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+00130::Thermoproteus_tenax.::M35966|g176260                   UAUAAUCCCCGGAGGACCACCAGUGGCGAAAGCGGGCGGCCAGAACGCGC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS ......>>>>>>>>..>>....<..<<....>>>>>>>>>>.>>>>>>.>
+#=GC SS_cons                                                  ------>>>>>>>>-->>,,,,<--<<____>>>)))))))-))))))-)
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                66666666666666666666666666666666666667777777777777
+#=GC RFCOL..X.                                                66666667777777777888888888899999999990000000000111
+#=GC RFCOL...X                                                34567890123456789012345678901234567890123456789012
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCGACGGUGAGGGACGAAGGCCAGGGGAGCGAACCGGAUUAGAUACCCGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00136::Aeropyrum_pernix::AP000062                             CCGACGGUGAGGGGCGAAAGCCGGGGGAGCGAACCGGAUUAGAUACCCGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00052::Halobacterium_sp.::AE005128                            CCGACAGUGAGGGACGAAAGCUAGGGUCUCGAACCGGAUUAGAUACCCGG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00075::Haloarcula_marismortui::X61688                         CCGACGGUGAGGGACGAAAGCUAGGGUCUCGAACCGGAUUAGAUACCCGG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00076::Haloarcula_marismortui::X61689                         CCGACAGUGAGGGACGAAAGCCAGGGUCUCGAACCGGAUUAGAUACCCGG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00049::Haloferax_volcanii::K00421                             CCGACGGUGAGGGACGAAAGCUAGGGUCUCGAACCGGAUUAGAUACCCGG
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00013::Methanobacterium_formicicum::M36508                    CUGACGGUGAGUAACGAAAGCCAGGGGCGCGAACCGGAUUAGAUACCCGG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00022::Methanospirillum_hungatei::M60880                      CCGACAGUGAGGGACGAAAGCUGGGGGAGCAAACCGGAUUAGAUACCCGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00016::Methanobacterium_thermoautotrophicum::AE000930         CUGACGGUGAGGGACGAAAGCCAGGGGCGCGAACCGGAUUAGAUACCCGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00017::Methanobacterium_thermoautotrophicum::AE000940         CUGACGGUGAGGGACGAAAGCCAGGGGCGCGAACCGGAUUAGAUACUCGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00010::Methanococcus_vannielii::M36507                        CCGACGGUGAGGGACGAAAGCCAGGGGCGCGAACCGGAUUAGAUACCCGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00062::Natronobacterium_bangense.::Y14028                     CCGACGGUGAGGGACGAAAGCUCGGGUCACGAACCGGAUUAGAUACCCGG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00004::Nanoarchaeum_equitans::AJ318041                        CCGACGGUGAGGGCCGAAGGCCGGGGGCUAGAACGGGAUUAGAGACCCCG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00064::Natronobacterium_innermongoliae.::AF009601             CCGACGGUGAGGGACGAAAGCUCGGGUCACGAACCGGAUUAGAUACCCGG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00114::Pyrococcus_abyssi.::AJ248283                           CCGACGGUGAGGGCCGAAGGCCAGGGGAGCGAACCGGAUUAGAUACCCGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00115::Pyrococcus_furiosus::U20163|g643670                    CCGACGGUGAGCGCGGAAGGCCAGGGGAGCGAACCGGAUUAGAUACCCGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00116::Pyrococcus_horikoshii::AP000001                        CCGACGGUGAGGGCCGAAGGCCAGGGGAGCGAACCGGAUUAGAUACCCGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00132::Pyrodictium_occultum::M21087                           CCGACGGUGAGGGGCGAAAGCCGGGGGAGCAAACCGGAUUAGAUACCCGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00153::Sulfolobus_acidocaldarius::D14876                      CCGACGGUGAGAGGCGAAAGCCGGGGCAGCAAACGGGAUUAGAUACCCCG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00151::Sulfolobus_solfataricus::X03235                        CCGACGGUGAGAGGCGAAAGCCGGGGCAGCAAACGGGAUUAGAUACCCCG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00089::Thermoplasma_acidophilum::AL445067_M38637              CCGACGGUGAGGGACGAAGGCUAGGGGAGCAAACCGGAUUAGAUACCCGG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00121::Thermococcus_celer::M21529                             CCGACGGUGAGGGACGAAGGCCAGGGGAGCGAACCGGAUUAGAUACCCGG
+#=GR 00121::Thermococcus_celer::M21529                     SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+00130::Thermoproteus_tenax.::M35966|g176260                   CCGACGGUGAGGGGCGAAAGCCGGGGGAGCAAAGGGGAUUAGAUACCCCU
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>...>>>>..>>>>....<<<<<<...<<...<<<<.........>>>>
+#=GC SS_cons                                                  )),,,]]]]--]]]],,,,<<<<<<---<<---<<<<_________>>>>
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                77777777777777777777777777777777777777777777777777
+#=GC RFCOL..X.                                                11111112222222222333333333344444444445555555555666
+#=GC RFCOL...X                                                34567890123456789012345678901234567890123456789012
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GUAGUCCUGGCUGUAAACGAUGCGGACUAGGUGUCACCGAAGCUAC-GAG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00136::Aeropyrum_pernix::AP000062                             GUAGUCCCGGCUGUAAACGAUGCGGGCUAGGUGUUGGGCGGGCGUGCGAG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00052::Halobacterium_sp.::AE005128                            GUAGUCCUAGCUGUAAACGAUGUCCGCUAGGUGUGGCGCAGGCUAC-GAG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00075::Haloarcula_marismortui::X61688                         GUAGUCCUAGCUGUAAACGAUGCUCGCUAGGUGUGCCGUAGGCUAC-GAG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00076::Haloarcula_marismortui::X61689                         GUAGUCCUGGCUGUAAACAAUGCUCGCUAGGUAUGUCACGCGCCAU-GAG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00049::Haloferax_volcanii::K00421                             GUAGUCCUAGCUGUAAACGAUGCUCGCUAGGUGUGACACAGGCUAC-GAG
+#=GR 00049::Haloferax_volcanii::K00421                     SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00013::Methanobacterium_formicicum::M36508                    GUAGUCCUGGCCGUAAACGAUGUGGACUUGGUGUUGGGAUGGCUCC-GAG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00022::Methanospirillum_hungatei::M60880                      GUAGUCCCAGCUGUAAACGAUGCGCGUUAGGUGUGUCAGUGACCAC-GUG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00016::Methanobacterium_thermoautotrophicum::AE000930         GUAGUCCUGGCCGUAAACGAUGUGGACUUGGUGUUGGGAUGGCUUC-GAG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00017::Methanobacterium_thermoautotrophicum::AE000940         GUAGUCCUGGCCGUAAACGAUGUGGACUUGGUGUUGGGAUGGCUUC-GAG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00010::Methanococcus_vannielii::M36507                        GUAGUCCUGGCCGUAAACUCUGCGAACUAGGUGUCACCUGGGCCUC-GAG
+#=GR 00010::Methanococcus_vannielii::M36507                SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00062::Natronobacterium_bangense.::Y14028                     GUAGUCCGAGCUGUAAACGAUGUCUGCUAGGUGUGACACAAACUAC-GAG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00004::Nanoarchaeum_equitans::AJ318041                        GUAUUCCCGGCUGUCAACGCUGCGGGCUACCUGCUGGGCGGGCUAC-GAG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00064::Natronobacterium_innermongoliae.::AF009601             GUAGUCCGAGCUGUAAACGAUGUCUGCUAGGUGUGACACAGGCUAC-GAG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00114::Pyrococcus_abyssi.::AJ248283                           GUAGUCCUGGCUGUAAAGGAUGCGGGCUAGGUGUCGGGCGAGCUUC-GAG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00115::Pyrococcus_furiosus::U20163|g643670                    GUAGUCCUGGCUGUAAAGGAUGCGGGCUAGGUGUCGGGCGAGCUUC-GAG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00116::Pyrococcus_horikoshii::AP000001                        GUAGUCCUGGCUGUAAAGGAUGCGGGCUAGGUGUCGGGCGAGCUUC-GAG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00132::Pyrodictium_occultum::M21087                           GUAGUCCCGGCUGUAAACGAUGCGGGCUAGGUGUUGGGCGGGCUUG-GAG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00153::Sulfolobus_acidocaldarius::D14876                      GUAGUCCCGGCUGUAAACGAUGCGGGCUAGGUGUCGAGUAGGCUUA-GAG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00151::Sulfolobus_solfataricus::X03235                        GUAGUCCCGGCUGUAAACGAUGCGGGCUAGGUGUCGAGUAGGCUUA-GAG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00089::Thermoplasma_acidophilum::AL445067_M38637              GUAGUCCUAGCUGUAAACGCUGCCCACUUGGUGUUGCUUCUCCGUU-GAG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00121::Thermococcus_celer::M21529                             GUAGUCCUGGCUGUAAAGGAUGCGGGCUAGGUGUCGGGCGAGCUUC-GAG
+#=GR 00121::Thermococcus_celer::M21529                     SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+00130::Thermoproteus_tenax.::M35966|g176260                   GUAGUCCCGGCCGUAAACGAUGCGGGCUAGCUGUCGGCCGGGCUUA-GGG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS ...>>>>>>>>..........<<<<<<..<<<<<<<<<<<<<<......>
+#=GC SS_cons                                                  --->>>>>>>>,,,,,,,,,,((((((,,<<<<<<<<<<<<<<______>
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxx
+#=GC RFCOLX...                                                0000000000000000000000000000000000000000000000.000
+#=GC RFCOL.X..                                                7777777777777777777777777777777777777888888888.888
+#=GC RFCOL..X.                                                6666666777777777788888888889999999999000000000.011
+#=GC RFCOL...X                                                3456789012345678901234567890123456789012345678.901
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CUUCGGUGGUGCCGGAGGGAAGCCGUUAAGUCCGCCGCCUGGGGAGUACG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00136::Aeropyrum_pernix::AP000062                             CCCGCCCAGUGCCGCAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00052::Halobacterium_sp.::AE005128                            CCUGCGCUGUGCCGUAGGGAAGCCGAGAAGCGGACCGCCUGGGAAGUACG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00075::Haloarcula_marismortui::X61688                         CCUGCGCUGCGCCCUAGGGAAGCCGAGAAGCGAGCCGCCUGGGAAGUACG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00076::Haloarcula_marismortui::X61689                         CACGUGAUGUGCCGUAGUGAAGACGAUAAGCGAGCCGCCUGGGAAGUACG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00049::Haloferax_volcanii::K00421                             CCUGUGUUGUGCCGUAGGGAAGCCGAGAAGCGAGCCGCCUGGGAAGUACG
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>>>>>>>>>>...<<....>>.....>>>>>>.>>>.<<<......<
+00013::Methanobacterium_formicicum::M36508                    CUGCCCCAGUGCCGAAGGGAAGCUGUUAAGUCCACCGCCUGGGAAGUACG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00022::Methanospirillum_hungatei::M60880                      UCACUGAGGUGCCGAAGGGAAACCGUGAAACGCGCCGCCUGGGGAGUACG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00016::Methanobacterium_thermoautotrophicum::AE000930         CUGCCCCAGUGCCGAAGGGAAGCUGUUAAGUCCACCGCCUGGGAAGUACG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00017::Methanobacterium_thermoautotrophicum::AE000940         CUGCCCCAGUGCCGAAGGGAAGCUGUUAAGUCCACCGCCUGGGAAGUACG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00010::Methanococcus_vannielii::M36507                        CCCAGGUGGUGCCGAAGGGAAGCCGUUAAGUUCGCCGCCUGGGGAGUACG
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00062::Natronobacterium_bangense.::Y14028                     UUUGUGUUGUGCCGUAGGGAAGCCGUGAAGCAGACCGCCUGGGAAGUACG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00004::Nanoarchaeum_equitans::AJ318041                        CCCGCCCAGUGGGGUAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00064::Natronobacterium_innermongoliae.::AF009601             CCUGUGUUGUGCCGUAGGGAAGCCGUGAAGCAGACCGCCUGGGAAGUACG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00114::Pyrococcus_abyssi.::AJ248283                           CUCGCCCGGUGCCGUAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00115::Pyrococcus_furiosus::U20163|g643670                    CUCGCCCGGUGCCGUAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>>>>>>>>>>...<<....>>.....>>>>>>.>>>.<<<......<
+00116::Pyrococcus_horikoshii::AP000001                        CUCGCCCGGUGCCGUAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00132::Pyrodictium_occultum::M21087                           CCCGCCCAGUGCCGCAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00153::Sulfolobus_acidocaldarius::D14876                      CCUACUCGGUGCCGCAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00151::Sulfolobus_solfataricus::X03235                        CCUACUCGGUGCCGCAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00089::Thermoplasma_acidophilum::AL445067_M38637              GGGGGGCAGUGCCGUAGCGAAGGUGUUAAGUGGGUCACUUGGGGAGUACG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00121::Thermococcus_celer::M21529                             CUCGCCCGGUGCCGAAGGGAAGCCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+00130::Thermoproteus_tenax.::M35966|g176260                   CCCGGCCGGUGGCGUAGGGAAACCGUUAAGCCCGCCGCCUGGGGAGUACG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>>>>>>>>>>...<<....>>.....>>>>>>>>>>.<<<......<
+#=GC SS_cons                                                  >>>>>>>>>>>>>,,,<<____>>,,,,,))))))}}}}:<<<------<
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                88888888888888888888888888888888888888888888888888
+#=GC RFCOL..X.                                                11111111222222222233333333334444444444555555555566
+#=GC RFCOL...X                                                23456789012345678901234567890123456789012345678901
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAACGGGU
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00136::Aeropyrum_pernix::AP000062                             GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAAGGGGU
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00052::Halobacterium_sp.::AE005128                            UCUGCAAGGAUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAACCGGA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00075::Haloarcula_marismortui::X61688                         UCUGCAAGGAUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACCGGA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00076::Haloarcula_marismortui::X61689                         UCUGCAAGGAUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACCGGA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00049::Haloferax_volcanii::K00421                             UCCGCAAGGAUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAACCGGA
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00013::Methanobacterium_formicicum::M36508                    GUCGCAAGACUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACGCGU
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00022::Methanospirillum_hungatei::M60880                      GUCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACGGGU
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACGCGU
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACGCGU
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00010::Methanococcus_vannielii::M36507                        GUCGCAAGACUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAACGGGU
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00062::Natronobacterium_bangense.::Y14028                     UCCGCAAGGAUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAACCGGA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00004::Nanoarchaeum_equitans::AJ318041                        GCCGCAAGGCUGAAACUUAAAGGAAUAGGCGGGGGAGCAC-ACAAGAGGU
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00064::Natronobacterium_innermongoliae.::AF009601             UCCGCAAGGAUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAACCGGA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00114::Pyrococcus_abyssi.::AJ248283                           GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAAGGGGU
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00115::Pyrococcus_furiosus::U20163|g643670                    GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAAGGGGU
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00116::Pyrococcus_horikoshii::AP000001                        GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAAGGGGU
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00132::Pyrodictium_occultum::M21087                           GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGNAGCACCACAAGGGGU
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00153::Sulfolobus_acidocaldarius::D14876                      GUCGCAAGACUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAAGGGGU
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00151::Sulfolobus_solfataricus::X03235                        GUCGCAAGACUGAAACUUAAAGGAAUUGGCGGGGGAGCACCACAAGGGGU
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACCGCAACGGGA
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00121::Thermococcus_celer::M21529                             GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGAGCACUACAAGGGGU
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+00130::Thermoproteus_tenax.::M35966|g176260                   GCCGCAAGGCUGAAACUUAAAGGAAUUGGCGGGGGGGCACCACAAGGGGU
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<....>>>>....>>>........<<<<<.<<<<<<<..<<..<<<<<
+#=GC SS_cons                                                  <<<____>>>>---->>>::::::::{{{{{-{{{{{{{--{{,,{{{{{
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL.X..                                                88888888888888888888888888888888888888999999999999
+#=GC RFCOL..X.                                                66666666777777777788888888889999999999000000000011
+#=GC RFCOL...X                                                23456789012345678901234567890123456789012345678901
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GGAGCCUGCGGUUUAAUUGGAUUCAACGCCGGGAAGCU-UACCGGGGGAG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00136::Aeropyrum_pernix::AP000062                             GGAGCCUGCGGCUUAAUUGGAGUCAACGCCGGGAACCUCCACCGGGGGCG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00052::Halobacterium_sp.::AE005128                            GGAGCCUGCGGUUUAAUUGGACUCAACGCCGGACAUCU-CACCAGCCCCG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00075::Haloarcula_marismortui::X61688                         GGAGCCUGCGGUUUAAUUGGACUCAACGCCGGACAUCU-CACCGGUCCCG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00076::Haloarcula_marismortui::X61689                         GGAGCCUGCGGUUUAAUUGGACUCAACGCCGGACAUCU-CACCGGUCCCG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00049::Haloferax_volcanii::K00421                             GGAGCCUGCGGUUUAAUUGGACUCAACGCCGGACAUCU-CACCAGCUCCG
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00013::Methanobacterium_formicicum::M36508                    GGAGCCUGCGGUUUAAUUGGAUUCAACGCCGGACAUCU-CACCAGGGGCG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00022::Methanospirillum_hungatei::M60880                      GGAGCCUGCGGUUUAAUCGGACUCAACGCCGGAAAUCU-CACCGGAUAAG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00016::Methanobacterium_thermoautotrophicum::AE000930         GGAGCCUGCGGUUUAAUUGGAUUCAACGCCGGACAUCU-CACCAGGGGCG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00017::Methanobacterium_thermoautotrophicum::AE000940         GGAGCCUGCGGUUUAAUUGGAUUCAACGCCGGACAUCU-CACCAGGGGCG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00010::Methanococcus_vannielii::M36507                        GGAGCCUGCGGUUUAAUUGGAUUCAACGCCGGGCAUCU-CACCAGGAGCG
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00062::Natronobacterium_bangense.::Y14028                     GGAGCCUGCGGUUUAAUUGGACUCAACGCCGGACAUCU-CACCAGCAUCG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00004::Nanoarchaeum_equitans::AJ318041                        GGGGUGCGCGGUUUAAUUGGAUUCGACGCCGGGAACCU-CACCGGGGCUG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00064::Natronobacterium_innermongoliae.::AF009601             GGAGCCUGCGGUUUAAUUGGACUCAACGCCGGACAUCU-CACCAGCAUCG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00114::Pyrococcus_abyssi.::AJ248283                           GGAGCGUGCGGUUUAAUUGGAUUCAACGCCGGGAACCU-CACCGGGGGCG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00115::Pyrococcus_furiosus::U20163|g643670                    GGAGCGUGCGGUUUAAUUGGAUUCAACGCCGGGAACCU-CACCGGGGGCG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00116::Pyrococcus_horikoshii::AP000001                        GGAGCGUGCGGUUUAAUUGGAUUCAACGCCGGGAACCU-CACCGGGGGCG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00132::Pyrodictium_occultum::M21087                           GGAGCCUGCGGCUUAAUUGGAGUCAACGCCGGGAAUCU-UACCGGGGGCG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00153::Sulfolobus_acidocaldarius::D14876                      GGAACCUGCGGCUCAAUUGGAGUCAACGCCUGGAAUCU-UACCGGGGGAG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00151::Sulfolobus_solfataricus::X03235                        GGAACCUGCGGCUCAAUUGGAGUCAACGCCUGGAAUCU-UACCGGGGGAG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00089::Thermoplasma_acidophilum::AL445067_M38637              GGAGCGUGCGGUUUAAUUGGAUUCAACGCCGGAAAACU-CACCGGGAGCG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00121::Thermococcus_celer::M21529                             GGAGCGUGCGGUUUAAUUGGAUUCAACGCCGGGAACCU-CACCGGGGGCG
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+00130::Thermoproteus_tenax.::M35966|g176260                   GAAGCUUGCGGCUUAAUUGGAGUCAACGCCGGAAACCU-UACCCGGGGCG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<<<<<<<<<<....<<<<........>>>>.........<<<<<<<..
+#=GC SS_cons                                                  {{{{{{{{{{{{,,,,<<<<________>>>>,,,,,,,,,{{{{{{{,,
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxx
+#=GC RFCOLX...                                                00000000000000000000000000000000000000.00000000000
+#=GC RFCOL.X..                                                99999999999999999999999999999999999999.99999999999
+#=GC RFCOL..X.                                                11111111222222222233333333334444444444.55555555556
+#=GC RFCOL...X                                                23456789012345678901234567890123456789.01234567890
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                ACAGC--GGGAUGAAGGUCGGGCUGAAGACCUUACC-AGA-CUAGCUGAG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00136::Aeropyrum_pernix::AP000062                             ACAGC--AGGAUGACGGCCAGGCUGAAGGCCUUGCC-CGA-CGCGCUGAG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00052::Halobacterium_sp.::AE005128                            ACAGUA-GUAAUGACGGUCAGGUUGAUGACCUUACC-CGAGGCUACUGAG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS .<<<<<.<<......<<<<<<<.......>>>>>>>.....>>>>>>>..
+00075::Haloarcula_marismortui::X61688                         ACAGUA-GUAAUGACAGUCAGGUUGACGACUUUACU-CGACGCUACUGAG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS .<<<<<.<<<.....<<<<<<<.......>>>>>>>....>>>>>>>>..
+00076::Haloarcula_marismortui::X61689                         ACAGUA-GUAAUGACAGUCAGGUUGACGACUUUACU-CGACGCUACUGAG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS .<<<<<.<<<.....<<<<<<<.......>>>>>>>....>>>>>>>>..
+00049::Haloferax_volcanii::K00421                             ACUACA-GUGAUGACGAUCAGGUUGAUGACCUUAUCACGACGCUGUAGAG
+#=GR 00049::Haloferax_volcanii::K00421                     SS .<<<<<.<<<.....<<<<<<<.......>>>>>>>....>>>>>>>>..
+00013::Methanobacterium_formicicum::M36508                    ACAGC--AGAAUGAUAGCCAGGUUGAUGACCUUGCU-UGA-CAAGCUGAG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00022::Methanospirillum_hungatei::M60880                      ACAGC--UGAAUGAUAGUCGGGAUGAAGACUCUACU-UGA-CUAGCUGAG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00016::Methanobacterium_thermoautotrophicum::AE000930         ACAGC--AGUAUGAUGGCCAGGUUGAUGACCUUGCC-UGA-CGAGCUGAG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00017::Methanobacterium_thermoautotrophicum::AE000940         ACAGC--AGUAUGAUGGCCAGGUUGAUGACCUUGCC-UGA-CGAGCUGAG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00010::Methanococcus_vannielii::M36507                        ACAGC--AUGAUGACGGCCAGGUUGACGACCUUGCC-UGA-AGCGCUGAG
+#=GR 00010::Methanococcus_vannielii::M36507                SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00062::Natronobacterium_bangense.::Y14028                     ACAAUGUGCAGUGACGGUCAGUGUGAUGAGCUUACC-UGA-GCCAUUGAG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS .<<<<<.<<......<<<<<<<.......>>>>>>>.....>>>>>>>..
+00004::Nanoarchaeum_equitans::AJ318041                        ACAGC--ACAAUGAUGGUCGGCCUGAAGGGCCUACC-GGA-GGCGCUGAG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00064::Natronobacterium_innermongoliae.::AF009601             ACAAUGUGCAGUGACGGUCAGUGUGAUGAGCUUACC-UGA-GCCAUUGAG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS .<<<<<.<<......<<<<<<<.......>>>>>>>.....>>>>>>>..
+00114::Pyrococcus_abyssi.::AJ248283                           ACGGC--AGGAUGAAGGCCAGGCUGAAGGUCUUGCC-GGA-CGCGCCGAG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00115::Pyrococcus_furiosus::U20163|g643670                    ACGGC--AGGAUGAAGGCCAGGCUGAAGGUCUUGCC-GGA-CGCGCCGAG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS .<<<<..........<<<<<<<.......>>>>>>>........>>>>..
+00116::Pyrococcus_horikoshii::AP000001                        ACGGC--AGGAUGAAGGCCAGGCUGAAGGUCUUGCC-GGA-CGCGCCGAG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00132::Pyrodictium_occultum::M21087                           ACAGC--AGGAUGACGGCCAGGCUGACGACCUUGCC-CGA-CACGCUGAG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00153::Sulfolobus_acidocaldarius::D14876                      ACCGC--AGUAUGACGGCCAGGCUAACGACCUUGCC-UGA-CUCGCGGAG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00151::Sulfolobus_solfataricus::X03235                        ACCGC--AGUAUGACGGCCAGGCUAACGACCUUGCC-UGA-CUCGCGGAG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00089::Thermoplasma_acidophilum::AL445067_M38637              ACCUU--CGGAUGAGGGUCAACCUGACGAAUUUACC-CGA-UAGAAGGAG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00121::Thermococcus_celer::M21529                             ACGGC--AGGAUGAAGGCCAGGCUGAAGGUCUUGCC-GGA-CACGCCGAG
+#=GR 00121::Thermococcus_celer::M21529                     SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+00130::Thermoproteus_tenax.::M35966|g176260                   ACAGC--AGGAUGAAGGCCAGGCUAACGACCUUGCC-GGA-CGAGCUGAG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS .<<<<...<......<<<<<<<.......>>>>>>>.....>..>>>>..
+#=GC SS_cons                                                  ,<<<<<-<<<-----<<<<<<<_______>>>>>>>---->>>>>>>>,,
+#=GC RF                                                       xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxx.xxxxxxxxx
+#=GC RFCOLX...                                                000000.00000000000000000000000000000.000.011111111
+#=GC RFCOL.X..                                                999999.99999999999999999999999999999.999.900000000
+#=GC RFCOL..X.                                                666666.66677777777778888888888999999.999.900000000
+#=GC RFCOL...X                                                123456.78901234567890123456789012345.678.901234567
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                AGGUGGUGCAUGGCCGCCGUCAGUUCGUACUGUGAAGCAUCCUGUUAAGU
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00136::Aeropyrum_pernix::AP000062                             GGGAGAUGCAUGGCCGUCGCCAGCUCGUGCCGUGAGGUGUCCUGUUAAGU
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00052::Halobacterium_sp.::AE005128                            AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00052::Halobacterium_sp.::AE005128                    SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00075::Haloarcula_marismortui::X61688                         AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00075::Haloarcula_marismortui::X61688                 SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00076::Haloarcula_marismortui::X61689                         AGGAGGUGCAUGGCCACCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00076::Haloarcula_marismortui::X61689                 SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00049::Haloferax_volcanii::K00421                             AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00049::Haloferax_volcanii::K00421                     SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00013::Methanobacterium_formicicum::M36508                    AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00013::Methanobacterium_formicicum::M36508            SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00022::Methanospirillum_hungatei::M60880                      AGGAGGUGCAUGGCCGUCGUCAGUUCGUACUGUGAAGCAUCCUGUUUAGU
+#=GR 00022::Methanospirillum_hungatei::M60880              SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00016::Methanobacterium_thermoautotrophicum::AE000930         AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00017::Methanobacterium_thermoautotrophicum::AE000940         AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00010::Methanococcus_vannielii::M36507                        AGGUGGUGCAUGGCCAUCGUCAGCUCGUACCGCGAGGCGUCCUGUUAAGU
+#=GR 00010::Methanococcus_vannielii::M36507                SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00062::Natronobacterium_bangense.::Y14028                     AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00004::Nanoarchaeum_equitans::AJ318041                        AGGAGGUGCAUGGCCGCCGUCAGCCUGUGCCGUGAGGUGCCCUGUUAAGU
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00064::Natronobacterium_innermongoliae.::AF009601             AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCUGUUAAGU
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00114::Pyrococcus_abyssi.::AJ248283                           AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCACUUAAGU
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00115::Pyrococcus_furiosus::U20163|g643670                    AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCACUUAAGU
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00116::Pyrococcus_horikoshii::AP000001                        AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCACUUAAGU
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00132::Pyrodictium_occultum::M21087                           AGGAGGUGCAUGGCCGUCGCCAGCUCGUGCCGUGAGGUGUCCGGUUAAGU
+#=GR 00132::Pyrodictium_occultum::M21087                   SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00153::Sulfolobus_acidocaldarius::D14876                      AGGAGGUGCAUGGCCGUCGCCAGCUCGUGUUGUGAAAUGUCCGGUUAAGU
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00151::Sulfolobus_solfataricus::X03235                        AGGAGGUGCAUGGCCGUCGCCAGCUCGUGUUGUGAAAUGUCCGGUUAAGU
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00089::Thermoplasma_acidophilum::AL445067_M38637              AGGUGGUGCAUGGCCGUCGUCAGCUCGUACCGUAGGGCGUUCACUUAAGU
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00121::Thermococcus_celer::M21529                             AGGAGGUGCAUGGCCGCCGUCAGCUCGUACCGUGAGGCGUCCACUUAAGU
+#=GR 00121::Thermococcus_celer::M21529                     SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+00130::Thermoproteus_tenax.::M35966|g176260                   AGGAGGUGCAUGGCCGUCGUCAGCUCGUGCCGUGAGGUGUCCGGUUAAGU
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS .<<.<<<<..<<<<<<<<<...<<<<<<<<<....>>>..<<<<......
+#=GC SS_cons                                                  ,[[-[[[[--[[[[[[[[[,,,((((((<<<____>>>,,<<<<______
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                00000000000000000000000000000000000000000000000000
+#=GC RFCOL..X.                                                00111111111122222222223333333333444444444455555555
+#=GC RFCOL...X                                                89012345678901234567890123456789012345678901234567
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CAGGCAACGAGCGAGACCCGCGCCCCCAGUUGCCAGCGGUUCCCUUCG-G
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00136::Aeropyrum_pernix::AP000062                             CAGGCAACGAGCGAGACCCCCGCCCCUAGUUGCCAUCCCCGGG-GCGA--
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<...<<<<<<.<.....
+00052::Halobacterium_sp.::AE005128                            CAGGCAACGAGCGAGACCCGCACUCCUAAUUGCCAGCAGUACCCUUU--G
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00075::Haloarcula_marismortui::X61688                         CAGGCAACGAGCGAGACCCGCACUUCUAGUUGCCAGCAAUACC-CUUGA-
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00076::Haloarcula_marismortui::X61689                         CAGGCAACGAGCGAGACCCACACUUCUAGUUGCCAGCAACACC-CCUGC-
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00049::Haloferax_volcanii::K00421                             CAGGCAACGAGCGAGACCCGCACUUCUAAUUGCCAGCAGCAGU-UUCG--
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00013::Methanobacterium_formicicum::M36508                    CAGGCAACGAGCGAGACCCACGCCCUUAGUUACCAGCGGAUCC-UUCG--
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00022::Methanospirillum_hungatei::M60880                      CAGGCAACGAGCGAGACCCACGCGAGCAGUUGCCAGCUUGACC-UUCG--
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00016::Methanobacterium_thermoautotrophicum::AE000930         CAGGCAACGAGCGAGACCCACGCCCUUAGUUACCAGCGGAACCCUUAU-G
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00017::Methanobacterium_thermoautotrophicum::AE000940         CAGGCAACGAGCGAGACCCACGCCCUUAGUUACCAGCGGAACCCUUAU-G
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00010::Methanococcus_vannielii::M36507                        CAGGUAACGAGCGAGACCCGUGCCCUAUGUUGCGACUACUUUC-UCCG--
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00062::Natronobacterium_bangense.::Y14028                     CAGGCAACGAGCGAGACCCGCAUGCCUAAUUGCCAGCAGUACC-CUUGU-
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00004::Nanoarchaeum_equitans::AJ318041                        CAGGAAACAGGCGAGACCCGCGCCCGCAGUUGCGACGGCC----GAAA--
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<..........
+00064::Natronobacterium_innermongoliae.::AF009601             CAGGCAACGAGCGAGACCCGCACUCCUAAUUGCCAGCAACACC-CUUGU-
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00114::Pyrococcus_abyssi.::AJ248283                           GUGGUAACGAGCGAGACCCGCGCCCCCAGUUGCCAGUCCCUCCCGCUC-G
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00115::Pyrococcus_furiosus::U20163|g643670                    GUGGUAACGAGCGAGACCCGCGCCCCCAGUUGCCAGUCCCUCCCGCU--C
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<.<<<<......
+00116::Pyrococcus_horikoshii::AP000001                        GUGGUAACGAGCGAGACCCGCGCCCCCAGUUGCCAGUCCCUCCCGCUC-G
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00132::Pyrodictium_occultum::M21087                           CCGGCAACGAGCGAGACCCCCACCCCUAGUUGCUACCCCGGGG-CCA---
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00153::Sulfolobus_acidocaldarius::D14876                      CCGGCAACGAGCGAGACCCCCACCCCUAGUUGGUAUUCUGGAC-UCCG--
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00151::Sulfolobus_solfataricus::X03235                        CCGGCAACGAGCGAGACCCCCACCCCUAGUUGGUAUUCUGGAC-UCCG--
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00089::Thermoplasma_acidophilum::AL445067_M38637              GUGAUAACGAGCAAGACCCCCAUCUCUAAUUGCCAGACUGUCU-UUGC--
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+00121::Thermococcus_celer::M21529                             GUGGUAACGAGCGAGACCCGCGCCCCCAGUUGCCAGUCCUUCCCGCU--G
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<<.....>
+00130::Thermoproteus_tenax.::M35966|g176260                   CCGGCAACGAGCGAGACCCCCACCCCUAGUUGCUACCCCGCUC-UUCG--
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>..>>>>>>.....<<<<.<<<<<<<...<<..<<<<<<<.......
+#=GC SS_cons                                                  >>>>,,)))))),,,,,((((,<<<<<<<---<<--<<<<<<<<_____>
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.x
+#=GC RFCOLX...                                                111111111111111111111111111111111111111111111111.1
+#=GC RFCOL.X..                                                000000000000000000000000000000000000000000111111.1
+#=GC RFCOL..X.                                                556666666666777777777788888888889999999999000000.0
+#=GC RFCOL...X                                                890123456789012345678901234567890123456789012345.6
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GGAAGCCGGGCACACUGGGGGGACUGCCGGCGC-UAAGCCGGAGGAAGGU
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00136::Aeropyrum_pernix::AP000062                             CCCG-GGGGGCACACUAGGGGGACUGCCGCCGC-UAAGGCGGAGGAAGGA
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00052::Halobacterium_sp.::AE005128                            GGUAGCUGGGUACAUUAGGUGGACUGCCGCUGC-CAAAGCGGAGGAAGGA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00075::Haloarcula_marismortui::X61688                         GGUAGUUGGGUACACUAGGAGGACUGCCGCUGC-UAAAGCGGAGGAAGGA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00076::Haloarcula_marismortui::X61689                         GGUGGUUGGGUACACUAGGAGGACUGCCAUUGG-UAAAAUGGAGGAAGGA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00049::Haloferax_volcanii::K00421                             ACUGGCUGGGUACAUUAGAAGGACUGCCGCUGC-UAAAGCGGAGGAAGGA
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00013::Methanobacterium_formicicum::M36508                    GGAUGCCGGGCACACUAAGGGGACCGCCAGUGA-UAAACUGGAGGAAGGA
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00022::Methanospirillum_hungatei::M60880                      GGUUGAUGGGGACACUGCUCGGACCGCCUCUGC-UAAAGGGGAGGAAGGA
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00016::Methanobacterium_thermoautotrophicum::AE000930         GGUUGCCGGGCACACUAAGGGGACCGCCAGUGA-UAAACUGGAGGAAGGA
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00017::Methanobacterium_thermoautotrophicum::AE000940         GGUUGCCGGGCACACUAAGGGGACCGCCAGUGA-UAAACUGGAGGAAGGA
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00010::Methanococcus_vannielii::M36507                        GAAG-GUAAGCACUCAUAGGGGACCGCUAGCGC-UAAGCUAGAGGAAGGA
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00062::Natronobacterium_bangense.::Y14028                     GGUAGCUGGGUACAUUAGGUAGACUGCCAGUGC-CAAACUGGAGGAAGGA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00004::Nanoarchaeum_equitans::AJ318041                        ---G-GCCGGCACACUGCGGGGACUGCCGGGG--AAACCCGGAGGAAGGU
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS ...>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00064::Natronobacterium_innermongoliae.::AF009601             GGUGGUUGGGUACAUUAGGAGGACUGCCAGUGC-CAAACUGGAGGAAGGA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00114::Pyrococcus_abyssi.::AJ248283                           GGAG-GGAGGCACUCUGGGGGGACUGCCGGCGA-UAAGCCGGAGGAAGGG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00115::Pyrococcus_furiosus::U20163|g643670                    GGGA-GGAGGCACUCUGGGGGGACUGCCGGCGA-UAAGCCGGAGGAAGGG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00116::Pyrococcus_horikoshii::AP000001                        GGAG-GGAGGCACUCUGGGGGGACUGCCGGCGA-UAAGCCGGAGGAAGGG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00132::Pyrodictium_occultum::M21087                           CCCC-GGGGGCACACUAGGGGGACUGCCGNCGUCCAAGGCGGAGGAAGGA
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00153::Sulfolobus_acidocaldarius::D14876                      GUCC-AGAACCACACUAGGGGGACUGCCGGCG--UAAGCCGGAGGAAGGA
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00151::Sulfolobus_solfataricus::X03235                        GUCC-AGAACCACACUAGGGGGACUGCCGGCG--UAAGCCGGAGGAAGGA
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00089::Thermoplasma_acidophilum::AL445067_M38637              GGGC-AGAGGCACUUUAGAGGGACCGCCAGCGC-UAAGCUGGAGGAAGGA
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00121::Thermococcus_celer::M21529                             GGGA-GGAGGCACUCUGGGGGGACCGCCGGCGA-UAAGCCGGAGGAAGGA
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+00130::Thermoproteus_tenax.::M35966|g176260                   GGGC-GGGGGCACACUAGGGGGACUGCCGGCG--UAAGCCGGAGGAAGGA
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>.>>>>>....>>>>>>>..<<<<<<<<......>>>>>>>>.....
+#=GC SS_cons                                                  >>>>->>>>>---->>>>>>>,,<<<<<<<<______>>>>>>>>,,,,,
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                111111111111111111111111111111111.1111111111111111
+#=GC RFCOL.X..                                                111111111111111111111111111111111.1111111111111111
+#=GC RFCOL..X.                                                000111111111122222222223333333333.4444444444555555
+#=GC RFCOL...X                                                789012345678901234567890123456789.0123456789012345
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GCGGGCAACGGCAGGUCCGUAUGCCCCGAAUCCCCCGGGCUACACGCGGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00136::Aeropyrum_pernix::AP000062                             GGGGGCAACGGCAGGUCAGCAUGCCCCUAAACCCCCGGGCUGCACGCGGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00052::Halobacterium_sp.::AE005128                            ACGGGCAACGGUAGGUCAGUAUGCCCCGAAUGGGCUGGGCAACACGCGGG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00075::Haloarcula_marismortui::X61688                         ACGGGCAACGGUAGGUCAGUAUGCCCCGAAUGGACCGGGCAACACGCGGG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00076::Haloarcula_marismortui::X61689                         AUGGGCAACGGUAGGUCAGUAUGCCCCGAAUGGACCGGGCAACACGCGGG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00049::Haloferax_volcanii::K00421                             ACGGGCAACGGUAGGUCAGUAUGCCCCGAAUGAGCUGGGCUACACGCGGG
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00013::Methanobacterium_formicicum::M36508                    GUGGACGACGGUAGGUCCGUAUGCCCCGAAUCCCCUGGGCUACACGCGGG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00022::Methanospirillum_hungatei::M60880                      AUGGGCAACGGUAGGUCAGCAUGCCCCGAAUUAUCCGGGCUACACGCGGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00016::Methanobacterium_thermoautotrophicum::AE000930         GUGGACGACGGUAGGUCCGUAUGCCCCGAAUCCCCUGGGCAACACGCGGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00017::Methanobacterium_thermoautotrophicum::AE000940         GUGGACGACGGUAGGUCCGUAUGCCCCGAAUCCCCUGGGCAACACGCGGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00010::Methanococcus_vannielii::M36507                        GCGGGCAACGAUAGGUCCGCAUGCCCCGAAUCUCCUGGGCUACACGCGGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00062::Natronobacterium_bangense.::Y14028                     ACGGGCAACGGUAGGUCAGUAUGCCCCGAAUGUGCUGGGCGACACGCGGG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00004::Nanoarchaeum_equitans::AJ318041                        GCGGGCGACGGCAGGUAUGCAUGCCCCGAAUGCCCCGGGCUACACGCGCG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00064::Natronobacterium_innermongoliae.::AF009601             ACGGGCAACGGUAGGUCAGUAUGCCCCGAAUGUGCUGGGCGACACGCGGG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00114::Pyrococcus_abyssi.::AJ248283                           GCGGGCGACGGUAGGUCAGUAUGCCCCGAAACCCCCGGGCUACACGCGCG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00115::Pyrococcus_furiosus::U20163|g643670                    GCGGGCGACGGUAGGUCAGUAUGCCCCGAAACCCCCGGGCUACACGCGCG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00116::Pyrococcus_horikoshii::AP000001                        GCGGGCGACGGUAGGUCAGUAUGCCCCGAAACCCCCGGGCUACACGCGCG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00132::Pyrodictium_occultum::M21087                           GGGGGCCACGGCAGGUCAGCAUGCCCCGAAUCCCCCGGGCUGCACGCGGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00153::Sulfolobus_acidocaldarius::D14876                      GGGGGCCACGGCAGGUCAGCAUGCCCCGAAACUCCCGGGCCGCACGCGGG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00151::Sulfolobus_solfataricus::X03235                        GGGGGCCACGGCAGGUCAGCAUGCCCCGAAACUCCCGGGCCGCACGCGGG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00089::Thermoplasma_acidophilum::AL445067_M38637              GGGGUCGACGGCAGGUCAGUACGCCCCGAAUCUCCCGGGCUACACGCGCG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00121::Thermococcus_celer::M21529                             GCGGGCGACGGUAGGUCAGUAUGCCCCGAAACCCCCGGGCUACACGCGCG
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+00130::Thermoproteus_tenax.::M35966|g176260                   GGGGGCGACGGCAGGUCAGUAUGCCCCGAAACCCCGGGGCUGCACGCGAG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>....>>>>.>>>...>>>>>>>>....>>>>>>>...>>.>>>>>>
+#=GC SS_cons                                                  )))),,,,]]]]-]]]---]]]]]]]],,,,}}}}}}},,,}}-}}}}}}
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                11111111111111111111111111111111111111111111222222
+#=GC RFCOL..X.                                                55556666666666777777777788888888889999999999000000
+#=GC RFCOL...X                                                67890123456789012345678901234567890123456789012345
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CUACAAUGGCCGGGACAAUGGGUACCGACCCCGAAAGGGGUAGGUAAUCC
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00136::Aeropyrum_pernix::AP000062                             CUACAAUGGCGGGGACAGCGGGUGCCGACCCCGAAAGGGGGAGGCAAUCC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00052::Halobacterium_sp.::AE005128                            CUACAAUGGUCGAGACAAUGGGAAGCCACUCCGAGAGGAGGCGCUAAUCU
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00075::Haloarcula_marismortui::X61688                         CUACAAUGGCUAUGACAGUGGGAUGCAACGCCGAGAGGCGACGCUAAUCU
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00076::Haloarcula_marismortui::X61689                         CUACAAUGGCUAUGACAGUGGGAUGCAACGCCGAAAGGCGACGCUAAUCU
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00049::Haloferax_volcanii::K00421                             CUACAAUGGUCGAGACAAUGGGUUGCUAUCUCGAAAGAGAACGCUAAUCU
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00013::Methanobacterium_formicicum::M36508                    CUACAAUGGUUAGGACAAUGGGUUCCGACACUGAAAGGUGGAGGUAAUCU
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00022::Methanospirillum_hungatei::M60880                      CUACAAUGGACAGGACAAUGGGUUUCGACACCGAGAGGUGAGGAUAAUCU
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00016::Methanobacterium_thermoautotrophicum::AE000930         CUACAAUGGCCUGGACAAUGGGUUCCGACACCGAAAGGUGGAGGUAAUCC
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00017::Methanobacterium_thermoautotrophicum::AE000940         CUACAAUGGCCUGGACAAUGGGUUCCGACACCGAAAGGUGGAGGUAAUCC
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00010::Methanococcus_vannielii::M36507                        CUACAAUGGCUAGGACAAUGGGCUGCUACCCUGAAAAGGGACGCGAAUCU
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00062::Natronobacterium_bangense.::Y14028                     CUACAAUGGCCACGACAGUGGGAUGCAACCCCGAAAGGGGACGCUAAUCU
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00004::Nanoarchaeum_equitans::AJ318041                        CAUCAAUGGGCGGGACAGGGGGCCGCGACCCCGAAAGGGGGAGCAAAUCC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>...<<<<<<<.....<<<..<<..<<<<....>>>>..>>....>>
+00064::Natronobacterium_innermongoliae.::AF009601             CUACAAUGGCCACGACAGUGGGAUGCAACGCCGAAAGGCGACGCUAAUCU
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00114::Pyrococcus_abyssi.::AJ248283                           CUACAAUGGGCGGGACAAUGGGUGCCGACCCCGAAAGGGGGAGGUAAUCC
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00115::Pyrococcus_furiosus::U20163|g643670                    CUACAAUGGGCGGGACAAUGGGACCCGACCUCGAAAGGGGAAGGGAAUCC
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00116::Pyrococcus_horikoshii::AP000001                        CUACAAUGGGCGGGACAAUGGGUGCCGACCCCGAAAGGGGGAGGUAAUCC
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00132::Pyrodictium_occultum::M21087                           CUACAAUGGCGGGGACAGCGGGAUCCGACCCCGAAAGGGGGAGGCAAUCC
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+00153::Sulfolobus_acidocaldarius::D14876                      UUACAAUGGCAGGGACAACGGGAUGCUACCUCGAAAGGGGGAGCCAAUC-
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>...<<<<<<<.....<.<..<<...<<<....>>>...>>....>.
+00151::Sulfolobus_solfataricus::X03235                        UUACAAUGGCAGGGACAACGGGAUGCUACCUCGAAAGGGGGAGCCAAUC-
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>...<<<<<<<.....<.<..<<...<<<....>>>...>>....>.
+00089::Thermoplasma_acidophilum::AL445067_M38637              CUACAAAGGACGGGACAAUGAGUUGCAACCUCGAAAGGGGAAGCUAACCU
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>...<<<<<<<.....<<<..<<..<<<<....>>>>..>>....>>
+00121::Thermococcus_celer::M21529                             CUACAAUGGGCGGGACAAUGGGAUCCGACCCCGAAAGGGGAAGGGAAUCC
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>...<<<<<<<.....<<<..<<..<<<<....>>>>..>>....>>
+00130::Thermoproteus_tenax.::M35966|g176260                   CUGCAAUGGCGGGGACAGCGGGAUCCGACCCCGAAAGGGGGAGGCAAUCC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>...<<<<<<<.....<<<..<<...<<<....>>>...>>....>>
+#=GC SS_cons                                                  }}}},,,<<<<<<<-----<<<--<<--<<<<____>>>>-->>---->>
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                22222222222222222222222222222222222222222222222222
+#=GC RFCOL..X.                                                00001111111111222222222233333333334444444444555555
+#=GC RFCOL...X                                                67890123456789012345678901234567890123456789012345
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCUAAACCCGGUCUAACCUGGGAUCGAGGGCUGCAACUCGCCCUCGUGAA
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00136::Aeropyrum_pernix::AP000062                             CUCAAACCCCGCCUCAGUUGGGAUCGAGGGCUGCAACUCGCCCUCGUGAA
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00052::Halobacterium_sp.::AE005128                            CCUAAACUCGAUCGUAGUUCGGAUUGAGGGCUGAAACUCGCCCUCAUGAA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00075::Haloarcula_marismortui::X61688                         CC-AAACGUAGUCGUAGUUCGGAUUGCGGGCUGAAACCCGCCCGCAUGAA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00076::Haloarcula_marismortui::X61689                         CC-AAACGUAGUCGUAGUUCGGAUUGCGGGCUGAAACCCGCCCGCAUGAA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00049::Haloferax_volcanii::K00421                             CCUAAACUCGAUCGUAGUUCGGAUUGAGGGCUGAAACUCGCCCUCAUGAA
+#=GR 00049::Haloferax_volcanii::K00421                     SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00013::Methanobacterium_formicicum::M36508                    CCUAAACCUGGCCUUAGUUCGGAUUGAGGGCUGUAACUCGCCCUCAUGAA
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00022::Methanospirillum_hungatei::M60880                      CCUAAACCUGUCCGAAGUUCGGAUUGCGGGUUGUAACUCACCCGCAUGAA
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00016::Methanobacterium_thermoautotrophicum::AE000930         CCUAAACCAGGUCGUAGUUCGGAUCGAGGGCUGUAACCCGCCCUCGUGAA
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00017::Methanobacterium_thermoautotrophicum::AE000940         CCUAAACCAGGUCGUAGUUCGGAUCGAGGGCUGUAACCCGCCCUCGUGAA
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00010::Methanococcus_vannielii::M36507                        CCGAAACCUAGUCGUAGUUCGGAUCGUGGGCUGUAACUCGCCCACGUGAA
+#=GR 00010::Methanococcus_vannielii::M36507                SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00062::Natronobacterium_bangense.::Y14028                     CCGAAACGUGGUCGUAGUUCGGAUUGAGGGCUGAAACUCGCCCUCAUGAA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00004::Nanoarchaeum_equitans::AJ318041                        CC-AAACCCGCUCUCAGUCCAGAUCGAGGGCUGCAACUCGCCCUCGUGAC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00064::Natronobacterium_innermongoliae.::AF009601             CCGAAACGUGGUCGUAGUUCGGAUUGAGGGCUGAAACUCGCCCUCAUGAA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00114::Pyrococcus_abyssi.::AJ248283                           CCUAAACCCGCCCUCAGUUCGGAUCGCGGGCUGCAACUCGCCCGCGUGAA
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00115::Pyrococcus_furiosus::U20163|g643670                    CCUAAACCCGCCCUCAGUUCGGAUCGCGGGCUGCAACUCGCCCGCGUGAA
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00116::Pyrococcus_horikoshii::AP000001                        CCUAAACCCGCCCUCAGUUCGGAUCGCGGGCUGCAACUCGCCCGCGUGAA
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00132::Pyrodictium_occultum::M21087                           CUUAAACCCCGCCGCAGUUGGGAUCGAGGGCUGCAACUCGCCCUCGUGAA
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00153::Sulfolobus_acidocaldarius::D14876                      CUUAAACCCUGCCGCAGUUGGGAUCGAGGGCUGAAACCCGCCCUCGUGAA
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00151::Sulfolobus_solfataricus::X03235                        CUUAAACCCUGCCGCAGUUGGGAUCGAGGGCUGAAACCCGCCCUCGUGAA
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00089::Thermoplasma_acidophilum::AL445067_M38637              CG-AAACCCGUUCGUAGUCAGGACUGAGGGCUGUAACUCGCCCUCACGAA
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00121::Thermococcus_celer::M21529                             CCUAAACCCGCCCCCAGUUCGGAUCGCGGGCUGCAACUCGCCCGCGUGAA
+#=GR 00121::Thermococcus_celer::M21529                     SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+00130::Thermoproteus_tenax.::M35966|g176260                   CGUAAACCCCGCCCCAGUAGGGAUCGAGGGCUGCAACUCGCCCUCGUGAA
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >.....>>>>>>>......<...<<<<<<<<........>>>>>>>>...
+#=GC SS_cons                                                  >----->>>>>>>,,,,,,<---<<<<<<<<________>>>>>>>>---
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                22222222222222222222222222222222222222222222333333
+#=GC RFCOL..X.                                                55556666666666777777777788888888889999999999000000
+#=GC RFCOL...X                                                67890123456789012345678901234567890123456789012345
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CCUGGAAUCCGUAGUAAUCGCGCCUCAAAAUGGCGCGGUGAAUACGUCCC
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00136::Aeropyrum_pernix::AP000062                             CGUGGAAUCCCUAGUAACCGCGCGUCAUCAUCGCGCGGUGAAUACGUCCC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00052::Halobacterium_sp.::AE005128                            GCUGGAUUCGGUAGUAAUCGCGUGUCAGCAGCGCGCGGUGAAUACGUCCC
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00075::Haloarcula_marismortui::X61688                         GCUGGAUUCGGUAGUAAUCGCGUGUCAGAAGCGCGCGGUGAAUACGUCCC
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00076::Haloarcula_marismortui::X61689                         GCUGGAUUCGGUAGUAAUCGCGUGUCAGAAGCGCGCGGUGAAUACGUCCC
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00049::Haloferax_volcanii::K00421                             GCUGGAUUCGGUAGUAAUCGCAUUUCAAUAGAGUGCGGUGAAUACGUCCC
+#=GR 00049::Haloferax_volcanii::K00421                     SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00013::Methanobacterium_formicicum::M36508                    GCUGGAAUGCGUAGUAAUCGCGUGUCAUAACCGCGCGGUGAAUACGUCCC
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00022::Methanospirillum_hungatei::M60880                      GCUGGAAUCCGUAGUAAUCGCGUUUCAACAUAGCGCGGUGAAUAUGUCCC
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00016::Methanobacterium_thermoautotrophicum::AE000930         GCUGGAAUGCGUAGUAAUCGCGUGUCACUAUCGCGCGGUGAAUACGUCCC
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00017::Methanobacterium_thermoautotrophicum::AE000940         GCUGGAAUGCGUAGUAAUCGCGUGUCACUAUCGCGCGGUGAAUACGUCCC
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00010::Methanococcus_vannielii::M36507                        GCUGGAAUCCGUAGUAAUCGCAGUUCAUAAUACUGCGGUGAAUGUGUCCC
+#=GR 00010::Methanococcus_vannielii::M36507                SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00062::Natronobacterium_bangense.::Y14028                     GCUGGAUUCGGUAGUAAUCGCGCCUCAGAAGGGCGCGGUGAAUACGUCCC
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00004::Nanoarchaeum_equitans::AJ318041                        GGCGGAAUCUCUAGUAGUCGGACGUCACCAGCGUCCGGCGAAUACGUCCC
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00064::Natronobacterium_innermongoliae.::AF009601             GCUGGAUUCGGUAGUAAUCGCGCCUCAGAAGGGCGCGGUGAAUACGUCCC
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00114::Pyrococcus_abyssi.::AJ248283                           GCUGGAAUCCCUAGUACCCGCGCGUCAUCAUCGCGCGGCGAAUACGUCCC
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00115::Pyrococcus_furiosus::U20163|g643670                    GCUGGAAUCCCUAGUACCCGCGUGUCAUCAUCGCGCGGCGAAUACGUCCC
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00116::Pyrococcus_horikoshii::AP000001                        GCUGGAAUCCCUAGUACCCGCGCGUCAUCAUCGCGCGGCGAAUACGUCCC
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00132::Pyrodictium_occultum::M21087                           CGCGGAAUCCCUAGUAACCGCGCGUUAGCAUCGCGCGGUGAAUACGUCCC
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00153::Sulfolobus_acidocaldarius::D14876                      CGAGGAAUCCCUAGUAACCGCGGGUCAACAACCCGCGGUGAAUACGUCCC
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00151::Sulfolobus_solfataricus::X03235                        CGAGGAAUCCCUAGUAACCGCGGGUCAACAACCCGCGGUGAAUACGUCCC
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGUGGAUUCCGUAGUAAUCGUAGGUCAACAGCCUACGGUGAAUAUGCCCC
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00121::Thermococcus_celer::M21529                             GCUGGAAUCCCUAGUACCCGCGUGUCAUCAUCGCGCGGCGAAUACGUCCC
+#=GR 00121::Thermococcus_celer::M21529                     SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+00130::Thermoproteus_tenax.::M35966|g176260                   CGUGGAAUCCCUAGUAACCGCGUGUCACCAACGCGCGGUGAAUACGUCCC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >.....>>>>>.....<<<<<<<<.......>>>>>>>>......>>...
+#=GC SS_cons                                                  >,,,,,}}}}},,,,,<<<<<<<<_______>>>>>>>>,,,,,,}}---
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                33333333333333333333333333333333333333333333333333
+#=GC RFCOL..X.                                                00001111111111222222222233333333334444444444555555
+#=GC RFCOL...X                                                67890123456789012345678901234567890123456789012345
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                UGCUCCUUGCACACACCGCCCGUCAAGCCACCCGAGUGGGCCAGGGGCGA
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00136::Aeropyrum_pernix::AP000062                             UGCUCCUUGCACACACUGCCCGUCGCUCCACCCGAGGGGGGAGGGGGUGA
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00052::Halobacterium_sp.::AE005128                            UGCUCCUUGCACACACCGCCCGUCAAAUCACCCGAGUGGGGUUCGGAUGA
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00075::Haloarcula_marismortui::X61688                         UGCUCCUUGCACACACCGCCCGUCAAAGCACCCGAGUGGGGUCCGGAUGA
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00076::Haloarcula_marismortui::X61689                         UGCUCCUUGCACACACCGCCCGUCAAAGCACCCGAGUGGGGUCCGGAUGA
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00049::Haloferax_volcanii::K00421                             UGCUCCUUGCACACACCGCCCGUCAAAGCACCCGAGUGAGGUCCGGAUGA
+#=GR 00049::Haloferax_volcanii::K00421                     SS >>>>>>>>>>.>>....<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00013::Methanobacterium_formicicum::M36508                    UGCUCCUUGCACACACCGCCCGUCACGCCACCCAAAAAGGGUUUGGAUGA
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00022::Methanospirillum_hungatei::M60880                      UGCUCCUUGCACACACCGCCCGUCAAACCACCCGAGUGAGGUCUUGAUGA
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00016::Methanobacterium_thermoautotrophicum::AE000930         UGCUCCUUGCACACACCGCCCGUCACGCCACCCAAAAAGGGCUUGGAUGA
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00017::Methanobacterium_thermoautotrophicum::AE000940         UGCUCCUUGCACACACCGCCCGUCACGCCACCCAAAAAGGGCUUGGAUGA
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00010::Methanococcus_vannielii::M36507                        UGCUCCUUGCACACACCGCCCGUCACACCACCCGAGUUGGGUUCAGGUGA
+#=GR 00010::Methanococcus_vannielii::M36507                SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00062::Natronobacterium_bangense.::Y14028                     UGCUCCUUGCACACACCGCCCGUCAAAGCACCCGAGUGAGGUCCGGAUGA
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00004::Nanoarchaeum_equitans::AJ318041                        UGCUCCUUGCACUCACCGCCCGUCAAGCCACCCGAGCUGGGGCCUAGCGA
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >>>>>>>>>>.>>..<.<<.<<.<.<<<<<<<<..<<<<<<<<<<<<<..
+00064::Natronobacterium_innermongoliae.::AF009601             UGCUCCUUGCACACACCGCCCGUCAAAGCACCCGAGUGGGGUCCGGAUGA
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00114::Pyrococcus_abyssi.::AJ248283                           UGCUCCUUGCACACACCGCCCGUCACUCCACCCGAGCGGGGCCUAGGUGA
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00115::Pyrococcus_furiosus::U20163|g643670                    UGCUCCUUGCACACACCGCCCGUCACUCCACCCGAGCGGAGUCCGGGUGA
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >>>>>>>>>>.>>....<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00116::Pyrococcus_horikoshii::AP000001                        UGCUCCUUGCACACACCGCCCGUCACUCCACCCGAGCGGGGCCUAGGUGA
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00132::Pyrodictium_occultum::M21087                           UGCUCCUUGCACACACCGCCCGUCGCUCCACCCGAGCGGGGGAGGGGUGA
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00153::Sulfolobus_acidocaldarius::D14876                      UGCUCCUUGCACACACCGCCCGUCGCUCCACCCGAGCGAGAAAGGGGUGA
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00151::Sulfolobus_solfataricus::X03235                        UGCUCCUUGCACACACCGCCCGUCGCUCCACCCGAGCGCGAAAGGGGUGA
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGCUCCUUGCACACACCGCCCGUCAAACCAUCCGAGCUGGUGUUGGAUGA
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >>>>>>>>>>.>>..<.<<.<<.<.<<<<<<<<..<<<<<<<<<<<<<..
+00121::Thermococcus_celer::M21529                             UGCUCCUUGCACACACCGCCCGUCACUCCACCCGAGCGGGGUCCGGAUGA
+#=GR 00121::Thermococcus_celer::M21529                     SS >>>>>>>>>>.>>..<.<<.<<.<.<<<<<<<<..<<<<<<<<<<<<<..
+00130::Thermoproteus_tenax.::M35966|g176260                   UGCCCCUUGCACACACCGCCCGUCGCACCACCCGAGGGAGUUCUCUGCGA
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >>>>>>>>>>.>>..<.<<.<<...<<<<<<<<..<<<<<<<<<<<<<<<
+#=GC SS_cons                                                  }}}}}}}}}}-}}::<-<<-<<-<-<<<<<<<<--<<<<<<<<<<<<<<<
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                33333333333333333333333333333333333333333333444444
+#=GC RFCOL..X.                                                55556666666666777777777788888888889999999999000000
+#=GC RFCOL...X                                                67890123456789012345678901234567890123456789012345
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                GGGGGUGGCC--------CUA-----GGCCACCUUCGAGCCCAGGGUCCG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00136::Aeropyrum_pernix::AP000062                             GGCCCUCUCC--------GCCG----GGAGGGGGUCGAACCCCCUCCCCC
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00052::Halobacterium_sp.::AE005128                            GGCCGGC-----------AUGC-------GCUGGUCAAAUCUGGGCUCCG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS <<<<<<<......................>>>>>>>>>>>>>>>>>>>>>
+00075::Haloarcula_marismortui::X61688                         GGCCGUC-----------AUGC-------GACGGUCGAAUCUGGGCUCCG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS <<<<<<<......................>>>>>>>>>>>>>>>>>>>>>
+00076::Haloarcula_marismortui::X61689                         GGCCGUC-----------AUGC-------GACGGUCGAAUCUGGGCUCCG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS <<<<<<<......................>>>>>>>>>>>>>>>>>>>>>
+00049::Haloferax_volcanii::K00421                             GGCCACC-----------ACAC-------GGUGGUCGAAUCUGGGCUUCG
+#=GR 00049::Haloferax_volcanii::K00421                     SS <<<<<<<......................>>>>>>>>>>>>>>>>>>>>>
+00013::Methanobacterium_formicicum::M36508                    GGCCAUAGUC--------UUU-----GGUUAUGGUCGAAUCUAGGUUCUU
+#=GR 00013::Methanobacterium_formicicum::M36508            SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00022::Methanospirillum_hungatei::M60880                      GGAUGUAUC---------AUU------GAUAUGUUCGAAUCUGGGUUUUG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS <<<<<<<<<..................>>>>>>>>>>>>>>>>>>>>>>>
+00016::Methanobacterium_thermoautotrophicum::AE000930         GGCCACAACA--------UUC-----UGUUGUGGUCGAAUCUGGGUUCUU
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00017::Methanobacterium_thermoautotrophicum::AE000940         GGCCACAACA--------UUC-----UGUUGUGGUCGAAUCUGGGUUCUU
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00010::Methanococcus_vannielii::M36507                        GGCCUUGGCC--------UUU-----GGCUAGGGUCGAACCUGGGCUCAG
+#=GR 00010::Methanococcus_vannielii::M36507                SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00062::Natronobacterium_bangense.::Y14028                     GGCCGCCG----------CAA-------CGGCGGUCGAAUCUGGGCUUCG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS <<<<<<<<....................>>>>>>>>>>>>>>>>>>>>>>
+00004::Nanoarchaeum_equitans::AJ318041                        GGCCGUGGGGGG------UUCG--CCCCCCACGGUCGAGCUAGGCCCCGG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS <<<<<<<<<<<<............>>>>>>>>>>>>..>>>>>>>>>>>>
+00064::Natronobacterium_innermongoliae.::AF009601             GGCCCGG-----------UUU--------CCGGGUCGAAUCUGGGCUCCG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS <<<<<<<......................>>>>>>>>>>>>>>>>>>>>>
+00114::Pyrococcus_abyssi.::AJ248283                           GGCCCGAUCUCC------UUCG--GGAGGUCGGGUCGAGCCUAGGCUCCG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS <<<<<<<<<<<<............>>>>>>>>>>>>>>>>>>>>>>>>>>
+00115::Pyrococcus_furiosus::U20163|g643670                    GGCCUGAUCUCC------UUCG--GGAGGUCAGGUCGAGCCCGGGCUCCG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS <<<<<<<<<<<<............>>>>>>>>>>>>>>>>>>>>>>>>>>
+00116::Pyrococcus_horikoshii::AP000001                        GGCCCGAUCUCC------UUCG--GGAGGUCGGGUCGAGCCUAGGCUCCG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS <<<<<<<<<<<<............>>>>>>>>>>>>>>>>>>>>>>>>>>
+00132::Pyrodictium_occultum::M21087                           GGCCCCGUCC-------CUCGCCA--GGGCGGGGUCGAACCUCUCCCCCG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00153::Sulfolobus_acidocaldarius::D14876                      GGUCCCUUGC-------GAUAA----GUGGGGGAUCGAACUCCUUUCCCG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00151::Sulfolobus_solfataricus::X03235                        GGUCCCUUGC-------GAUAA----GUGGGGGAUCGAACUCCUUUCCCG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS <<<<<<<<<<................>>>>>>>>>>>>>>>>>>>>>>>>
+00089::Thermoplasma_acidophilum::AL445067_M38637              GGGUCCGUCC--------UCU-----GGAUGGAUUCGAAUCUGAUGUCAG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS <<<<<<<<<<................>>>>>>>>>>..>>>>>>>>>>>>
+00121::Thermococcus_celer::M21529                             GGCCUGAUCUCC-----CUUCG-GGGAGGUCGGGUCGAGUCUGGGCUCCG
+#=GR 00121::Thermococcus_celer::M21529                     SS <<<<<<<<<<<<.....<.....>>>>>>>>>>>>>..>>>>>>>>>>>>
+00130::Thermoproteus_tenax.::M35966|g176260                   GGCCCCUCGCUUGGGGCAACCC--AGGUGGGGGGACGAGCAGAGAACUCC
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS <<<<<<<<<<<<<<<....>>>..>>>>>>>>>>>>>>>>>>>>>>>>>>
+#=GC SS_cons                                                  <<<<<<<<<<<<____________>>>>>>>>>>>>>>>>>>>>>>>>>>
+#=GC RF                                                       xxxxxxxxxxxx.....xxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                111111111111.....11111..11111111111111111111111111
+#=GC RFCOL.X..                                                444444444444.....44444..44444444444444444444444444
+#=GC RFCOL..X.                                                000011111111.....11222..22222223333333333444444444
+#=GC RFCOL...X                                                678901234567.....89012..34567890123456789012345678
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                CGAGGGGGGCUAAGUCGUAACAAGGUAGCCGUAGGGGAAUCUGCGGCUGG
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00136::Aeropyrum_pernix::AP000062                             CGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00052::Halobacterium_sp.::AE005128                            CAAGGGGGAUUAAGUCGUAACAAGGUAGCCGUAGGGGAAUCUGCGGCUGG
+#=GR 00052::Halobacterium_sp.::AE005128                    SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00075::Haloarcula_marismortui::X61688                         CAAGGGGGCUUAAGUCGUAACAAGGUAGCCGUAGAGGAAUCUGUGGCUGG
+#=GR 00075::Haloarcula_marismortui::X61688                 SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00076::Haloarcula_marismortui::X61689                         CAAGGGGGCUUAAGUCGUAACAAGGUAGCCGUAGAGGAAUCUGUGGCUGG
+#=GR 00076::Haloarcula_marismortui::X61689                 SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00049::Haloferax_volcanii::K00421                             CAAGGGGGCUUAAGUCGUAACAAGGUAGCCGUAGGGGAAUCUGCGGCUGG
+#=GR 00049::Haloferax_volcanii::K00421                     SS >..>>>>>>>>....>>..>>....<<<<<<<<<<....>>>>>>>>>>.
+00013::Methanobacterium_formicicum::M36508                    UGAGGAGGGCGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00013::Methanobacterium_formicicum::M36508            SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00022::Methanospirillum_hungatei::M60880                      CAAGGGGGGUUAAGUCGUAACAAGGUAGCCGUAGGGGAAUCUGCGGCUGG
+#=GR 00022::Methanospirillum_hungatei::M60880              SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00016::Methanobacterium_thermoautotrophicum::AE000930         UGAGGAGGGCGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00017::Methanobacterium_thermoautotrophicum::AE000940         UGAGGAGGGCGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00010::Methanococcus_vannielii::M36507                        CGAGGGGGGUGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00010::Methanococcus_vannielii::M36507                SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00062::Natronobacterium_bangense.::Y14028                     CAAGGGGGCUUAAGUCGUAACAAGGUAGCCGUAGGGGAAUCUGCGGCUGG
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00004::Nanoarchaeum_equitans::AJ318041                        CGAGGGGGGCUAAGUCGACACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS >..>>>>>>>>..>.>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00064::Natronobacterium_innermongoliae.::AF009601             CAAGGGGGCUUAAGUCGUAACAAGGUAGCCGUAGGGGAAUCUGCGGCUGG
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00114::Pyrococcus_abyssi.::AJ248283                           UGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUACGGCUCG
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00115::Pyrococcus_furiosus::U20163|g643670                    UGAGGGGGGAGAAGUCGUAACAAGGUAACCGUAGGGGAACCUACGGCUCG
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS >..>>>>>>>>....>>..>>....<<<<<<<<<<....>>>>>>>>>>.
+00116::Pyrococcus_horikoshii::AP000001                        UGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUACGGCUCG
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00132::Pyrodictium_occultum::M21087                           CGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00132::Pyrodictium_occultum::M21087                   SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00153::Sulfolobus_acidocaldarius::D14876                      CGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00151::Sulfolobus_solfataricus::X03235                        CGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00089::Thermoplasma_acidophilum::AL445067_M38637              UGAGGAGGGUUAAGUCGUAACAAGGUAUCCGUAGGGGAACCUGCGGAUGG
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS >..>>>>>>>>..>.>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00121::Thermococcus_celer::M21529                             UGAGGGGGGAGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUACGGCUCG
+#=GR 00121::Thermococcus_celer::M21529                     SS >..>>>>>>>>..>.>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+00130::Thermoproteus_tenax.::M35966|g176260                   CGAGGGGGGUGAAGUCGUAACAAGGUAGCCGUAGGGGAACCUGCGGCUGG
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS >..>>>>>>>>....>>..>>..>.<<<<<<<<<<....>>>>>>>>>>.
+#=GC SS_cons                                                  >-->>>>>>>>-->->>-->>-->:<<<<<<<<<<____>>>>>>>>>>:
+#=GC RF                                                       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#=GC RFCOLX...                                                11111111111111111111111111111111111111111111111111
+#=GC RFCOL.X..                                                44444444444444444444444444444444444444444444444444
+#=GC RFCOL..X.                                                45555555555666666666677777777778888888888999999999
+#=GC RFCOL...X                                                90123456789012345678901234567890123456789012345678
+
+00092::Archaeoglobus_fulgidus::X05567_AE000965                AUCACCUCCU---
+#=GR 00092::Archaeoglobus_fulgidus::X05567_AE000965        SS .............
+00136::Aeropyrum_pernix::AP000062                             AUCACCUC-----
+#=GR 00136::Aeropyrum_pernix::AP000062                     SS .............
+00052::Halobacterium_sp.::AE005128                            AUCACCUCCU---
+#=GR 00052::Halobacterium_sp.::AE005128                    SS .............
+00075::Haloarcula_marismortui::X61688                         AUCACCUCCU---
+#=GR 00075::Haloarcula_marismortui::X61688                 SS .............
+00076::Haloarcula_marismortui::X61689                         AUCACCUCCU---
+#=GR 00076::Haloarcula_marismortui::X61689                 SS .............
+00049::Haloferax_volcanii::K00421                             AUCACCUCCUG--
+#=GR 00049::Haloferax_volcanii::K00421                     SS .............
+00013::Methanobacterium_formicicum::M36508                    AUCACCUCCU---
+#=GR 00013::Methanobacterium_formicicum::M36508            SS .............
+00022::Methanospirillum_hungatei::M60880                      AUCACCUCCU---
+#=GR 00022::Methanospirillum_hungatei::M60880              SS .............
+00016::Methanobacterium_thermoautotrophicum::AE000930         AUCACCUCCU---
+#=GR 00016::Methanobacterium_thermoautotrophicum::AE000930 SS .............
+00017::Methanobacterium_thermoautotrophicum::AE000940         AUCACCUCCU---
+#=GR 00017::Methanobacterium_thermoautotrophicum::AE000940 SS .............
+00010::Methanococcus_vannielii::M36507                        AUCACCUCC----
+#=GR 00010::Methanococcus_vannielii::M36507                SS .............
+00062::Natronobacterium_bangense.::Y14028                     AUCACCUCCU---
+#=GR 00062::Natronobacterium_bangense.::Y14028             SS .............
+00004::Nanoarchaeum_equitans::AJ318041                        AUCACCUCCU---
+#=GR 00004::Nanoarchaeum_equitans::AJ318041                SS .............
+00064::Natronobacterium_innermongoliae.::AF009601             AUCACCUCCU---
+#=GR 00064::Natronobacterium_innermongoliae.::AF009601     SS .............
+00114::Pyrococcus_abyssi.::AJ248283                           AUCACCUCCUAUC
+#=GR 00114::Pyrococcus_abyssi.::AJ248283                   SS .............
+00115::Pyrococcus_furiosus::U20163|g643670                    AUCACCUCCU---
+#=GR 00115::Pyrococcus_furiosus::U20163|g643670            SS .............
+00116::Pyrococcus_horikoshii::AP000001                        AUCACCUCCUAUC
+#=GR 00116::Pyrococcus_horikoshii::AP000001                SS .............
+00132::Pyrodictium_occultum::M21087                           AUCACCUCCU---
+#=GR 00132::Pyrodictium_occultum::M21087                   SS .............
+00153::Sulfolobus_acidocaldarius::D14876                      AUCACCUC-----
+#=GR 00153::Sulfolobus_acidocaldarius::D14876              SS .............
+00151::Sulfolobus_solfataricus::X03235                        AUCACCUC-----
+#=GR 00151::Sulfolobus_solfataricus::X03235                SS .............
+00089::Thermoplasma_acidophilum::AL445067_M38637              AUCACCUCC----
+#=GR 00089::Thermoplasma_acidophilum::AL445067_M38637      SS .............
+00121::Thermococcus_celer::M21529                             AUCACCUCCU---
+#=GR 00121::Thermococcus_celer::M21529                     SS .............
+00130::Thermoproteus_tenax.::M35966|g176260                   AUCACCUCC----
+#=GR 00130::Thermoproteus_tenax.::M35966|g176260           SS .............
+#=GC SS_cons                                                  :::::::::::::
+#=GC RF                                                       xxxxxxxxxx...
+#=GC RFCOLX...                                                1111111111...
+#=GC RFCOL.X..                                                4555555555...
+#=GC RFCOL..X.                                                9000000000...
+#=GC RFCOL...X                                                9012345678...
+//

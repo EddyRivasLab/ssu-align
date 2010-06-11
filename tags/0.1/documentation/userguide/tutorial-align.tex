@@ -1,0 +1,193 @@
+\subsection{Aligning SSU sequences with ssu-align}
+
+We'll use a small dataset to demonstrate how the package works.
+The file \prog{seed-15.fa} contains five archaeal sequences, five
+bacterial sequences and five eukaryotic sequences from the
+SSU-ALIGN v0.1 seed alignments. These seed alignments
+were derived from alignments from the \db{CRW} database
+\cite{CannoneGutell02} as described in section~\ref{sec:models}.
+
+Pretend that \prog{seed-15.fa} is a set of SSU sequences obtained from
+an environmental sampling survey and that we want to analyze. First,
+we can run the \prog{ssu-align} program to classify each sequence by
+its domain, and create an alignment for each domain by executing the
+command:
+
+\user{ssu-align seed-15.fa myseqs}\\
+
+\prog{ssu-align} takes two command line arguments. The first is the
+target sequence file. The second is the name of a directory that the
+program will create and place its output files into. This directory
+should not yet exist\footnote{If the directory does exist,
+  \prog{ssu-align} will print an error and exit. To overwrite an
+  existing directory, use the \prog{-f} option.}.
+
+The program will first print a header describing the program version
+used, command used, current date, and some other information:
+
+\begin{sreoutput}
+# ssu-align :: align SSU rRNA sequences
+# SSU-ALIGN 0.1 (May 2010)
+# Copyright (C) 2010 HHMI Janelia Farm Research Campus
+# Freely distributed under the GNU General Public License (GPLv3)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: ssu-align seed-15.fa myseqs
+# date:    Wed May  5 13:17:20 2010
+#
+# Validating input sequence file ... done.
+#
+# Stage 1: Determining SSU start/end positions and best-matching models...
+\end{sreoutput}
+
+In stage 1, the program scans the input sequences with each of the
+three default SSU models. This has two purposes.  First, it classifies
+each sequence by determining which model in the input CM file is its
+``best-matching'' model, defined as
+the model that gives the sequence the highest primary sequence-based
+alignment score using a profile HMM\@. Secondly, it
+defines the start and end points of the SSU sequences based on the
+best-matching model's alignment.
+
+Stage 1 takes about 30 seconds on this dataset (on an Intel Xeon 3.0
+GHz processor, which I'll use for all of the example runs in this
+guide). When it finishes you'll see: 
+
+\begin{sreoutput}
+# Stage 1: Determining SSU start/end positions and best-matching models...
+#
+# output file name         description                                
+# -----------------------  -------------------------------------------
+  myseqs.tab               locations/scores of hits defined by HMM(s)
+  myseqs.archaea.hitlist   list of sequences to align with archaea CM
+  myseqs.archaea.fa              5 sequences to align with archaea CM
+  myseqs.bacteria.hitlist  list of sequences to align with bacteria CM
+  myseqs.bacteria.fa             5 sequences to align with bacteria CM
+  myseqs.eukarya.hitlist   list of sequences to align with eukarya CM
+  myseqs.eukarya.fa              5 sequences to align with eukarya CM
+\end{sreoutput}
+
+This lists and briefly describes the seven output files the program created
+in the newly created \prog{myseqs/} subdirectory of the current directory.
+The content and format of these files are described
+in detail in section~\ref{sec:output}, but I'll briefly describe them 
+here. The first file \prog{myseqs.tab} is output from
+INFERNAL's \prog{cmsearch} program. The other six files are
+model-specific: two files for each model that was the best-matching
+model for at least one sequence in the input target sequence file
+\prog{seed-15.fa}. The \prog{.hitlist} suffixed files contain a list
+of the sequences that match best to the model, and the \prog{.fa}
+suffixed files are those actual sequences. If any of the models had
+not been the best-matching model to at least one target sequence,
+there would be no \prog{.hitlist} or \prog{.fa} files for that
+model.
+
+The program will now proceed to stage 2, the alignment stage. This
+stage serially progresses through each model that was the
+best-matching model for at least one sequence and aligns the
+best-matching sequences to that model. The alignments are computed by
+scoring a combination of both sequence and secondary structure
+conservation (see section~\ref{sec:background} for further
+discussion). 
+%as opposed to the scoring in stage one which only used sequence
+%conservation. 
+As the alignment to each model finishes, three new lines
+of text, one for each of three newly created files, will appear on the
+screen. For this example, alignment to all three models takes about 20
+seconds. When it finishes you'll see:
+
+\begin{sreoutput}
+# Stage 2: Aligning each sequence to its best-matching model...
+#
+# output file name         description
+# -----------------------  ---------------------------------------
+  myseqs.archaea.stk       archaea alignment
+  myseqs.archaea.cmalign   archaea cmalign output
+  myseqs.archaea.ifile     archaea insert info
+  myseqs.bacteria.stk      bacteria alignment
+  myseqs.bacteria.cmalign  bacteria cmalign output
+  myseqs.bacteria.ifile    bacteria insert info
+  myseqs.eukarya.stk       eukarya alignment
+  myseqs.eukarya.cmalign   eukarya cmalign output
+  myseqs.eukarya.ifile     eukarya insert info
+  myseqs.scores            list of CM/HMM scores for each sequence
+\end{sreoutput}
+
+The newly created alignments are the \prog{.stk} suffixed files. These
+were created by INFERNAL's \prog{cmalign} program. The
+\prog{.cmalign} and \prog{.ifile} suffixed files were also output by
+\prog{cmalign}. As in stage 1, these files were created in the
+\prog{myseqs/} subdirectory of the current directory. We'll go over
+the key features of the alignment files next. For more detail on all
+other types of output files, see section~\ref{sec:output}.
+
+\subsubsection{Description of alignments}
+\label{sec:tutorial-stk}
+
+The alignment files are the most important important type of output
+file. Take a look at the archaeal alignment we just created in
+\prog{myseqs/myseqs.archaea.stk}. The alignment includes consensus
+secondary structure annotation and is in \emph{Stockholm format}.
+Stockholm format, the native alignment format used by the HMMER
+and INFERNAL packages and by the \db{pfam} and \db{rfam}
+databases. The key features of the alignment file are:
+
+\begin{itemize}
+
+%\item The alignment is in an interleaved format, like other
+%  common alignment file formats such as CLUSTALW.
+%  Lines consist of a name, followed by an aligned sequence;
+%  the alignment is split into blocks separated by blank lines.
+
+\item Each sequence occurs on a single line and each line consists of
+  the sequence name followed by the aligned sequence\footnote{Alternatively,
+  interleaved alignment files can be created using the \prog{-i}
+  option. See the \prog{ssu-align} manual page at the 
+  end of this guide for more information.}.
+
+\item Gaps are indicated by the characters \prog{.}, or
+  \prog{-}.  The \prog{.} characters occur in insert columns,
+  while \prog{-} characters occur in consensus
+  columns. Page~\pageref{sec:background-columns} in
+  section~\ref{sec:background-columns} explains the difference between
+  these two types of columns. In short, insert columns are not well
+  conserved and typically are gaps in most sequences while consensus
+  columns are typically non-gaps in most sequences.
+  However, many SSU alignments will have large regions of 100\% gaps
+  in both insert and consensus columns at the
+  beginning and ends of the alignment.  This will happen if the
+  sequences are partial SSU sequences, such as those obtained with PCR
+  primers that target well conserved regions within the SSU molecule.
+
+\item Special lines starting with {\small\verb+#=GR+} followed by a
+  sequence name and then {\small\verb+PP+} contain posterior
+  probabilities for each aligned nucleotide for the sequence they
+  correspond to.  These are confidence estimates in the correctness of
+  the alignment.  Page~\pageref{sec:background-pp} in
+  section~\ref{sec:background} introduces posterior probabilities with
+  an example in figure~\ref{fig:ambiguity}.
+  Characters in \prog{PP} rows have 12 possible values: \prog{0-9}, \prog{*}, or
+  \prog{.} If \prog{.}, the position corresponds to a gap in the sequence. A
+  value of \prog{0} indicates a posterior probability of between 0.0 and
+  0.05, \prog{1} indicates between 0.05 and 0.15, \prog{2} indicates between
+  0.15 and 0.25 and so on up to \prog{9} which indicates between 0.85 and
+  0.95. A value of \prog{*} indicates a posterior probability of between
+  0.95 and 1.0. Higher posterior probabilities correspond to greater
+  confidence that the aligned nucleotide belongs where it appears in
+  the alignment.  These confidence estimates can be used to mask the
+  alignment to remove columns with significant fractions of
+  ambiguously aligned nucleotides as demonstrated below.
+
+\item A special line starting with \prog{\#=GC SS\_cons}
+  indicates the secondary structure consensus. Gap characters annotate
+  unpaired (single-stranded) columns. Basepairs are indicated by any
+  of the following pairs: \prog{<>}, \prog{()}, \prog{[]}, or
+  \prog{[]}.
+
+\item A special ``RF'' line starting with {\prog{\#=GC RF}}
+  indicates the consensus, or ReFerence, model. Gaps in the RF line
+  are \emph{insert} columns, where at least 1 sequence has at least 1
+  inserted nucleotide between two consensus positions. Uppercase nucleotides
+  in the RF line are well conserved positions in the model; lowercase
+  nucleotides are less well conserved.
+\end{itemize}
+
