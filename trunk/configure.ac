@@ -386,10 +386,11 @@ if test "$impl_choice" = "none"; then
   esac
 fi
 
-if test "$impl_choice" = "dummy"; then
-  AC_MSG_WARN([It appears your platform will not fully support H3.])
-  AC_MSG_WARN([We'll use the 'dummy' implementation, a slow reference implementation.])
-fi
+# HMMER warns if it's using dummy, SSU_ALIGN shouldn't.
+#if test "$impl_choice" = "dummy"; then
+#  AC_MSG_WARN([It appears your platform will not fully support H3.])
+#  AC_MSG_WARN([We'll use the 'dummy' implementation, a slow reference implementation.])
+#fi
 
 if test "$impl_choice" = "sse" && test "$enable_sse" = "no"; then
   AC_MSG_WARN([You disabled the SSE implementation: I'll use the dummy impl instead.])
