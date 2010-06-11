@@ -406,7 +406,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
 
     run_mask($ssumask, $dir, "-m $my_cm_file_name -s archaea-0p1.mask", $testctr);
     check_for_files           ($dir, $dir, $testctr, \@my_cm_file_name_only_A, ".mask.stk");
-    check_for_one_of_two_files($dir, $dir, $testctr, \@my_cm_file_name_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files($dir, $dir, $testctr, \@my_cm_file_name_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir/$dir.ssu-mask.sum`;
     if($output !~ /$dir.$my_cm.mask.stk+\s+output\s+aln+\s+1376\s+\-\s+\-/)     { die "ERROR, problem with creating mask diagram"; }
     remove_files              ($dir, "mask");

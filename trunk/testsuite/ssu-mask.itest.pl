@@ -92,7 +92,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir, "", $testctr);
     check_for_files           ($dir, $dir, $testctr, \@name_A, ".mask");
     check_for_files           ($dir, $dir, $testctr, \@name_A, ".mask.stk");
-    check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir/$dir.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1499\s+83/)      { die "ERROR, problem with masking"; }
     if($output !~ /$dir.bacteria.mask.p\w+\s+output\s+p\w+\s+1582\s+1499\s+83/) { die "ERROR, problem with creating mask diagram"; }
@@ -113,7 +113,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . "/" . $dir . ".bacteria.stk", "-a", $testctr);
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.bacteria.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1499\s+83/)      { die "ERROR, problem with masking"; }
     if($output !~ /$dir.bacteria.mask.p\w+\s+output\s+p\w+\s+1582\s+1499\s+83/) { die "ERROR, problem with creating mask diagram"; }
@@ -128,7 +128,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . ".bacteria.stk", "-a", $testctr);
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.bacteria.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1499\s+83/)      { die "ERROR, problem with masking"; }
     if($output !~ /$dir.bacteria.mask.p\w+\s+output\s+p\w+\s+1582\s+1499\s+83/) { die "ERROR, problem with creating mask diagram"; }
@@ -154,7 +154,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     # with -a
     run_mask                  ($ssumask, $dir . "/" . $dir . ".eukarya.stk", "-d -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@euk_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@euk_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@euk_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.eukarya.ssu-mask.sum`;
     if($output !~ /\.mask\s+input/)                              { die "ERROR, problem with masking"; }
     if($output !~ /$dir.eukarya.mask.stk\s+output\s+aln\s+1343/) { die "ERROR, problem with masking"; }
@@ -172,7 +172,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     }
     run_mask                  ($ssumask, $dir . "/" . $dir . ".archaea.stk", "-s $maskfile -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@arc_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@arc_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@arc_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.archaea.ssu-mask.sum`;
     if($output !~ /$dir.archaea.mask.stk\s+output\s+aln\s+794/)  { die "ERROR, problem with masking"; }
     if($output !~ /$maskfile_wo_dir\s+input/)                    { die "ERROR, problem with masking"; }
@@ -209,7 +209,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     }
     run_mask                  ($ssumask, $dir . "/" . $dir . ".eukarya.stk", "-k $mask_key_in -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@euk_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@euk_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@euk_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.eukarya.ssu-mask.sum`;
     if($output !~ /$dir.eukarya.mask.stk\s+output\s+aln/)        { die "ERROR, problem with masking"; }
     if($output !~ /eukarya.$mask_key_in.mask\s+input/)           { die "ERROR, problem with masking"; }
@@ -249,7 +249,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir, "-i", $testctr);
     check_for_files           ($dir, $dir, $testctr, \@name_A, ".mask");
     check_for_files           ($dir, $dir, $testctr, \@name_A, ".mask.stk");
-    check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir/$dir.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1499\s+83/)      { die "ERROR, problem with masking"; }
     if($output !~ /$dir.bacteria.mask.p\w+\s+output\s+p\w+\s+1582\s+1499\s+83/) { die "ERROR, problem with creating mask diagram"; }
@@ -259,7 +259,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . "/" . $dir . ".bacteria.stk", "-i -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.bacteria.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1499\s+83/)      { die "ERROR, problem with masking"; }
     if($output !~ /$dir.bacteria.mask.p\w+\s+output\s+p\w+\s+1582\s+1499\s+83/) { die "ERROR, problem with creating mask diagram"; }
@@ -287,7 +287,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . "/" . $dir . ".bacteria.stk", "--pf 0.75 -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.bacteria.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1543\s+39/) { die "ERROR, problem with masking"; }
     remove_files              (".", "bacteria.mask");
@@ -309,7 +309,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . "/" . $dir . ".bacteria.stk", "--pt 0.5 -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.bacteria.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1570\s+12/) { die "ERROR, problem with masking"; }
     remove_files              (".", "bacteria.mask");
@@ -332,7 +332,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . "/" . $dir . ".bacteria.stk", "--pt 0.5 --pf 0.75 -a", $testctr);
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@bac_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@bac_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.bacteria.ssu-mask.sum`;
     if($output !~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1571\s+11/) { die "ERROR, problem with masking"; }
     remove_files              (".", "bacteria.mask");
@@ -357,7 +357,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     run_mask                  ($ssumask, $dir . "/" . $dir . ".archaea.stk", "--rfonly -a ", $testctr);
     check_for_files           (".", $dir, $testctr, \@arc_only_A, ".mask");
     check_for_files           (".", $dir, $testctr, \@arc_only_A, ".mask.stk");
-    check_for_one_of_two_files(".", $dir, $testctr, \@arc_only_A, ".mask.pdf", "mask.ps");
+    check_for_one_of_two_files(".", $dir, $testctr, \@arc_only_A, ".mask.pdf", ".mask.ps");
     $output = `cat $dir.archaea.ssu-mask.sum`;
     if($output !~ /$dir.archaea.mask\s+output\s+mask\s+1508\s+1508\s+0/)  { die "ERROR, problem with masking"; }
     if($output =~ /$dir.bacteria.mask\s+output\s+mask\s+1582\s+1582\s+0/) { die "ERROR, problem with masking"; }
