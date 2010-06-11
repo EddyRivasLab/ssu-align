@@ -174,7 +174,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
           nawrockie/src/            eddys/src/               eddys/easel/
    Release   from-rev   to-rev      from-rev    to-rev    from-rev     to-rev
    -------   --------   ------      --------    ------    ---------    ---------
-   0.1:             -    1088              -      3306            -         616
+   0.1:             -    1088              -      3307            -         616
    
    These release notes will be merged back into the trunk later, if
    we're in a branch.
@@ -272,15 +272,19 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
 
 
 14. Put on the FTP site. (on selab)
-          scp 00README                  selab:/opt/www/ftp/pub/software/infernal/
-          scp documentation/release-notes/RELEASE-1.0.2  selab:/opt/www/ftp/pub/software/infernal/00RELEASE
-          scp COPYRIGHT                 selab:/opt/www/ftp/pub/software/infernal
-          scp LICENSE                   selab:/opt/www/ftp/pub/software/infernal/
-          scp Userguide.pdf             selab:/opt/www/ftp/pub/software/infernal/
-          scp ../infernal-1.0.2.tar.gz  selab:/opt/www/ftp/pub/software/infernal/
-          ssh selab  rm -f /opt/www/ftp/pub/software/infernal/infernal.tar.gz
-          ssh selab  "(cd /opt/www/ftp/pub/software/infernal; ln -s infernal-1.0.2.tar.gz infernal.tar.gz)"
+    On the head node (it knows what 'selab' means):
 
+    from ~/releases/ssu-align-0.1/
+
+    scp README selab:/opt/www/ftp/pub/software/ssu-align/
+    scp documentation/release-notes/RELEASE-0.1 selab:/opt/www/ftp/pub/software/ssu-align/00RELEASE
+    scp COPYRIGHT selab:/opt/www/ftp/pub/software/ssu-align/
+    scp LICENSE selab:/opt/www/ftp/pub/software/ssu-align/
+    scp Userguide.pdf selab:/opt/www/ftp/pub/software/ssu-align/
+    scp ../ssu-align-0.1.tar.gz selab:/opt/www/ftp/pub/software/ssu-align/
+    (IN THE FUTURE, DO ssh selab  rm -f /opt/www/ftp/pub/software/ssu-align/ssu-align.tar.gz
+    ssh selab  "(cd /opt/www/ftp/pub/software/ssu-align; ln -s ssu-align-0.1.tar.gz ssu-align.tar.gz)"
+    
 15. Update the web site
 	 cd ~/web/infernal/
          emacs index.html 
