@@ -1324,7 +1324,7 @@ sub run_ssdraw_for_ssu_mask {
 		PrintStringToFile($sum_file, 1, sprintf("  %-*s  %6s  %4s  %5s  %5s  %5s\n", $max_width, $draw_pdf2print, "output", "ps", ($n0+$n1), $n1, $n0));
 	    }
 	}
-	else { #command didn't work
+	else { #no column breakdown
 	    if($command_worked) { 
 		PrintStringToFile($sum_file, 1, sprintf("  %-*s  %6s  %4s  %5s  %5s  %5s\n", $max_width, $draw_pdf2print, "output", "pdf", ($n0+$n1), "-", "-"));
 	    }
