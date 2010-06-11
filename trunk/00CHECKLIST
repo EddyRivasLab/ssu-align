@@ -217,6 +217,10 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    svn mkdir https://svn.janelia.org/eddylab/eddys/src/hmmer/tags/ssu-align
    svn mkdir https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align
 
+      svn copy https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk \
+               https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/tags/0.1 \
+               -m "tagged SSU-ALIGN 0.1 release, from the trunk"          
+
       svn copy https://svn.janelia.org/eddylab/eddys/src/infernal/trunk \
                https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 \
                -m "tagged Infernal for SSU-ALIGN 0.1 release, from Infernal's trunk"          
@@ -258,18 +262,12 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    perspective of a new user: start by reading the README's.
 
 13. Build for our system (on login-eddy) (UPDATE ME FOR SSU-ALIGN)
-	 cd releases/infernal-xxx
-	 setenv OMPI_CC      "icc"
-	 setenv OMPI_CFLAGS  "-O3"
-	 ./configure --enable-mpi --prefix=/usr/local/infernal-1.0.2/
+	 cd releases/ssu-align-xx
+	 ./configure CC=icc --enable-mpi --prefix=/usr/local/ssu-align-0.1/
 	 make
-	 make check
-         (cd testsuite; ./sqc -p ../squid/ -r ../../infernal-0.52/src 4 regressions.sqc ../src/)
-                                                  ^^^^ replace w/ latest old version
-         
+
    Currently, I don't have permission to install software on login-eddy, so 
    just email Goran at this point.
-
 
 14. Put on the FTP site. (on selab)
     On the head node (it knows what 'selab' means):
@@ -286,23 +284,28 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
     ssh selab  "(cd /opt/www/ftp/pub/software/ssu-align; ln -s ssu-align-0.1.tar.gz ssu-align.tar.gz)"
     
 15. Update the web site
-	 cd ~/web/infernal/
-         emacs index.html 
-         make
-	 texclean
+	 cd ~/web/selab/
+	 emacs software.html
+         make test
          svn commit
+	 
+    Email Sean to do the final 'make' and push the webpages live.	 
 
 15. Clean up. Don't remove the old directory though, we will (should) use it for regression testing 
     at the next release.
 	cd ~/releases
-        mv infernal-1.0.2.tar.gz ~/Archives/
-        cd infernal-release
+        mv ssu-align-0.1.tar.gz ~/Archives/
+        cd ssu-align-release
 	make distclean
-        cd ../infernal-1.0.2
-	make distclean
+        cd ../ssu-align-0.1 
+	make distclean (ONLY AFTER GORAN HAS INSTALLED THE SOFTWARE!)
 
 16. Merge the changes from the "stabilized" release branch back into the trunk.
 
+    NOTE: I HAVEN'T DONE THIS YET (SINCE 0.1 WAS OUT OF TRUNK)
+    SEAN'S INFERNAL NOTES FOLLOW:
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     If you're doing a minor bugfix release on a stable branch, you know the
     revs that introduced the bugfixes; merge them explicitly. For example:
        cd ~/src/infernal
@@ -342,11 +345,14 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
     For subsequent rc's, the only thing that has changed is the release notes; so:
       cd ~/src/infernal/documentation/release-notes
       cp ~/releases/infernal-release/documentation/release-notes/RELEASE-1.0.1 .
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
     Commits.
        svn commit 
        ( cd easel ; svn commit )
+
+FROM INFERNAL:
 
 0.3    - SRE, Thu Jul  4 10:27:16 2002
 0.5    - SRE, Sun Oct  6 14:22:47 2002
