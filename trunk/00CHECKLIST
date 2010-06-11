@@ -174,7 +174,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
           nawrockie/src/            eddys/src/               eddys/easel/
    Release   from-rev   to-rev      from-rev    to-rev    from-rev     to-rev
    -------   --------   ------      --------    ------    ---------    ---------
-   0.1:             -    1076              -      3301            -         612
+   0.1:             -    1088              -      3306            -         616
    
    These release notes will be merged back into the trunk later, if
    we're in a branch.
@@ -195,11 +195,18 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
 
    Download to another computer and look at it. And do the INSTALL.
 
-9. Commit to SVN; include release number in the log message
+9. Test the 'dist' tarball on ALL compile farm nodes.
+   Ensure that:
+   1. "./configure --enable-debugging; make" gives no warnings and
+      builds successfully.
+   2. "./configure --prefix some-local-path; make; make install; make check;"
+      Builds successfully and passes all tests.
+
+10. Commit to SVN; include release number in the log message
 	 svn commit
     Remember to separately commit in Easel if changes were made there.
 
-10. Tag.
+11. Tag.
    We don't bother to tag snapshots.
    For a new major release, or a bugfix minor release,
    the tags are made from the relevant stable branch:
@@ -225,7 +232,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
      svn delete https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
      svn delete https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
 
-11. Make a distribution tarball.
+12. Make a distribution tarball.
    (Remaking configure scripts w/ autoconf is needed)
 	 make distclean
          autoconf
@@ -250,7 +257,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    Go into infernal-$RELEASE and make sure it looks good from the 
    perspective of a new user: start by reading the README's.
 
-12. Build for our system (on login-eddy) (UPDATE ME FOR SSU-ALIGN)
+13. Build for our system (on login-eddy) (UPDATE ME FOR SSU-ALIGN)
 	 cd releases/infernal-xxx
 	 setenv OMPI_CC      "icc"
 	 setenv OMPI_CFLAGS  "-O3"
@@ -264,7 +271,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
    just email Goran at this point.
 
 
-13. Put on the FTP site. (on selab)
+14. Put on the FTP site. (on selab)
           scp 00README                  selab:/opt/www/ftp/pub/software/infernal/
           scp documentation/release-notes/RELEASE-1.0.2  selab:/opt/www/ftp/pub/software/infernal/00RELEASE
           scp COPYRIGHT                 selab:/opt/www/ftp/pub/software/infernal
@@ -274,7 +281,7 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
           ssh selab  rm -f /opt/www/ftp/pub/software/infernal/infernal.tar.gz
           ssh selab  "(cd /opt/www/ftp/pub/software/infernal; ln -s infernal-1.0.2.tar.gz infernal.tar.gz)"
 
-14. Update the web site
+15. Update the web site
 	 cd ~/web/infernal/
          emacs index.html 
          make
