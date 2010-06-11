@@ -443,6 +443,7 @@ clean:
 	(if cd documentation/userguide; then make clean; fi)
 	(cd infernal/src;            make clean)
 	if test -e infernal/src/imp_sse/Makefile;     then (cd infernal/src/impl_sse;    make clean); fi	
+	if test -e infernal/testsuite/Makefile;       then (cd infernal/testsuite;       make clean); fi
 	if test -e infernal/rigfilters/Makefile;      then (cd infernal/rigfilters;      make clean); fi	
 	(cd infernal/easel;          make clean)
 	(cd infernal/hmmer/src/;     make clean)

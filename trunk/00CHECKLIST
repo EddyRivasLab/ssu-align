@@ -197,10 +197,10 @@ snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap200803
 
 9. Test the 'dist' tarball on ALL compile farm nodes.
    Ensure that:
-   1. "./configure --enable-debugging; make" gives no warnings and
-      builds successfully.
-   2. "./configure --prefix some-local-path; make; make install; make check;"
-      Builds successfully and passes all tests.
+     - "./configure --enable-debugging; make" gives no warnings and
+        builds successfully.
+     -  "./configure --prefix some-local-path; make; make install; make check;"
+        Builds successfully and passes all tests.
 
 10. Commit to SVN; include release number in the log message
 	 svn commit

@@ -910,7 +910,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".log");
     check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".indi.ps", ".indi.pdf");
     $output = `cat $dir/$dir.ssu-draw.sum`;
-    if($output !~ /$dir.bacteria.stk\s+$dir.bacteria.indi.p\w+\s+5/) { die "ERROR, problem with drawing"; }
+    if($output !~ /$dir.bacteria.stk\s+$dir.bacteria.indi.p\w+\s+10/) { die "ERROR, problem with drawing"; }
     # NOTE: no drawtab file is created, and the postscript is not checked (I could do that, but don't)
     remove_files              ($dir, "draw");
     remove_files              ($dir, "\.ps");
@@ -922,7 +922,7 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".log");
     check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".indi.ps", ".indi.pdf");
     $output = `cat $dir/$dir.ssu-draw.sum`;
-    if($output !~ /$dir.bacteria.stk\s+$dir.bacteria.indi.p\w+\s+5/) { die "ERROR, problem with drawing"; }
+    if($output !~ /$dir.bacteria.stk\s+$dir.bacteria.indi.p\w+\s+10/) { die "ERROR, problem with drawing"; }
     # NOTE: no drawtab file is created, and the postscript is not checked (I could do that, but don't)
     remove_files              ($dir, "draw");
     remove_files              ($dir, "\.ps");
