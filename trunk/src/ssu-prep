@@ -800,13 +800,15 @@ sub partition_seqfile_and_write_shell_script {
     
     # Modify permissions of the script so it can be executed.
     my $chmod_worked;
-    $chmod_worked = chmod(777, $shell_script);
+    $chmod_worked = chmod(0777, $shell_script);
     PrintStringToFile($sum_file, 1, sprintf("#\n################################################################################\n"));
     if($chmod_worked) { 
-	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with:\n#\t$shell_script\n", $njobs));
+	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with the command:\n#\t\"$shell_script\"\n", $njobs));
+	PrintStringToFile($sum_file, 1, sprintf("# (it is an executable file)\n"));
     }
     else { 
-	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with:\n#\t/bin/bash $shell_script\n", $njobs));
+	PrintStringToFile($sum_file, 1, sprintf("# To execute all %d ssu-align jobs, run the shell script with the command:\n#\tbash \"$shell_script\"\n", $njobs));
+	PrintStringToFile($sum_file, 1, sprintf("# (or provide the full path to bash)\n"));
     }
     PrintStringToFile($sum_file, 1, sprintf("################################################################################\n"));
     if(! $opt_H{"--no-merge"}) {
