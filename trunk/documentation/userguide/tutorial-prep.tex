@@ -117,8 +117,9 @@ this, you'll see:
 
 \begin{sreoutput}
 ################################################################################
-# To execute all 5 ssu-align jobs, run the shell script with:
-#	sh my30.ssu-align.sh
+# To execute all 5 ssu-align jobs, run the shell script with the command:
+#	"my30.ssu-align.sh"
+# (it is an executable file)
 ################################################################################
 \end{sreoutput}
 
@@ -231,9 +232,11 @@ in the warning above, this will simply run the 5 jobs in succession
 instead of in parallel, but for our purposes here this is okay. To run
 the script, execute the command: 
 
-\user{sh my30.ssu-align.sh \footnote{If this command fails, you're
-    probably not using the BASH shell. Rerun the \prog{ssu-prep}
-    command above with the \prog{--no-bash} option and try again.}}
+\user{my30.ssu-align.sh \footnote{If this command fails, you're
+    probably not using the BASH shell or the \prog{ssu-prep} was
+    unable to make the file executable. In the former case, rerun the \prog{ssu-prep}
+    command above with the \prog{--no-bash} option and try again. In
+    the latter, execute \prog{bash my30.ssu-align.sh}}}
 
 The script executes \prog{ssu-align} five times in succession, and
 these jobs will being reporting what they're doing to the screen. 
