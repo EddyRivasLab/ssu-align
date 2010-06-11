@@ -887,8 +887,37 @@ if(($testnum eq "") || ($testnum == $testctr)) {
     remove_files              (".", "bacteria.indi");
     remove_files              (".", "bacteria.ssu-draw");
 
-    # without -a, but with --no-prob
-    run_draw                  ($ssudraw, $dir, "--indi --no-aln --no-prob", $testctr);
+    ################
+    # NOTE the --no-pp, --no-bp, and --no-ol tests are weak, they only make sure that
+    # the program will run with those options, they don't check the output to make sure
+    # no PPs, basepairs, or outlines were drawn.
+    ################
+    # without -a, but with --no-pp
+    run_draw                  ($ssudraw, $dir, "--indi --no-aln --no-pp", $testctr);
+    check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".sum");
+    check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".log");
+    check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".indi.ps", ".indi.pdf");
+    $output = `cat $dir/$dir.ssu-draw.sum`;
+    if($output !~ /$dir.bacteria.stk\s+$dir.bacteria.indi.p\w+\s+5/) { die "ERROR, problem with drawing"; }
+    # NOTE: no drawtab file is created, and the postscript is not checked (I could do that, but don't)
+    remove_files              ($dir, "draw");
+    remove_files              ($dir, "\.ps");
+    remove_files              ($dir, "\.pdf");
+
+    # without -a, but with --no-bp
+    run_draw                  ($ssudraw, $dir, "--indi --no-aln --no-bp", $testctr);
+    check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".sum");
+    check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".log");
+    check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".indi.ps", ".indi.pdf");
+    $output = `cat $dir/$dir.ssu-draw.sum`;
+    if($output !~ /$dir.bacteria.stk\s+$dir.bacteria.indi.p\w+\s+5/) { die "ERROR, problem with drawing"; }
+    # NOTE: no drawtab file is created, and the postscript is not checked (I could do that, but don't)
+    remove_files              ($dir, "draw");
+    remove_files              ($dir, "\.ps");
+    remove_files              ($dir, "\.pdf");
+
+    # without -a, but with --no-ol
+    run_draw                  ($ssudraw, $dir, "--indi --no-aln --no-ol", $testctr);
     check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".sum");
     check_for_files           ($dir, $dir, $testctr, \@ssudraw_only_A, ".log");
     check_for_one_of_two_files($dir, $dir, $testctr, \@name_A, ".indi.ps", ".indi.pdf");

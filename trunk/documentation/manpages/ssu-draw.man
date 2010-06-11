@@ -293,6 +293,10 @@ Draw a single page diagram displaying the mutual information per
 basepaired position for each alignment to a file. 
 
 .TP 
+.B --cnt
+Draw consensus nucleotides on all alignment summary diagrams
+
+.TP 
 .B --no-aln
 Do not draw the default nine page diagram displaying all available
 statistics.
@@ -346,11 +350,26 @@ least 75% of the sequences that do not have a gap at the position will
 be uppercase; others will be lowercase.
 
 .TP 
-.B --no-prob
+.B --no-pp
 With 
 .B --indi,
 do not draw posterior probability diagrams, only draw individual
 sequence diagrams.
+
+.TP 
+.B --no-bp
+With 
+.B --indi, --rf, 
+or 
+.B --cons,
+do not color nucleotides based on their basepair type.
+
+.TP 
+.B --no-ol
+With 
+.B --indi,
+do not outline nucleotides that are not the most common nucleotide in
+the alignment at their respective consensus position.
 
 .SH OPTIONS FOR OMITTING SECTIONS OF STRUCTURE DIAGRAMS:
 
