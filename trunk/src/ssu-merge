@@ -1098,7 +1098,7 @@ sub concatenate_sum_files_and_merge_statistics {
 		    $nseq_cm_HR->{$cm_name} += $nseq;
 		    if($nseq > 0) { 
 			$aligned_nres                    = $nt;
-			$total_nres                      = $aligned_nres / $cov;
+			$total_nres                      = ($cov > 1E-9) ? $aligned_nres / $cov : 0.;
 			$nres_total_all_cms             += $total_nres;
 			$nres_total_cm_HR->{$cm_name}   += $total_nres;
 			$nres_aligned_all_cms           += $aligned_nres;

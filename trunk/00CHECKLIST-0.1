@@ -1,0 +1,377 @@
+Checklist for an SSU-ALIGN release.
+EPN, Mon Jun  7 13:11:49 2010
+
+This is based heavily on the 00CHECKLIST from Infernal
+-------------------------------------
+
+When editing this 00CHECKLIST, it is best to edit it only in the
+trunk, not in a release branch. It isn't included in releases anyway.
+
+Subversion repository:  https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/
+Trunk:                  https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk
+
+-------------------------------------
+IMPORTANT: The vast majority of development for the 0.1 release was
+done in a different repository: 
+
+https://svn.janelia.org/eddylab/nawrockie/src/ssualign
+
+(no dash between 'ssu' and 'align'). I changed the repository just
+before the 0.1 release b/c I hadn't set up a trunk/ subdirectory in
+https://svn.janelia.org/eddylab/nawrockie/src/ssualign (nor a tags/ or
+branches/). 
+-------------------------------------
+SSU-ALIGN follows an 'unstable trunk' policy.
+Each major release goes onto a stable branch.
+Every release (even minor ones) is tagged.
+
+There's three types of releases: major releases, minor releases, and
+snapshots. A major release gets its own branch. A minor release puts
+bug fixes into a major branch. A snapshot is straight from the
+development trunk.
+
+Version naming:                                        example
+major              <lineage>.<major-release>                      1.0
+minor              <lineage>.<major-release>.<minor-release>      1.0.1
+alpha              <lineage>.<major-release>a<n>                  1.0a1
+beta               <lineage>.<major-release>b<n>                  1.0b1
+release candidate  <lineage>.<major-release>rc<n>                 1.0rc1
+snapshot           <lineage>.<major-release>.snap<yyyymmdd>       1.0.snap20080325
+
+1. Announce the intent to release to all developers. 
+   Commit working copies on all machines (including Infernal, HMMER, and Easel).
+   Example of checking for stray or uncommitted files:
+	 ./configure
+         make distclean
+         svn update
+	 svn status
+   Clean up any stray files identified by 'svn status'.
+   'svn add' and 'svn commit' as needed to commit new or modified files.
+
+2. For a major release (where we're about to create a new branch):
+   First test the development trunk.
+   Compile should be entirely clean when compiled -Wall.
+
+        ssh login-eddy
+        ./configure --enable-debugging --prefix=/groups/eddy/home/nawrockie/tmp/ssu-align
+        make
+        (cd documentation/userguide; make) 
+        make check
+	make install
+	make REPOSITORY=https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk RELEASE=0.1 dist
+
+   When trunk is clean,
+        svn commit
+   We're (usually) next going to move out of the trunk to the release branch.
+
+
+3. If I ever do a major release, create stable release branches for Infernal, HMMER and Easel.
+   All subsequent bugfix releases will happen in this branch, while trunk keeps moving.
+   [Query replace the version # here]
+         svn copy https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk\
+                 https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/branches/1.0\
+                 -m "created 1.0 release branch"          
+         svn copy https://svn.janelia.org/eddylab/eddys/src/infernal/trunk\
+                 https://svn.janelia.org/eddylab/eddys/src/infernal/branches/ssu-align/1.0\
+                 -m "created SSU-ALIGN 1.0 release branch"          
+         svn copy https://svn.janelia.org/eddylab/eddys/src/hmmer/trunk\
+                 https://svn.janelia.org/eddylab/eddys/src/hmmer/branches/ssu-align/1.0\
+                 -m "created SSU-ALIGN 1.0 release branch"          
+         svn copy https://svn.janelia.org/eddylab/eddys/easel/trunk\
+                 https://svn.janelia.org/eddylab/eddys/easel/branches/ssu-align/1.0\
+                 -m "created SSU-ALIGN 1.0 release branch"          
+
+
+4. Move into a working copy of the release branch.
+
+   For a dev snapshot, this is the normal working copy.
+   For a major or minor release, this is a fresh working copy of the appropriate branch:
+       cd ~/releases
+       svn checkout https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk ssu-align-release
+
+   Don't call this working directory ssu-align-xx, nor ssu-align! Call it
+   ssu-align-release, because later "make dist" is going to try to create
+   ssu-align-xx as its release, and because you want to recognize that
+   it's different from src/ssu-align.  
+
+   If this is the first time (a new release branch), you also need to update the "svn:externals"
+   so Infernal, HMMER and Easel are checked out from the their appropriate stable branches too.
+
+   NOTE: for the 0.1 release, I didn't have to do this (since branches
+   weren't used. So I'm not sure the below commands are correct. I
+   think I'll have to update externals for Infernal, and then for
+   easel and hmmer within infernal, but not for hmmer/easel???
+
+         svn proplist --verbose https://svn.janelia.org/eddylab/eddys/src/infernal/branches/1.0
+         svn propedit svn:externals infernal
+           infernal         https://svn.janelia.org/eddylab/eddys/src/infernal/branches/ssu-align/1.0
+           infernal/easel   https://svn.janelia.org/eddylab/eddys/easel/branches/ssu-align/1.0
+           infernal/hmmer   https://svn.janelia.org/eddylab/eddys/src/hmmer/branches/ssu-align/1.0
+         cd ssu-align
+         svn update
+	 svn commit
+
+   Note the hassle with svn:externals, because it currently only accepts
+   absolute URLs. Relative paths are supposed to become available in
+   Subversion 1.5, which may help.
+
+
+4.5 [For minor bugfix releases, on branches]:
+
+   Figure out what bug fixes need to be merged from the development trunk.
+   For Infernal 1.0rc2, this is r2497,2498; Easel r277
+
+   Then in a working copy of the 1.0 branch, merge from trunk:
+
+   svn update
+   svn merge -r 2496:2498 https://svn.janelia.org/eddylab/eddys/src/infernal/trunk
+   cd easel
+   svn merge -r 276:277 https://svn.janelia.org/eddylab/eddys/easel/trunk
+   
+
+5. Test.
+   The SSU-ALIGN testsuite is currently relatively weak; and its based
+   on PERL scripts. It needs to include valgrind tests for memory leaks, for example.
+   The INFERNAL testsuite does not do memory leak checking either.
+
+   But even so, don't rely solely on the automated exercises and bug tests.
+   Run some anecdotal examples by hand too.
+
+    	 autoconf
+         (cd infernal/testsuite; ln -s ../easel/devkit/sqc .)
+     	 env CFLAGS="-g -Wall" ./configure --prefix=/groups/eddy/home/eddys/tmp/infernal
+         make
+         make check
+
+   Run some anecdotes. Examples:
+        ../infernal/src/ssu-cmbuild foo.cm ../infernal/intro/trna.sto
+        ../infernal/src/ssu-cmsearch foo.cm trna-regression.fa
+   Run those with valgrind, too.
+
+   Check the User's Guide.
+      cd documentation/userguide
+      make
+
+   Check that the Infernal, HMMER and Easel user's guides build, but
+   place correct release numbers on their covers (e.g. 's0.1').
+
+6. Write (or update) release notes.
+   For the first time on a new release branch, it's handy to look
+   at the svn log. Replace "1534" below with the last release's SVN rev.
+	 svn log -r 1534:HEAD | more
+         cd easel
+         svn log -r 314:HEAD | more
+         emacs documentation/release-notes/RELEASE-${RELEASE}
+	 svn add documentation/release-notes/RELEASE-${RELEASE}
+
+	 repo=https://svn.janelia.org/eddylab/
+
+	 Different revision numbering histories:
+	 nawrockie/src is relevant for ssu-align
+	 eddys/src     is relevant for infernal/ and hmmer/
+	 eddys/easel   is relevant for easel
+                                           
+          nawrockie/src/            eddys/src/               eddys/easel/
+   Release   from-rev   to-rev      from-rev    to-rev    from-rev     to-rev
+   -------   --------   ------      --------    ------    ---------    ---------
+   0.1:             -    1088              -      3307            -         616
+   
+   These release notes will be merged back into the trunk later, if
+   we're in a branch.
+
+7. Update the copyright, year stamps. 
+	- configure.ac (release, relcode, date)
+	- COPYRIGHT (year only)
+
+8. Test a 'make dist' tarball:
+   I recommend doing a 'make dist' at this and testing that it
+   includes the exact set of files that you want. Sean's 00CHECKLIST
+   does not include this step here (he does include it later), but I
+   found this is good to do before Tagging. 
+
+          make REPOSITORY=https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk RELEASE=0.1 dist
+	  cd ../
+	  scp ssu-align-0.1.tar.gz nawrockie@ssh.janelia.org:~/
+
+   Download to another computer and look at it. And do the INSTALL.
+
+9. Test the 'dist' tarball on ALL compile farm nodes.
+   Ensure that:
+     - "./configure --enable-debugging; make" gives no warnings and
+        builds successfully.
+     -  "./configure --prefix some-local-path; make; make install; make check;"
+        Builds successfully and passes all tests.
+
+10. Commit to SVN; include release number in the log message
+	 svn commit
+    Remember to separately commit in Easel if changes were made there.
+
+11. Tag.
+   We don't bother to tag snapshots.
+   For a new major release, or a bugfix minor release,
+   the tags are made from the relevant stable branch:
+
+   ONLY if first time (0.1 release), create the tags/ssu-align subdirs:
+
+   svn mkdir https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align
+   svn mkdir https://svn.janelia.org/eddylab/eddys/src/hmmer/tags/ssu-align
+   svn mkdir https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align
+
+      svn copy https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/trunk \
+               https://svn.janelia.org/eddylab/nawrockie/src/ssu-align/tags/0.1 \
+               -m "tagged SSU-ALIGN 0.1 release, from the trunk"          
+
+      svn copy https://svn.janelia.org/eddylab/eddys/src/infernal/trunk \
+               https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 \
+               -m "tagged Infernal for SSU-ALIGN 0.1 release, from Infernal's trunk"          
+      svn copy https://svn.janelia.org/eddylab/eddys/src/hmmer/trunk \
+               https://svn.janelia.org/eddylab/eddys/src/hmmer/tags/ssu-align/0.1 \
+               -m "tagged HMMER for SSU-ALIGN 0.1 release, from HMMER's trunk"          
+      svn copy https://svn.janelia.org/eddylab/eddys/easel/trunk \
+               https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1 \
+                 -m "tagged Easel for SSU-ALIGN 0.1 release, from Easel's trunk"
+
+   Note: if you screw up somewhere below, and need to come back and
+   re-tag, you must delete the previous tagged versions first:
+     svn delete https://svn.janelia.org/eddylab/eddys/src/infernal/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
+     svn delete https://svn.janelia.org/eddylab/eddys/easel/tags/ssu-align/0.1 -m "needed to make more changes; deleted tag; new tag coming"
+
+12. Make a distribution tarball.
+   (Remaking configure scripts w/ autoconf is needed)
+	 make distclean
+         autoconf
+	 IS THIS NEC? (cd infernal; autoconf)
+         IS THIS NEC? (cd easel; autoconf)
+         IS THIS NEC? (cd ../hmmer; autoconf)
+	 ./configure          <-- makes a Makefile (needed for "make dist")
+
+    major or minor:
+	 make REPOSITORY=https://svn.janelia.org/eddylab/eddys/src/infernal/tags/1.0.2 dist
+    snapshot:
+	 make REPOSITORY=https://svn.janelia.org/eddylab/eddys/src/infernal/trunk RELEASE=snap20080325 dist
+
+   NOT SURE WHAT THESE NEXT 2 LINES MEAN:
+   Alternatively, make -n dist' and execute commands yourself one at a
+   time, under a Bourne shell like 'bash' so the for loops work.
+
+   This exports into a infernal-$RELEASE directory, alongside the
+   infernal working directory in ~/releases/. The tarball is also
+   left in ~/releases/.
+   
+   Go into infernal-$RELEASE and make sure it looks good from the 
+   perspective of a new user: start by reading the README's.
+
+13. Build for our system (on login-eddy) (UPDATE ME FOR SSU-ALIGN)
+	 cd releases/ssu-align-xx
+	 ./configure CC=icc --enable-mpi --prefix=/usr/local/ssu-align-0.1/
+	 make
+
+   Currently, I don't have permission to install software on login-eddy, so 
+   just email Goran at this point.
+
+14. Put on the FTP site. (on selab)
+    On the head node (it knows what 'selab' means):
+
+    from ~/releases/ssu-align-0.1/
+
+    scp README selab:/opt/www/ftp/pub/software/ssu-align/
+    scp documentation/release-notes/RELEASE-0.1 selab:/opt/www/ftp/pub/software/ssu-align/00RELEASE
+    scp COPYRIGHT selab:/opt/www/ftp/pub/software/ssu-align/
+    scp LICENSE selab:/opt/www/ftp/pub/software/ssu-align/
+    scp Userguide.pdf selab:/opt/www/ftp/pub/software/ssu-align/
+    scp ../ssu-align-0.1.tar.gz selab:/opt/www/ftp/pub/software/ssu-align/
+    (IN THE FUTURE, DO ssh selab  rm -f /opt/www/ftp/pub/software/ssu-align/ssu-align.tar.gz
+    ssh selab  "(cd /opt/www/ftp/pub/software/ssu-align; ln -s ssu-align-0.1.tar.gz ssu-align.tar.gz)"
+    
+15. Update the web site
+	 cd ~/web/selab/
+	 emacs software.html
+         make test
+         svn commit
+	 
+    Email Sean to do the final 'make' and push the webpages live.	 
+
+15. Clean up. Don't remove the old directory though, we will (should) use it for regression testing 
+    at the next release.
+	cd ~/releases
+        mv ssu-align-0.1.tar.gz ~/Archives/
+        cd ssu-align-release
+	make distclean
+        cd ../ssu-align-0.1 
+	make distclean (ONLY AFTER GORAN HAS INSTALLED THE SOFTWARE!)
+
+16. Merge the changes from the "stabilized" release branch back into the trunk.
+
+    NOTE: I HAVEN'T DONE THIS YET (SINCE 0.1 WAS OUT OF TRUNK)
+    SEAN'S INFERNAL NOTES FOLLOW:
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    If you're doing a minor bugfix release on a stable branch, you know the
+    revs that introduced the bugfixes; merge them explicitly. For example:
+       cd ~/src/infernal
+       svn update
+       svn merge -r 3019:HEAD https://svn.janelia.org/eddylab/eddys/src/infernal/branches/1.0
+    
+    If you're doing a major release on a new stable branch:
+    First identify the rev #'s for when we made the release branch.
+    In the release working copy:
+       svn log --verbose --stop-on-copy      <-- ssdk, squid are the same
+       cd easel
+       svn log --verbose --stop-on-copy 
+           infernal     easel
+    0.6:  (r1465; Easel is r72.)
+    0.7:  (r1522; Easel is r81.)
+    0.71: (r1723; Easel is r139.)
+    0.8:   r1966       r1967     r1968   r173
+    1.0rc1 r2485        r272
+
+    Go back to working copies of the trunks, and merge the release branches into it.
+       cd ~/src/infernal
+       svn update
+       svn merge -r 2485:HEAD https://svn.janelia.org/eddylab/eddys/src/infernal/branches/1.0
+
+       cd ../easel
+       svn update
+       svn merge -r 272:HEAD https://svn.janelia.org/eddylab/eddys/easel/branches/infernal/1.0
+       
+    Now, the merge will always screw up the svn:externals for Infernal. Reset them.
+       cd ..
+       svn propedit svn:externals .
+          easel   https://svn.janelia.org/eddylab/eddys/easel/trunk
+    [didn't screw up on 1.0rc1?]
+
+
+    1.0rc2-1.0rc5,1.0
+    For subsequent rc's, the only thing that has changed is the release notes; so:
+      cd ~/src/infernal/documentation/release-notes
+      cp ~/releases/infernal-release/documentation/release-notes/RELEASE-1.0.1 .
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    Commits.
+       svn commit 
+       ( cd easel ; svn commit )
+
+FROM INFERNAL:
+
+0.3    - SRE, Thu Jul  4 10:27:16 2002
+0.5    - SRE, Sun Oct  6 14:22:47 2002
+0.51   - SRE, Wed Oct  9 09:43:50 2002
+0.52   - SRE, Mon Oct 14 2002
+0.53   - SRE, Thu Jan  2 14:24:07 2003
+0.54   - SRE, Sun Jan  5 18:17:55 2003
+0.55   - SRE, Wed Apr  2 18:12:23 2003   r875
+0.6    - SRE, Tue Nov  1 17:13:00 2005   r1477  Easel:r72
+0.7    - SRE, Tue Dec 13 14:54:30 2005   r1534  Easel:r84
+0.71   - SRE, Thu Nov 30 11:43:57 2006   r1730  Easel:r142
+0.72   - SRE, Sat Jan 27 10:44:46 2007   r1862  Easel:r149
+0.8    - SRE, Sun Apr 29 11:55:56 2007   r1984  Easel:r176
+0.81   - SRE, Tue May  1 10:36:10 2007   r1995  Easel:r179
+1.0rc1 - SRE, Fri Jun 20 13:38:46 2008   r2492  Easel:r276
+1.0rc2 - SRE, Sat Jul 12 09:26:29 2008   r2502  Easel:r280
+1.0rc3 - SRE, Wed Sep 24 14:33:59 2008   r2596  Easel:r294
+1.0rc4 - SRE, Mon Nov 24 17:43:07 2008   r2635  Easel:r304
+1.0rc5 - SRE, Wed Dec 17 17:59:01 2008   r2673  Easel:r310
+1.0    - SRE, Tue Jan 13 14:33:16 2009   r2710  Easel:r317
+1.0.1  - SRE, Sat Oct 24 10:12:50 2009   r2997  Easel:r422
+1.0.2  - SRE, Fri Oct 30 13:57:33 2009   r3021  Easel:r428
