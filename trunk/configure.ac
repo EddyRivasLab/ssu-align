@@ -48,7 +48,7 @@
 
 # Autoconf 2.61 has a bug in AC_FUNC_FSEEKO; don't use it.
 AC_PREREQ(2.63)
-AC_INIT(SSU-ALIGN, 0.1, nawrockie@janelia.hhmi.org, ssu-align)
+AC_INIT(SSU-ALIGN, 0.1.1, nawrocke@ncbi.nlm.nih.gov, ssu-align)
 AC_MSG_NOTICE([Configuring SSU-ALIGN for your system.])
 
 # remember if the user is overriding CFLAGS
@@ -75,34 +75,34 @@ fi
 # And we have to define the relevant package variables for Infernal, Easel and HMMER as well.
 #
 ################################################################
-PACKAGE_DATE="June 2010"
-PACKAGE_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
-PACKAGE_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
+PACKAGE_DATE="Feb 2016"
+PACKAGE_COPYRIGHT="Copyright (C) 2016 Howard Hughes Medical Institute."
+PACKAGE_LICENSE="Freely distributed under the BSD open source license."
 PACKAGE_VERSION="$PACKAGE_VERSION"
-PACKAGE_URL="http://eddylab.org/software.html"
+PACKAGE_URL="eddylab.org/software/ssu-align"
 
-SSUALIGN_DATE="June 2010"
-SSUALIGN_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
-SSUALIGN_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
+SSUALIGN_DATE="Feb 2016"
+SSUALIGN_COPYRIGHT="Copyright (C) 2016 Howard Hughes Medical Institute."
+SSUALIGN_LICENSE="Freely distributed under the BSD open source license."
 SSUALIGN_VERSION="$PACKAGE_VERSION"
-SSUALIGN_URL="http://eddylab.org/software.html"
+SSUALIGN_URL="eddylab.org/software/ssu-align"
 
-INFERNAL_DATE="June 2010"
-INFERNAL_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
-INFERNAL_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
+INFERNAL_DATE="Feb 2016"
+INFERNAL_COPYRIGHT="Copyright (C) 2016 Howard Hughes Medical Institute."
+INFERNAL_LICENSE="Freely distributed under the BSD open source license."
 INFERNAL_VERSION="s$PACKAGE_VERSION"
-INFERNAL_URL="http://infernal.janelia.org/"
+INFERNAL_URL="eddylab.org/infernal"
 
-HMMER_DATE="June 2010"
-HMMER_COPYRIGHT="Copyright (C) 2010 Howard Hughes Medical Institute."
-HMMER_LICENSE="Freely distributed under the GNU General Public License (GPLv3)."
+HMMER_DATE="Feb 2016"
+HMMER_COPYRIGHT="Copyright (C) 2016 Howard Hughes Medical Institute."
+HMMER_LICENSE="Freely distributed under the BSD open source license."
 HMMER_VERSION="s$PACKAGE_VERSION"
-HMMER_URL="http://hmmer.org/"
+HMMER_URL="hmmer.org"
 HMMER_ESLDIR="../easel"
 
-EASEL_DATE="June 2010"
-EASEL_COPYRIGHT="Copyright (C) 2010 HHMI Janelia Farm Research Campus"
-EASEL_LICENSE="Freely distributed under the Janelia Software License."
+EASEL_DATE="Feb 2016"
+EASEL_COPYRIGHT="Copyright (C) 2016 HHMI Janelia Farm Research Campus"
+EASEL_LICENSE="Freely distributed under the BSD open source license."
 EASEL_VERSION="s$PACKAGE_VERSION"
 EASEL_URL="http://bioeasel.org/"
 
