@@ -101,6 +101,7 @@ SSU-ALIGN post-0.1 release steps:
    what's in 'trunk' at the top-level. However, that's not how I did
    it. So we work around it here.
 
+     cd ~/releases
      git clone https://github.com/EddyRivasLab/ssu-align.git ssu-align-release
 
      cd ssu-align-release/trunk
