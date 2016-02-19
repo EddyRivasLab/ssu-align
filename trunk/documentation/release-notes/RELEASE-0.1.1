@@ -1,0 +1,29 @@
+SSU-ALIGN 0.1.1 release notes
+EPN, Fri Feb 19 18:21:21 2016
+________________________________________________________________
+
+SSU-ALIGN 0.1.1 is the first update release for SSU-ALIGN 0.1.
+
+Very little has changed since 0.1. The only changes are as follows:
+
+- a bug fix (in infernal/easel/devkit/sqc) that enables 'make check'
+  to run on systems that use new versions of Perl.
+
+- a bug fix in ssu-merge that prevents a possible divide-by-zero
+  error.
+
+- a change to the Userguide, which now suggests using 'source' instead
+  of 'sh' at certain installation steps.
+
+- the SSU-ALIGN license has changed to BSD. See the LICENSE file for
+  more details.
+
+Because so little of the code has changed, the output of SSU-ALIGN
+0.1.1 should be identical to that of 0.1, with the following excepton
+of ssu-merge. If the divide-by-zero bug mentioned above is encountered
+for v0.1 leading to a failure of ssu-merge, then v0.1.1's ssu-merge
+should finish successfully. 
+
+-------------------------------------------------------------------
+Eric Nawrocki
+nawrocke@ncbi.nlm.nih.gov

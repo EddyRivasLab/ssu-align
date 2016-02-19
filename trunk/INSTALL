@@ -1,15 +1,15 @@
 Brief installation instructions 
-SSU-ALIGN 0.1; June 2010
-EPN, Mon Jun  7 09:10:06 2010
+SSU-ALIGN 0.1.1; February 2016
+EPN, Fri Feb 19 18:20:24 2016
 -------------------------------------------------------------
 
 These are quick installation instructions. For complete documentation,
 including customization, see the Installation chapter in the SSU-ALIGN
 User's Guide (Userguide.pdf).
 
-Starting from a source distribution, ssu-align-0.1.tar.gz:
- uncompress and unpack:     tar xfz ssu-align-0.1.tar.gz
- move into new directory:   cd ssu-align-0.1
+Starting from a source distribution, ssu-align-0.1..1tar.gz:
+ uncompress and unpack:     tar xfz ssu-align-0.1.1.tar.gz
+ move into new directory:   cd ssu-align-0.1.1
  configure:                 ./configure
  build:                     make
  automated install:         make install
@@ -30,10 +30,6 @@ installed, such as Cygwin.
 
 -------------------------------------------------------------
 Eric Nawrocki
-HHMI Janelia Farm Research Campus
-19700 Helix Drive
-Ashburn VA 20147 USA
-http://eddylab.org
-
+nawrocke@ncbi.nlm.nih.gov
 
 

@@ -1,5 +1,5 @@
 SSU-ALIGN - structural alignment of SSU rRNA sequences
-Copyright (C) 2010 HHMI Janelia Farm Research Campus
+Copyright (C) 2016 HHMI Janelia Farm Research Campus
 ------------------------------------------------------------------
 
 SSU-ALIGN is a software package for creating, masking and visualizing
@@ -10,7 +10,7 @@ that represent archaeal 16S SSU rRNA, bacterial 16S SSU rRNA and
 eukaryotic 18S SSU rRNA. Each of these profile models was built from a
 reference alignment derived from Robin Gutell's Comparative RNA
 Website database (CRW) (Cannone et al., BMC Bionformatics. 2002; 3:2.)
-as described in the user's guide.  The alignments created by SSU-ALIGN
+as described in the user's guide. The alignments created by SSU-ALIGN
 explicitly take into account the conserved secondary structure of SSU
 as annotated by CRW.
 
@@ -26,10 +26,8 @@ SSU-ALIGN User's Guide (Userguide.pdf).
 
 -------------------------------------------------------------------
 Eric Nawrocki
-HHMI Janelia Farm Research Campus
-19700 Helix Drive
-Ashburn VA 20147 USA
-http://eddylab.org
+nawrocke@ncbi.nlm.nih.gov
+
 
 
 
