@@ -53,9 +53,12 @@ RELEASE     = @PACKAGE_VERSION@
 RELEASEDATE = "@PACKAGE_DATE@"
 COPYRIGHT   = "@PACKAGE_COPYRIGHT@"
 LICENSELINE = "@PACKAGE_LICENSE@"
-LICENSETAG  = gnu
+LICENSETAG  = bsd
 COMPRESS    = gzip
-REPOSITORY  = https://svn.janelia.org/eddylab/nawrockie/src/ssualign/
+REPOSITORY           = https://github.com/EddyRivasLab/ssu-align.git
+INFERNAL_REPOSITORY  = https://github.com/EddyRivasLab/infernal.git
+HMMER_REPOSITORY     = https://github.com/EddyRivasLab/hmmer.git
+EASEL_REPOSITORY     = https://github.com/EddyRivasLab/easel.git
 
 EASEL_COPYRIGHT = "@EASEL_COPYRIGHT@"
 EASEL_LICENSE   = "@EASEL_LICENSE@"
@@ -168,9 +171,21 @@ addssu:
 # dist: build a new distribution directory in ssu-align-$RELEASE
 #
 dist:
-	# Make sure we pointed the make dist to a subversion repository
+	# Make sure we have the locations of all the git repos we need
 	@if test x${REPOSITORY} = 'x'; then\
 	  echo "REPOSITORY isn't set; use make REPOSITORY=... dist";\
+	  exit 1;\
+	fi
+	@if test x${INFERNAL_REPOSITORY} = 'x'; then\
+	  echo "INFERNAL_REPOSITORY isn't set; use make INFERNAL_REPOSITORY=... dist";\
+	  exit 1;\
+	fi
+	@if test x${HMMER_REPOSITORY} = 'x'; then\
+	  echo "HMMER_REPOSITORY isn't set; use make HMMER_REPOSITORY=... dist";\
+	  exit 1;\
+	fi
+	@if test x${EASEL_REPOSITORY} = 'x'; then\
+	  echo "EASEL_REPOSITORY isn't set; use make EASEL_REPOSITORY=... dist";\
 	  exit 1;\
 	fi
 	# Delete old versions of the same release
@@ -180,18 +195,25 @@ dist:
 	@if test -e ../${BASENAME}-$(RELEASE).tar.Z;  then rm -f  ../${BASENAME}-$(RELEASE).tar.Z;  fi
 	@if test -e ../${BASENAME}-$(RELEASE).tar.gz; then rm -f  ../${BASENAME}-$(RELEASE).tar.gz; fi
 	# 
-	# Export the release from Subversion control.
-        # Because we use svn:externals, this automatically exports 
-	# the Infernal, ssdk, and Easel libraries as well.
+	# Clone the git repo, then delete the .git subdir.
+        # There's probably a better way, but I picked this
+	# way because I understand it.
 	#
-	svn export ${REPOSITORY} ../${BASENAME}-${RELEASE}
+	git clone ${REPOSITORY} ../${BASENAME}-${RELEASE}
+	mv ../${BASENAME}-${RELEASE}/trunk/* ../${BASENAME}-${RELEASE}/
+	rm -rf ../${BASENAME}-${RELEASE}/trunk
+	rm -rf ../${BASENAME}-${RELEASE}/tags
+	rm -rf ../${BASENAME}-${RELEASE}/.git
+	(cd ../${BASENAME}-${RELEASE};          git clone ${INFERNAL_REPOSITORY} infernal; cd infernal; git checkout ssu-align-0.1-branch; rm -rf .git)
+	(cd ../${BASENAME}-${RELEASE}/infernal; git clone ${HMMER_REPOSITORY}    hmmer;    cd hmmer;    git checkout ssu-align-0.1-branch; rm -rf .git)
+	(cd ../${BASENAME}-${RELEASE}/infernal; git clone ${EASEL_REPOSITORY}    easel;    cd easel;    git checkout ssu-align-0.1-branch; rm -rf .git)
 	# 
-	# Make the configure scripts from configure.ac
-	#
-	(cd ../${BASENAME}-${RELEASE};          autoconf)
-	(cd ../${BASENAME}-${RELEASE}/infernal/easel;    autoconf)
-	(cd ../${BASENAME}-${RELEASE}/infernal/hmmer;    autoconf)
-	(cd ../${BASENAME}-${RELEASE}/infernal; autoconf)
+	# Make the configure script from configure.ac
+	# As of 0.1.1 we do not make configures for infernal
+	# hmmer or easel. Users shouldn't need those, but
+	# the real reason was hmmer's autoconf command failed
+	# and I couldn't figure out how to fix it.
+	(cd ../${BASENAME}-${RELEASE};                autoconf)
 	#
 	# We'll need a basic Makefiles for some steps; later
 	# we'll delete them
