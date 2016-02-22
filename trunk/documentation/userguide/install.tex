@@ -1,4 +1,5 @@
 % EPN, Thu Jun  3 08:04:50 2010
+% EPN, Mon Feb 22 09:31:56 2016 [updated for 0.1.1 release]
 % NOTE: this install section was created by taking the first half of
 % the HMMER3 installation section and the second half of the Infernal
 % installation sections, glueing them together and making the
@@ -10,13 +11,13 @@
 
 \subsection{Quick installation instructions}
 Download the source tarball (\prog{ssu-align.tar.gz}) from 
-\url{http://eddylab.org/software.html}, or directly from 
-\url{ftp://selab.janelia.org/pub/software/ssu-align/ssu-align-0.1.tar.gz}; \\
-untar; and change into the newly created directory \prog{ssu-align-0.1}:
+\url{http://eddylab.org/software/ssu-align}, or directly from 
+\url{eddylab.org/software/ssu-align/ssu-align-0.1.1.tar.gz}; \\
+untar; and change into the newly created directory \prog{ssu-align-0.1.1}:
 
-\user{wget ftp://selab.janelia.org/pub/software/ssu-align/ssu-align-0.1.tar.gz}\\
-\user{tar xfz ssu-align-0.1.tar.gz}\\
-\user{cd ssu-align-0.1}
+\user{wget eddylab.org/software/ssu-align/ssu-align-0.1.1.tar.gz}; \\
+\user{tar xfz ssu-align-0.1.1tar.gz}\\
+\user{cd ssu-align-0.1.1}
 
 Configure for your system, and build the programs:
 
@@ -54,7 +55,7 @@ never need to run them.  By default, man pages for all programs are
 installed in \prog{/usr/local/man/man1}. The file \prog{ssu.1} in that
 directory is a special man page that summarizes the entire package.
 Finally, data files and a PERL module (\prog{ssu.pm}) required by the
-programs are placed in \prog{/usr/local/share/ssu-align-0.1}, by
+programs are placed in \prog{/usr/local/share/ssu-align-0.1.1}, by
 default. Data files include the default CM files, the seed alignments,
 mask files, and postscript secondary structure template files.
 
@@ -77,7 +78,7 @@ lines to the '.bashrc' file in your home directory:
 
 export PATH="\$PATH:/usr/local/bin"
 export MANPATH="\$MANPATH:/usr/local/share/man"
-export SSUALIGNDIR="/usr/local/share/ssu-align-0.1"
+export SSUALIGNDIR="/usr/local/share/ssu-align-0.1.1"
 
 And then source that file to update your current
 environment with the command:
@@ -266,16 +267,6 @@ set \prog{CFLAGS} to some sensible optimization flags for your
 platform and compiler. The \prog{-g} default generated unoptimized
 code. At a minimum, turn on your compiler's default optimizations with
 \prog{CFLAGS=-O}.
-
-\begin{comment}
-% This is unchanged from infernal
-\subsection{Example configuration}
-
-The Intel GNU/Linux version installed at Janelia Farm is configured as
-follows:
-
-{\scriptuser{env CFLAGS="-O3" ./configure --enable-mpi --enable-lfs --prefix=/usr/local/infernal-1}}
-\end{comment}
 
 % This is copied and modified from the HMMER3 installation section of
 % its user's guide

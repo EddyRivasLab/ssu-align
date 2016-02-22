@@ -59,12 +59,11 @@ The \prog{.tab} files are created by INFERNAL's
 in the input CM file and scans each input sequence for high scoring
 alignments to the HMM\@. The \prog{.tab} file lists the locations and
 scores of each of these alignments. Let's look at the header of the 
-\prog{seed-15.tab} file created here:
+\prog{myseqs.tab} file created here:
 
 \begin{sreoutput}
-# command:    ssu-cmsearch --hmm-cW 1.5 --no-null3 --noalign -T -1 --tab myseqs/myseqs.tab --viterbi 
-/usr/local/share/ssu-align-0.1/ssu-align-0p1.cm seed-15.fa
-# date:       Tue May 18 05:48:34 2010
+# command:    ssu-cmsearch --hmm-cW 1.5 --no-null3 --noalign -T -1 --tab myseqs/myseqs.tab --viterbi /home/nawrocke/share/ssu-align-0.1.1/ssu-align-0p1.cm /home/nawrocke/src/ssu-align-0.1/tutorial/seed-15.fa
+# date:       Mon Feb 22 09:35:05 2016
 # num seqs:   15
 # dbsize(Mb): 0.040518
 #
@@ -239,8 +238,8 @@ beginning of the file \prog{myseqs.archaea.cmalign}:
 
 \begin{sreoutputwide}
 # command: ssu-cmalign --cm-name archaea --mxsize 4096 --no-null3 --sub --ifile myseqs/myseqs.archaea.ifile 
--o myseqs/myseqs.archaea.stk /usr/local/share/ssu-align-0.1/ssu-align-0p1.cm myseqs/myseqs.archaea.fa
-# date:    Tue May 18 05:48:47 2010
+-o myseqs/myseqs.archaea.stk /home/nawrocke/share/ssu-align-0.1.1/ssu-align-0p1.cm myseqs/myseqs.archaea.fa
+# date:    Mon Feb 22 09:35:27 2016
 #
 # cm name                    algorithm  config  sub  bands     tau
 # -------------------------  ---------  ------  ---  -----  ------
