@@ -136,7 +136,72 @@ SSU-ALIGN post-0.1 release steps:
 
    When done, git add and commit the new RELEASE-xxx file.
 
-5. Test.
+5. Update the copyright, year, version stamps. 
+   * Edit configure.ac: make sure version, date, copyright info is set correctly.
+     Do this in infernal, hmmer and easel too, they won't use their configure's
+     unless someone goes in there and manually does it, but they should
+     be updated (e.g. version s0.1.1).
+
+       emacs configure.ac
+       emacs infernal/configure.ac
+       emacs infernal/easel/configure.ac
+       emacs infernal/hmmer/configure.ac
+       autoconf; (cd infernal; autoconf); (cd infernal/hmmer; autoconf); (cd infernal/easel; autoconf);
+       ./configure
+       . release-notes/LICENSE.sh
+
+   NOTE for 0.1.1, the hmmer autoconf does NOT work. This means a
+   'make dist' will fail if you try to run autoconf in
+   trunk/infernal/hmmer. I've decided to just not run autoconf for 
+   infernal, easel or hmmer for this release. No one should need 
+   those 'configure' scripts anyway.
+
+   * Update the release date and version in the userguide. Especially in:
+
+       cd ~/releases/ssu-align-release/trunk/documentation/userguide/
+       emacs titlepage.tex
+       emacs install.tex 
+       emacs copyright.tex
+
+   * And do the tutorial in the user guide, and make sure all output 
+     is identical to what's in the user guide. You'll at least need
+     to update the version and release date for some of the examples.
+     This is a good regression test and general test of the code.
+
+   To find all files that need to be update, grep for the month and 
+   year of the last release: e.g. 'grep 'June 2010' *.tex'
+
+     emacs output.tex
+     emacs tutorial-align.tex     
+
+  I DECIDED NOT TO UPDATE THE CLUSTER RELATED DOCUMENTS/COMMENTS 
+  IN THE TUTORIAL FROM JANELIA TO NCBI, BUT WE MAY WANT TO DO THAT
+  FOR FUTURE RELEASES:
+
+     emacs tutorial-prep.tex
+     emacs stats.tex     
+
+6. Write (or update) release notes.
+
+   For the first time on a new release branch, it's handy to look
+   at the git log. Replace "60f6583" below with the last release's git
+   SHA.
+	 git log 60f6583 HEAD > tmp
+         cd infernal
+	 git log ssu-align-0.1 HEAD > tmp
+         cd ../easel
+	 git log ssu-align-0.1 HEAD > tmp         
+         cd hmmer
+	 git log ssu-align-0.1 HEAD > tmp
+
+         emacs documentation/release-notes/RELEASE-0.1.1
+	 git add documentation/release-notes/RELEASE-0.1.1
+
+   These release notes will be merged back into the trunk later, if
+   we're in a branch.
+
+
+7. Test.
    The SSU-ALIGN testsuite is currently relatively weak; and its based
    on PERL scripts. It needs to include valgrind tests for memory leaks, for example.
    The INFERNAL testsuite does not do memory leak checking either.
@@ -147,67 +212,25 @@ SSU-ALIGN post-0.1 release steps:
          cd ~/releases/ssu-align-release/trunk/
     	 autoconf
          (cd infernal/testsuite; ln -s ../easel/devkit/sqc .)
-     	 cd ../..
          env CFLAGS="-g -Wall" ./configure --prefix=/home/nawrocke/tmp/ssu-align
          make
          make check
+         make install
 
    Run some anecdotes. Examples:
-        infernal/src/ssu-cmbuild foo.cm infernal/intro/trna.sto
-        infernal/src/ssu-cmsearch foo.cm infernal/testsuite/trna-regression.fa
+        ~/tmp/ssu-align/bin/ssu-cmbuild foo.cm infernal/intro/trna.sto
+        ~/tmp/ssu-align/bin/ssu-cmsearch foo.cm infernal/testsuite/trna-regression.fa
    Run those with valgrind, too
-        valgrind --orig infernal/src/ssu-cmbuild -F foo.cm infernal/intro/trna.sto
-        valgrind --orig infernal/src/ssu-cmsearch foo.cm infernal/testsuite/trna-regression.fa
+        valgrind --orig ~/tmp/ssu-align/bin/ssu-cmbuild -F foo.cm infernal/intro/trna.sto
+        valgrind --orig ~/tmp/ssu-align/bin/ssu-cmsearch foo.cm infernal/testsuite/trna-regression.fa
 
    Check the User's Guide.
       cd documentation/userguide
       make
 
-   Check that the Infernal, HMMER and Easel user's guides build, but
-   place correct release numbers on their covers (e.g. 's0.1.1').
-
-6. Write (or update) release notes.
-   For the first time on a new release branch, it's handy to look
-   at the svn log. Replace "1534" below with the last release's SVN rev.
-	 svn log -r 1534:HEAD | more
-         cd easel
-         svn log -r 314:HEAD | more
-         emacs documentation/release-notes/RELEASE-${RELEASE}
-	 svn add documentation/release-notes/RELEASE-${RELEASE}
-
-	 repo=https://svn.janelia.org/eddylab/
-
-	 Different revision numbering histories:
-	 nawrockie/src is relevant for ssu-align
-	 eddys/src     is relevant for infernal/ and hmmer/
-	 eddys/easel   is relevant for easel
-                                           
-          nawrockie/src/            eddys/src/               eddys/easel/
-   Release   from-rev   to-rev      from-rev    to-rev    from-rev     to-rev
-   -------   --------   ------      --------    ------    ---------    ---------
-   0.1:             -    1088              -      3307            -         616
-   
-   These release notes will be merged back into the trunk later, if
-   we're in a branch.
-
-7. Update the copyright, year, version stamps. 
-   * Edit configure.ac: make sure version, date, copyright info is set correctly.
-     Do this in infernal, hmmer and easel too, they won't use their configure's
-     unless someone goes in there and manually does it, but they should
-     be updated (e.g. version s0.1.1).
-       emacs configure.ac
-       emacs infernal/configure.ac
-       emacs infernal/easel/configure.ac
-       emacs infernal/hmmer/configure.ac
-       autoconf; (cd infernal; autoconf); (cd infernal/hmmer; autoconf); (cd infernal/easel; autoconf);
-       ./configure
-       . release-notes/LICENSE.sh
-
-   NOTE for 0.1.1, the hmmer autoconf does NOT work, I've decided to
-   leave it this way, that is, ship 0.1.1 with a broken configure in
-   infernal/hmmer/configure. Nobody should be using that file anyway.
-   And the configure in 0.1's infernal/hmmer/ doesn't work either,
-   albeit for a different reason.
+   Check that the correct release number is on the cover.
+   I DID NOT UPDATE ALL EXAMPLES (version number, release date) 
+   FOR 0.1.1 RELEASE BUT MAY WANT TO FOR FUTURE RELEASES
 
 8. Test a 'make dist' tarball:
    I recommend doing a 'make dist' at this and testing that it
@@ -215,6 +238,31 @@ SSU-ALIGN post-0.1 release steps:
    does not include this step here (he does include it later), but I
    found this is good to do before Tagging. 
 
+          First make sure we don't have any uncommited changes
+          (the 'git status' calls below) and that we have the 
+          latest revision from the remote repository (the
+          'git pull' calls below):
+
+          cd ~/releases/ssu-align-release/trunk
+          git status
+          git pull
+
+          cd infernal
+          git status
+          git pull
+          git pull origin ssu-align-0.1-branch:ssu-align-0.1-branch
+
+          cd hmmer
+          git status
+          git pull origin ssu-align-0.1-branch:ssu-align-0.1-branch           
+
+          cd ../easel
+          git status
+          git pull origin ssu-align-0.1-branch:ssu-align-0.1-branch           
+
+   Now do the 'make dist':
+
+          cd ~/releases/ssu-align-release/trunk
           make RELEASE=0.1.1 dist
 	  cd ../
 	  cp ssu-align-0.1.1.tar.gz /am/ftp-pub/nawrocki/
@@ -242,13 +290,13 @@ SSU-ALIGN post-0.1 release steps:
      git tag -a v0.1.1 -m "Version 0.1.1"
 
      cd infernal
-     git tag -a ssu-align-0.1.1 -m "SSU-ALIGN version 0.1.1"
+     git tag -a ssu-align-0.1.1-release -m "SSU-ALIGN version 0.1.1"
 
      cd hmmer    
-     git tag -a ssu-align-0.1.1 -m "SSU-ALIGN version 0.1.1"
+     git tag -a ssu-align-0.1.1-release -m "SSU-ALIGN version 0.1.1"
 
      cd ../easel
-     git tag -a ssu-align-0.1.1 -m "SSU-ALIGN version 0.1.1"
+     git tag -a ssu-align-0.1.1-release -m "SSU-ALIGN version 0.1.1"
         
    Note: if you screw up somewhere below, and need to come back and
    re-tag, you must delete the previous tagged versions first:
@@ -259,15 +307,15 @@ SSU-ALIGN post-0.1 release steps:
      git push origin :refs/tags/v0.1.1
         
      cd infernal
-     git tag -d ssu-align-0.1.1 
+     git tag -d ssu-align-0.1.1-release 
      git push origin :refs/tags/ssu-align-0.1.1
 
      cd hmmer    
-     git tag -d ssu-align-0.1.1 
+     git tag -d ssu-align-0.1.1-release 
      git push origin :refs/tags/ssu-align-0.1.1
 
      cd ../easel
-     git tag -d ssu-align-0.1.1 
+     git tag -d ssu-align-0.1.1-release 
      git push origin :refs/tags/ssu-align-0.1.1
 
 13. Put on the FTP site. 
