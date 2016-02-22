@@ -184,9 +184,9 @@ sub PrintBanner {
     }
 
     PrintStringToFile($out_file, $print_to_stdout, sprintf("\# $script_name :: $script_desc\n"));
-    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# SSU-ALIGN 0.1 (June 2010)\n"));
-    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# Copyright (C) 2010 HHMI Janelia Farm Research Campus\n"));
-    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# Freely distributed under the GNU General Public License (GPLv3)\n"));
+    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# SSU-ALIGN 0.1.1 (Feb 2016)\n"));
+    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# Copyright (C) 2016 Howard Hughes Medical Institute\n"));
+    PrintStringToFile($out_file, $print_to_stdout, sprintf("\# Freely distributed under the BSD open source license.\n"));
     PrintStringToFile($out_file, $print_to_stdout, sprintf("\# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"));
     PrintStringToFile($out_file, $print_to_stdout, sprintf("%-10s %s ", "# command:", $script_name . $enabled_options));
 #    PrintStringToFile($out_file, $print_to_stdout, sprintf("%-10s %s ", "# command:", $script_call . $enabled_options));
