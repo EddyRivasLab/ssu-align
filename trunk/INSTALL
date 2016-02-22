@@ -7,19 +7,25 @@ These are quick installation instructions. For complete documentation,
 including customization, see the Installation chapter in the SSU-ALIGN
 User's Guide (Userguide.pdf).
 
-Starting from a source distribution, ssu-align-0.1..1tar.gz:
+Starting from a source distribution, ssu-align-0.1.1.tar.gz:
+
  uncompress and unpack:     tar xfz ssu-align-0.1.1.tar.gz
+
  move into new directory:   cd ssu-align-0.1.1
+
  configure:                 ./configure
+
  build:                     make
+
  automated install:         make install
- automated tests:           make check
 
  setup environment:         Follow the instructions after the
                             'make install'. They'll explain how to
                             update your PATH, MANPATH, and SSUALIGNDIR
                             environment variables for the current and
                             all subsequent shell sessions.
+
+ automated tests:           make check
 
 SSU-ALIGN is developed primarily on Linux and Mac OS/X systems. It is
 tested on a variety of UNIX and UNIX-like operating systems. It is
