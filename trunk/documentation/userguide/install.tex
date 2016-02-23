@@ -10,13 +10,13 @@
 \label{sec:install}
 
 \subsection{Quick installation instructions}
-Download the source tarball (\prog{ssu-align.tar.gz}) from 
+Download the source tarball (\prog{ssu-align-0.1.1.tar.gz}) from 
 \url{http://eddylab.org/software/ssu-align}, or directly from 
 \url{eddylab.org/software/ssu-align/ssu-align-0.1.1.tar.gz}; \\
 untar; and change into the newly created directory \prog{ssu-align-0.1.1}:
 
 \user{wget eddylab.org/software/ssu-align/ssu-align-0.1.1.tar.gz}; \\
-\user{tar xfz ssu-align-0.1.1tar.gz}\\
+\user{tar xfz ssu-align-0.1.1.tar.gz}\\
 \user{cd ssu-align-0.1.1}
 
 Configure for your system, and build the programs:
@@ -90,7 +90,7 @@ lines to the '.cshrc' file in your home directory:
 
 setenv PATH "\$PATH:/usr/local/bin"
 setenv MANPATH "\$MANPATH:/usr/local/share/man"
-setenv SSUALIGNDIR "/usr/local/share/ssu-align-0.1"
+setenv SSUALIGNDIR "/usr/local/share/ssu-align-0.1.1"
 
 And then source that file to update your current
 environment with the command:
@@ -115,7 +115,7 @@ three lines:
 
 \prog{export MANPATH="\$MANPATH:/usr/local/share/man"}
 
-\prog{export SSUALIGNDIR="/usr/local/share/ssu-align-0.1"}
+\prog{export SSUALIGNDIR="/usr/local/share/ssu-align-0.1.1"}
 
 Note that these will only work for the current configuration (that is,
 they'll be different if you change the installation locations with
@@ -136,7 +136,7 @@ with default settings), and
 \user{echo \$SSUALIGNDIR}
 
 should return the path to the your data directory
-(\prog{/usr/local/share/ssu-align-0.1} if you configured with default
+(\prog{/usr/local/share/ssu-align-0.1.1} if you configured with default
 settings).
 
 If you want to, at this point you can run the automated
@@ -148,7 +148,7 @@ tests should pass:
 \user{make check}
 
 That's it. You can keep reading if you want to know more about
-customizing a \sft{ssu-align} installation, or you can skip ahead to
+customizing a SSU-ALIGN installation, or you can skip ahead to
 section~\ref{sec:tutorial}, the tutorial.
 
 \subsection{More detailed installation notes}
@@ -192,10 +192,10 @@ of files: programs, man pages, and data files. It installs the programs in
 \prog{--bindir} (which defaults to \prog{/usr/local/bin}), the man pages in the
 \prog{man1} subdirectory of \prog{--mandir} (default
 \prog{/usr/local/man}) and the data files in a newly created
-subdirectory \prog{ssu-align-0.1} of \prog{--datadir} (which
+subdirectory \prog{ssu-align-0.1.1} of \prog{--datadir} (which
 defaults to \prog{/usr/local/share}. Thus, say you want
 \prog{make install} to install programs in \prog{/usr/bioprogs/bin}, man pages in
-\prog{/usr/share/man/man1} and data files in \prog{/usr/share/ssu-align-0.1};
+\prog{/usr/share/man/man1} and data files in \prog{/usr/share/ssu-align-0.1.1};
 you would configure with:
 
 \noindent \prog{> ./configure --mandir=/usr/share/man --bindir=/usr/bioprogs/bin --datatdir=/usr/share}
@@ -208,7 +208,7 @@ files under one directory, like the default \prog{/usr/local}. To
 change this prefix to something else, say \prog{/usr/mylocal}
 (so that programs go in \prog{/usr/mylocal/bin}, man pages in
 \prog{/usr/mylocal/man/man1}, and data files in
-\prog{/usr/mylocal/share/ssu-align-0.1}), you can use the
+\prog{/usr/mylocal/share/ssu-align-0.1.1}), you can use the
 \prog{--prefix} option:
 
 \user{./configure --prefix=/usr/mylocal}
