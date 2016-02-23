@@ -157,6 +157,7 @@ SSU-ALIGN post-0.1 release steps:
    those 'configure' scripts anyway.
 
    * Update the release date and version in the userguide. Especially in:
+     *REMEMBER TO ACTUALLY SEARCH FOR ALL OCCURENCES OF RELEASE NUMBER*
 
        cd ~/releases/ssu-align-release/trunk/documentation/userguide/
        emacs titlepage.tex
@@ -229,6 +230,7 @@ SSU-ALIGN post-0.1 release steps:
       make
 
    Check that the correct release number is on the cover.
+
    I DID NOT UPDATE ALL EXAMPLES (version number, release date) 
    FOR 0.1.1 RELEASE BUT MAY WANT TO FOR FUTURE RELEASES
 
@@ -284,72 +286,75 @@ SSU-ALIGN post-0.1 release steps:
     Remember to separately commit in infernal, hmmer and easel 
     if changes were made there.
 
-11. Tag.
+11. Tag. (Remeber we need to push tags explicitly to remote master.)
 
-     cd ~/releases/ssu-align-release/trunk
+     cd ~/releases/ssu-align-release
      git tag -a v0.1.1 -m "Version 0.1.1"
+     git push origin v0.1.1
 
      cd infernal
-     git tag -a ssu-align-0.1.1-release -m "SSU-ALIGN version 0.1.1"
+     git tag -a ssu-align-0.1.1 -m "SSU-ALIGN version 0.1.1"
+     git push origin ssu-align-0.1.1
 
      cd hmmer    
-     git tag -a ssu-align-0.1.1-release -m "SSU-ALIGN version 0.1.1"
+     git tag -a ssu-align-0.1.1 -m "SSU-ALIGN version 0.1.1"
+     git push origin ssu-align-0.1.1
 
      cd ../easel
-     git tag -a ssu-align-0.1.1-release -m "SSU-ALIGN version 0.1.1"
+     git tag -a ssu-align-0.1.1 -m "SSU-ALIGN version 0.1.1"
+     git push origin ssu-align-0.1.1
         
    Note: if you screw up somewhere below, and need to come back and
    re-tag, you must delete the previous tagged versions first:
-   I've never actually done it, but found this online:
 
      cd ~/releases/ssu-align-release/trunk
      git tag -d v0.1.1 
      git push origin :refs/tags/v0.1.1
         
      cd infernal
-     git tag -d ssu-align-0.1.1-release 
+     git tag -d ssu-align-0.1.1 
      git push origin :refs/tags/ssu-align-0.1.1
 
      cd hmmer    
-     git tag -d ssu-align-0.1.1-release 
+     git tag -d ssu-align-0.1.1 
      git push origin :refs/tags/ssu-align-0.1.1
 
      cd ../easel
-     git tag -d ssu-align-0.1.1-release 
+     git tag -d ssu-align-0.1.1 
      git push origin :refs/tags/ssu-align-0.1.1
 
 13. Put on the FTP site. 
-    NOT SURE HOW TO DO THIS YET, SINCE SEAN IS NOW AT HARVARD. 
-    I WILL UPDATE POST 0.1.1 RELEASE AFTER I'VE DONE IT.
 
-    This is how I did it for ssu-align-0.1 (OLD at beginning of each
-    0.1 line):
+    First put everything on my personal NCBI ftp site:
 
-OLD    from ~/releases/ssu-align-0.1/
+    Copy from ~/releases/ssu-align-release/ssu-align-0.1.1/
 
-OLD    scp README selab:/opt/www/ftp/pub/software/ssu-align/
-OLD    scp documentation/release-notes/RELEASE-0.1 selab:/opt/www/ftp/pub/software/ssu-align/00RELEASE
-OLD    scp COPYRIGHT selab:/opt/www/ftp/pub/software/ssu-align/
-OLD    scp LICENSE selab:/opt/www/ftp/pub/software/ssu-align/
-OLD    scp Userguide.pdf selab:/opt/www/ftp/pub/software/ssu-align/
-OLD    scp ../ssu-align-0.1.tar.gz selab:/opt/www/ftp/pub/software/ssu-align/
-OLD    (IN THE FUTURE, DO ssh selab  rm -f /opt/www/ftp/pub/software/ssu-align/ssu-align.tar.gz
-OLD    ssh selab  "(cd /opt/www/ftp/pub/software/ssu-align; ln -s ssu-align-0.1.tar.gz ssu-align.tar.gz)"
+    Go to /panfs/pan1/infernal/web/eddylab.org/site/software/ssu-align/     
+
+    (Or checkout new working copy of Sean's website with:
+     'git clone nawrocke@ody:/n/eddy_lab/gitrepo/web.git'
+     After setting up your ~/.ssh/config file as explained here:
+     https://rc.fas.harvard.edu/resources/documentation/linux/using-ssh-controlmaster-for-single-sign-on/)
+
+     cp ~/releases/ssu-align-release/ssu-align-0.1.1/README .
+     cp ~/releases/ssu-align-release/ssu-align-0.1.1/documentation/release-notes/RELEASE-0.1.1 ./00RELEASE 
+     cp ~/releases/ssu-align-release/ssu-align-0.1.1/LICENSE .
+     cp ~/releases/ssu-align-release/ssu-align-0.1.1/Userguide.pdf .
+     cp ~/releases/ssu-align-release/ssu-align-0.1.1.tar.gz .
+
+     rm ssu-align.tar.gz
+     ln -s ssu-align-0.1.1.tar.gz ssu-align.tar.gz
+
+     Update index.html:
+       - search for all instances of the version (e.g. 0.1.1)
+         and update them.
+
+     Add everything to git and commit it, and push it.
+
+     Email Sean and ask him to do a 'make' on the website.
+
+     Review the website once Sean has performed a 'make'.
     
-14. Update the web site
-    NOT SURE HOW TO DO THIS YET, SINCE SEAN IS NOW AT HARVARD. 
-    I WILL UPDATE POST 0.1.1 RELEASE AFTER I'VE DONE IT.
-
-    This is how I did it for ssu-align-0.1 (OLD at beginning of each
-    0.1 line):
-
-OLD	 cd ~/web/selab/
-OLD	 emacs software.html
-OLD      make test
-OLD      svn commit
-	 
-OLD    Email Sean to do the final 'make' and push the webpages live.	 
-
 15. Clean up. 
 
 	cd ~/releases
