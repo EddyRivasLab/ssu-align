@@ -109,6 +109,25 @@ ESLPROGS = esl-afetch\
 	   esl-ssdraw\
 	   esl-weight
 
+ESLPROGSWITHMAN = esl-afetch\
+	   esl-alimanip\
+	   esl-alimap\
+	   esl-alimask\
+           esl-alimerge\
+           esl-alistat\
+	   esl-compalign\
+	   esl-compstruct\
+	   esl-histplot\
+	   esl-mask\
+	   esl-reformat\
+	   esl-selectn\
+	   esl-seqrange\
+	   esl-seqstat\
+	   esl-sfetch\
+	   esl-shuffle\
+	   esl-ssdraw\
+	   esl-weight
+
 SSUESLPROGS = ssu-esl-afetch\
 	      ssu-esl-alimanip\
 	      ssu-esl-alimap\
@@ -385,7 +404,7 @@ actually-install:
 	    -e 's/esl-sfetch/ssu-esl-sfetch/g' \
 	    < infernal/documentation/manpages/$$file.man > $(MANDIR)/man$(MANSUFFIX)/ssu-$$file.$(MANSUFFIX);\
 	done
-	@for file in $(ESLPROGS); do\
+	@for file in $(ESLPROGSWITHMAN); do\
 	   sed -e 's/cmalign/ssu-cmalign/g' \
 	    -e 's/cmbuild/ssu-cmbuild/g' \
 	    -e 's/cmcalibrate/ssu-cmcalibrate/g' \
@@ -399,7 +418,6 @@ actually-install:
 	    -e 's/esl-alimask/ssu-esl-alimask/g' \
 	    -e 's/esl-alimerge/ssu-esl-alimerge/g' \
 	    -e 's/esl-alistat/ssu-esl-alistat/g' \
-	    -e 's/esl-cluster/ssu-esl-cluster/g' \
 	    -e 's/esl-compalign/ssu-esl-compalign/g' \
 	    -e 's/esl-compstruct/ssu-esl-compstruct/g' \
 	    -e 's/esl-construct/ssu-esl-construct/g' \

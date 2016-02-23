@@ -118,7 +118,7 @@ file, not a directory.
 
 .TP
 .B -d
-Display the pre-calculated, default @PACKAGE@-@SSUALIGN_VERSION@ masks
+Display the pre-calculated, default SSU-ALIGN v0.1 masks
 on the secondary structure diagrams. Positions excluded by the mask
 will appear as open circles. 
 
@@ -172,7 +172,7 @@ either the current working directory or SSUALIGNDIR.
 Specify that the template postscript file to use for drawing secondary
 structure diagrams is file
 .I <f>. 
-If not used, the default @PACKAGE@-@RELEASE@ template file
+If not used, the default v0.1 template file
 will be used. 
 .I <f>
 must be a path that exists with respect to
