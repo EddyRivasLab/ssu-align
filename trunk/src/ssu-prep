@@ -706,7 +706,7 @@ sub partition_seqfile_and_write_shell_script {
 	printf SH ("#\tssu-merge $out_dir\n");
 	printf SH ("#\n");
 	if(! $opt_HR->{"--no-bash"}) { 
-	    printf SH ("# The for loop will execute all %d jobs:\n", $njobs-1, $njobs);
+	    printf SH ("# The for loop will execute all %d jobs:\n", $njobs);
 	    printf SH ("#\n");
 	}
     }
