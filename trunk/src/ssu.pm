@@ -615,7 +615,7 @@ sub TempFilename {
     foreach $suffix ("aa".."zz") {
         $name = $out_dir . "ssutmp".$key.$suffix.$$;
         if (! (-e $name)) { 
-            open (TMP,">$name") || FileOpenFailure($name, $sum_file, 1, "writing");
+            open (TMP,">$name") || FileOpenFailure($name, $sum_file, $log_file, 1, "writing");
             close(TMP);
             return "$name"; 
         }
@@ -761,7 +761,7 @@ sub DetermineNumSeqsStockholm {
     @{$nseq_AR} = ();
     my $nali = 0;
 
-    open(IN, $tmp_alistat_file) || FileOpenFailure($tmp_alistat_file, $log_file, $!, "reading");
+    open(IN, $tmp_alistat_file) || FileOpenFailure($tmp_alistat_file, $sum_file, $log_file, $!, "reading");
     while($line = <IN>) { 
 	chomp $line;
 	if($line =~ /Number of sequences\:\s+(\d+)/) { 
