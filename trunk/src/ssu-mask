@@ -73,7 +73,6 @@ $options_usage .= "  --gaponly       : do not consider posterior probabilities, 
 
 $options_usage .= "\nmiscellaneous output options:\n";
 $options_usage .= "  --afa         : output aligned FASTA (.afa) alignments, not Stockholm ones\n";
-$options_usage .= "  --dna         : output alignments as DNA, default is RNA (even if input is DNA)\n";
 $options_usage .= "  --key-out <s> : add <s> to all output file names, before the suffix\n";
 
 $options_usage .= "\noptions for creating secondary structure diagrams displaying masks\n";
@@ -89,6 +88,7 @@ $options_usage .= "  --no-draw    : do not draw mask diagrams\n";
 $options_usage .= "\noptions for listing, converting, or removing sequences (no masking will be done):\n";
 $options_usage .= "  --list      : output list file(s) of sequence names in alignment(s)\n";    
 $options_usage .= "  --stk2afa   : convert Stockholm alignment(s) to aligned FASTA\n";
+$options_usage .= "  --dna       : with --stk2afa, convert alignment to DNA\n";
 $options_usage .= "  --seq-k <f> : with -a, remove all sequences *except* those listed in file <f>\n"; 
 $options_usage .= "  --seq-r <f> : with -a, remove sequences with names listed in file <f>\n"; 
 
@@ -148,7 +148,6 @@ my $opt_return = GetOptions
      'gapthresh=s' => \$opt_H{"--gapthresh"},
      'gaponly'     => \$opt_H{"--gaponly"},
      'afa'         => \$opt_H{"--afa"},
-     'dna'         => \$opt_H{"--dna"},
      'key-out=s'   => \$opt_H{"--key-out"},
      'ps2pdf=s'    => \$opt_H{"--ps2pdf"},
      'ps-only'     => \$opt_H{"--ps-only"},
@@ -157,6 +156,7 @@ my $opt_return = GetOptions
      'list'        => \$opt_H{"--list"},
      'seq-r=s'     => \$opt_H{"--seq-r"},
      'seq-k=s'     => \$opt_H{"--seq-k"},
+     'dna'         => \$opt_H{"--dna"},
      'stk2afa'     => \$opt_H{"--stk2afa"});
 
 if($opt_return != 1) { exit(1); }
@@ -180,7 +180,7 @@ my $do_mask_mode        = 0; # default mode, mask the alignment
 my $do_remove_seqs_mode = 0; # remove some sequences from the alignment given a list file, no masking
 my $do_filter_mode      = 0; # filter alignment(s), no masking
 my $do_list_mode        = 0; # list sequences in the alignment, no masking
-my $do_stk2afa_mode     = 0; # convert a single alignment file to aligned fasta and exit
+my $do_stk2afa_mode     = 0; # convert a single alignment file to aligned fasta or DNA and exit
 
 # Mask mode options.
 if($opt_H{"--pf"} ne "")        { $do_mask_mode = 1; }
@@ -277,6 +277,8 @@ if($opt_H{"--ps-only"} && (! $do_mask_mode)) { printf STDERR ("\nERROR, --ps-onl
 if(($opt_H{"--afa"})  && ((! $do_mask_mode) && (! $do_filter_mode)))      { printf STDERR ("\nERROR, --afa is incompatible with --list, --stk2afa, --seq-r, and --seq-k\n"); exit(1); }
 
 if($opt_H{"--ps-only"} && ($opt_H{"--ps2pdf"} ne "")) { printf STDERR ("\nERROR, --ps-only is incompatible with --ps2pdf\n"); exit(1); }
+
+if(($opt_H{"--dna"}) && (! $do_stk2afa_mode)) { printf STDERR ("\nERROR, --dna requires --stk2afa (to convert a DNA afa alignment back to stockholm do 'ssu-esl-reformat --informat afa stockholm <afa-file>')\n"); exit(1); } 
 
 ###################################################
 # Process command-line arguments and print banner #
