@@ -603,8 +603,10 @@ if($do_stk2afa_mode)
 	    $afa_file       = SwapOrAppendFileSuffix($aln_file, \@stk_suffix_A, $key_out . ".afa", 1);
 	    $afa_file2print = RemoveDirPath($afa_file);
 	}
-	if($opt_H{"-i"}) { $reformat_opts = "--informat stockholm afa"; }
-	else             { $reformat_opts = "--small --informat pfam afa"; }
+        $reformat_opts = "";
+        if($opt_H{"--dna"}) { $reformat_opts .= "-d "; }
+	if($opt_H{"-i"}) { $reformat_opts .= "--informat stockholm afa"; }
+	else             { $reformat_opts .= "--small --informat pfam afa"; }
 	$command = "$reformat -o $afa_file $reformat_opts $aln_file";
 	RunCommand("$command", $tfilectr++, 1, 1, $sum_file, $log_file, \$command_worked, "");
 
